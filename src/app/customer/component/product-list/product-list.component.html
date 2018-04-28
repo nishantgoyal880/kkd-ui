@@ -2,13 +2,12 @@
 <div class="container mt-100">
   <div class="row">
     <div class="col-md-3">
-
     </div>
     <div class="col-md-6">
       <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
+        <input class="form-control mr-sm-2 col-md-9" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)='searchProduct()'><i class="fas fa-search"></i></button>
-    </form>
+      </form>
     </div>
     <div class="col-md-3">
     </div>
@@ -36,11 +35,10 @@
       <ion-range-slider #sliderElement
         type="double"
         min="0"
-        max="100"
+        max="{{max_price}}"
         from_shadow="true"
         to_shadow="true"
         grid="true"
-        grid_num="10"
         prefix="Price: "
         postfix=" Rs"
         decorate_both="false"
@@ -51,12 +49,11 @@
       <label class="my-2"><span>Filter By Quantity:</span></label>
       <ion-range-slider #sliderElement
         type="double"
-        max="50"
         min="0"
+        max="{{max_quantity}}"
         from_shadow="true"
         to_shadow="true"
         grid="true"
-        grid_num="5"
         prefix="Quantity:"
         postfix=" Kg"
         decorate_both="false"

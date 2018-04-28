@@ -10,6 +10,8 @@ export class ProductListComponent implements OnInit {
 
   public searchInput:string;
   public products:Array<any>=[];
+  public max_price:number;
+  public max_quantity:number;
 
   constructor(private searchService: SearchService) { }
 
@@ -17,10 +19,15 @@ export class ProductListComponent implements OnInit {
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
       console.log(data);
       this.products=data;
+      this.calculatingMax();
     },
     (err)=> console.log("in component"+err));
   }
 
+  calculatingMax(){
+    this.max_price=this.products.reduce((prev, current) => (prev.price > current.price) ? prev : current).price;
+    this.max_quantity=this.products.reduce((prev, current) => (prev.quantity > current.quantity) ? prev : current).quantity;
+  }
   sorters = {
     byPrice: function(firstProduct, secondProduct) {
       return firstProduct.price - secondProduct.price;
@@ -72,6 +79,7 @@ export class ProductListComponent implements OnInit {
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
       console.log(data);
       this.products=data;
+      this.calculatingMax();
     },
     (err)=> {
       console.log("in component"+err),
@@ -97,27 +105,20 @@ export class ProductListComponent implements OnInit {
   public cartItem={};
   public enteredQuant:number;
   addToCart(item){
-
-
     this.cartItem={
+      "productId":item.productId,
       "custId":"KKDCUST1000",
-      "kkkdFarmID":item.kkdFarmId,
+      "kkdFarmID":item.kkdFarmId,
       "productName":item.productName,
       "productPrice":item.price,
       "farmerName":"Ram Singh",
       "quantity":item.quantity,
-      "productId":"KKDPROD101",
       "avgRating": 4.5
     };
-    console.log(this.cartItem)
-
   }
 
   proceed(){
-    console.log("original"+this.cartItem["quantity"]);
-    console.log("gduehdfikej"+this.enteredQuant);
     if(this.cartItem["quantity"]>this.enteredQuant){
-      console.log(this.enteredQuant);
       this.cartItem["quantity"]=this.enteredQuant;
     this.searchService.addToCart(this.cartItem).subscribe((data)=>{
       alert("added to bag")
