@@ -37,7 +37,7 @@ export class FarmerAddAddressComponent implements OnInit {
     this.farmerHeaderService.updateFarmerAddress(res.mobileNo, this.details)
     .subscribe((res)=>{
       swal({
-        position: 'top-end',
+        position: 'top',
         type: 'success',
         title: 'Your address has been updated',
         showConfirmButton: false,
@@ -51,10 +51,13 @@ export class FarmerAddAddressComponent implements OnInit {
       })
     });
   },(error) =>{
+    swal({
+      type: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+    })
   });
 }
   ngOnInit() {
   }
 }
-
-

@@ -1,5 +1,5 @@
 <header>
-     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark topnav">
+     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-transparent topnav">
      <a class="navbar-brand">
    <img src="../../../assets/Header/kkd_logo.png" width="60" height="60" alt="">
    </a>
@@ -8,19 +8,19 @@
     </button>
    <div class="container-fluid">
      <div class="navbar-collapse collapse nav" id="navbarTogglerDemo01">
-      <ul class="navbar-nav mr-auto">
-         <li class="nav-item">
-           <a class="nav-link active" routerLink="/home"><i class="fas fa-home"></i> Home<span class="sr-only">(current)</span></a>
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+           <a class="nav-link" routerLink="/home">Home<span class="sr-only">(current)</span></a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" routerLink="/productList"><i class="fas fa-info-circle"></i> Products </a>
+           <a class="nav-link" routerLink="/productList">Products </a>
          </li>
 
          <li class="nav-item">
-           <a class="nav-link" routerLink="/help"><i class="fas fa-info-circle"></i> Help</a>
+           <a class="nav-link" routerLink="/help">Help</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" routerLink="/support"><i class="fas fa-phone-square"></i>  Support</a>
+           <a class="nav-link" routerLink="/support">Support</a>
          </li>
        </ul>
        <ul *ngIf="loggedIn==false">
