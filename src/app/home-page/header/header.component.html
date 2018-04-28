@@ -10,17 +10,17 @@
      <div class="navbar-collapse collapse nav" id="navbarTogglerDemo01">
        <ul class="navbar-nav mr-auto">
          <li class="nav-item active">
-           <a class="nav-link" routerLink="/home">Home<span class="sr-only">(current)</span></a>
+           <a class="nav-link" routerLink="/home"><i class="fas fa-home mr-1"></i>Home<span class="sr-only">(current)</span></a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" routerLink="/productList">Products </a>
+           <a class="nav-link" routerLink="/productList"><i class="fab fa-product-hunt mr-1"></i>Products </a>
          </li>
 
          <li class="nav-item">
-           <a class="nav-link" routerLink="/help">Help</a>
+           <a class="nav-link" routerLink="/help"><i class="fas fa-hands-helping mr-1"></i>Help</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" routerLink="/support">Support</a>
+           <a class="nav-link" routerLink="/support"><i class="fas fa-envelope mr-1"></i>Support</a>
          </li>
        </ul>
        <ul *ngIf="loggedIn==false">
@@ -39,21 +39,21 @@
           </li>
       </ul>
 
-      <ul class="navbar-nav mr-auto" *ngIf="loggedIn==true && role=='farmer'">
+      <ul class="navbar-nav justify-content-end" *ngIf="loggedIn==true && role=='farmer'">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home"><i class="fas fa-info-circle"></i>Log Out</a>
+          <a class="nav-link" routerLink="/home"><i class="fas fa-sign-out-alt mr-1"></i>Log Out</a>
         </li>
       </ul>
 
-      <ul class="navbar-nav mr-auto" *ngIf="loggedIn==true && role=='customer'">
+      <ul class="navbar-nav justify-content-end" *ngIf="loggedIn==true && role=='customer'">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/customer/myAccount"><i class="fas fa-info-circle"></i>My Account</a>
+          <a class="nav-link" routerLink="/customer/myAccount"><i class="far fa-user-circle mr-1"></i>My Account</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/customer/myCart"><i class="fas fa-info-circle"></i>My Cart</a>
+          <a class="nav-link" routerLink="/customer/myCart"><i class="fas fa-cart-arrow-down mr-1"></i>My Cart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home"><i class="fas fa-info-circle"></i>LogOut</a>
+          <a class="nav-link" routerLink="/home"><i class="fas fa-sign-out-alt mr-1"></i>LogOut</a>
         </li>
       </ul>
 
