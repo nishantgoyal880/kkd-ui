@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
  public searchInput:String;
  public search:String;
- public loggedIn:any=true;
+ public loggedIn:any=false;
  public role:any="customer";
 
  constructor() { }
