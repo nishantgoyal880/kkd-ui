@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerHeaderService } from '../../../services/farmer-header/farmer-header.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-farmer-alternate-mobile',
@@ -26,8 +27,19 @@ export class FarmerAlternateMobileComponent implements OnInit {
                    res.alternateNo = post.alternateMobileNumber;
                    this.farmerHeaderService.updateFarmerMobile(this.searchedFarmerId,res)
                    .subscribe((updatedInfo) =>{  
-                     alert("successfully updated");          
+                    swal({
+                      position: 'top-end',
+                      type: 'success',
+                      title: 'Your alternate mobile number has updated',
+                      showConfirmButton: false,
+                      timer: 1500
+                    })        
                      }, (error) =>{
+                      swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                      })
                      });            
              }, (error) =>{
              });
@@ -35,3 +47,7 @@ export class FarmerAlternateMobileComponent implements OnInit {
   ngOnInit() {
   }
 }
+
+
+
+

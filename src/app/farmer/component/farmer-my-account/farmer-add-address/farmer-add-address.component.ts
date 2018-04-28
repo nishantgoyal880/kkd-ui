@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerHeaderService } from '../../../services/farmer-header/farmer-header.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-farmer-add-address',
@@ -35,8 +36,19 @@ export class FarmerAddAddressComponent implements OnInit {
     .subscribe((res) =>{
     this.farmerHeaderService.updateFarmerAddress(res.mobileNo, this.details)
     .subscribe((res)=>{
-      alert("Successfully Updated");
+      swal({
+        position: 'top-end',
+        type: 'success',
+        title: 'Your address has been updated',
+        showConfirmButton: false,
+        timer: 1500
+      })
     },(error)=>{
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+      })
     });
   },(error) =>{
   });
@@ -44,3 +56,5 @@ export class FarmerAddAddressComponent implements OnInit {
   ngOnInit() {
   }
 }
+
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerHeaderService } from '../../../services/farmer-header/farmer-header.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-farmer-change-password',
@@ -41,18 +42,29 @@ export class FarmerChangePasswordComponent implements OnInit {
                    this.farmerHeaderService.updateFarmerMobile(this.searchedFarmerId ,res )
                    .subscribe((updatedInfo) =>{
                      if(this.newPassword == updatedInfo.password){
-                       alert("Password changed successfully");
+                      swal({
+                        position: 'top-end',
+                        type: 'success',
+                        title: 'Your password has changed successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                      }
                      }, (error) =>{
+                      swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                      })
                      })
              }else{
-               alert("Incorrect current password");
+              swal("Incorrect current password");
              }
              }, (error) =>{
              })
           }
     else{
-      alert("Re-enter the new password correctly");
+      swal("Re-enter the new password correctly");
     }
   }
   ngOnInit() {
