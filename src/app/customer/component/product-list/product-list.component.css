@@ -30,3 +30,7 @@ hr {
 .card-title {
     margin: 0.1rem;
 }
+.card
+{
+    width:110%;
+}
