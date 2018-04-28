@@ -4,10 +4,10 @@
     <div class="col-md-3">
 
     </div>
-    <div class="col-md-6">
+    <div class="col-md-9 offset-md-3">
       <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)='searchProduct()'><i class="fas fa-search"></i></button>
+        <input class="form-control  searchText" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
+        <button class="btn btn-outline-primary my-2 my-sm-0 ml-1" type="submit" (click)='searchProduct()'><i class="fas fa-search"></i></button>
     </form>
     </div>
     <div class="col-md-3">
@@ -19,9 +19,9 @@
   <div class="row">
     <div class="col-md-3">
       <div class="dropdown">
-        <label>Sort By</label>
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Relevance
+       
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Sort By Relevance
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" (click)="sortBy('priceLH')">Price: Low to High</a>
@@ -32,7 +32,8 @@
           <a class="dropdown-item" (click)="sortBy('popularity')">Popular</a>
         </div>
       </div>
-      <label class="my-2"><span>Filter By Price:</span></label>
+
+      <label class="my-3"><span>Filter By Price:</span></label>
       <ion-range-slider #sliderElement
         type="double"
         min="0"
@@ -47,8 +48,7 @@
         (onFinish)="myOnFinishPrice($event)">
       </ion-range-slider>
       <!-- filtered by price-->
-      <br>
-      <label class="my-2"><span>Filter By Quantity:</span></label>
+      <label class="my-3"><span>Filter By Quantity:</span></label>
       <ion-range-slider #sliderElement
         type="double"
         max="50"
@@ -71,7 +71,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">
-            <div class="card shadow p-2 mb-3" style="height: 26rem;">
+            <div class="card shadow p-2 mb-3">
               <!-- Card image -->
               <div class="view overlay zoom">
                 <img class="card-img-top" src="{{item.imageUrl}}" alt="Product Image">
@@ -95,7 +95,7 @@
                 </div>
                 <hr>
                 <span>
-                    <button type="button" class="btn btn-success" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1">Add to Bag</button>
+                    <button type="button" class="btn btn-success mt-4" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1">Add to Bag</button>
                 </span>
               </div>
             </div>
