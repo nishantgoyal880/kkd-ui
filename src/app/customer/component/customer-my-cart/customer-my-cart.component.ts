@@ -11,23 +11,23 @@ export class CustomerMyCartComponent implements OnInit {
   constructor(private cartService: CartService) {}
   public items = [];
   public x: number;
-  public customerInfo:object={
-  };
+  public customerInfo: object = {};
 
-  @Input() kkdCustId:string;
+  @Input() kkdCustId: string;
   ngOnInit() {
-    this.kkdCustId="KKDCUST2006";
+    this.kkdCustId = "KKDCUST2006";
     this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
-      (res)=> {
-        this.customerInfo=res;
-        console.log(this.customerInfo);},
-      (err)=> console.log(err)
-    )
+      res => {
+        this.customerInfo = res;
+        console.log(this.customerInfo);
+      },
+      err => console.log(err)
+    );
     this.getCartItems();
   }
 
   getCartItems() {
-    this.kkdCustId="KKDCUST1000";
+    this.kkdCustId = "KKDCUST1000";
     this.cartService.getCartItems(this.kkdCustId).subscribe(
       res => {
         this.items = res;
@@ -50,21 +50,30 @@ export class CustomerMyCartComponent implements OnInit {
   }
 
   checkout() {
-    let orders:Array<object>=[];
-    this.items.map((ele) => {
-      let d=new Date();
-      ele["kkdCustId"]=ele.custId;
-      ele["kkdFarmId"]=ele.kkdFarmID;
-      ele["name"]=ele.productName;
-      ele["address"] = this.customerInfo["primaryAddress"];
-      ele["mobileNo"]=this.customerInfo["mobileNo"];
-      ele["totalAmount"] = ele.quantity*ele.productPrice;
-      ele["orderType"] = "Current";
-      ele["orderPlacingDate"]=d.getFullYear()+'-0'+(d.getMonth()+1)+'-'+d.getDate();
-      orders.push(ele);
-    });
-    this.cartService
-      .postOrder(orders)
-      .subscribe(res => console.log("orders successfully placed"), err => console.log(err));
+    if (this.customerInfo["primaryAddress"] != null) {
+      let orders: Array<object> = [];
+      this.items.map(ele => {
+        let d = new Date();
+        ele["kkdCustId"] = ele.custId;
+        ele["kkdFarmId"] = ele.kkdFarmID;
+        ele["name"] = ele.productName;
+        ele["address"] = this.customerInfo["primaryAddress"];
+        ele["mobileNo"] = this.customerInfo["mobileNo"];
+        ele["totalAmount"] = ele.quantity * ele.productPrice;
+        ele["orderType"] = "Current";
+        ele["orderPlacingDate"] =
+          d.getFullYear() + "-0" + (d.getMonth() + 1) + "-" + d.getDate();
+        orders.push(ele);
+      });
+      this.cartService
+        .postOrder(orders)
+        .subscribe(
+          res => console.log("orders successfully placed"),
+          err => console.log(err)
+        );
+      alert("hi");
+    } else {
+      alert("Add address First");
+    }
   }
 }
