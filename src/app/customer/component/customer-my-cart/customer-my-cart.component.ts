@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { CartService } from "../../services/cart.service";
 import { Router } from "@angular/router";
+import swal from 'sweetalert2'
 @Component({
   selector: "app-customer-my-cart",
   templateUrl: "./customer-my-cart.component.html",
@@ -15,7 +16,7 @@ export class CustomerMyCartComponent implements OnInit {
 
   @Input() kkdCustId: string;
   ngOnInit() {
-    this.kkdCustId = "KKDCUST2000";
+    this.kkdCustId = "KKDCUST2009";
     this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
       res => {
         this.customerInfo = res;
@@ -70,8 +71,11 @@ export class CustomerMyCartComponent implements OnInit {
           err => console.log(err)
         );
     } else {
-      alert("Add Address First");
-      this.router.navigate(["/customer/myAccount"]);
+      swal({
+        title: 'No default address added',
+        text: "Add new address",
+        type: 'warning'});
+      this.router.navigate(["customer/addressBook/addAddress"]);
     }
   }
 }
