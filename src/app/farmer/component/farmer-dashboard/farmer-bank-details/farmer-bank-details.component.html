@@ -1,4 +1,4 @@
-<app-farmer-header></app-farmer-header>
+<div class="mt-100">
 <h1> Bank Details </h1>
 
 <form [formGroup]="rForm" (ngSubmit)="addBankDetails(rForm.value)">
@@ -11,7 +11,13 @@
 				<input type="text" class="form-control" id="accountNo" placeholder="Enter Accont Number" formControlName="accountNo">
 				<div *ngIf="rForm.controls['accountNo'].touched && rForm.controls['accountNo'].invalid" class="alert">
 					<div *ngIf="rForm.controls['accountNo'].hasError('required')">
-						Title is required!
+						Account Number is required!
+					</div>
+					<div *ngIf="rForm.controls['accountNo'].hasError('maxlength')">
+						More than 12 digits not allowed.
+					</div>
+					<div *ngIf="rForm.controls['accountNo'].hasError('minlength')">
+						Minimun 12 digits are required!
 					</div>
 				</div>
 			</div>
@@ -21,7 +27,13 @@
 				<input type="textarea" class="form-control" id="accountName" placeholder="Enter Account Holder's Name" formControlName="accountName">
 				<div *ngIf="rForm.controls['accountName'].touched && rForm.controls['accountName'].invalid" class="alert">
 					<div *ngIf="rForm.controls['accountName'].hasError('required')">
-						Description is required!
+						Name is required!
+					</div>
+					<div *ngIf="rForm.controls['accountName'].hasError('maxlength')">
+						More than 20 characters not allowed.
+					</div>
+					<div *ngIf="rForm.controls['accountName'].hasError('minlength')">
+						Minimun 2 digits are required!
 					</div>
 				</div>
 			</div>
@@ -31,7 +43,13 @@
 				<input type="text" class="form-control" id="ifscCode" placeholder="Enter IFSC Code" formControlName="ifscCode">
 				<div *ngIf="rForm.controls['ifscCode'].touched && rForm.controls['accountName'].invalid" class="alert">
 					<div *ngIf="rForm.controls['ifscCode'].hasError('required')">
-						Email is required!
+						IFSC code is required!
+					</div>
+					<div *ngIf="rForm.controls['ifscCode'].hasError('maxlength')">
+						More than 6 characters not allowed.
+					</div>
+					<div *ngIf="rForm.controls['accountName'].hasError('minlength')">
+						Minimun 6 digits are required!
 					</div>
 				</div>
 			</div>
@@ -41,3 +59,4 @@
 		</div>
 	</div>
 </form>
+</div>

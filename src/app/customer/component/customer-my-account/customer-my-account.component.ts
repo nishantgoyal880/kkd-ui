@@ -19,8 +19,43 @@ export class CustomerMyAccountComponent implements OnInit {
   public currentPassword: string="";
   public newPassword: string="";
   public reenterNewPassword: string="";
-  public userDetails ={};
-  public mobileNumberDeleteProfile : String="";
+  public userDetails ={
+    "currentPassword": "",
+    "newPassword": "",
+    "userId": ""
+  };
+  public userDetailsDelete={
+    "addresses": [
+      {
+        "addressLine": "string",
+        "city": "string",
+        "district": "string",
+        "pincode": 0,
+        "primary": false,
+        "state": "string"
+      }
+    ],
+    "bankDetails": {
+      "accountName": "string",
+      "accountNo": "string",
+      "ifscCode": "string"
+    },
+    "firstName": "string",
+    "kkdCustId": "string",
+    "lastName": "string",
+    "mobileNo": "2424214244",
+    "password": "Sriz",
+    "primaryAddress": {
+      "addressLine": "string",
+      "city": "string",
+      "district": "string",
+      "pincode": 0,
+      "primary": false,
+      "state": "string"
+    },
+    "role": "string"
+  };
+  public mobileNumberDeleteProfile : string="";
   public currentPasswordDeleteProfile: string="";
 
   constructor(private customerAuthenticationService :CustomerAuthenticationService,private fb: FormBuilder,public router: Router) { 
@@ -44,9 +79,7 @@ export class CustomerMyAccountComponent implements OnInit {
    this.customerAuthenticationService.changeCustomerId("kkdcust2000");
   }
   
-  
-  
-  onSubmit(post){
+   onSubmit(post){
     
   this.mobileNumber=post.mobileNumber;
   this.currentPassword=post.currentPassword;
@@ -60,22 +93,22 @@ export class CustomerMyAccountComponent implements OnInit {
     {
     
       this.customerAuthenticationService.getUserDetails(this.mobileNumber)
-            .subscribe((res) =>{this.userDetails = res;
+            .subscribe((res) =>{
             if(!(res == null)){
-            if(this.currentPassword == res.password){
-                  res.password = this.newPassword;
-                  this.customerAuthenticationService.updatePassword(res.kkdCustId ,res )
+                  this.userDetails.currentPassword=this.currentPassword;
+                  this.userDetails.userId=res.kkdCustId;
+                  this.userDetails.newPassword=this.newPassword;
+                  this.customerAuthenticationService.updatePassword(this.userDetails )
                   .subscribe((updatedInfo) =>{
-                    if(this.newPassword == updatedInfo.password){
+                    if( updatedInfo == true){
                       alert("Password changed successfully");
+                    }else{
+                      alert("Incorrect Password");
                     }
-                    
                     }, (error) =>{
                       alert ("Mobile number not registered");
                     })
-            }else{
-              alert("Incorrect current password");
-            }}else{
+           }else{
               alert ("Mobile number not registered");
             }
             }, (error) =>{
@@ -98,37 +131,31 @@ export class CustomerMyAccountComponent implements OnInit {
   }
   
 
-  validateUser(post){
+  deleteUser(post){
+    
     this.mobileNumberDeleteProfile=post.mobileNumberDeleteProfile;
     this.currentPasswordDeleteProfile=post.currentPasswordDeleteProfile;
     if(!(isNaN(+this.mobileNumberDeleteProfile)) && this.mobileNumberDeleteProfile.length==10 ){
     if(this.currentPasswordDeleteProfile.length){
-    this.customerAuthenticationService.getUserDetails(this.mobileNumberDeleteProfile)
-    .subscribe((res) =>{this.userDetails = res;
-    //console.log(res.password);
-    if(!(res == null)){
-    if(this.currentPasswordDeleteProfile == res.password){
-      this.customerAuthenticationService.deleteProfile(res.kkdCustId)
+      this.userDetailsDelete.mobileNo=this.mobileNumberDeleteProfile;
+      this.userDetailsDelete.password = this.currentPasswordDeleteProfile;
+      this.customerAuthenticationService.deleteProfile(this.userDetailsDelete)
             .subscribe((status) =>{
-               alert("Profile deleted successfully");
+              if(!(status == null)){
+              if( status == true){
+                alert("Profile Deleted successfully");
+              }else{
+                alert("Incorrect Password");
+              }}else{
+                alert("Mobile number not registered");
+              }
         
         }, (error) =>{
                alert("Internal Error : Can't delete right now")
-        })
-      }
-      else{
-        alert("Incorrect Password");
-      }}else{
-        alert ("Mobile number not registered");
-      }
-    })
-  }else{
+        })}else{
     alert ("Password field cannot be empty");
   }}else{
     alert("Enter a valid mobile number");
   }
 }
-
-
- 
 }

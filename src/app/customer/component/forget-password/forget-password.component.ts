@@ -115,6 +115,7 @@ export class ForgetPasswordComponent implements OnInit {
 				showConfirmButton: false,
 				timer: 1000
 			})
+			localStorage.removeItem('token');
 			localStorage.setItem("token", res.results.token);
 			localStorage.setItem("kkdFarmId", res.results.kkdFarmId);
 			this.router.navigate(['/customer/homePage']);

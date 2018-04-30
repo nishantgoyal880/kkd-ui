@@ -1,4 +1,4 @@
-<app-farmer-common-header></app-farmer-common-header>
+<div class="mt-100">
 <div *ngIf="!hideVar">
     <h1> Register Farmer </h1>
   <div class="container-fluid">
@@ -11,13 +11,13 @@
             <input id ="aadhaarNo" class="form-control" type="text" formControlName="aadhaarNo" placeholder="Aadhaar Number">
             <div *ngIf="rForm.controls['aadhaarNo'].touched && rForm.controls['aadhaarNo'].invalid" class="alert">
               <div *ngIf="rForm.controls['aadhaarNo'].hasError('minlength')" >
-                Less than 12 digits 
+                Less than 12 digits
               </div>
               <div *ngIf="rForm.controls['aadhaarNo'].hasError('maxlength')">
-               More than 12 digits 
+               More than 12 digits
              </div>
              <div *ngIf="rForm.controls['aadhaarNo'].hasError('required')">
-               Aadhaar Number is required!  
+               Aadhaar Number is required!
              </div>
            </div>
            </div>
@@ -42,7 +42,7 @@
                   <div class = "name"> <label for="exampleInputEmail1">Enter OTP*</label></div>
             <input class="form-control" type="text" id="otp" formControlName="otp">
             <div class="alert" *ngIf=" otpForm.controls['otp'].touched && otpForm.controls['otp'].hasError('required')">
-              OTP is required!  
+              OTP is required!
             </div>
             </div>
           </div>
@@ -53,4 +53,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

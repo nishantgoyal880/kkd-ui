@@ -1,0 +1,8 @@
+.alert {
+    background: #ffaaaa;
+    padding: 0px;
+    font-size: .9em;
+    margin-bottom: 0px;
+    display: inline-block;
+    animation: 2s alertAnim forwards;
+}

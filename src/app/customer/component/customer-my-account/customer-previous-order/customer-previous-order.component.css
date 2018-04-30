@@ -1,12 +1,14 @@
 
-.previous-orders-body{
-    padding:30px;
-}
 
+
+.cards{
+    padding-top:30px;
+}
 .card{
     background-color: #f9f9f9;
-    width : 300px;
+    width : 340px;
     margin : auto;
+   
 }
 .item{
     background-color: #f9f9f9;
@@ -141,8 +143,3 @@ button:focus{
     border-color : #f9f9f9 !important;
 }
 
-.card{
-    background-color: #f9f9f9;
-    width : 600px;
-    margin : auto;
-}

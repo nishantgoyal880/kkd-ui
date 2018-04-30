@@ -31,8 +31,8 @@ deleteCartItem(cartItem){
 postOrder(order){
   return this.http.post(CartConfig.addOrder,order,{headers: this.headers}).
   map(
-    (data)=> data.json(),
-    (err)=> console.log("hi"+err)
+    (data)=> console.log(data),
+    (err)=> console.log(err)
   );
 }
 

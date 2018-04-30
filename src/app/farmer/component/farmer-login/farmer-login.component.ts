@@ -34,12 +34,12 @@ export class FarmerLoginComponent implements OnInit {
 		}
 
 		this.registrationService.loginFarmer(farmerCredentials).subscribe((res) =>{
+			localStorage.removeItem('token');
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
 			if(err.status=401){
-				//alert("Invalid Credentials")
 				swal({
 					type: 'error',
 					title: 'Oops...',

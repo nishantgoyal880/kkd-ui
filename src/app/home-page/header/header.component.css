@@ -28,3 +28,12 @@
       text-align: left;
     }
   }
+
+  ul{
+    list-style-type:none ;
+  }
+
+  nav{
+    background-color: #3E3F43;
+    opacity: 0.9;
+  }

@@ -4,7 +4,6 @@ import { FarmerRoutingModule } from './farmer-routing.module';
 import { FarmerLoginComponent } from './component/farmer-login/farmer-login.component';
 import { FarmerRegisterComponent } from './component/farmer-authentication-authorization/farmer-register/farmer-register.component';
 import { FarmerDashboardComponent } from './component/farmer-dashboard/farmer-dashboard.component';
-import { FarmerHeaderComponent } from './component/farmer-header/farmer-header.component';
 import { FarmerMyAccountComponent } from './component/farmer-my-account/farmer-my-account.component';
 import { FarmerAddProductComponent } from './component/farmer-dashboard/farmer-add-product/farmer-add-product.component';
 import { FarmerBankDetailsComponent } from './component/farmer-dashboard/farmer-bank-details/farmer-bank-details.component';
@@ -17,7 +16,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AadhaarComponent } from './component/farmer-authentication-authorization/aadhaar/aadhaar.component';
 import { FarmerAuthenticationAuthorizationComponent } from './component/farmer-authentication-authorization/farmer-authentication-authorization.component';
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
-import { FarmerCommonHeaderComponent } from './component/farmer-common-header/farmer-common-header.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FarmerAddAddressComponent } from './component/farmer-my-account/farmer-add-address/farmer-add-address.component';
 import { FarmerChangePasswordComponent } from './component/farmer-my-account/farmer-change-password/farmer-change-password.component';
@@ -41,7 +39,7 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
   })
   ],
 
-  declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent, FarmerHeaderComponent, FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent, AadhaarComponent, FarmerAuthenticationAuthorizationComponent, ForgetPasswordComponent,FarmerCommonHeaderComponent, FarmerAddAddressComponent, FarmerChangePasswordComponent, FarmerAlternateMobileComponent, FarmerDeleteProfileComponent],
+  declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent,FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent, AadhaarComponent, FarmerAuthenticationAuthorizationComponent, ForgetPasswordComponent,FarmerAddAddressComponent, FarmerChangePasswordComponent, FarmerAlternateMobileComponent, FarmerDeleteProfileComponent],
 
 })
 export class FarmerModule { }

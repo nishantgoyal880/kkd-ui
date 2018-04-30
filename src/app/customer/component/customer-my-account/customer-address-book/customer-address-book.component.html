@@ -1,15 +1,17 @@
 <h1>Address Details</h1>
 <div class="container-fluid address">
   <div class="row">
-<div *ngFor="let address of details" >
-  <div class="col-md-12">
- <div class="card shadow">
-    <div class="card-body">
-
-              <p class = "name">{{address.pincode}},{{address.addressLine}},{{address.city}},{{address.district}},{{address.state}}</p>
+    <div *ngFor="let address of details" >
+      <div class="col-md-12">
+        <div class="card shadow">
+          <div class="card-body">
+            <p class = "name">{{address.pincode}},{{address.addressLine}},{{address.city}},{{address.district}},{{address.state}}</p>
+          </div>
+        </div>
+      </div>
     </div>
+    <button><a routerLink="/customer/addressBook/addAddress">+Add Address</a></button>
   </div>
- </div>
- <button><a routerLink="/customer/addressBook/addAddress">+Add Address</a></button>
 </div>
+
 

@@ -1,23 +1,75 @@
-<app-farmer-header></app-farmer-header>
-
-<div class="home">
-    <div class="container-fluid display-table">
-        <div class="row display-table-row">
-            <div class="col-sm-2 hidden-xs display-table-cell v-align box" id="navigation">
-                <div class="navi">
-                    <ul>
-                        <li><a routerLink="/farmer/myAccount">My Account</a></li>
-                        <li><a routerLink="/farmer/addProduct">Add Product</a></li>
-                        <li><a routerLink="/farmer/bankDetails">Bank Details</a></li>
-                        <li><a routerLink="/farmer/currentOrder">Current Order</a></li>
-                        <li><a routerLink="/farmer/previousOrder">Previous Orders</a></li>
-                        <li><a routerLink="/farmer/viewProduct">View Product</a></li>
-                        <li><a routerLink="/home">Logout</a></li>
-                    </ul>
-                </div>
+<div class="home mt-100">
+<div class="container-fluid">
+        <ul class="nav nav-tabs nav-justified sidebar-nav edit" id="myTab" role="tablist">
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+            <div class="dropdown-menu">
+            <ul>
+                <li class="nav-item">
+                <a class="nav-link active dropdown-item" data-toggle="tab" href="#acc" role="tab" aria-controls="acc">My Account</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active dropdown-item" data-toggle="tab" href="#add" role="tab" aria-controls="add">Add Address</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active dropdown-item" data-toggle="tab" href="#chPass" role="tab" aria-controls="chPass">Change Password</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active dropdown-item" data-toggle="tab" href="#altMob" role="tab" aria-controls="altMob">Alternate Mobile</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active dropdown-item" data-toggle="tab" href="#delPro" role="tab" aria-controls="delPro">Delete Profile</a>
+                </li>
+            </ul>
             </div>
-            <div class="col-sm-10 display-table-cell v-align">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " data-toggle="tab" href="#prod" role="tab" aria-controls="prod">Add Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#bank" role="tab" aria-controls="bank">Bank Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#curr" role="tab" aria-controls="curr">Current Order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#prev" role="tab" aria-controls="prev">Previous Orders</a>
+       </li>
+       <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#view" role="tab" aria-controls="view">View Product</a>
+       </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane " id="prod" role="tabpanel">
+              <app-farmer-add-product></app-farmer-add-product>
+        </div>
+        <div class="tab-pane " id="bank" role="tabpanel">
+              <app-farmer-bank-details></app-farmer-bank-details>
+        </div>
+        <div class="tab-pane " id="curr" role="tabpanel">
+                <app-farmer-current-order></app-farmer-current-order>
+          </div>
+          <div class="tab-pane " id="prev" role="tabpanel">
+                <app-farmer-previous-order></app-farmer-previous-order>
+          </div>
+          <div class="tab-pane " id="view" role="tabpanel">
+                <app-farmer-view-product></app-farmer-view-product>
+                </div>
+                <div class="tab-pane " id="add" role="tabpanel">
+                        <app-farmer-add-address></app-farmer-add-address>
+                  </div>
+                  <div class="tab-pane " id="chPass" role="tabpanel">
+                        <app-farmer-change-password></app-farmer-change-password>
+                  </div>
+                  <div class="tab-pane " id="altMob" role="tabpanel">
+                        <app-farmer-alternate-mobile></app-farmer-alternate-mobile>
+                  </div>
+                  <div class="tab-pane " id="delPro" role="tabpanel">
+                        <app-farmer-delete-profile></app-farmer-delete-profile>
+                  </div>
+                  <div class="tab-pane active" id="acc" role="tabpanel">
+                          <app-farmer-my-account></app-farmer-my-account>
                     </div>
-                </div>
-               </div>
-            </div>
+      </div>
+ </div>
+</div>

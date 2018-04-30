@@ -1,6 +1,5 @@
-<app-farmer-common-header></app-farmer-common-header>
-<h1> Login Farmer </h1>
-<div class="container-fluid">
+<div class="container-fluid mt-100">
+  <h1> Login Farmer </h1>
   <div class="card shadow cardwidth">
     <div class="card-body">
       <form [formGroup]="rForm" (ngSubmit)="loginFarmer(rForm.value)">
@@ -38,8 +37,8 @@
      </div>
      <a routerLink="/farmer/forgetPassword">Forgot password?</a>
      <div class = "form-comp-button">
-     <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Login</button>
-     <button type="submit" class="btn btn-primary" routerLink="/farmer/authenticationAndAuthorization">Register</button>
+     <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Login Farmer</button>
+     <button type="submit" class="btn btn-primary" routerLink="/farmer/authenticationAndAuthorization">Register Farmer</button>
    </div>
     </form>
  </div>
@@ -57,5 +56,3 @@
                Password is required!
               </div>
             </div> -->
-
-            

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerHeaderService } from '../../../../services/customer-header.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer-add-address',
@@ -9,8 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   providers:[CustomerHeaderService]
 })
 export class CustomerAddAddressComponent implements OnInit {
-  public customerId:string="KKDCUST2004";
-  public customerMobileNumber : string;
+  public customerId:string="KKDCUST2002";
   rForm: FormGroup;
   public details;
   public addresses:Array<object>;
@@ -35,11 +35,30 @@ export class CustomerAddAddressComponent implements OnInit {
     }
     this.customerHeaderService.searchCustomer(this.customerId)
     .subscribe((res) =>{
-     let i=((res.addresses).length)+1;
+      if(res.addresses==null){
+        res.addresses=this.details;
+        console.log(res.addresses);
+      }else{
+     let i=((res.addresses).length);
       res.addresses[i]=this.details;
+      }
+      console.log(res.addresses);
+      console.log(this.details);
     this.customerHeaderService.updateCustomerAddress(this.customerId,res)
     .subscribe((res)=>{
+      swal({
+        position: 'top-end',
+        type: 'success',
+        title: 'Your address has been added',
+        showConfirmButton: false,
+        timer: 1500
+      })
     },(error)=>{
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+      })
     });
   },(error) =>{
   });

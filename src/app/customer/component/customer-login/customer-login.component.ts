@@ -12,13 +12,13 @@ import swal from 'sweetalert2';
 })
 export class CustomerLoginComponent implements OnInit {
 	rForm: FormGroup;
-	post:any;   
+	post:any;
 	mobileNo:String;
 	password:String;
 	newPassword:String;
 	select : any=0;
 
-	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) { 
+	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) {
 		this.rForm = fb.group({
 			'mobileNo': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
 			'password': [null, Validators.compose([Validators.required, Validators.maxLength(12), Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$")])]
@@ -35,9 +35,10 @@ export class CustomerLoginComponent implements OnInit {
 		}
 
 		this.registrationService.loginCustomer(customerCredentials).subscribe((res) =>{
+			localStorage.removeItem('token');
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdCustId",res.results.kkdCustId);
-			this.router.navigate(['/customer/homePage']);
+			this.router.navigate(['customer/myAccount']);
 		}, (err) =>{
 			if(err.status==401){
 				swal({

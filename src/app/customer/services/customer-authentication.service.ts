@@ -43,32 +43,35 @@ export class CustomerAuthenticationService {
      
    }
 
-  updatePassword(customerId : String,updatedInfo){
-    return this.http.put(UserDetails.updatePasswordUrl+customerId,updatedInfo, {headers: this.headers})
+  updatePassword(updatedInfo){
+    return this.http.put(UserDetails.updatePasswordUrl,updatedInfo, {headers: this.headers})
     .map(data => data.json(),
     (error: any)=>this.handleError(error));
     }
 
-    deleteProfile(customerId : String){
-      return this.http.delete(UserDetails.deleteProfileUrl+customerId, {headers: this.headers});
+    deleteProfile(userInfo){
+      
+      return this.http.put(UserDetails.deleteProfileUrl,userInfo,{headers: this.headers})
+      .map(data=>data.json(),
+       error=>this.handleError(error));
      
   }
 
-  getCurrentOrders(customerId : String){
+      getCurrentOrders(customerId : String){
        return this.http.get(UserDetails.currentOrdersUrl+customerId)
        .map(data=>data.json(),
        error=>this.handleError(error));
        }
 
-     getPreviousOrders(customerId : String){
+       getPreviousOrders(customerId : String){
         return this.http.get(UserDetails.previousOrdersUrl+customerId)
         .map(data=>data.json(),
         error=>this.handleError(error));
         }
 
-getDetails(customerId){
-   return this.http.get(UserDetails.customerAddressBookUrl+customerId)
-   .map(res => res.json());
+      getDetails(customerId){
+      return this.http.get(UserDetails.customerAddressBookUrl+customerId)
+      .map(res => res.json());
  }
   }
 

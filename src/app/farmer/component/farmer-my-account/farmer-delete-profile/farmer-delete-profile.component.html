@@ -1,6 +1,6 @@
-<app-farmer-header></app-farmer-header>
+<div class="mt-100">
 <h1>Delete Profile</h1>
-<form [formGroup]="rForm" (ngSubmit)="deleteFarmerProfile(rForm.value)">    
+<form [formGroup]="rForm" (ngSubmit)="deleteFarmerProfile(rForm.value)">
   <div class = "card">
     <div class="form-group">
     <div class = form-comp>
@@ -25,13 +25,13 @@
           <h4 class="modal-title">Confirm Action </h4>
           <button type="button" class="close" data-dismiss="modal">
             &times;
-          </button>           
+          </button>
         </div>
         <div class="modal-body">
           <form>
             <div class="form-group">
               <h4>Are you surely want to delete your profile ? </h4>
-            </div>               
+            </div>
           </form>
         </div>
         <div class="modal-footer">
@@ -41,3 +41,4 @@
       </div>
     </div>
   </div>
+</div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BankDetailsService } from '../../../../services/bank-details.service'
-
+/*import {swal} from 'sweetalert2'*/
 
 @Component({
   selector: 'app-farmer-bank-details',
@@ -21,9 +21,9 @@ export class FarmerBankDetailsComponent implements OnInit {
 
   constructor(private bankDetailsService : BankDetailsService, private fb: FormBuilder,public router: Router) { 
   	this.rForm = fb.group({
-      accountNo : [null, Validators.compose([Validators.required])],
-      accountName : [null, Validators.compose([Validators.required])],
-      ifscCode : [null, Validators.compose([Validators.required])],
+      accountNo : [null, Validators.compose([Validators.required,Validators.minLength(12),Validators.maxLength(12)])],
+      accountName : [null, Validators.compose([Validators.required,Validators.minLength(2),Validators.maxLength(20)])],
+      ifscCode : [null, Validators.compose([Validators.required,Validators.minLength(6),Validators.maxLength(6)])],
   })
   }
 

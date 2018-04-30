@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-farmer-dashboard',
   templateUrl: './farmer-dashboard.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmerDashboardComponent implements OnInit {
 
-  constructor() { }
+
+  public userList;
+  public login;
+
+  constructor( ) { }
 
   ngOnInit() {
+
   }
 
 }

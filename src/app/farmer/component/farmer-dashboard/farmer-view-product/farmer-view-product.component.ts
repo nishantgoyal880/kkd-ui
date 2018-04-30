@@ -12,15 +12,12 @@ import swal from 'sweetalert2';
 })
 export class FarmerViewProductComponent implements OnInit {
 
-  constructor(private farmerViewProductService : FarmerViewProductService) { }
+  constructor(private farmerViewProductService: FarmerViewProductService) { }
 
-  public products : any = [];
-  public productId : any;
-  //public id : any;
-  rForm: FormGroup;
-  post:any;
+  public products: any = [];
+  public productId: any;
   public kkdFarmId: any;
-  public imageUrl:any;
+  public imageUrl: any;
   public description: any;
   public price: any;
   public bulkOrderPrice: any;
@@ -30,13 +27,15 @@ export class FarmerViewProductComponent implements OnInit {
   public cities: any = [];
   productSubmission;
 
+  // calling service to get all products of a particular farmer
   public getProducts() {
-    this.farmerViewProductService.getAllProducts().subscribe((res)=>{
-      this.products=res;
-    },error=>this.handleError(error))
+    this.farmerViewProductService.getAllProducts().subscribe((res) => {
+      this.products = res;
+    }, error => this.handleError(error))
   }
 
-  public saveId(id : any) {
+  //saving id for deleting a farmer product
+  public saveId(id: any) {
     this.productId = id;
     swal({
       title: 'Are you sure?',
@@ -56,17 +55,17 @@ export class FarmerViewProductComponent implements OnInit {
         this.deleteProduct();
       }
     })
-    //alert(this.productId);
   }
 
+  //calling service to delete farmer product
   public deleteProduct() {
-    //alert("here****");
-    this.farmerViewProductService.deleteParticularProduct(this.productId).subscribe((res)=>{
+    this.farmerViewProductService.deleteParticularProduct(this.productId).subscribe((res) => {
       this.getProducts();
-    },error=>this.handleError(error))
+    }, error => this.handleError(error))
   }
 
-  public updateProduct(product : any) {
+  //showing product details on update product form
+  public updateProduct(product: any) {
     this.productId = product.productId;
     this.kkdFarmId = product.kkdFarmId;
     this.imageUrl = product.imageUrl;
@@ -79,32 +78,32 @@ export class FarmerViewProductComponent implements OnInit {
     this.cities = product.cities;
   }
 
-  public updateData(){
-
+  //creating json data for updating a product
+  public updateData() {
     this.productSubmission = {
-    "productId":this.productId,
-    "kkdFarmId":this.kkdFarmId,
-    "imageUrl":this.imageUrl,
-    "productName":this.productName,
-    "description":this.description,
-    "price":this.price,
-    "bulkOrderPrice":this.bulkOrderPrice,
-    "quantity":this.quantity,
-    "available":this.available,
-    "cities":this.cities
+      "productId": this.productId,
+      "kkdFarmId": this.kkdFarmId,
+      "imageUrl": this.imageUrl,
+      "productName": this.productName,
+      "description": this.description,
+      "price": this.price,
+      "bulkOrderPrice": this.bulkOrderPrice,
+      "quantity": this.quantity,
+      "available": this.available,
+      "cities": this.cities
     }
-    console.log(this.productSubmission);
+    // calling service to update farmer product
     this.farmerViewProductService.update(this.productSubmission).subscribe((res) => {
       console.log(res);
       swal({
-        position: 'top-end',
+        position: 'center',
         type: 'success',
         title: 'Your product is successfully updated',
         showConfirmButton: false,
         timer: 1500
       })
       this.getProducts();
-    },(error) => {
+    }, (error) => {
       console.log(error);
       swal({
         type: 'error',
@@ -119,8 +118,9 @@ export class FarmerViewProductComponent implements OnInit {
     this.getProducts();
   }
 
+  // Handling errors
   private handleError(error) {
-		console.log("Logging the error occured in the service");
+    console.log(error);
   }
-  
+
 }

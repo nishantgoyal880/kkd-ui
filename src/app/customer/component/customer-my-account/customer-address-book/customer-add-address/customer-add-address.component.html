@@ -1,6 +1,6 @@
-<app-customer-header></app-customer-header>
-<h1>Add Alternate Address</h1> 
-  <form [formGroup]="rForm" (ngSubmit)="updateCustomerAddress(rForm.value)">    
+<div class="mt-100">
+<h1>Add Alternate Address</h1>
+  <form [formGroup]="rForm" (ngSubmit)="updateCustomerAddress(rForm.value)">
     <div class = "card">
       <div class="form-group">
       <div class = form-comp>
@@ -50,7 +50,8 @@
       </div>
       </div>
       <div class = form-comp-button>
-      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid"><a routerLink="/customer/addressBook"> Update</a></button>
+      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid"> Update</button>
       </div>
     </div>
   </form>
+</div>

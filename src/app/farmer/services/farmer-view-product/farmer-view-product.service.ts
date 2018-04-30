@@ -14,6 +14,7 @@ export class FarmerViewProductService {
   }
   // private headers = new Headers({ 'Content-Type': 'application/json'});
 
+  //getting all data of particular farmer from database service
   public getAllProducts() {
     const options = new RequestOptions({headers: this.header});
     return this.http.get(viewProductServiceUrl.viewProductUrl,options)
@@ -22,14 +23,15 @@ export class FarmerViewProductService {
     )
   }
 
+  //deleting a particular product from database service
   public deleteParticularProduct(id : any) {
-    //alert(url);
       return this.http.delete(viewProductServiceUrl.Url+id)
       .map(data => data.status,
         error => this.handleError(error)
       )
   }
 
+  //updating a particular product from database service
   public update(productSubmission){
     const options = new RequestOptions({headers: this.header});
     return this.http.put(viewProductServiceUrl.Url,productSubmission,options)
@@ -37,6 +39,7 @@ export class FarmerViewProductService {
     (error: any)=>this.handleError(error)); 
    }
 
+   //handling errors
   private handleError(error) {
     console.log("Logging the error occured in the service");
   }

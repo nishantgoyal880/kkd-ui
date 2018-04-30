@@ -1,36 +1,25 @@
-<app-farmer-header></app-farmer-header>
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
+<div clas="mt-100">
   <h1> Upload Product </h1>
-
 <form [formGroup]="rForm" (ngSubmit)="check(rForm.value)">
-    
+
   <div class = "card shadow">
     <div class="form-group">
 
-			<div class = form-comp>
-
-					<div class="dropdown">
-						
-							<select (change)="selectChangeHandler($event)" class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
-								<option value="select" class="dropdown-header">--Select--</option>
-								 <option value="Onion" class="dropdown-item">Onion</option>
-								 <option value="Tomato" class="dropdown-item">Tomato</option>
-								 <option value="Brinjal" class="dropdown-item">Brinjal</option>
-								 <option value="Cauliflower" class="dropdown-item">Cauliflower</option>
-								 <option value="Carrot" class="dropdown-item">Carrot</option>
-								 <option value="Garlic" class="dropdown-item">Garlic</option>
-								 <option value="Lady Finger" class="dropdown-item">Lady Finger</option>
-								 <option value="Orange" class="dropdown-item">Orange</option>
-								 <option value="Lemon" class="dropdown-item">Lemon</option>
-							</select>
-							
-						</div>
+				<div class = form-comp>
+					<select class="form-control" (change)="selectChangeHandler($event)">
+						<option value="select">Choose Product Name</option>
+								 <option value="Onion">Onion</option>
+								 <option value="Tomato">Tomato</option>
+								 <option value="Brinjal">Brinjal</option>
+								 <option value="Cauliflower">Cauliflower</option>
+								 <option value="Carrot">Carrot</option>
+								 <option value="Garlic">Garlic</option>
+								 <option value="Lady Finger">Lady Finger</option>
+								 <option value="Orange">Orange</option>
+								 <option value="Lemon">Lemon</option>
+					</select>
 				</div>
-
-
 
 		<div class = form-comp>
 			<div class = "name"><label for="description">Product description</label></div>
@@ -42,7 +31,6 @@
 				</div>
 			  </div>
 
-
       <div class = form-comp>
 		  <div class = "name"><label for="price">Product Price per kg</label></div>
 		<input type="text" class="form-control" id="price" placeholder="Enter Price" formControlName="price">
@@ -53,9 +41,8 @@
 		  </div>
 		</div>
 
-
 		<div class = form-comp>
-			<div class = "name"><label for="bulkOrderPrice">Product Bulk Price per kg</label></div>
+			<div class = "name"><label for="bulkOrderPrice">Product Bulk Order Price per kg</label></div>
 		  <input type="text" class="form-control" id="bulkOrderPrice" placeholder="Enter Bulk Order Price" formControlName="bulkOrderPrice">
 		  <div *ngIf="rForm.controls['bulkOrderPrice'].touched && rForm.controls['bulkOrderPrice'].invalid" class="alert">
 				<div *ngIf="rForm.controls['bulkOrderPrice'].hasError('required')">
@@ -74,23 +61,23 @@
 			</div>
 		  </div>
 
-		 
+		  <div class = form-comp>
 		  <input type="checkbox" name="available" formControlName="available" value="1"> In Stock
-			
+		</div>
+
       <div class = form-comp>
 					<div class = "name">
 					<label for="exampleInputFile">
 							Upload an image
 						</label></div>
 						<input type="file" (change)="onFileSelected($event)" class="form-control-file" id="exampleInputFile">
-						<img src={{imageUrl}} alt="upload image" width:200px height:200px>
 			</div>
 
     <div class = form-comp-button>
-
       <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit Product</button>
-   </div>
+	 </div>
+
    </div>
    </div>
 </form>
-  
+</div>

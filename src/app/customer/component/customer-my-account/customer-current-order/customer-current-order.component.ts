@@ -19,8 +19,9 @@ export class CustomerCurrentOrderComponent implements OnInit {
     console.log(error);
   });
 }
-  ngOnInit() {
-   this.customerId = CustomerAuthenticationService.cus;
+  
+ngOnInit() {
+    this.customerAuthenticationService.changeCustomerId("kkdcust3001");
+    this.customerId = CustomerAuthenticationService.cus;
     this.getdata();
-
-  }}
+   }}

@@ -1,15 +1,21 @@
-<app-farmer-header></app-farmer-header>
-<h1>Alternate Mobile Number</h1> 
-<form [formGroup]="rForm" (ngSubmit)="updateFarmerMobile(rForm.value)">    
+<div class="mt-100">
+<h1>Alternate Mobile Number</h1>
+<form [formGroup]="rForm" (ngSubmit)="updateFarmerMobile(rForm.value)">
   <div class = "card">
     <div class="form-group">
     <div class = form-comp>
     <div class = "name"><label for="alternateMobileNumber">Enter Mobile Number</label></div>
     <input type="number" class="form-control" id="alternateMobileNumber" placeholder="Enter Mobile Number" formControlName="alternateMobileNumber">
     <div *ngIf="rForm.controls['alternateMobileNumber'].touched && rForm.controls['alternateMobileNumber'].invalid" class="alert">
-      <div *ngIf="rForm.controls['alternateMobileNumber'].hasError('required')">
-        Mobile Number is required!
+      <div *ngIf="rForm.controls['alternateMobileNumber'].hasError('minlength')" >
+        Less than 10 digits
       </div>
+      <div *ngIf="rForm.controls['alternateMobileNumber'].hasError('maxlength')">
+       More than 10 digits
+     </div>
+     <div *ngIf="rForm.controls['alternateMobileNumber'].hasError('required')">
+      Mobile Number is required!
+    </div>
     </div>
     </div>
     </div>
@@ -18,3 +24,4 @@
     </div>
   </div>
 </form>
+</div>

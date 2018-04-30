@@ -1,8 +1,8 @@
-<app-customer-header></app-customer-header>
-<br>
-<div class="container-fluid">
-  <h2>My Account</h2>
-  <ul class="nav nav-tabs nav-justified " id="myTab" role="tablist">
+<!-- <h1 class="text-center">My Account</h1>
+<br> -->
+<div class="container-fluid mt-100">
+
+  <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">My Orders</a>
   </li>
@@ -21,7 +21,7 @@
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="home" role="tabpanel">
+  <div class="tab-pane active " id="home" role="tabpanel">
         <app-customer-current-order></app-customer-current-order>
   </div>
   <div class="tab-pane " id="profile" role="tabpanel">
@@ -30,14 +30,14 @@
   <div class="tab-pane " id="messages" role="tabpanel">
         <app-customer-address-book></app-customer-address-book>
   </div>
-  <div class="tab-pane " id="settings" role="tabpanel">
+  <div class="tab-pane change-password" id="settings" role="tabpanel">
         <h1> Change Password </h1>
 
         <form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
-            
+
           <div class = "card shadow">
             <div class="form-group">
-        
+
             <div class = "form-comp-top">
             <div class = "name"><label for="mobileNumber">Mobile No</label></div>
             <input type="text"  class="form-control" id="mobileNumber" placeholder="Enter your 10 digit mobile number" formControlName="mobileNumber">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
               </div>
-        
+
               <div class = "form-comp">
                 <div class = "name"><label for="currentPassword">Current Password</label></div>
               <input  type="password" class="form-control" id="currentPassword" placeholder="Enter current Password" formControlName="currentPassword">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
               </div>
-        
+
                 <div class = "form-comp">
                   <div class = "name"><label for="newPassword">New Password</label></div>
                 <input  type="password" class="form-control" id="newPassword" placeholder="Enter new Password" formControlName="newPassword">
@@ -67,8 +67,8 @@
                         </div>
                     </div>
                   </div>
-        
-        
+
+
                   <div class = "form-comp">
                     <div class = "name"><label for="reenterNewPassword">Re-enter new Password</label></div>
                   <input  type="password" class="form-control" id="reenterNewPassword" placeholder="Re-enter New Password" formControlName="reenterNewPassword">
@@ -78,21 +78,21 @@
                           </div>
                       </div>
                     </div></div>
-        
+
                     <div class = form-comp-button>
-        
+
                         <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit</button>
                      </div></div></form>
   </div>
- 
-        <div class="tab-pane" id="settings1" role="tabpanel">
+
+        <div class="tab-pane change-password" id="settings1" role="tabpanel">
                 <h1> Delete Profile </h1>
 
-                <form [formGroup]="rFormDeleteProfile" (ngSubmit)="validateUser(rFormDeleteProfile.value)">
-                    
+                <form [formGroup]="rFormDeleteProfile" (ngSubmit)="deleteUser(rFormDeleteProfile.value)">
+
                   <div class = "card shadow">
                     <div class="form-group">
-                
+
                     <div class = "form-comp-top">
                     <div class = "name"><label for="mobileNumberDeleteProfile">Mobile No</label></div>
                     <input type="text"  class="form-control" id="mobileNumberDeleteProfile" placeholder="Enter your 10 digit mobile number" formControlName="mobileNumberDeleteProfile">
@@ -102,7 +102,7 @@
                             </div>
                         </div>
                       </div>
-                
+
                       <div class = "form-comp">
                         <div class = "name"><label for="currentPasswordDeleteProfile">Password</label></div>
                       <input  type="password" class="form-control" id="currentPasswordDeleteProfile" placeholder="Enter your Password" formControlName="currentPasswordDeleteProfile">
@@ -112,345 +112,10 @@
                             </div>
                         </div>
                       </div></div>
-                
+
                       <div class = form-comp-button>
-                
+
                         <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rFormDeleteProfile.valid">Submit</button>
                      </div></div></form>
         </div>
-
-
-<script>
- 
-</script>
 </div></div>
-
-    
-
-    
-	
-<!-- <h1> Delete Profile </h1>
-
-<form [formGroup]="rFormDeleteProfile" (ngSubmit)="validateUser(rFormDeleteProfile.value)">
-    
-  <div class = "card shadow">
-    <div class="form-group">
-
-    <div class = "form-comp-top">
-    <div class = "name"><label for="mobileNumberDeleteProfile">Mobile No</label></div>
-    <input type="text"  class="form-control" id="mobileNumberDeleteProfile" placeholder="Enter your 10 digit mobile number" formControlName="mobileNumberDeleteProfile">
-    <div *ngIf="rFormDeleteProfile.controls['mobileNumberDeleteProfile'].touched && rFormDeleteProfile.controls['mobileNumberDeleteProfile'].invalid" class="alert">
-            <div *ngIf="rFormDeleteProfile.controls['mobileNumberDeleteProfile'].hasError('required')">
-                Mobile Number is required!
-            </div>
-        </div>
-      </div>
-
-      <div class = "form-comp">
-        <div class = "name"><label for="currentPasswordDeleteProfile">Password</label></div>
-      <input  type="password" class="form-control" id="currentPasswordDeleteProfile" placeholder="Enter your Password" formControlName="currentPasswordDeleteProfile">
-      <div *ngIf="rFormDeleteProfile.controls['currentPasswordDeleteProfile'].touched && rFormDeleteProfile.controls['currentPasswordDeleteProfile'].invalid" class="alert">
-            <div *ngIf="rFormDeleteProfile.controls['currentPasswordDeleteProfile'].hasError('required')">
-              Password is required!
-            </div>
-        </div>
-      </div></div>
-
-      <div class = form-comp-button>
-
-        <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rFormDeleteProfile.valid">Submit</button>
-     </div></div></form>
-      -->
-
-
-<!-- <h1> Change Password </h1>
-
-<form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
-    
-  <div class = "card shadow">
-    <div class="form-group">
-
-    <div class = "form-comp-top">
-    <div class = "name"><label for="mobileNumber">Mobile No</label></div>
-    <input type="text"  class="form-control" id="mobileNumber" placeholder="Enter your 10 digit mobile number" formControlName="mobileNumber">
-    <div *ngIf="rForm.controls['mobileNumber'].touched && rForm.controls['mobileNumber'].invalid" class="alert">
-            <div *ngIf="rForm.controls['mobileNumber'].hasError('required')">
-                Mobile Number is required!
-            </div>
-        </div>
-      </div>
-
-      <div class = "form-comp">
-        <div class = "name"><label for="currentPassword">Current Password</label></div>
-      <input  type="password" class="form-control" id="currentPassword" placeholder="Enter current Password" formControlName="currentPassword">
-      <div *ngIf="rForm.controls['currentPassword'].touched && rForm.controls['currentPassword'].invalid" class="alert">
-            <div *ngIf="rForm.controls['currentPassword'].hasError('required')">
-              Password is required!
-            </div>
-        </div>
-      </div>
-
-        <div class = "form-comp">
-          <div class = "name"><label for="newPassword">New Password</label></div>
-        <input  type="password" class="form-control" id="newPassword" placeholder="Enter new Password" formControlName="newPassword">
-        <div *ngIf="rForm.controls['newPassword'].touched && rForm.controls['newPassword'].invalid" class="alert">
-                <div *ngIf="rForm.controls['newPassword'].hasError('required')">
-                  New Password is required!
-                </div>
-            </div>
-          </div>
-
-
-          <div class = "form-comp">
-            <div class = "name"><label for="reenterNewPassword">Re-enter new Password</label></div>
-          <input  type="password" class="form-control" id="reenterNewPassword" placeholder="Re-enter New Password" formControlName="reenterNewPassword">
-          <div *ngIf="rForm.controls['reenterNewPassword'].touched && rForm.controls['reenterNewPassword'].invalid" class="alert">
-                  <div *ngIf="rForm.controls['reenterNewPassword'].hasError('required')">
-                    Re-entering the new Password is required!
-                  </div>
-              </div>
-            </div></div>
-
-            <div class = form-comp-button>
-
-                <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit</button>
-             </div></div></form>
-              -->
-<!--
-
-    <div class="container-fluid bg">
-	<div class="row">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-6">
-                <div class="title">
-      <h3 >
-        My account
-                </h3>
-            </div>
-      <div class="main-body">
-      <div class ="total_earnings">
-      
-                <a routerLink="/customer/currentOrder" class="btn btn-primary change_password_button" role="button">My orders</a>
-                </div>
-                <div class ="next_buttons">
-                <div class ="change_password">
-                <button type="submit" class="btn btn-primary change_password_button" data-target="#loginModal" data-toggle="modal">Change Password</button>
-            </div>
-            <div class ="change_password">
-                <a routerLink="/customer/addressBook" class="btn btn-primary change_password_button" role="button">Address Book</a>
-            </div>
-            <div class ="change_password">
-                <a routerLink="/customer/previousOrder" class="btn btn-primary change_password_button" role="button">Previous orders</a>
-            </div>
-            
-            <div class ="change_password">
-                <button type="submit" class="btn btn-primary change_password_button" data-target="#DeleteProfileModal" data-toggle="modal">Delete Profile</button>
-            </div>
-            
-            </div></div>
-        </div>
-    <div class="col-md-3">
-    </div>
-  
-</div>
-
-
-<div class="modal fade" tabindex="-1" id="loginModal"
-    data-keyboard="false" data-backdrop="static">
-<div class="modal-dialog modal-sm">
-    <div class="modal-content">
-        <div class="modal-header change-password-header">
-            <h4 class="modal-title">Change Password</h4>
-            <button type="button" class="close" data-dismiss="modal">
-                &times;
-            </button>
-           
-        </div>
-        <div class="modal-body change-password-body ">
-            <form>
-                <div class="form-group">
-                    <label for="inputUserName">Mobile No</label>
-                    <input [(ngModel)]="mobileNumber" class="form-control" placeholder="Enter mobile number"
-                    type="text"  id="inputUserName" name="mobileNumber" title="Enter your 10 digit mobile number"/>
-                </div>
-                <div class="form-group">
-                    <label for="psw">Current Password</label>
-                    <input [(ngModel)]="currentPassword" class="form-control" placeholder="Enter current Password"
-                    id="psw" name="psw"  title="Enter your current password" required type="password"/>
-                </div>
-                <div class="form-group">
-                        <label for="inputPassword">New Password</label>
-                        <input [(ngModel)]="newPassword" class="form-control" placeholder="Enter new Password"
-                                type="password" id="inputPassword" name="newPassword" title="Must contain at least one number and one uppercase and one lowercase and one special case, and at least 8 or more characters" />
-                    </div>
-                    <div class="form-group">
-                            <label for="inputPassword">Re-enter new Password</label>
-                            <input [(ngModel)]="reenterNewPassword" class="form-control" placeholder="Re-enter New Password"
-                                    type="password" id="inputPassword" name="reenterNewPassword" title="Re-enter your new password"/>
-                        </div>
-            </form>
-        </div>
-        <div class="modal-footer change-password-footer">
-            <button (click)="onSubmit()" type="submit" class="btn btn-primary">Submit</button>
-            <button  type="button" class="btn btn-primary"
-                    data-dismiss="modal">Close</button>
-        </div>
-    </div>
-</div>
-</div>
-
-
-
-<div class="modal fade" tabindex="-1" id="DeleteProfileModal"
-    data-keyboard="false" data-backdrop="static">
-<div class="modal-dialog modal-sm">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">Delete Profile</h4>
-            <button type="button" class="close" data-dismiss="modal">
-                &times;
-            </button>
-           
-        </div>
-        <div class="modal-body">
-            <form>
-                <div class="form-group">
-                    <label for="inputUserName">Mobile No</label>
-                    <input [(ngModel)]="mobileNumber" class="form-control" placeholder="Enter mobile number"
-                            type="text"  id="inputUserName" name="mobileNumber"/>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword">Password</label>
-                    <input [(ngModel)]="currentPassword" class="form-control" placeholder="Enter current Password"
-                            type="password"  id="inputPassword" name="currentPassword" />
-                </div>
-               
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button  type="submit" class="btn btn-primary" data-target="#ConfirmDeleteProfileModal" data-toggle="modal" data-dismiss="modal">Delete</button>
-            <button  type="button" class="btn btn-primary"
-                    data-dismiss="modal">Close</button>
-        </div>
-    </div>
-</div>
-</div>
-
-
-
-<div class="modal fade" tabindex="-1" id="ConfirmDeleteProfileModal"
-    data-keyboard="false" data-backdrop="static">
-<div class="modal-dialog modal-sm">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">Confirm Action </h4>
-            <button type="button" class="close" data-dismiss="modal">
-                &times;
-            </button>
-           
-        </div>
-        <div class="modal-body">
-            <form>
-                <div class="form-group">
-                   <h4>Are you surely want to delete your profile ? </h4>
-                </div>
-              
-               
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button (click)="validateUser()" type="submit" class="btn btn-primary" data-target="#ConfirmDeleteProfileModal" data-toggle="modal">Delete</button>
-            <button  type="button" class="btn btn-primary"
-                    data-dismiss="modal">Close</button>
-        </div>
-    </div>
-</div>
-</div>
-</div>  -->
-
-
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            
-    <h2>Dynamic Tabs</h2>
-    <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-      <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-      <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-      <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
-    </ul>
-  </div>
-  <div class="col-md-8">
-    <div class="tab-content">
-      <div id="home" class="tab-pane fade in active">
-        <h3>HOME</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div id="menu1" class="tab-pane fade">
-        <h3>Menu 1</h3>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-      <div id="menu2" class="tab-pane fade">
-        <h3>Menu 2</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-      </div>
-      <div id="menu3" class="tab-pane fade">
-        <h3>Menu 3</h3>
-        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-      </div>
-    </div>
-    </div>
-  </div></div> -->
-
-
-  <!-- <div class="home">
-        <div class="container-fluid display-table">
-            <div class="row display-table-row">
-                <div class="col-sm-3 hidden-xs display-table-cell v-align box" id="navigation">
-                    <div class="navi">
-                        <ul class="nav nav-tabs">
-                            <li><a data-toggle="tab" href="#home">My Account</a></li>
-                            <li><a routerLink="/farmer/addProduct">Add Product</a></li>
-                            <li><a routerLink="/farmer/bankDetails">Bank Details</a></li>
-                            <li><a routerLink="/farmer/currentOrder">Current Order</a></li>
-                            <li><a routerLink="/farmer/previousOrder">Previous Orders</a></li>
-                            <li><a routerLink="/farmer/viewProduct">View Product</a></li>
-                            <li><a routerLink="/home">Logout</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class=" display-table-cell v-align " >
-                        <div class="tab-content col-sm-9">
-                                <div id="home" class="tab-pane fade in active">
-                                    <h1>hi this is sridharsdaasdasdas</h1>
-                                    <app-customer-current-order></app-customer-current-order>
-                                </div>
-                   </div>
-                </div>
-            </div>
-        </div></div> -->
-
-        <!-- <div class="home">
-                <div class="container-fluid display-table">
-                    <div class="row display-table-row">
-                        <div class="col-sm-3 hidden-xs display-table-cell v-align box" id="navigation">
-                            <div class="navi">
-                                <ul>
-                                    <li><a routerLink="/farmer/myAccount">My Account</a></li>
-                                    <li><a routerLink="/farmer/addProduct">Add Product</a></li>
-                                    <li><a routerLink="/farmer/bankDetails">Bank Details</a></li>
-                                    <li><a routerLink="/farmer/currentOrder">Current Order</a></li>
-                                    <li><a routerLink="/farmer/previousOrder">Previous Orders</a></li>
-                                    <li><a routerLink="/farmer/viewProduct">View Product</a></li>
-                                    <li><a routerLink="/home">Logout</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-9 display-table-cell v-align">
-                            
-                           </div>
-                        </div>
-                    </div>
-                </div> -->

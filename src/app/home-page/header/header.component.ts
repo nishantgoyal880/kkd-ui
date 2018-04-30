@@ -9,8 +9,10 @@ export class HeaderComponent implements OnInit {
 
 @Output() success = new EventEmitter<any>();
 
- public searchInput: String;
+ public searchInput:String;
  public search:String;
+ public loggedIn:any=false;
+ public role:any="farmer";
 
  constructor() { }
 

@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            Payment Details
+          </h3>
+
+        </div>
+        <div class="panel-body">
+          <form [formGroup]="rForm" (ngSubmit)="makePayment(rForm.value)">
+            <!-->
+            </!-->
+
+            <div class="checkbox pull-right">
+              <label>
+                <input type="radio" formControlName="rad" value="cod" (change)="radioClick(true)" /> Cash On Delivery
+              </label>
+            </div>
+            <div class="checkbox pull-right">
+              <label>
+                <input type="radio" formControlName="rad" value="card" (change)="radioClick(false)" /> Credit/Debit Card
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="cardNumber">
+                CARD NUMBER</label>
+              <div class="input-group">
+                <input type="text" class="form-control" formControlName="cardNumber" placeholder="Valid Card Number" />
+                <div *ngIf="rForm.controls['cardNumber'].touched && rForm.controls['cardNumber'].invalid" class="alert">
+                  <div *ngIf="rForm.controls['cardNumber'].hasError('minlength')">
+                    Less than 16 digits
+                  </div>
+                  <div *ngIf="rForm.controls['cardNumber'].hasError('maxlength')">
+                    More than 16 digits
+                  </div>
+                  <div *ngIf="rForm.controls['cardNumber'].hasError('required')">
+                    Card Number is required!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-7 col-md-7">
+                <div class="form-group">
+                  <label for="expiryMonth">
+                    EXPIRY DATE</label>
+                  <div class="row">
+                    <div class="col-sm-6 pl-ziro">
+                      <input type="text" class="form-control" formControlName="expiryMonth" placeholder="MM" required />
+                      <div *ngIf="rForm.controls['expiryMonth'].touched && rForm.controls['expiryMonth'].invalid" class="alert">
+                        <div *ngIf="rForm.controls['expiryMonth'].hasError('minlength')">
+                          Less than 1 digit
+                        </div>
+                        <div *ngIf="rForm.controls['expiryMonth'].hasError('maxlength')">
+                          More than 2 digits
+                        </div>
+                        <div *ngIf="rForm.controls['expiryMonth'].hasError('required')">
+                          Month is required!
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6  pl-ziro">
+                      <input type="text" class="form-control" formControlName="expiryYear" placeholder="YY" required />
+                      <div *ngIf="rForm.controls['expiryYear'].touched && rForm.controls['expiryYear'].invalid" class="alert">
+                        <div *ngIf="rForm.controls['expiryYear'].hasError('minlength')">
+                          Less than 1 digit
+                        </div>
+                        <div *ngIf="rForm.controls['expiryYear'].hasError('maxlength')">
+                          More than 2 digits
+                        </div>
+                        <div *ngIf="rForm.controls['expiryYear'].hasError('required')">
+                          Year is required!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5 col-md-5 pull-right">
+                <div class="form-group">
+                  <label for="cvCode">
+                    CV CODE</label>
+                  <input type="password" class="form-control" formControlName="cvCode" placeholder="CV" required />
+                  <div *ngIf="rForm.controls['cvCode'].touched && rForm.controls['cvCode'].invalid" class="alert">
+                    <div *ngIf="rForm.controls['cvCode'].hasError('minlength')">
+                      Less than 3 digits
+                    </div>
+                    <div *ngIf="rForm.controls['cvCode'].hasError('maxlength')">
+                      More than 3 digits
+                    </div>
+                    <div *ngIf="rForm.controls['cvCode'].hasError('required')">
+                      CVV is required!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-success btn-lg btn-block" [disabled]="rForm.invalid">Make Payment</button>
+          </form>
+        </div>
+      </div>
+      <br/>
+    </div>
+  </div>
+</div>
+
+{{flag}}
+
+<!-->[disabled]="!rForm.valid"</!-->

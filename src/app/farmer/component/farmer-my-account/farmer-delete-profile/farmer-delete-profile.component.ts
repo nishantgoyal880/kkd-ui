@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FarmerHeaderService } from '../../../services/farmer-header/farmer-header.service';
+import { FarmerDetailsService } from '../../../services/farmer-details/farmer-details.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-farmer-delete-profile',
   templateUrl: './farmer-delete-profile.component.html',
   styleUrls: ['./farmer-delete-profile.component.css'],
-  providers:[FarmerHeaderService]
+  providers:[FarmerDetailsService]
 })
 export class FarmerDeleteProfileComponent implements OnInit {
 
-  public searchedFarmerId: string="KKDFARM1001";
+  public searchedFarmerId: string="KKDFARM1000";
   public delete:boolean;
   rForm: FormGroup;
 
-  constructor(private farmerHeaderService : FarmerHeaderService,private fb: FormBuilder) {
+  constructor(private farmerDetailsService : FarmerDetailsService,private fb: FormBuilder) {
     this.rForm = fb.group({
       currentPassword : [null, Validators.compose([Validators.required])]
   })
@@ -23,7 +23,7 @@ export class FarmerDeleteProfileComponent implements OnInit {
   /* Function to delete farmer's profile by his KKDId
   and make service call to delete farmer's profile from app */
   deleteFarmerProfile(post){
-    this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
+    this.farmerDetailsService.getFarmerName(this.searchedFarmerId)
     .subscribe((res) =>{
       if(post.currentPassword == res.password){
         this.delete=true;
@@ -37,7 +37,7 @@ export class FarmerDeleteProfileComponent implements OnInit {
   }
   deletingProfile(){
     if(this.delete==true){
-      this.farmerHeaderService.deleteFarmerProfile(this.searchedFarmerId).subscribe((data)=>{
+      this.farmerDetailsService.deleteFarmerProfile(this.searchedFarmerId).subscribe((data)=>{
         alert("Successfully Deleted");
       },(err)=> console.log(err));
     }

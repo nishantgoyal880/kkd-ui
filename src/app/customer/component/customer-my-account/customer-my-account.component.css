@@ -6,7 +6,8 @@ form{
 h1 {
     font-weight: normal;
     font-family: 'Roboto', sans-serif;
-    padding: 0.5em 0 40px 0;
+    padding: 0.5em 40px 40px 0px;
+   
     text-align: center;
     margin: 0;
     color: #4b5320;
@@ -96,7 +97,7 @@ button:focus{
     margin-right: 20px;
     border-bottom:0;
     border-right: 1px solid #ddd;
-    padding-right: 15px;
+    padding-right: 15px; 
 }
 .nav-tabs .nav-link {
     border: 1px solid transparent;
@@ -117,7 +118,7 @@ button:focus{
 }
 .tab-content>.active {
     display: block;
-    background: #f9f9f9;
+    /* background: #f9f9f9; */
     min-height: 165px;
 }
 .nav.nav-tabs {
@@ -127,4 +128,11 @@ button:focus{
     border-bottom: 0;
     border-right: 1px solid transparent;
     padding-right: 15px;
+}
+
+.main-body{
+    background-color: #FFFFFF;
+}
+.change-password{
+    padding-left:110px;
 }
