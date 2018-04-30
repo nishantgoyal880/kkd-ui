@@ -1,17 +1,21 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { FarmerAddProductService } from './farmer-add-product.service';
-//import {HttpClientModule} from '@angular/common/http';
-//import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('FarmerAddProductService', () => {
+fdescribe('FarmerAddProductService', () => {
+  let service: FarmerAddProductService;
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [FarmerAddProductService],
       imports: [ 
-        HttpClientTestingModule]
+        HttpClientTestingModule,
+      HttpClientModule,
+    HttpModule]
     });
+    service = TestBed.get(FarmerAddProductService);
   });
 
   it('should be created', inject([FarmerAddProductService], (service: FarmerAddProductService) => {
@@ -21,5 +25,5 @@ describe('FarmerAddProductService', () => {
   it('should have update function',
   inject([FarmerAddProductService], (service: FarmerAddProductService)=>{
     expect(service.update).toBeTruthy();
-  }))
+  }));
 });

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { addProductServiceUrl } from '../../config/addProductServiceUrl.config';
 
+
 @Injectable()
 export class FarmerAddProductService {
 
