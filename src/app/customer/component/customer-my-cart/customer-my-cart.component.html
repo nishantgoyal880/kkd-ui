@@ -24,14 +24,23 @@
         </table>
         <div class="row">
             <div class="col-md-6">
-
+                <div *ngIf="customerInfo; then address else emptyAddress"></div>
+                <ng-template #address>
+                <p> Products will be delivered to</p>
+                <p>{{customerInfo.primaryAddress.addressLine}}, {{customerInfo.primaryAddress.city}}</p>
+                <p>{{customerInfo.primaryAddress.district}}, {{customerInfo.primaryAddress.state}} -{{customerInfo.primaryAddress.pincode}}</p>
+                </ng-template>
+                <ng-template #emptyAddress>
+                    <p>Add Address to continue</p>
+                    <button class="btn btn-success btn-sm" routerLink="/customer/myAccount">Add Address</button>
+                </ng-template>
             </div>
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-6"><strong>Total</strong></div>
                     <div class="col-md-2">₹{{x}}</div>
                     <div class="col-md-4">
-                            <button type="button" class="btn btn-success" (click)="checkout()">
+                            <button type="button" class="btn btn-success" (click)="checkout()" routerLink="/customer/payment">
                                     <i class="fas fa-hand-point-right"></i>Place Order
                             </button>
                     </div>
@@ -47,7 +56,7 @@
         <div class="h6">Your Cart (0 Items)</div>
     </div>
     <div class="cart-header">
-        <img src="http://www.austeknis.com/cart_files/cart_pix/empty_cart.jpg" alt="empty wishlist" class="img-fluid">
+        <img src="./../../../../assets/images/empty_cart.jpg" alt="empty wishlist" class="img-fluid">
     </div>
 </ng-template>
 </div>

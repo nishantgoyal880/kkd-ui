@@ -10,6 +10,7 @@ import { CustomerPreviousOrderComponent } from './component/customer-my-account/
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { CustomerAddAddressComponent } from './component/customer-my-account/customer-address-book/customer-add-address/customer-add-address.component';
 import { ProductListComponent } from './component/product-list/product-list.component';
+import {CustomerPaymentComponent} from './component/customer-payment/customer-payment.component'
 
 const routes: Routes = [
     { path:'customer/login',component:CustomerLoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path:'customer/addressBook/addAddress',component:CustomerAddAddressComponent },
     { path:'customer/forgetPassword',component:ForgetPasswordComponent},
     { path:'productList',component:ProductListComponent},
+    { path:'customer/payment', component:CustomerPaymentComponent},
 
   ];
 

@@ -10,9 +10,18 @@ export class SearchService {
   constructor(private http:Http) { }
   private headers = new Headers({ 'Content-Type': 'application/json'});
 
+  //code to send token in the header
+  private authorization() {
+    let token=localStorage.getItem("token");
+    if (token) {
+      let headers =new Headers();
+      headers.append('Authorization', token);
+      return new RequestOptions({ headers: headers });
+    }
+  }
+
   getAllProducts(searchQuery:string){
     let url:string;
-    console.log("search by"+searchQuery);
     if(searchQuery!=undefined){
       url=SearchConfig.searchSpecificProducts+searchQuery;
     }
@@ -21,14 +30,14 @@ export class SearchService {
     }
     console.log(url);
     return this.http.get(url).
-    map((data)=> data.json(),
-  (err)=> console.log("in service"+err))
+      map((data)=> data.json(),
+      (err)=> console.log(err));
   }
 
   addToCart(cartItem){
     return this.http.post(CartConfig.addToCart,cartItem,{headers: this.headers}).
-  map(data=> {
-    data
-  console.log("success")},err=> err.json());
+    map(data=> {
+      console.log("success")
+    },err=> err.json());
   }
 }

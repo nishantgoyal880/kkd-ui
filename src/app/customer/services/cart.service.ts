@@ -11,8 +11,18 @@ export class CartService {
 
   private headers = new Headers({ 'Content-Type': 'application/json'});
 
+  //code to send token in the header
+  private authorization() {
+    let token=localStorage.getItem("token");
+    if (token) {
+      let headers =new Headers();
+      headers.append('Authorization', token);
+      return new RequestOptions({ headers: headers });
+    }
+  }
+
   getCartItems(kkdCustId:string){
-   return this.http.get(CartConfig.cartUrl+kkdCustId).
+   return this.http.get(CartConfig.cartUrl+kkdCustId,this.authorization()).
     map(data=>
       data.json(),
     error=> {
@@ -21,7 +31,7 @@ export class CartService {
   }
 
 deleteCartItem(cartItem){
-  return this.http.delete(CartConfig.deleteItem+cartItem.cartItemId,{headers: this.headers}).
+  return this.http.delete(CartConfig.deleteItem+cartItem.cartItemId,this.authorization()).
   map(
     data=> console.log("deleting"),
     err=> console.log(err)
@@ -29,22 +39,16 @@ deleteCartItem(cartItem){
 }
 
 postOrder(order){
-  return this.http.post(CartConfig.addOrder,order,{headers: this.headers}).
+  return this.http.post(CartConfig.addOrder,order,this.authorization()).
   map(
     (data)=> console.log(data),
     (err)=> console.log(err)
   );
 }
 
-updateProducts(product){
-  return this.http.put(CartConfig.updateProuct,product,{headers: this.headers}).
-  map((data)=>data.json(),
-  (err)=> console.log("hi"+err)
-)
-}
 // get customer Info
 getCustomerInfo(kkdCustId:string){
-  return this.http.get(CartConfig.customerDetails+kkdCustId).
+  return this.http.get(CartConfig.customerDetails+kkdCustId,this.authorization()).
    map(data=>
      data.json(),
    error=> {
