@@ -1,31 +1,35 @@
-<div class="container">
+<div class="container mt-100">
   <div class="row">
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-8 mx-auto">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
             Payment Details
           </h3>
-          <div class="checkbox pull-right">
-            <label>
-              <input type="Radio" name="rad" (change)="radioClick(true)" /> Cash On Delivery
-            </label>
-          </div>
-          <div class="checkbox pull-right">
-            <label>
-              <input type="Radio" name="rad" (change)="radioClick(false)" /> Credit/Debit Card
-            </label>
-          </div>
         </div>
         <div class="panel-body">
-          <form [formGroup]="rForm" (ngSubmit)="payment(rForm.value)">
+          <form [formGroup]="rForm" (ngSubmit)="makePayment(rForm.value)">
             <!-->
+            Form group area starts here
             </!-->
+            <div class="checkbox ">
+              <!--Cash on delivery checkbox-->
+              <label>
+                <input type="radio" formControlName="rad" value="cod" (change)="radioClick(true)" /> Cash On Delivery
+              </label>
+            </div>
+            <div class="checkbox ">
+              <!--Online payment checkbox-->
+              <label>
+                <input type="radio" formControlName="rad" value="card" (change)="radioClick(false)" /> Credit/Debit Card
+              </label>
+            </div>
             <div class="form-group">
               <label for="cardNumber">
                 CARD NUMBER</label>
               <div class="input-group">
                 <input type="text" class="form-control" formControlName="cardNumber" placeholder="Valid Card Number" />
+                <!--Input field for Card Number-->
                 <div *ngIf="rForm.controls['cardNumber'].touched && rForm.controls['cardNumber'].invalid" class="alert">
                   <div *ngIf="rForm.controls['cardNumber'].hasError('minlength')">
                     Less than 16 digits
@@ -46,7 +50,8 @@
                     EXPIRY DATE</label>
                   <div class="row">
                     <div class="col-sm-6 pl-ziro">
-                      <input type="text" class="form-control" formControlName="expiryMonth" placeholder="MM" required />
+                      <input type="text" class="form-control mb-1" formControlName="expiryMonth" placeholder="MM" required />
+                      <!--Input field for Month-->
                       <div *ngIf="rForm.controls['expiryMonth'].touched && rForm.controls['expiryMonth'].invalid" class="alert">
                         <div *ngIf="rForm.controls['expiryMonth'].hasError('minlength')">
                           Less than 1 digit
@@ -61,6 +66,7 @@
                     </div>
                     <div class="col-sm-6  pl-ziro">
                       <input type="text" class="form-control" formControlName="expiryYear" placeholder="YY" required />
+                      <!--Input field for Year-->
                       <div *ngIf="rForm.controls['expiryYear'].touched && rForm.controls['expiryYear'].invalid" class="alert">
                         <div *ngIf="rForm.controls['expiryYear'].hasError('minlength')">
                           Less than 1 digit
@@ -81,6 +87,7 @@
                   <label for="cvCode">
                     CV CODE</label>
                   <input type="password" class="form-control" formControlName="cvCode" placeholder="CV" required />
+                  <!--Input field for CVV number-->
                   <div *ngIf="rForm.controls['cvCode'].touched && rForm.controls['cvCode'].invalid" class="alert">
                     <div *ngIf="rForm.controls['cvCode'].hasError('minlength')">
                       Less than 3 digits
@@ -95,13 +102,12 @@
                 </div>
               </div>
             </div>
+            <button class="btn btn-success btn-lg btn-block" [disabled]="rForm.invalid">Make Payment</button>
+            <!--Submit Button-->
           </form>
         </div>
       </div>
       <br/>
-      <button class="btn btn-success btn-lg btn-block" (click)='makePayment()' [disabled]="!rForm.valid">Make Payment</button>
     </div>
   </div>
 </div>
-
-{{flag}}

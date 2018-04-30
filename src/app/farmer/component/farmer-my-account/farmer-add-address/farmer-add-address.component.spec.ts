@@ -1,4 +1,7 @@
+import { FarmerDetailsService } from '../../../services/farmer-details/farmer-details.service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserModule, By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 
 import { FarmerAddAddressComponent } from './farmer-add-address.component';
 
