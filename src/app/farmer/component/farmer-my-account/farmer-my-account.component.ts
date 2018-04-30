@@ -1,12 +1,12 @@
 //import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { FarmerHeaderService } from '../../services/farmer-header/farmer-header.service';
+import { FarmerDetailsService } from '../../services/farmer-details/farmer-details.service';
 
 @Component({
   selector: 'app-farmer-my-account',
   templateUrl: './farmer-my-account.component.html',
   styleUrls: ['./farmer-my-account.component.css'],
-  providers:[FarmerHeaderService]
+  providers:[FarmerDetailsService]
 })
 export class FarmerMyAccountComponent implements OnInit {
 
@@ -22,11 +22,11 @@ export class FarmerMyAccountComponent implements OnInit {
    public farmerPrimary: boolean;
    public farmerMobileNumber : string;
 
-   constructor(private farmerHeaderService : FarmerHeaderService,) { }
+   constructor(private farmerDetailsService : FarmerDetailsService,) { }
 
   // Function to get farmer details by his KKDId and make service call to get farmer details from app
   searchFarmer(){
-    this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
+    this.farmerDetailsService.getFarmerName(this.searchedFarmerId)
     .subscribe((res) =>{
       this.farmerPhoto=res.aadhaarData.photoUrl;
       this.farmerId=res.kkdFarmId;

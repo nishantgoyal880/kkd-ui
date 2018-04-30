@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FarmerHeaderService } from '../../../services/farmer-header/farmer-header.service';
+import { FarmerDetailsService } from '../../../services/farmer-details/farmer-details.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 
@@ -7,7 +7,7 @@ import swal from 'sweetalert2';
   selector: 'app-farmer-add-address',
   templateUrl: './farmer-add-address.component.html',
   styleUrls: ['./farmer-add-address.component.css'],
-  providers:[FarmerHeaderService]
+  providers:[FarmerDetailsService]
 })
 export class FarmerAddAddressComponent implements OnInit {
 
@@ -15,7 +15,7 @@ export class FarmerAddAddressComponent implements OnInit {
   public farmerMobileNumber : string;
   rForm: FormGroup;
   public details;
-  constructor(private farmerHeaderService : FarmerHeaderService,private fb: FormBuilder) {
+  constructor(private farmerDetailsService : FarmerDetailsService,private fb: FormBuilder) {
     this.rForm = fb.group({
       addressLine : [null, Validators.compose([Validators.required])],
       city : [null, Validators.compose([Validators.required])],
@@ -32,9 +32,9 @@ export class FarmerAddAddressComponent implements OnInit {
       "state" : post.state,
       "pincode" : post.pincode
     }
-    this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
+    this.farmerDetailsService.getFarmerName(this.searchedFarmerId)
     .subscribe((res) =>{
-    this.farmerHeaderService.updateFarmerAddress(res.mobileNo, this.details)
+    this.farmerDetailsService.updateFarmerAddress(res.mobileNo, this.details)
     .subscribe((res)=>{
       swal({
         position: 'top',
