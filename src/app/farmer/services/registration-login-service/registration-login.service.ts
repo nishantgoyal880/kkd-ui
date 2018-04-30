@@ -34,6 +34,12 @@ export class RegistrationLoginService {
 			(error: any)=>this.handleError(error));
 	}
 
+	addhaarDataVerify(aadhaarNo) {
+		return this.http.get(RegistrationLogin.aadhaar+aadhaarNo,this.authorization())
+		.map(data => data.json(),
+			(error: any)=>this.handleError(error));
+	}
+
 	generateOtp(mobileNo) {
 		return this.http.get(RegistrationLogin.otp_generate+mobileNo,this.authorization())
 		.map(data => data.json(),
