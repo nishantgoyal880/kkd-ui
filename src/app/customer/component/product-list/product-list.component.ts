@@ -107,7 +107,7 @@ export class ProductListComponent implements OnInit {
     this.searchService.getAllProducts(this.searchInput).subscribe(
       data => {
         this.products = data.filter(
-          product => product.price >= event.from && product.price <= event.to
+          product => product.quantity >= event.from && product.quantity <= event.to
         );
       },
       err => console.log(err)
