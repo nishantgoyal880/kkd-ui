@@ -3,6 +3,7 @@ import { RegistrationLoginService } from '../../../customer/registration-login-s
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import { IdRoleService } from '../../../services/id-role/id-role.service'
 
 @Component({
 	selector: 'app-customer-register',
@@ -23,7 +24,7 @@ export class CustomerRegisterComponent implements OnInit {
 	otpForm: FormGroup;
 	select : any=0;
 
-	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) {
+	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router,private idRoleService: IdRoleService) {
 		this.rForm = fb.group({
 			'firstName':[null, Validators.compose([Validators.required, Validators.minLength(3)])],
 			'mobileNo': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
@@ -78,9 +79,11 @@ export class CustomerRegisterComponent implements OnInit {
 			if(res==true){
 				//save customer details to db
 				this.registrationService.addCustomer(this.customerToRegister).subscribe((res) =>{
-					localStorage.removeItem('token');
 					localStorage.setItem("token",res.results.token);
-					localStorage.setItem("kkdCustId",res.results.kkdCustId);
+					//localStorage.setItem("id",res.results.kkdCustId);
+					//localStorage.setItem("role",res.results.role);
+					this.idRoleService.id=res.results.kkdCustId;
+					this.idRoleService.role=res.results.role;
 					this.router.navigate(['customer/homePage']);
 				}, (err) =>{
 					swal({
@@ -106,5 +109,5 @@ export class CustomerRegisterComponent implements OnInit {
 				text: 'Server Down!',
 				footer: '<b>Please Try Later......</b>',
 			})
-	})}
-}
+		})}
+	}

@@ -17,6 +17,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+import { IdRoleService } from './services/id-role/id-role.service'
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
     cancelButtonClass: 'btn'
 })
 ],
-  providers: [],
+ providers:[IdRoleService],
   bootstrap: [AppComponent]
 })
 

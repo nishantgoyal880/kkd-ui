@@ -36,8 +36,8 @@ export class FarmerAddProductComponent implements OnInit {
       quantity : [null, Validators.compose([Validators.required])],
       available : ''
 
-  })
-}
+      })
+    }
 
 
   selectChangeHandler (event: any){
@@ -56,7 +56,7 @@ export class FarmerAddProductComponent implements OnInit {
     }
   }
 
-  check(post){
+  addProduct(post){
     this.productSubmission = {
 
     "kkdFarmId":this.kkdFarmId,

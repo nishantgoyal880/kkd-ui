@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { IdRoleService } from '../../../services/id-role/id-role.service'
 
 @Component({
   selector: 'app-farmer-dashboard',
@@ -12,10 +12,10 @@ export class FarmerDashboardComponent implements OnInit {
   public userList;
   public login;
 
-  constructor( ) { }
+  constructor(private idRoleService: IdRoleService ) { }
 
   ngOnInit() {
-
+  	alert(this.idRoleService.id);
   }
 
 }
