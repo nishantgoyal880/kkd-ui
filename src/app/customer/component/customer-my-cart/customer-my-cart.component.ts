@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { CartService } from "../../services/cart.service";
-import {Router} from "@angular/router"
+import { Router } from "@angular/router";
 @Component({
   selector: "app-customer-my-cart",
   templateUrl: "./customer-my-cart.component.html",
@@ -8,14 +8,14 @@ import {Router} from "@angular/router"
   providers: [CartService]
 })
 export class CustomerMyCartComponent implements OnInit {
-  constructor(private cartService: CartService, private router:Router) {}
+  constructor(private cartService: CartService, private router: Router) {}
   public items = [];
   public x: number;
   public customerInfo: object = {};
 
   @Input() kkdCustId: string;
   ngOnInit() {
-    this.kkdCustId = "KKDCUST2006";
+    this.kkdCustId = "KKDCUST2000";
     this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
       res => {
         this.customerInfo = res;
@@ -48,7 +48,7 @@ export class CustomerMyCartComponent implements OnInit {
   }
 
   checkout() {
-    if (this.customerInfo!= null) {
+    if (this.customerInfo != null) {
       let orders: Array<object> = [];
       this.items.map(ele => {
         let d = new Date();
@@ -66,12 +66,12 @@ export class CustomerMyCartComponent implements OnInit {
       this.cartService
         .postOrder(orders)
         .subscribe(
-          res => console.log("orders successfully placed"),
+          res => {},
           err => console.log(err)
         );
     } else {
-      alert("Add Address First")
-      this.router.navigate(['/customer/myAccount']);
+      alert("Add Address First");
+      this.router.navigate(["/customer/myAccount"]);
     }
   }
 }
