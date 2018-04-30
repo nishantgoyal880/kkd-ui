@@ -9,10 +9,10 @@
 }
 
 .alert {
-    background: #f2edda;
-    padding: 7px;
+    background: #ffaaaa;
+    padding: 0px;
     font-size: .9em;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     display: inline-block;
     animation: 2s alertAnim forwards;
 }
