@@ -78,6 +78,7 @@ export class CustomerRegisterComponent implements OnInit {
 			if(res==true){
 				//save customer details to db
 				this.registrationService.addCustomer(this.customerToRegister).subscribe((res) =>{
+					localStorage.removeItem('token');
 					localStorage.setItem("token",res.results.token);
 					localStorage.setItem("kkdCustId",res.results.kkdCustId);
 					this.router.navigate(['customer/homePage']);
