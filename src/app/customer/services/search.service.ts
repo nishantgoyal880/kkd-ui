@@ -26,7 +26,6 @@ export class SearchService {
     } else {
       url = SearchConfig.searchProducts;
     }
-    console.log(url);
     return this.http.get(url).map(data => data.json(), err => console.log(err));
   }
 
@@ -34,9 +33,7 @@ export class SearchService {
     return this.http
       .post(CartConfig.addToCart, cartItem, { headers: this.headers })
       .map(
-        data => {
-          console.log("success");
-        },
+        data => {},
         err => err.json()
       );
   }
