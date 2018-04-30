@@ -22,6 +22,7 @@ export class CustomerPaymentComponent implements OnInit {
       'expiryMonth': [null, Validators.compose([Validators.required, Validators.maxLength(2), Validators.minLength(1)])],
       'expiryYear': [null, Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(2)])],
       'cvCode': [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(3)])],
+      'rad':[null,Validators.required]
     });
   }
 
@@ -43,16 +44,18 @@ export class CustomerPaymentComponent implements OnInit {
     }
   }
 
-  makePayment() {
-    swal(
-      'Thank You!',
-      'Your order has been placed',
-      'success'
-    )
-  }
-
-  payment(data) {
-
+  makePayment(data) {
+  	swal(
+  		'Thank You!',
+  		'Your order has been placed',
+  		'success'
+  		)
+  	if(this.flag){
+  		console.log("Making COD");
+  	}
+  	else{
+  		console.log("Making Online Payment")
+  	}
   }
 
 

@@ -51,6 +51,7 @@ export class FarmerRegisterComponent implements OnInit {
 			'cities': post.cities
 		}
 		this.registrationService.addFarmer(farmerToRegister).subscribe((res) =>{
+			localStorage.removeItem('token');
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
 			this.router.navigate(['/farmer/dashboard']);

@@ -35,9 +35,10 @@ export class CustomerLoginComponent implements OnInit {
 		}
 
 		this.registrationService.loginCustomer(customerCredentials).subscribe((res) =>{
+			localStorage.removeItem('token');
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdCustId",res.results.kkdCustId);
-			this.router.navigate(['/productList']);
+			this.router.navigate(['customer/myAccount']);
 		}, (err) =>{
 			if(err.status==401){
 				swal({
