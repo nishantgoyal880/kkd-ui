@@ -116,3 +116,4 @@ export class AadhaarComponent implements OnInit {
 		})
 
 }
+}
