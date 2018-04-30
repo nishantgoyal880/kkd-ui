@@ -19,7 +19,6 @@ export class CustomerMyCartComponent implements OnInit {
     this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
       res => {
         this.customerInfo = res;
-        console.log(this.customerInfo);
       },
       err => console.log(err)
     );
@@ -42,7 +41,6 @@ export class CustomerMyCartComponent implements OnInit {
   deleteItem(item, ind) {
     this.cartService.deleteCartItem(item).subscribe(
       res => {
-        console.log("deleting");
         this.getCartItems();
       },
       err => console.log(err)
@@ -71,7 +69,6 @@ export class CustomerMyCartComponent implements OnInit {
           res => console.log("orders successfully placed"),
           err => console.log(err)
         );
-      alert("hi");
     } else {
       alert("Add address First");
     }

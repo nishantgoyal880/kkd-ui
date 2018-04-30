@@ -17,11 +17,10 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
-      console.log(data);
       this.products=data;
       this.calculatingMax();
     },
-    (err)=> console.log("in component"+err));
+    (err)=> console.log(err));
   }
 
   calculatingMax(){
@@ -77,30 +76,25 @@ export class ProductListComponent implements OnInit {
 
   searchProduct(){
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
-      console.log(data);
       this.products=data;
       this.calculatingMax();
     },
     (err)=> {
-      console.log("in component"+err),
+      console.log(err),
       this.products=[];
     });
   }
   myOnFinishPrice(event){
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
-      console.log(data);
       this.products=data.filter((product)=>product.price>=event.from&& product.price<=event.to);
     },
-    (err)=> console.log("in component"+err));
-    console.log("from:"+event.from+"  to:"+event.to);
+    (err)=> console.log(err));
   }
   myOnFinishQuantity(event){
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
-      console.log(data);
       this.products=data.filter((product)=>product.price>=event.from&& product.price<=event.to);
     },
-    (err)=> console.log("in component"+err));
-    console.log("from:"+event.from+"  to:"+event.to);
+    (err)=> console.log(err));
   }
   public cartItem={};
   public enteredQuant:number;

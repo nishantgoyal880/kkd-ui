@@ -34,7 +34,7 @@ export class CartService {
   deleteCartItem(cartItem) {
     return this.http
       .delete(CartConfig.deleteItem + cartItem.cartItemId, this.authorization())
-      .map(data => console.log("deleting"), err => console.log(err));
+      .map(data => {}, err => console.log(err));
   }
 
   postOrder(order) {
