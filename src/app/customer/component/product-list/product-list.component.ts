@@ -24,8 +24,10 @@ export class ProductListComponent implements OnInit {
   }
 
   calculatingMax(){
-    this.max_price=this.products.reduce((prev, current) => (prev.price > current.price) ? prev : current).price;
-    this.max_quantity=this.products.reduce((prev, current) => (prev.quantity > current.quantity) ? prev : current).quantity;
+    if(this.products.length!=0){
+      this.max_price=this.products.reduce((prev, current) => (prev.price > current.price) ? prev : current).price;
+      this.max_quantity=this.products.reduce((prev, current) => (prev.quantity > current.quantity) ? prev : current).quantity;
+    }
   }
   sorters = {
     byPrice: function(firstProduct, secondProduct) {

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { CartService } from "../../services/cart.service";
-
+import {Router} from "@angular/router"
 @Component({
   selector: "app-customer-my-cart",
   templateUrl: "./customer-my-cart.component.html",
@@ -8,7 +8,7 @@ import { CartService } from "../../services/cart.service";
   providers: [CartService]
 })
 export class CustomerMyCartComponent implements OnInit {
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router:Router) {}
   public items = [];
   public x: number;
   public customerInfo: object = {};
@@ -48,7 +48,7 @@ export class CustomerMyCartComponent implements OnInit {
   }
 
   checkout() {
-    if (this.customerInfo["primaryAddress"] != null) {
+    if (this.customerInfo!= null) {
       let orders: Array<object> = [];
       this.items.map(ele => {
         let d = new Date();
@@ -70,7 +70,8 @@ export class CustomerMyCartComponent implements OnInit {
           err => console.log(err)
         );
     } else {
-      alert("Add address First");
+      alert("Add Address First")
+      this.router.navigate(['/customer/myAccount']);
     }
   }
 }
