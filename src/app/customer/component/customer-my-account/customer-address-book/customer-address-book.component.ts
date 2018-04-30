@@ -22,7 +22,7 @@ searchDetails(){
 }
   
   ngOnInit() {
-    this.customerAuthenticationService.changeCustomerId("KKDCUST2004");
+    this.customerAuthenticationService.changeCustomerId("KKDCUST2002");
     this.customerId=CustomerAuthenticationService.cus;
     this.searchDetails();
   }
