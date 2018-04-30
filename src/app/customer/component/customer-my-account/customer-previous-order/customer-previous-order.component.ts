@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerAuthenticationService} from '../../../services/customer-authentication.service'
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer-previous-order',
@@ -15,11 +16,21 @@ export class CustomerPreviousOrderComponent implements OnInit {
 
    getdata(){
    this.customerAuthenticationService.getPreviousOrders(this.customerId).subscribe(results=>{
-     console.log("results"+results)
+     if(results == null){
+      swal({
+        type: 'error',
+        title: 'No previous orders',
+        text: 'No previous orders available to show',
+      })
+     }
    this.previousOrders=results;
    },error=> {
-     console.log(error);
-   });
+    swal({
+      type: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+    })
+  });
  }
    ngOnInit() {
     this.customerAuthenticationService.changeCustomerId("kkdcust3001");

@@ -15,7 +15,7 @@ export class CustomerAuthenticationService {
   }
 
 //code to send token in the header
-private authorization() {
+  private authorization() {
   let token=localStorage.getItem("token");
   if (token) {
     let headers =new Headers();
@@ -24,16 +24,16 @@ private authorization() {
   }
 }
 
-getUserDetails(mobileNumber : String){
+   handleError(error: Response){
+  alert("mobile number not registered");
+   return Observable.throw(error.statusText);
+   }
+
+   getUserDetails(mobileNumber : String){
   return this.http.get(UserDetails.url + mobileNumber,this.authorization())
      .map(data => data.json(),
    (error: any)=>this.handleError(error));
   }
-
-private handleError(error: Response){
-    alert("mobile number not registered");
-     return Observable.throw(error.statusText);
-     }
 
   updatePassword(updatedInfo){
     return this.http.put(UserDetails.updatePasswordUrl,updatedInfo, this.authorization())

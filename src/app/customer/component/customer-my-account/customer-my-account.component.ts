@@ -181,19 +181,45 @@ export class CustomerMyAccountComponent implements OnInit {
             .subscribe((status) =>{
               if(!(status == null)){
               if( status == true){
-                alert("Profile Deleted successfully");
+                swal({
+                  position: 'center',
+                  type: 'success',
+                  title: 'Profile deleted successfully',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
               }else{
-                alert("Incorrect Password");
+                swal({
+                  type: 'error',
+                  title: 'Incorrect Password',
+                  text: 'Please enter the correct current password',
+                })
               }}else{
-                alert("Mobile number not registered");
+                swal({
+                  type: 'error',
+                  title: 'Incorrect mobile number',
+                  text: 'Mobile number is not registered',
+                })
               }
         
         }, (error) =>{
-               alert("Internal Error : Can't delete right now")
+          swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
         })}else{
-    alert ("Password field cannot be empty");
+          swal({
+            type: 'error',
+            title: 'Empty password field',
+            text: 'Password field cannot be empty',
+          })
   }}else{
-    alert("Enter a valid mobile number");
+    swal({
+      type: 'error',
+      title: 'Invalid mobile number format',
+      text: 'Enter a valid mobile number of 10 digits' ,
+    })
   }
 }
 }
