@@ -1,0 +1,34 @@
+export interface FarmerDetails{
+    id:string;
+    mobileNo:string;
+    password:string;
+    cities:Array<string>;
+    currentAddress:{
+        addressLine:string,
+        pincode:number,
+        city:string,
+        district:string,
+        state:string
+    };
+    status:string;
+    autoconfirm:boolean;
+    aadhaarData:{
+        aadhaarNo:string,
+        mobileNumber:string,
+        firstName:string,
+        lastName:string,
+        dateOfBirth:string,
+        gender:string,
+        fatherName:string,
+        photourl:string,
+        permanentAddress:{
+            addressLine:string,
+        pincode:number,
+        city:string,
+        district:string,
+        state:string,
+        primary:boolean
+        }
+    };
+    role:string;
+}

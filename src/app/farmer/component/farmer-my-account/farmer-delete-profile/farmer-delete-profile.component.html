@@ -14,31 +14,8 @@
     </div>
     </div>
     <div class = form-comp-button>
-    <button type="submit" data-target="#ConfirmDeleteProfileModal" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Delete</button>
+    <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Delete</button>
     </div>
   </div>
 </form>
-<div *ngIf="delete" class="modal fade" tabindex="-1" id="ConfirmDeleteProfileModal"data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Confirm Action </h4>
-          <button type="button" class="close" data-dismiss="modal">
-            &times;
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <h4>Are you surely want to delete your profile ? </h4>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button (click)="deleteFarmerProfile()" type="submit" class="btn btn-primary" data-target="#ConfirmDeleteProfileModal" data-toggle="modal">Delete</button>
-          <button  type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+

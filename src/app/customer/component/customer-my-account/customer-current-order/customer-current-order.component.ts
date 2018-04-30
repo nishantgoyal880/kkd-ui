@@ -1,5 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {CustomerAuthenticationService} from '../../../services/customer-authentication.service'
+import swal from 'sweetalert2';
+
 @Component({
   selector: 'app-customer-current-order',
   templateUrl: './customer-current-order.component.html',
@@ -14,9 +16,20 @@ export class CustomerCurrentOrderComponent implements OnInit {
   getdata(){
   this.customerAuthenticationService.getCurrentOrders(this.customerId).subscribe(results=>{
     console.log(results)
+    if(results == null){
+      swal({
+        type: 'error',
+        title: 'No current orders',
+        text: 'Currently there are no orders',
+      })
+     }
   this.currentOrders=results;
   },error=> {
-    console.log(error);
+    swal({
+      type: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+    })
   });
 }
   
