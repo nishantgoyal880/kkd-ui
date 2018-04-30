@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
  selector: 'app-header',
@@ -13,8 +14,12 @@ export class HeaderComponent implements OnInit {
  public search:String;
  public loggedIn:any=true;
  public role:any="customer";
+ public routes:any;
 
- constructor() { }
+ constructor(routes:Router) {
+    routes.events.subscribe();
+    this.routes=routes.url;
+ }
 
  ngOnInit() {
  }
