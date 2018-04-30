@@ -11,13 +11,13 @@ export class HeaderComponent implements OnInit {
 
  public searchInput:String;
  public search:String;
- public loggedIn:any=false;
- public role:any="farmer";
+ public loggedIn:any=true;
+ public role:any="customer";
 
  constructor() { }
 
  ngOnInit() {
-}
+ }
 
  sendToParent(){
    this.success.emit({'search':this.searchInput});
