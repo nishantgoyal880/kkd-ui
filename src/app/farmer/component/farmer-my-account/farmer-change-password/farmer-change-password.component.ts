@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FarmerHeaderService } from '../../../services/farmer-header/farmer-header.service';
+import { FarmerDetailsService } from '../../../services/farmer-details/farmer-details.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 
@@ -7,7 +7,7 @@ import swal from 'sweetalert2';
   selector: 'app-farmer-change-password',
   templateUrl: './farmer-change-password.component.html',
   styleUrls: ['./farmer-change-password.component.css'],
-  providers:[FarmerHeaderService]
+  providers:[FarmerDetailsService]
 })
 export class FarmerChangePasswordComponent implements OnInit {
  
@@ -18,7 +18,7 @@ export class FarmerChangePasswordComponent implements OnInit {
   public details;
   rForm: FormGroup;
 
-  constructor(private farmerHeaderService : FarmerHeaderService,private fb: FormBuilder) { 
+  constructor(private farmerDetailsService : FarmerDetailsService,private fb: FormBuilder) { 
     this.rForm = fb.group({
       currentPassword : [null, Validators.compose([Validators.required])],
       newPassword : [null, Validators.compose([Validators.required])],
@@ -35,11 +35,11 @@ export class FarmerChangePasswordComponent implements OnInit {
     }    
     if(this.newPassword == this.reenterNewPassword)
     {
-       this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
+       this.farmerDetailsService.getFarmerName(this.searchedFarmerId)
              .subscribe((res) =>{
              if(this.currentPassword == res.password){
                    res.password = this.newPassword;
-                   this.farmerHeaderService.updateFarmerMobile(this.searchedFarmerId ,res )
+                   this.farmerDetailsService.updateFarmerMobile(this.searchedFarmerId ,res )
                    .subscribe((updatedInfo) =>{
                      if(this.newPassword == updatedInfo.password){
                       swal({

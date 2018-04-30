@@ -6,33 +6,43 @@ import 'rxjs/add/operator/map';
 import { App } from '../../config/app.config';
 
 @Injectable()
-export class FarmerHeaderService {
+export class FarmerDetailsService {
+
   constructor(private http : Http) { }
 
   private headers = new Headers({ 'Content-Type': 'application/json'});
 
+  //code to send token in the header
+private authorization() {
+  let token=localStorage.getItem("token");
+  if (token) {
+    let headers =new Headers();
+    headers.append('Authorization', token);
+    return new RequestOptions({ headers: headers });
+  }
+}
    // Function to get farmer's details
    getFarmerName(gotFarmerName) {
-    return this.http.get(App.nameMapping+gotFarmerName)
+    return this.http.get(App.nameMapping+gotFarmerName,this.authorization())
      .map(data => data.json(),
    (error: any)=>this.handleError(error));
    }
    // Function to update farmer's address 
    updateFarmerAddress(mobileNo,updatedInfo){
-    return this.http.put(App.alternateAddressMapping+mobileNo,updatedInfo,{headers: this.headers})
+    return this.http.put(App.alternateAddressMapping+mobileNo,updatedInfo,this.authorization())
     .map(data => data.json(),
     (error: any)=>this.handleError(error));
     }
    // Function to update farmer's mobile number
     updateFarmerMobile(searchedFarmer,updatedInfo){
-      return this.http.put(App.alternateMobileMapping+searchedFarmer,updatedInfo,{headers: this.headers})
+      return this.http.put(App.alternateMobileMapping+searchedFarmer,updatedInfo,this.authorization())
       .map(data => 
         data.json(),
       (error: any)=>this.handleError(error));
     }
      // Function to delete farmer's profile
      deleteFarmerProfile(searchedFarmer){
-      return this.http.delete(App.deleteProfileMapping+searchedFarmer)
+      return this.http.delete(App.deleteProfileMapping+searchedFarmer,this.authorization())
       .map(data => data.json(),
       (error: any)=>this.handleError(error));
     }
