@@ -1,7 +1,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div clas="mt-100">
   <h1> Upload Product </h1>
-<form [formGroup]="rForm" (ngSubmit)="check(rForm.value)">
+<form [formGroup]="rForm" (ngSubmit)="addProduct(rForm.value)">
 
   <div class = "card shadow">
     <div class="form-group">
@@ -62,7 +62,7 @@
 		  </div>
 
 		  <div class = form-comp>
-		  <input type="checkbox" name="available" formControlName="available" value="1"> In Stock
+		  <input type="addProductbox" name="available" formControlName="available" value="1"> In Stock
 		</div>
 
       <div class = form-comp>

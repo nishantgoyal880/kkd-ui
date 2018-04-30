@@ -1,55 +1,57 @@
-import { Injectable } from '@angular/core';
-import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import {CartConfig} from '../config/cart.config'
-import 'rxjs/add/operator/map';
+import { Injectable } from "@angular/core";
+import { Http, Response, RequestOptions, Headers } from "@angular/http";
+import { Observable } from "rxjs/Observable";
+import { CartConfig } from "../config/cart.config";
+import "rxjs/add/operator/map";
 
 @Injectable()
 export class CartService {
+  constructor(private http: Http) {}
 
-  constructor(private http:Http) { }
+  private headers = new Headers({ "Content-Type": "application/json" });
 
-  private headers = new Headers({ 'Content-Type': 'application/json'});
-
-  getCartItems(kkdCustId:string){
-   return this.http.get(CartConfig.cartUrl+kkdCustId).
-    map(data=>
-      data.json(),
-    error=> {
-      console.log(error);
-    });
+  //code to send token in the header
+  private authorization() {
+    let token = localStorage.getItem("token");
+    if (token) {
+      let headers = new Headers();
+      headers.append("Authorization", token);
+      return new RequestOptions({ headers: headers });
+    }
   }
 
-deleteCartItem(cartItem){
-  return this.http.delete(CartConfig.deleteItem+cartItem.cartItemId,{headers: this.headers}).
-  map(
-    data=> console.log("deleting"),
-    err=> console.log(err)
-  );
-}
+  getCartItems(kkdCustId: string) {
+    return this.http
+      .get(CartConfig.cartUrl + kkdCustId, this.authorization())
+      .map(
+        data => data.json(),
+        error => {
+          console.log(error);
+        }
+      );
+  }
 
-postOrder(order){
-  return this.http.post(CartConfig.addOrder,order,{headers: this.headers}).
-  map(
-    (data)=> console.log(data),
-    (err)=> console.log(err)
-  );
-}
+  deleteCartItem(cartItem) {
+    return this.http
+      .delete(CartConfig.deleteItem + cartItem.cartItemId, this.authorization())
+      .map(data => {}, err => console.log(err));
+  }
 
-updateProducts(product){
-  return this.http.put(CartConfig.updateProuct,product,{headers: this.headers}).
-  map((data)=>data.json(),
-  (err)=> console.log("hi"+err)
-)
-}
-// get customer Info
-getCustomerInfo(kkdCustId:string){
-  return this.http.get(CartConfig.customerDetails+kkdCustId).
-   map(data=>
-     data.json(),
-   error=> {
-     console.log(error);
-   });
- }
+  postOrder(order) {
+    return this.http
+      .post(CartConfig.addOrder, order, this.authorization())
+      .map(data => {}, err => console.log(err));
+  }
 
+  // get customer Info
+  getCustomerInfo(kkdCustId: string) {
+    return this.http
+      .get(CartConfig.customerDetails + kkdCustId, this.authorization())
+      .map(
+        data => data.json(),
+        error => {
+          console.log(error);
+        }
+      );
+  }
 }
