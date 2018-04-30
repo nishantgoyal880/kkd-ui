@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SearchService } from "../../services/search.service";
+import swal from 'sweetalert2'
 @Component({
   selector: "app-product-list",
   templateUrl: "./product-list.component.html",
@@ -132,12 +133,20 @@ export class ProductListComponent implements OnInit {
       this.cartItem["quantity"] = this.enteredQuant;
       this.searchService.addToCart(this.cartItem).subscribe(
         data => {
-          alert("added to bag");
+          swal(
+            'Thank you!',
+            'Items added to cart!',
+            'success'
+          )
         },
         err => console.log(err)
       );
     } else {
-      alert("No stocks Available for this much Qunatity");
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'We do not have that much stocks right now!'
+      })
     }
   }
 }

@@ -42,8 +42,8 @@
 							<div *ngIf="customerInfo; then address else emptyAddress"></div>
 							<ng-template #address>
 								<p> Products will be delivered to</p>
-								<p>{{customerInfo.primaryAddress.addressLine}}, {{customerInfo.primaryAddress.city}}</p>
-								<p>{{customerInfo.primaryAddress.district}}, {{customerInfo.primaryAddress.state}} -{{customerInfo.primaryAddress.pincode}}</p>
+								<p><strong>{{customerInfo.primaryAddress.addressLine}}, {{customerInfo.primaryAddress.city}}</strong></p>
+								<p><strong>{{customerInfo.primaryAddress.district}}, {{customerInfo.primaryAddress.state}} -{{customerInfo.primaryAddress.pincode}}</strong></p>
 							</ng-template>
 							<ng-template #emptyAddress>
 								<p> No Address linked</p>

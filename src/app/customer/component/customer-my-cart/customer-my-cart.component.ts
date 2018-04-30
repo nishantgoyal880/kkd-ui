@@ -15,7 +15,7 @@ export class CustomerMyCartComponent implements OnInit {
 
   @Input() kkdCustId: string;
   ngOnInit() {
-    this.kkdCustId = "KKDCUST2006";
+    this.kkdCustId = "KKDCUST2000";
     this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
       res => {
         this.customerInfo = res;
@@ -66,7 +66,7 @@ export class CustomerMyCartComponent implements OnInit {
       this.cartService
         .postOrder(orders)
         .subscribe(
-          res => console.log("orders successfully placed"),
+          res => {},
           err => console.log(err)
         );
     } else {

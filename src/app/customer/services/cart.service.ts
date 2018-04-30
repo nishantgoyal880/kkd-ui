@@ -40,7 +40,7 @@ export class CartService {
   postOrder(order) {
     return this.http
       .post(CartConfig.addOrder, order, this.authorization())
-      .map(data => console.log(data), err => console.log(err));
+      .map(data => {}, err => console.log(err));
   }
 
   // get customer Info
