@@ -15,19 +15,6 @@ h1 {
     text-shadow: 0 2px white, 0 3px #777;
     }
 
-/* h1{
-    text-align : center;
-    margin: 15px 0 0.5em 0;
-    padding-top: 10px;
-    color :#d84b6b;
-    font-weight: normal;
-    font-family: 'Roboto', sans-serif;   
-    font-size: 50px;
-    line-height: 42px;
-    text-transform: uppercase;
-    text-shadow: 0 2px white, 0 3px #777;   
-} */
-
 .jumbotron{
     background-color : #a9c056;
     margin-top : -15px;
