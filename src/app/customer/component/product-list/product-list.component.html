@@ -2,7 +2,6 @@
 <div class="container mt-100">
   <div class="row">
     <div class="col-md-3">
-
     </div>
     <div class="col-md-9 offset-md-3">
       <form class="form-inline mt-2 mt-md-0">
@@ -37,11 +36,10 @@
       <ion-range-slider #sliderElement
         type="double"
         min="0"
-        max="100"
+        max="{{max_price}}"
         from_shadow="true"
         to_shadow="true"
         grid="true"
-        grid_num="10"
         prefix="Price: "
         postfix=" Rs"
         decorate_both="false"
@@ -51,12 +49,11 @@
       <label class="my-3"><span>Filter By Quantity:</span></label>
       <ion-range-slider #sliderElement
         type="double"
-        max="50"
         min="0"
+        max="{{max_quantity}}"
         from_shadow="true"
         to_shadow="true"
         grid="true"
-        grid_num="5"
         prefix="Quantity:"
         postfix=" Kg"
         decorate_both="false"
