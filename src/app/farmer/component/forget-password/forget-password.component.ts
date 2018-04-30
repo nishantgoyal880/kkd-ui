@@ -3,6 +3,7 @@ import { RegistrationLoginService } from '../../services/registration-login-serv
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import { IdRoleService } from '../../../services/id-role/id-role.service'
 
 @Component({
 	selector: 'app-forget-password',
@@ -23,7 +24,7 @@ export class ForgetPasswordComponent implements OnInit {
 	hideVar2:boolean=false;
 	hideVar3:boolean=false;
 
-	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) { 
+	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router,private idRoleService: IdRoleService) { 
 		this.newPasswordForm = fb.group({
 			'password': [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
 			'confirmPassword' : ['',[Validators.required]],
@@ -117,9 +118,12 @@ export class ForgetPasswordComponent implements OnInit {
 				timer: 1000
 			})
 			//storing the token and farmer id
-			localStorage.removeItem('token');
 			localStorage.setItem("token",res.results.token);
-			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
+			//localStorage.setItem("id",res.results.kkdFarmId);
+			//localStorage.setItem("role",res.results.role);
+			this.idRoleService.id=res.results.kkdFarmId;
+			this.idRoleService.role=res.results.role;
+			alert(this.idRoleService.role)
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
 			swal({

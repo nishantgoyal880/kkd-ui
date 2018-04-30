@@ -75,7 +75,7 @@ export class AadhaarComponent implements OnInit {
 
 	getAadhaarData(post) {
 		//call aadhaar service to get aadhaar data
-		this.registrationService.addhaarData(post.aadhaarNo).subscribe((res) => {
+		/*this.registrationService.addhaarData(post.aadhaarNo).subscribe((res) => {
 			this.aadhaarData = res;
 			//go to otp page
 			this.hideVar = true;
@@ -100,7 +100,20 @@ export class AadhaarComponent implements OnInit {
 				footer: 'Enter Valid Aadhaar Number......',
 			})
 		})
-	}
+	}*/
+	this.registrationService.addhaarDataVerify(post.aadhaarNo).subscribe((res) => {
+				//sucessfully sended
+				this.aadhaarData = res;
+			//go to otp page
+			this.hideVar = true;
+		}, (err) => {
+			swal({
+				type: 'error',
+				title: 'Oops...',
+				text: 'Aadhaar Number Not Found!',
+				footer: 'Enter Valid Aadhaar Number......',
+			})
+		})
 
-
+}
 }

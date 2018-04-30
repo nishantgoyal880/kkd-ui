@@ -1,13 +1,14 @@
-
 <div class="container mt-100">
   <div class="row">
     <div class="col-md-3">
     </div>
     <div class="col-md-9 offset-md-3">
       <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control  searchText" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
-        <button class="btn btn-outline-primary my-2 my-sm-0 ml-1" type="submit" (click)='searchProduct()'><i class="fas fa-search"></i></button>
-    </form>
+        <input class="form-control  searchText" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput" />
+        <button class="btn btn-outline-primary my-2 my-sm-0 ml-1" type="submit" (click)='searchProduct()'>
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
     </div>
     <div class="col-md-3">
     </div>
@@ -17,10 +18,11 @@
 <div class="container my-4">
   <div class="row">
     <div class="col-md-3">
-      <div class="dropdown">
-       
-        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Sort By Relevance
+      <div class="dropdown ">
+
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Sort By Relevance
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" (click)="sortBy('priceLH')">Price: Low to High</a>
@@ -31,78 +33,65 @@
           <a class="dropdown-item" (click)="sortBy('popularity')">Popular</a>
         </div>
       </div>
-
-      <label class="my-3"><span>Filter By Price:</span></label>
-      <ion-range-slider #sliderElement
-        type="double"
-        min="0"
-        max="{{max_price}}"
-        from_shadow="true"
-        to_shadow="true"
-        grid="true"
-        prefix="Price: "
-        postfix=" Rs"
-        decorate_both="false"
-        (onFinish)="myOnFinishPrice($event)">
+      <!-- filtered by price start-->
+      <label class="my-3">
+        <span>Filter By Price:</span>
+      </label>
+      <ion-range-slider style="color:white" #sliderElement type="double" min="0" [max]=max_price [to_max]=max_price prefix="Price: "
+        postfix=" Rs" keyboard:true (onFinish)="myOnFinishPrice($event)">
       </ion-range-slider>
-      <!-- filtered by price-->
-      <label class="my-3"><span>Filter By Quantity:</span></label>
-      <ion-range-slider #sliderElement
-        type="double"
-        min="0"
-        max="{{max_quantity}}"
-        from_shadow="true"
-        to_shadow="true"
-        grid="true"
-        prefix="Quantity:"
-        postfix=" Kg"
-        decorate_both="false"
+      <!-- filtered by price end-->
+      <!-- filtered by quantity start-->
+      <label class="my-3">
+        <span>Filter By Quantity:</span>
+      </label>
+      <ion-range-slider #sliderElement type="double" min="0" [max]=max_quantity [to_max]=max_quantity prefix="Quantity:" postfix=" Kg"
         (onFinish)="myOnFinishQuantity($event)">
       </ion-range-slider>
-      <!-- filtered by Quantity-->
+      <!-- filtered by Quantity end-->
     </div>
     <!-- end of side bar-->
     <div *ngIf="products[0]; then prod else empty"></div>
-      <ng-template #prod>
-    <div class="col-md-9">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">
-            <div class="card shadow p-2 mb-3">
-              <!-- Card image -->
-              <div class="view overlay zoom">
-                <img class="card-img-top" src="{{item.imageUrl}}" alt="Product Image">
-              </div>
-              <!-- Card content -->
-              <div class="card-body text-center">
-                <!-- Title -->
-                <h5 class="card-title">
-                  <strong>{{item.productName}}</strong>
-                </h5>
-                <!-- Text -->
-                <div class="text-area">
-                  <p class="card-text">
-                    <b>Description: </b>{{item.description}}</p>
-                  <p class="card-text">
-                    <b>Price: </b>{{item.price}}/kg.</p>
-                  <p class="card-text">
-                    <b>Bulk Order Price: </b>{{item.bulkOrderPrice}}/kg.</p>
-                  <p class="card-text">
-                    <b>Quantity: </b>{{item.quantity}} Kg</p>
+    <ng-template #prod>
+      <div class="col-md-9">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">
+              <div class="card shadow p-2 mb-3">
+                <!-- Card image -->
+                <div class="view overlay zoom">
+                  <img class="card-img-top" src="{{item.imageUrl}}" alt="Product Image">
                 </div>
-                <hr>
-                <span>
+                <!-- Card content -->
+                <div class="card-body text-center">
+                  <!-- Title -->
+                  <h5 class="card-title">
+                    <strong>{{item.productName}}</strong>
+                  </h5>
+                  <!-- Text -->
+                  <div class="text-area">
+                    <p class="card-text">
+                      <b>Description: </b>{{item.description}}</p>
+                    <p class="card-text">
+                      <b>Price: </b>{{item.price}}/kg.</p>
+                    <p class="card-text">
+                      <b>Bulk Order Price: </b>{{item.bulkOrderPrice}}/kg.</p>
+                    <p class="card-text">
+                      <b>Quantity: </b>{{item.quantity}} Kg</p>
+                  </div>
+                  <hr>
+                  <span>
                     <button type="button" class="btn btn-success mt-4" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1">Add to Bag</button>
-                </span>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- end of search results-->
+        <pagination-controls (pageChange)="p=$event" *ngIf="products[0]"></pagination-controls>
       </div>
-      <!-- end of search results-->
-      <pagination-controls (pageChange)="p=$event" *ngIf="products[0]"></pagination-controls>
-    </div>
-      </ng-template>
+    </ng-template>
     <ng-template #empty>
       <div class="col-md-9">
         <img src="./../../../../assets/images/not-found.png" alt="no products found">
@@ -122,10 +111,10 @@
         </button>
       </div>
       <div class="modal-body">
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Please Enter Quantity</label>
-            <input type="number" min="1" class="form-control" id="recipient-name" [(ngModel)]="enteredQuant">
-          </div>
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label">Please Enter Quantity</label>
+          <input type="number" min="1" class="form-control" id="recipient-name" [(ngModel)]="enteredQuant">
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
