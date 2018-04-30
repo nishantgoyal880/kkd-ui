@@ -1,8 +1,7 @@
-
 <!-- <h1 class="text-center">My Account</h1>
 <br> -->
 <div class="container-fluid mt-100">
-  
+
   <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">My Orders</a>
@@ -85,12 +84,12 @@
                         <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit</button>
                      </div></div></form>
   </div>
- 
+
         <div class="tab-pane change-password" id="settings1" role="tabpanel">
                 <h1> Delete Profile </h1>
 
                 <form [formGroup]="rFormDeleteProfile" (ngSubmit)="deleteUser(rFormDeleteProfile.value)">
-                    
+
                   <div class = "card shadow">
                     <div class="form-group">
 
@@ -120,8 +119,3 @@
                      </div></div></form>
         </div>
 </div></div>
-
-
-
-
-

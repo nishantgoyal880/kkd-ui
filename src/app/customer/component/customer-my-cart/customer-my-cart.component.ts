@@ -15,9 +15,8 @@ export class CustomerMyCartComponent implements OnInit {
   };
 
   @Input() kkdCustId:string;
-
   ngOnInit() {
-    this.kkdCustId="KKDCUST2001";
+    this.kkdCustId="KKDCUST2002";
     this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
       (res)=> {
         this.customerInfo=res;
@@ -50,9 +49,9 @@ export class CustomerMyCartComponent implements OnInit {
     );
   }
 
-  orders = [];
-  convertOrder() {
-    this.orders = this.items.map(ele => {
+  checkout() {
+    let orders:Array<object>=[];
+    this.items.map((ele) => {
       let d=new Date();
       ele["kkdCustId"]=ele.custId;
       ele["kkdFarmId"]=ele.kkdFarmID;
@@ -62,13 +61,10 @@ export class CustomerMyCartComponent implements OnInit {
       ele["totalAmount"] = ele.quantity*ele.productPrice;
       ele["orderType"] = "Current";
       ele["orderPlacingDate"]=d.getFullYear()+'-0'+(d.getMonth()+1)+'-'+d.getDate();
-      this.cartService
-        .postOrder(ele)
-        .subscribe(res => console.log(ele), err => console.log(err));
+      orders.push(ele);
     });
-}
-
-  checkout() {
-    this.convertOrder();
+    this.cartService
+      .postOrder(orders)
+      .subscribe(res => console.log("orders successfully placed"), err => console.log(err));
   }
 }

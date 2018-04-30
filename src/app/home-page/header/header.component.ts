@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
  public searchInput:String;
  public search:String;
  public loggedIn:any=false;
- public role:any="customer";
+ public role:any="farmer";
 
  constructor() { }
 
