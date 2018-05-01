@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { DebugElement } from '@angular/core';
 import { FarmerAddProductComponent } from './farmer-add-product.component';
 
-describe('FarmerAddProductComponent', () => {
+fdescribe('FarmerAddProductComponent', () => {
   let component: FarmerAddProductComponent;
   let fixture: ComponentFixture<FarmerAddProductComponent>;
   let de: DebugElement;
@@ -45,12 +45,31 @@ describe('FarmerAddProductComponent', () => {
     expect(el.innerText).toEqual('Upload Product');
   }));
 
+  it('should call the onFileSelected method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'onFileSelected');
+    el=fixture.debugElement.query(By.css('input')).nativeElement;
+    el.click();
+    //console.log(component.onFileSelected);
+    expect(component.onFileSelected).toHaveBeenCalledTimes(0);
+  }));
+
   it('should call the addProduct method', async(() => {
     fixture.detectChanges();
     spyOn(component,'addProduct');
     el=fixture.debugElement.query(By.css('button')).nativeElement;
     el.click();
+    //console.log(component.addProduct);
     expect(component.addProduct).toHaveBeenCalledTimes(0);
+  }));
+
+  it('should call the selectChangeHandler method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'selectChangeHandler');
+    el=fixture.debugElement.query(By.css('select')).nativeElement;
+    el.click();
+    //console.log(component.selectChangeHandler);
+    expect(component.selectChangeHandler).toHaveBeenCalledTimes(0);
   }));
 
   it('form should be invalid', async(() => {

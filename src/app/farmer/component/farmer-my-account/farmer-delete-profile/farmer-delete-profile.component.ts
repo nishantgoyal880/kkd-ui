@@ -18,42 +18,37 @@ export class FarmerDeleteProfileComponent implements OnInit {
   constructor(private farmerDetailsService : FarmerDetailsService,private fb: FormBuilder) {
     this.rForm = fb.group({
       currentPassword : [null, Validators.compose([Validators.required])]
-  })
+  });
    }
+   ngOnInit(){
+
+  }
 
   /* Function to delete farmer's profile by his KKDId
   and make service call to delete farmer's profile from app */
   deleteFarmerProfile(post){
-    this.farmerDetailsService.getFarmerName(this.searchedFarmerId)
-    .subscribe((res) =>{
-      if(post.currentPassword == res.password){
-        this.delete=true;
-        this.deletingProfile();
-      } else{
-        swal({
-          position: 'top',
-          type: 'error',
-          title: 'Wrong Password',
-          text:'Please Enter Correct Password'
-        })
-      }     
-     },(error) =>{
-
-    });  
-  }
-  deletingProfile(){
-    if(this.delete==true){
-      this.farmerDetailsService.deleteFarmerProfile(this.searchedFarmerId).subscribe((data)=>{
-        swal({
-          position: 'top',
-          type: 'success',
-          title: 'Your profile has deleted successfully',
-          timer: 1500
-        })
+    let userInfo={
+      kkdFarmId:this.searchedFarmerId,
+      password:post.currentPassword
+    };
+    this.farmerDetailsService.deleteFarmerProfile(userInfo).subscribe((data:boolean)=>{
+        if(data==true){
+          swal({
+            position: 'top',
+            type: 'success',
+            title: 'Your profile has deleted successfully',
+            timer: 1500
+          })
+        }
+        else{
+          swal({
+            position: 'top',
+            type: 'error',
+            title: 'Wrong Password',
+            text:'Please Enter Correct Password'
+          })
+        }
       },(err)=> console.log(err));
     }
+    
   }
-
-  ngOnInit() {
-  }
-}
