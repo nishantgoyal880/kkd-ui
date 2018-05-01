@@ -30,9 +30,9 @@ export const CUSTOMERDETAILS:Customer={
 
   export const DETAILS: Customer = {
     "kkdCustId": "KKDCUST2000",
-    "mobileNo": "9468075105",
+    "mobileNo": "7418832509",
     "password": null,
-    "firstName": "string",
+    "firstName": "Sridharan",
     "lastName": "string",
     "addresses": [
       {
