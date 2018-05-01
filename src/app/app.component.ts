@@ -20,12 +20,14 @@ export class AppComponent implements OnInit {
 
 	currentLat: any;
 	currentLong: any;
+	city: any;
 
 	constructor(
 		public router: Router,
 		private verifyTokenService: VerifytokenService,
 		private idRoleService: IdRoleService
 	) {
+
 
 	}
 
@@ -56,17 +58,14 @@ export class AppComponent implements OnInit {
 
 	getLocation() {
 		if (navigator.geolocation) {
-			console.log("inside");
 			navigator.geolocation.getCurrentPosition((position) => {
-				//alert(position);
 				this.currentLat = position.coords.latitude;
 				this.currentLong = position.coords.longitude;
 				console.log("lat:" + this.currentLat);
 				console.log("lon:" + this.currentLong);
 				this.getAddress(this.currentLat, this.currentLong)
 					.then((location) => {
-						swal("You are in " + location);
-						//console.log("You are in " +location);
+						this.city = location;
 					}
 					)
 					.catch((error) => {

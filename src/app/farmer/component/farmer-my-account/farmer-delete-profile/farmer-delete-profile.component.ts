@@ -8,7 +8,7 @@ import swal from 'sweetalert2';
   selector: 'app-farmer-delete-profile',
   templateUrl: './farmer-delete-profile.component.html',
   styleUrls: ['./farmer-delete-profile.component.css'],
-  providers:[FarmerDetailsService]
+  providers:[FarmerDetailsService, IdRoleService]
 })
 export class FarmerDeleteProfileComponent implements OnInit {
 

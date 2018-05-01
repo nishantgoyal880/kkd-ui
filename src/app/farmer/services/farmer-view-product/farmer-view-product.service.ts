@@ -15,9 +15,9 @@ export class FarmerViewProductService {
   // private headers = new Headers({ 'Content-Type': 'application/json'});
 
   //getting all data of particular farmer from database service
-  public getAllProducts() {
-    const options = new RequestOptions({headers: this.header});
-    return this.http.get(viewProductServiceUrl.viewProductUrl,options)
+  public getAllProducts(id:any) {
+    console.log("in product service:"+id);
+    return this.http.get(viewProductServiceUrl.viewProductUrl+id+"/product",this.authorization())
     .map(data => data.json(),
       error => this.handleError(error)
     )
@@ -25,7 +25,7 @@ export class FarmerViewProductService {
 
   //deleting a particular product from database service
   public deleteParticularProduct(id : any) {
-      return this.http.delete(viewProductServiceUrl.Url+id)
+      return this.http.delete(viewProductServiceUrl.Url+id,this.authorization())
       .map(data => data.status,
         error => this.handleError(error)
       )
@@ -33,8 +33,7 @@ export class FarmerViewProductService {
 
   //updating a particular product from database service
   public update(productSubmission){
-    const options = new RequestOptions({headers: this.header});
-    return this.http.put(viewProductServiceUrl.Url,productSubmission,options)
+    return this.http.put(viewProductServiceUrl.Url,productSubmission,this.authorization())
      .map(data => data.json(),
     (error: any)=>this.handleError(error)); 
    }
@@ -42,6 +41,16 @@ export class FarmerViewProductService {
    //handling errors
   private handleError(error) {
     console.log("Logging the error occured in the service");
+  }
+
+  //code to send token in the header
+  private authorization() {
+    let token=localStorage.getItem("token");
+    if (token) {
+      let headers =new Headers();
+      headers.append('Authorization', token);
+      return new RequestOptions({ headers: headers });
+    }
   }
 
 }
