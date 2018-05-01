@@ -1,5 +1,4 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { FarmerAddProductService } from './farmer-add-product.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
