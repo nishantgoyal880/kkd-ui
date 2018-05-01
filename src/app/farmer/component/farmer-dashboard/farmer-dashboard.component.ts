@@ -21,7 +21,6 @@ export class FarmerDashboardComponent implements OnInit {
     })
 
     this.idRoleService.id.subscribe((kkdId) =>{
-      console.log('id')
       console.log(kkdId)
     })
   }

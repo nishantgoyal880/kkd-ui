@@ -26,25 +26,25 @@ export class AppComponent implements OnInit {
 		private verifyTokenService: VerifytokenService,
 		private idRoleService: IdRoleService
 	) {
+
+	}
+
+	ngOnInit() {
+
+		this.getLocation();
 		if (!localStorage.getItem("token")) {
 			this.router.navigate(['/home']);
 		}
 		else {
 			this.verifyToken();
 		}
-	}
-
-	ngOnInit() {
-
-		this.getLocation();
 
 	}
 
 	verifyToken() {
 		this.verifyTokenService.verifyToken(localStorage.getItem("token"))
-
 		.subscribe((res) =>{
-			console.log(res.results.kkdId);
+			console.log(res.results.kkdId+" "+res.results.role)
 			this.idRoleService.id.emit(res.results.kkdId);
 			this.idRoleService.role.emit(res.results.role);
 		}, (err) =>{
