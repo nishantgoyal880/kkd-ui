@@ -11,7 +11,7 @@ import swal from 'sweetalert2';
 })
 export class FarmerChangePasswordComponent implements OnInit {
  
-  public searchedFarmerId: string="KKDFARM1000";
+  public searchedFarmerId: string="KKDFARM1001";
   public newPassword:string;
   public reenterNewPassword:string;
   public currentPassword:string;
@@ -25,6 +25,11 @@ export class FarmerChangePasswordComponent implements OnInit {
       reenterNewPassword : [null, Validators.compose([Validators.required])]
   })
   }
+
+  ngOnInit(){
+    
+  }
+
   /* Function to change farmer's password by his KKDId
   and make service call to change farmer's password from app */
   resetPassword(post){
@@ -35,38 +40,35 @@ export class FarmerChangePasswordComponent implements OnInit {
     }    
     if(this.newPassword == this.reenterNewPassword)
     {
-       this.farmerDetailsService.getFarmerName(this.searchedFarmerId)
-             .subscribe((res) =>{
-             if(this.currentPassword == res.password){
-                   res.password = this.newPassword;
-                   this.farmerDetailsService.updateFarmerMobile(this.searchedFarmerId ,res )
-                   .subscribe((updatedInfo) =>{
-                     if(this.newPassword == updatedInfo.password){
-                      swal({
-                        position: 'top-end',
-                        type: 'success',
-                        title: 'Your password has changed successfully',
-                        showConfirmButton: false,
-                        timer: 1500
-                      })
-                     }
-                     }, (error) =>{
-                      swal({
-                        type: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong!',
-                      })
-                     })
-             }else{
-              swal("Incorrect current password");
-             }
-             }, (error) =>{
-             })
-          }
-    else{
-      swal("Re-enter the new password correctly");
-    }
+      let resetPassInfo={
+        userId:this.searchedFarmerId,
+        currentPassword:post.currentPassword,
+        newPassword:post.newPassword
+      }
+      this.farmerDetailsService.updatePassword(resetPassInfo).subscribe((res:boolean)=>{
+        if(res==true){
+          swal({
+            position: 'top-end',
+            type: 'success',
+            title: 'Your password has changed successfully',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        }
+        else{
+          swal("Re-enter the password correctly");
+        }
+      },(error)=>{
+        swal({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+        });
+      });
   }
-  ngOnInit() {
+  else{
+    swal("Re-enter the new password correctly");
   }
+  }
+  
 }
