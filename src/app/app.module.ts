@@ -18,6 +18,8 @@ import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { IdRoleService } from './services/id-role/id-role.service'
+import { NgxPermissionsModule } from 'ngx-permissions';
+import { DemoComponent } from './demo/demo.component';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { IdRoleService } from './services/id-role/id-role.service'
   PoliciesComponent,
   ConnectUsComponent,
   HomePageComponent,
+  DemoComponent,
   ],
   imports: [
   BrowserModule,
@@ -48,7 +51,8 @@ import { IdRoleService } from './services/id-role/id-role.service'
     customClass: 'modal-content',
     confirmButtonClass: 'btn btn-primary',
     cancelButtonClass: 'btn'
-})
+}),
+NgxPermissionsModule.forRoot()
 ],
  providers:[IdRoleService],
   bootstrap: [AppComponent]

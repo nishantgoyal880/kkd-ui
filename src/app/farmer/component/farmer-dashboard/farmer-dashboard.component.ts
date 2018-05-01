@@ -15,7 +15,14 @@ export class FarmerDashboardComponent implements OnInit {
   constructor(private idRoleService: IdRoleService ) { }
 
   ngOnInit() {
-  	alert(this.idRoleService.id);
-  }
+    this.idRoleService.role.subscribe((role) =>{
+      console.log('role8888888888888888888')
+      console.log(role)
+    })
 
+    this.idRoleService.id.subscribe((kkdId) =>{
+      console.log('id')
+      console.log(kkdId)
+    })
+  }
 }

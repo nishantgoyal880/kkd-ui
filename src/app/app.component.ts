@@ -25,9 +25,10 @@ export class AppComponent {
 
 	verifyToken(){
 		this.verifyTokenService.verifyToken(localStorage.getItem("token"))
-		.subscribe((res) =>{ 
-			this.idRoleService.id=res.results.kkdId;
-			this.idRoleService.role=res.results.role;
+		.subscribe((res) =>{
+			console.log(res.results.kkdId);
+			this.idRoleService.id.emit(res.results.kkdId);
+			this.idRoleService.role.emit(res.results.role);
 		}, (err) =>{
 			alert("Invalid");
 		})

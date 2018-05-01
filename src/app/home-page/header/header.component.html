@@ -39,13 +39,13 @@
           </li>
       </ul>
 
-      <ul class="navbar-nav justify-content-end" *ngIf="loggedIn==true && role=='farmer'">
+      <ul class="navbar-nav justify-content-end" *ngIf="loggedIn==true && role=='Farmer'">
         <li class="nav-item">
           <a class="nav-link" routerLink="/home"><i class="fas fa-sign-out-alt mr-1"></i>Log Out</a>
         </li>
       </ul>
 
-      <ul class="navbar-nav justify-content-end" *ngIf="loggedIn==true && role=='customer'">
+      <ul class="navbar-nav justify-content-end" *ngIf="loggedIn==true && role=='Customer'">
         <li class="nav-item">
           <a class="nav-link" routerLink="/customer/myAccount"><i class="far fa-user-circle mr-1"></i>My Account</a>
         </li>
