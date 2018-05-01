@@ -41,13 +41,18 @@ private authorization() {
       (error: any)=>this.handleError(error));
     }
      // Function to delete farmer's profile
-     deleteFarmerProfile(searchedFarmer){
-      return this.http.delete(App.deleteProfileMapping+searchedFarmer,this.authorization())
+     deleteFarmerProfile(userDetails){
+      return this.http.put(App.deleteProfileMapping,userDetails,this.authorization())
       .map(data => data.json(),
       (error: any)=>this.handleError(error));
     }
    // Function to handle errors
     private handleError(error: Response){
       return Observable.throw(error.statusText);
+    }
+    updatePassword(passwordResetInfo){
+      return this.http.put(App.changePasswordMapping,passwordResetInfo,this.authorization()).
+      map( data=> data.json(),
+      (error:any)=> this.handleError(error));
     }
 }

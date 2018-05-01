@@ -17,32 +17,27 @@ export class FarmerDeleteProfileComponent implements OnInit {
   constructor(private farmerDetailsService : FarmerDetailsService,private fb: FormBuilder) {
     this.rForm = fb.group({
       currentPassword : [null, Validators.compose([Validators.required])]
-  })
+  });
    }
+   ngOnInit(){
+
+  }
 
   /* Function to delete farmer's profile by his KKDId
   and make service call to delete farmer's profile from app */
   deleteFarmerProfile(post){
-    this.farmerDetailsService.getFarmerName(this.searchedFarmerId)
-    .subscribe((res) =>{
-      if(post.currentPassword == res.password){
-        this.delete=true;
-        this.deletingProfile();
-      } else{
-        alert("Incorrect current password");
-      }     
-     },(error) =>{
-
-    });  
-  }
-  deletingProfile(){
-    if(this.delete==true){
-      this.farmerDetailsService.deleteFarmerProfile(this.searchedFarmerId).subscribe((data)=>{
-        alert("Successfully Deleted");
+    let userInfo={
+      kkdFarmId:this.searchedFarmerId,
+      password:post.currentPassword
+    };
+    this.farmerDetailsService.deleteFarmerProfile(userInfo).subscribe((data:boolean)=>{
+        if(data==true){
+          alert("successfully deleted");
+        }
+        else{
+          alert("incorrect password");
+        }
       },(err)=> console.log(err));
     }
+    
   }
-
-  ngOnInit() {
-  }
-}
