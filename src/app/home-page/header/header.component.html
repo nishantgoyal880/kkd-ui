@@ -27,6 +27,9 @@
          <li class="nav-item active">
            <a class="nav-link" routerLink="/support"><i class="fa fa-envelope mr-1"></i>Support</a>
          </li>
+         <li class="nav-item active">
+          <a class="nav-link ml-5" routerLink="/support">You are in <i class="fa fa-map-marker mr-1 ml-2"></i>{{city}}</a>
+        </li>
        </ul>
        <ul *ngIf="loggedIn==false">
           <li class="nav-item">
