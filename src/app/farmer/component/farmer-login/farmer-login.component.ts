@@ -37,6 +37,7 @@ export class FarmerLoginComponent implements OnInit {
 			localStorage.setItem("token",res.results.token);
 			this.idRoleService.id.emit(res.results.kkdFarmId);
 			this.idRoleService.role.emit(res.results.role);
+			this.idRoleService.isLoggedIn.emit(true);
 
 			alert(this.idRoleService.role);
 			this.router.navigate(['/farmer/dashboard']);
