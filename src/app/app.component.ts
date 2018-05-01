@@ -62,14 +62,29 @@ export class AppComponent implements OnInit {
 				this.currentLat = position.coords.latitude;
 				this.currentLong = position.coords.longitude;
 				console.log("lat:" + this.currentLat);
-				console.log(this.currentLong);
+				console.log("lon:" + this.currentLong);
 				this.getAddress(this.currentLat, this.currentLong)
 					.then((location) => {
 						swal("You are in " + location);
 						//console.log("You are in " +location);
 					}
 					)
-					.catch(console.error);
+					.catch((error) => {
+						console.log(error);
+					});
+			}, (error) => {
+				switch (error.code) {
+					case error.PERMISSION_DENIED:
+						console.log("User denied the request for Geolocation.");
+						break;
+					case error.POSITION_UNAVAILABLE:
+						console.log("Location information is unavailable.");
+						break;
+					case error.TIMEOUT:
+						console.log("The request to get user location timed out.");
+						break;
+				}
+
 			});
 		} else {
 			alert("Geolocation is not supported by this browser.");
