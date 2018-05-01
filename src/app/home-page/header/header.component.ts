@@ -13,12 +13,16 @@ export class HeaderComponent implements OnInit {
 
  constructor(private idRoleService:IdRoleService) {
    console.log("Header Component------------");
-
-    // idRoleService.role.subscribe((data: any) =>{this.role = data;console.log(this.role)},(err)=>{
-   // })
+   this.idRoleService.role.subscribe((role) =>{
+     console.log("In header role")
+     console.log(role)
+     this.role=role;
+   })
+   this.idRoleService.id.subscribe((id) =>{
+     console.log("In header id")
+     console.log(id)
+   })
  }
-
-
 
  ngOnInit() {
  }
