@@ -16,7 +16,7 @@ export class ForgetPasswordComponent implements OnInit {
 	newPasswordForm: FormGroup;
 	numberForm: FormGroup;
 	otpForm: FormGroup;
-	post:any;   
+	post:any;
 	mobileNo:String;
 	password:String;
 	confirmPassword:String;
@@ -24,7 +24,7 @@ export class ForgetPasswordComponent implements OnInit {
 	hideVar2:boolean=false;
 	hideVar3:boolean=false;
 
-	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router,private idRoleService: IdRoleService) { 
+	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router,private idRoleService: IdRoleService) {
 		this.newPasswordForm = fb.group({
 			'password': [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
 			'confirmPassword' : ['',[Validators.required]],
@@ -52,7 +52,7 @@ export class ForgetPasswordComponent implements OnInit {
 			return confirmPasswordField.setErrors(null);
 		}
 	}
-	
+
 
 	sendOtp(post) {
 		this.mobileNo=post.mobileNo;
@@ -64,7 +64,7 @@ export class ForgetPasswordComponent implements OnInit {
 		}, (err) =>{
 			console.log(err);
 		})
-		
+
 	}
 
 	verifyOtp(post) {
@@ -119,11 +119,9 @@ export class ForgetPasswordComponent implements OnInit {
 			})
 			//storing the token and farmer id
 			localStorage.setItem("token",res.results.token);
-			//localStorage.setItem("id",res.results.kkdFarmId);
-			//localStorage.setItem("role",res.results.role);
 			this.idRoleService.id.emit(res.results.kkdFarmId);
 			this.idRoleService.role.emit(res.results.role);
-			alert(this.idRoleService.role)
+			this.idRoleService.isLoggedIn.emit(true);
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
 			swal({
