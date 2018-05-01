@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerDetailsService } from '../../../services/farmer-details/farmer-details.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-farmer-delete-profile',
@@ -29,7 +30,12 @@ export class FarmerDeleteProfileComponent implements OnInit {
         this.delete=true;
         this.deletingProfile();
       } else{
-        alert("Incorrect current password");
+        swal({
+          position: 'top',
+          type: 'error',
+          title: 'Wrong Password',
+          text:'Please Enter Correct Password'
+        })
       }     
      },(error) =>{
 
@@ -38,7 +44,12 @@ export class FarmerDeleteProfileComponent implements OnInit {
   deletingProfile(){
     if(this.delete==true){
       this.farmerDetailsService.deleteFarmerProfile(this.searchedFarmerId).subscribe((data)=>{
-        alert("Successfully Deleted");
+        swal({
+          position: 'top',
+          type: 'success',
+          title: 'Your profile has deleted successfully',
+          timer: 1500
+        })
       },(err)=> console.log(err));
     }
   }
