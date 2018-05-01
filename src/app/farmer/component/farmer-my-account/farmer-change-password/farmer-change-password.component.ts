@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerDetailsService } from '../../../services/farmer-details/farmer-details.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IdRoleService } from '../../../../services/id-role/id-role.service';
 import swal from 'sweetalert2';
 
 @Component({
@@ -11,18 +12,26 @@ import swal from 'sweetalert2';
 })
 export class FarmerChangePasswordComponent implements OnInit {
  
-  public searchedFarmerId: string="KKDFARM1001";
+  public searchedFarmerId: string;
+  public role: string;
   public newPassword:string;
   public reenterNewPassword:string;
   public currentPassword:string;
   public details;
   rForm: FormGroup;
 
-  constructor(private farmerDetailsService : FarmerDetailsService,private fb: FormBuilder) { 
+  constructor(private farmerDetailsService : FarmerDetailsService,
+    private fb: FormBuilder,private idRoleService: IdRoleService) { 
     this.rForm = fb.group({
       currentPassword : [null, Validators.compose([Validators.required])],
       newPassword : [null, Validators.compose([Validators.required])],
       reenterNewPassword : [null, Validators.compose([Validators.required])]
+  })
+  this.idRoleService.role.subscribe((role) =>{
+    this.role=role;
+  })
+  this.idRoleService.id.subscribe((id) =>{
+    this.searchedFarmerId=id;
   })
   }
 

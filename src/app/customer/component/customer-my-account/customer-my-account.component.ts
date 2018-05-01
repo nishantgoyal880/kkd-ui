@@ -74,24 +74,19 @@ export class CustomerMyAccountComponent implements OnInit {
 })
 }
 
-  ngOnInit() {
-    
-   this.customerAuthenticationService.changeCustomerId("kkdcust2000");
-  }
+  ngOnInit() {}
   
-   onSubmit(post){
-    
+  onSubmit(post){
   this.mobileNumber=post.mobileNumber;
   this.currentPassword=post.currentPassword;
   this.newPassword=post.newPassword;
   this.reenterNewPassword=post.reenterNewPassword;
-    var regularExpression  = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  var regularExpression  = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if(!(isNaN(+this.mobileNumber)) && this.mobileNumber.length==10 ){
     if(this.currentPassword.length && this.newPassword.length && this.reenterNewPassword.length ){
     if(regularExpression.test(this.newPassword)){
       if(this.newPassword == this.reenterNewPassword)
     {
-    
       this.customerAuthenticationService.getUserDetails(this.mobileNumber)
             .subscribe((res) =>{
             if(!(res == null)){
