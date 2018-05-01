@@ -5,6 +5,7 @@ import { IdRoleService } from '../../../../services/id-role/id-role.service';
 import swal from 'sweetalert2';
 import { FarmerAddProductService } from '../../../services/farmer-add-product/farmer-add-product.service';
 
+
 @Component({
   selector: 'app-farmer-add-product',
   templateUrl: './farmer-add-product.component.html',
