@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { IdRoleService } from '../../services/id-role/id-role.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
  public loggedIn:any=true;
  public role:any;
+ @Input() city: any;
 
  constructor(private idRoleService:IdRoleService) {
    console.log("Header Component------------");
