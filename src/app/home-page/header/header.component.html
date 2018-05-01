@@ -26,7 +26,6 @@
           <a class="nav-link" id="settings-tab" data-toggle="tab" routerLink="/support" role="tab" aria-controls="settings" aria-selected="false"><i class="fa fa-envelope mr-1"></i>Support</a>
         </li>
         <li class="nav-item">
-
           <a class="nav-link ml-5" routerLink="/support">You are in <i class="fa fa-map-marker mr-1 ml-2"></i>{{city}}</a>
         </li>
       </ul>
@@ -45,22 +44,19 @@
               </div>
           </li>
       </ul>
-
-      <ul class="navbar-nav justify-content-end" *ngIf="loggedIn==true && role=='Farmer'">
+      <ul class="nav nav-tabs" id="myTab" role="tablist" *ngIf="loggedIn==true && role=='Farmer'">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home" (click)="changeOnClickOfLogOut()"><i class="fa fa-sign-out mr-1"></i>Log Out</a>
+          <a class="nav-link" routerLink="/home" role="tab" (click)="changeOnClickOfLogOut()"><i class="fa fa-sign-out mr-1"></i>Log Out</a>
         </li>
       </ul>
-
-      <ul class="navbar-nav justify-content-end" *ngIf="loggedIn==true && role=='Customer'">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/customer/myCart"><i class="fa fa-cart-arrow-down mr-1"></i>My Cart</a>
+      <ul class="nav nav-tabs" id="myTab" role="tablist" *ngIf="loggedIn==true && role=='Customer'">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/customer/myCart" role="tab" data-toggle="tab"><i class="fa fa-cart-arrow-down mr-1"></i>My Cart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home" (click)="changeOnClickOfLogOut()"> <i class="fa fa-sign-out mr-1"></i>LogOut</a>
+          <a class="nav-link" routerLink="/home" (click)="changeOnClickOfLogOut()" role="tab" data-toggle="tab"> <i class="fa fa-sign-out mr-1"></i>LogOut</a>
         </li>
       </ul>
-
      </div>
      </div>
    </nav>

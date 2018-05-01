@@ -10,7 +10,7 @@ nav{
 a{
   color: #29a745;
 }
-.nav-link.active{
+.show{
   color:#767a82;
 }
 
@@ -44,3 +44,21 @@ a{
       text-align: left;
     }
   }
+
+  .navbar-dark .navbar-toggler {
+    color: rgba(255,255,255,.5);
+    border-color: rgba(255,255,255,.1);
+}
+
+.navbar-toggler {
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: #35a041;
+  border: 1px solid #35a041;
+      border-top-color: rgb(53, 160, 65);
+      border-right-color: rgb(53, 160, 65);
+      border-bottom-color: rgb(53, 160, 65);
+      border-left-color: rgb(53, 160, 65);
+  border-radius: .25rem;
+}
