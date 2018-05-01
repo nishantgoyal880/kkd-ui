@@ -3,7 +3,7 @@ import{CustomerAuthenticationService} from '../../services/customer-authenticati
 import{UserDetails} from '../../config/user-details.config';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer-my-account',
@@ -101,32 +101,70 @@ export class CustomerMyAccountComponent implements OnInit {
                   this.customerAuthenticationService.updatePassword(this.userDetails )
                   .subscribe((updatedInfo) =>{
                     if( updatedInfo == true){
-                      alert("Password changed successfully");
+                      swal({
+                        position: 'center',
+                        type: 'success',
+                        title: 'Password changed successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                     }else{
-                      alert("Incorrect Password");
+                      swal({
+                        type: 'error',
+                        title: 'Incorrect Password',
+                        text: 'Please enter the correct current password',
+                      })
                     }
                     }, (error) =>{
-                      alert ("Mobile number not registered");
+                      swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong! Try after some time',
+                      })
                     })
            }else{
-              alert ("Mobile number not registered");
+            swal({
+              type: 'error',
+              title: 'Incorrect mobile number',
+              text: 'Mobile number is not registered',
+            })
             }
             }, (error) =>{
-            alert ("Mobile number not registered");
+              swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong! Try after some time',
+              })
             })
           }
     else{
-      alert("Re-enter the new password correctly");
+      swal({
+        type: 'error',
+        title: 'Passwords mismatch',
+        text: 'Re-enter the new password correctly',
+      })
     }}
     else{
-      alert("New password must contain at least one number and one uppercase"+ 
-      " and one lowercase and one special case, and at least 8 characters");
+      swal({
+        type: 'error',
+        title: 'Invalid Password format',
+        text: "New password must contain at least one number and one uppercase"+ 
+        " and one lowercase and one special case, and at least 8 characters",
+      })
+      }}
+    else{
+      swal({
+        type: 'error',
+        title: 'Empty fields',
+        text: 'Please fill all the fields',
+      })
     }}
     else{
-      alert("Please fill all the fields");
-    }}
-    else{
-      alert("Enter a valid mobile number");
+      swal({
+        type: 'error',
+        title: 'Invalid mobile number format',
+        text: 'Enter a valid mobile number of 10 digits' ,
+      })
     }
   }
   
@@ -143,19 +181,45 @@ export class CustomerMyAccountComponent implements OnInit {
             .subscribe((status) =>{
               if(!(status == null)){
               if( status == true){
-                alert("Profile Deleted successfully");
+                swal({
+                  position: 'center',
+                  type: 'success',
+                  title: 'Profile deleted successfully',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
               }else{
-                alert("Incorrect Password");
+                swal({
+                  type: 'error',
+                  title: 'Incorrect Password',
+                  text: 'Please enter the correct current password',
+                })
               }}else{
-                alert("Mobile number not registered");
+                swal({
+                  type: 'error',
+                  title: 'Incorrect mobile number',
+                  text: 'Mobile number is not registered',
+                })
               }
         
         }, (error) =>{
-               alert("Internal Error : Can't delete right now")
+          swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
         })}else{
-    alert ("Password field cannot be empty");
+          swal({
+            type: 'error',
+            title: 'Empty password field',
+            text: 'Password field cannot be empty',
+          })
   }}else{
-    alert("Enter a valid mobile number");
+    swal({
+      type: 'error',
+      title: 'Invalid mobile number format',
+      text: 'Enter a valid mobile number of 10 digits' ,
+    })
   }
 }
 }

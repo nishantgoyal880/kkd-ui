@@ -5,4 +5,6 @@ export class RegistrationLogin{
 	public static aadhaar_api="http://localhost:3000/aadhaarData/";
 	public static otp_generate="http://10.151.60.206:8765/api/verification-information-service/generateotp/";
 	public static otp_verify="http://10.151.60.206:8765/api/verification-information-service/verifyotp";
+	public static aadhaar="http://10.151.60.206:8765/api/aadhar-verification-service/aadhaarVerify/";
+
 }
