@@ -9,7 +9,7 @@ import swal from 'sweetalert2';
   selector: 'app-farmer-alternate-mobile',
   templateUrl: './farmer-alternate-mobile.component.html',
   styleUrls: ['./farmer-alternate-mobile.component.css'],
-  providers:[FarmerDetailsService]
+  providers:[FarmerDetailsService, IdRoleService]
 })
 export class FarmerAlternateMobileComponent implements OnInit {
 
