@@ -25,23 +25,23 @@ export class CustomerAuthenticationService {
 }
 
    handleError(error: Response){
-  alert("mobile number not registered");
+   alert("mobile number not registered");
    return Observable.throw(error.statusText);
    }
 
-   getUserDetails(mobileNumber : String){
-  return this.http.get(UserDetails.url + mobileNumber,this.authorization())
+     getUserDetails(mobileNumber : String){
+    return this.http.get(UserDetails.url + mobileNumber,this.authorization())
      .map(data => data.json(),
    (error: any)=>this.handleError(error));
   }
 
-  updatePassword(updatedInfo){
+     updatePassword(updatedInfo){
     return this.http.put(UserDetails.updatePasswordUrl,updatedInfo, this.authorization())
     .map(data => data.json(),
     (error: any)=>this.handleError(error));
     }
 
-    deleteProfile(userInfo){
+      deleteProfile(userInfo){
       return this.http.put(UserDetails.deleteProfileUrl,userInfo,this.authorization())
       .map(data=>data.json(),
        error=>this.handleError(error));
@@ -53,7 +53,7 @@ export class CustomerAuthenticationService {
        error=>this.handleError(error));
        }
 
-       getPreviousOrders(customerId : String){
+      getPreviousOrders(customerId : String){
         return this.http.get(UserDetails.previousOrdersUrl+customerId,this.authorization())
         .map(data=>data.json(),
         error=>this.handleError(error));

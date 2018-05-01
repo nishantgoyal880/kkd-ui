@@ -3,58 +3,29 @@ import { async, ComponentFixture } from '@angular/core/testing';
 import { CustomerAuthenticationService } from './customer-authentication.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
-import {Customer} from '../component/customer-my-account/customer'
+import {Customer} from '../component/customer-my-account/customer';
 import { Observable } from 'rxjs/Observable';
-
+import {DETAILS,USERDETAILS,USERDETAILSDELETE,CURRENTORDERS,PREVIOUSORDERS,CUSTOMERDETAILS} from '../component/customer-my-account/mock-data';
 
 fdescribe('CustomerAuthenticationService', () => {
   let details :any;
   let userDetails :any;
   let userDetailsDelete :any;
+  let currentOrders : any;
+  let previousOrders:any;
+  let customerDetails :any;
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [CustomerAuthenticationService],
       imports : [HttpClientModule,HttpModule],
-      
     });
-     userDetails ={
-      "currentPassword": "Sapient@1234",
-      "newPassword": "Sriz3196@",
-      "userId": "KKDCUST2000"
-    };
-    details = {
-      "kkdCustId": "KKDCUST2000",
-      "mobileNo": "9468075105",
-      "password": null,
-      "firstName": "string",
-      "lastName": "string",
-      "addresses": [
-        {
-          "pincode": 0,
-          "addressLine": "string",
-          "city": "string",
-          "district": "string",
-          "state": "string",
-          "primary": false
-        }
-      ],
-      "primaryAddress": {
-        "pincode": 0,
-        "addressLine": "string",
-        "city": "string",
-        "district": "string",
-        "state": "string",
-        "primary": false
-      },
-      "role": "Customer",
-      "bankDetails": null
-    };
-   
-    userDetailsDelete={
-      "mobileNo": "9468075105",
-      "password": "Sriz3196@",
-    };
-  });
+    details =DETAILS;
+    userDetails=USERDETAILS;
+    userDetailsDelete=USERDETAILSDELETE;
+    currentOrders=CURRENTORDERS;
+    previousOrders=PREVIOUSORDERS;
+    customerDetails=CUSTOMERDETAILS;
+});
 
   it('should be created', inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
     expect(service).toBeTruthy();
@@ -88,7 +59,7 @@ fdescribe('CustomerAuthenticationService', () => {
     expect(service.getDetails).toBeTruthy();
   }));
 
-  it('check getDetails function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+ it('check getUserDetails function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
     service. getUserDetails('9468075105').subscribe(results=>{
     console.log(JSON.stringify(results));
      console.log(JSON.stringify(details));
@@ -96,20 +67,83 @@ fdescribe('CustomerAuthenticationService', () => {
     });
 })));
 
+ it('negative check getUserDetails function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  service. getUserDetails('9468075104').subscribe(results=>{
+  console.log(JSON.stringify(results));
+   console.log(JSON.stringify(details));
+   expect(results).not.toEqual(details);
+  });
+})));
 
-it('check updatePassword function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+ it('check updatePassword function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
   service. updatePassword(userDetails).subscribe(status=>{
   console.log(status);
    expect(status).toEqual(true);
   });
 })));
 
-it('check deleteProfile function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+ it('negative check updatePassword function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  service. updatePassword(userDetails).subscribe(status=>{
+  console.log(status);
+   expect(status).not.toEqual(false);
+  });
+})));
+
+ it('check deleteProfile function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
   service. deleteProfile(userDetailsDelete).subscribe(status=>{
   console.log(status);
    expect(status).toEqual(false);
   });
 })));
 
+ it('negative check deleteProfile function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  service. deleteProfile(userDetailsDelete).subscribe(status=>{
+  console.log(status);
+   expect(status).not.toEqual(true);
+  });
+})));
 
+ it('check getCurrentOrders function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  service. getCurrentOrders("kkdcust3001").subscribe(results=>{
+  console.log(results);
+   expect(results).toEqual(currentOrders);
+  });
+})));
+
+ it('negative check getCurrentOrders function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  service. getCurrentOrders("kkdcust3002").subscribe(results=>{
+  console.log(results);
+   expect(results).not.toEqual(currentOrders);
+  });
+})));
+
+ it('check getPreviousOrders function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  service. getPreviousOrders("kkdcust3001").subscribe(results=>{
+  console.log(results);
+   expect(results).toEqual(previousOrders);
+  });
+})));
+
+ it('negative check getPreviousOrders function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  service. getPreviousOrders("kkdcust3002").subscribe(results=>{
+  console.log(results);
+   expect(results).not.toEqual(previousOrders);
+  });
+})));
+
+ it('check getDetails function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  service. getDetails("KKDCUST2000").subscribe(results=>{
+  console.log("----------------------")
+    console.log(results);
+   expect(results).toEqual(customerDetails);
+  });
+})));
+
+it('negative check getDetails function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  service. getDetails("KKDCUST2001").subscribe(results=>{
+  console.log("----------------------")
+    console.log(results);
+   expect(results).not.toEqual(customerDetails);
+  });
+})));
 })
