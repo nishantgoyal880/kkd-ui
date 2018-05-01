@@ -38,10 +38,9 @@ export class CustomerLoginComponent implements OnInit {
 
 		this.registrationService.loginCustomer(customerCredentials).subscribe((res) =>{
 			localStorage.setItem("token",res.results.token);
-			//localStorage.setItem("id",res.results.kkdCustId);
-			//localStorage.setItem("role",res.results.role);
 			this.idRoleService.id.emit(res.results.kkdCustId);
 			this.idRoleService.role.emit(res.results.role);
+      this.idRoleService.isLoggedIn.emit(true);
 			this.router.navigate(['customer/myAccount']);
 		}, (err) =>{
 			if(err.status==401){
@@ -59,7 +58,7 @@ export class CustomerLoginComponent implements OnInit {
 					text: 'Server down',
 					footer: '<b>Try Again Later......</b>',
 				  })
-				
+
 			}
 		})
 	}

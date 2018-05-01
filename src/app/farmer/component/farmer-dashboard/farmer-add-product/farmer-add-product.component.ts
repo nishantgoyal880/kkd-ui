@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IdRoleService } from '../../../../services/id-role/id-role.service';
 import swal from 'sweetalert2';
 import { FarmerAddProductService } from '../../../services/farmer-add-product/farmer-add-product.service';
 
@@ -14,7 +15,8 @@ export class FarmerAddProductComponent implements OnInit {
 
   rForm: FormGroup;
   post:any;
-  public kkdFarmId: any="KKDFARM1002";
+  public kkdFarmId: any;
+  public role:string;
   public imageUrl:any;
   public description: any;
   public price: any;
@@ -28,7 +30,8 @@ export class FarmerAddProductComponent implements OnInit {
   }
  
 
-  constructor(private productService: FarmerAddProductService,private fb: FormBuilder,public router: Router) { 
+  constructor(private productService: FarmerAddProductService,private fb: FormBuilder,
+    public router: Router,private idRoleService: IdRoleService) { 
     this.rForm = fb.group({
       description : [null, Validators.compose([Validators.required])],
       price : [null, Validators.compose([Validators.required])],
@@ -36,6 +39,15 @@ export class FarmerAddProductComponent implements OnInit {
       quantity : [null, Validators.compose([Validators.required])],
       available : ''
 
+      })
+      this.idRoleService.role.subscribe((role) =>{
+        this.role=role;
+      })
+      this.idRoleService.id.subscribe((id) =>{
+        console.log(id+"fdhbdfhdf");
+        
+        this.kkdFarmId=id;
+        console.log("vfdfvzsd"+this.kkdFarmId);
       })
     }
 

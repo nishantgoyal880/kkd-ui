@@ -8,24 +8,25 @@ import { IdRoleService } from '../../services/id-role/id-role.service';
 })
 export class HeaderComponent implements OnInit {
 
- public loggedIn:any=true;
+ public loggedIn:any=false;
  public role:any;
  @Input() city: any;
 
  constructor(private idRoleService:IdRoleService) {
-   console.log("Header Component------------");
    this.idRoleService.role.subscribe((role) =>{
-     console.log("In header role")
-     console.log(role)
-     this.role=role;
+      this.role=role;
    })
-   this.idRoleService.id.subscribe((id) =>{
-     console.log("In header id")
-     console.log(id)
+   this.idRoleService.isLoggedIn.subscribe((log) =>{
+      this.loggedIn=log;
    })
  }
 
  ngOnInit() {
+ }
+
+ changeOnClickOfLogOut(){
+   this.loggedIn=false;
+   localStorage.removeItem("token");
  }
 
 }
