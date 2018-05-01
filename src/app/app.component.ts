@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VerifytokenService } from './services/verify-token/verifytoken.service'
 import { IdRoleService } from './services/id-role/id-role.service'
+import { } from '@types/googlemaps';
+import swal from 'sweetalert2';
 
 @Component({
 	selector: 'app-root',
@@ -9,22 +11,38 @@ import { IdRoleService } from './services/id-role/id-role.service'
 	styleUrls: ['./app.component.css'],
 	providers: [VerifytokenService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+	@ViewChild('gmap') gmapElement: any;
+	map: google.maps.Map;
+
+	isTracking = false;
+
+	currentLat: any;
+	currentLong: any;
+
 	constructor(
 		public router: Router,
 		private verifyTokenService: VerifytokenService,
 		private idRoleService: IdRoleService
-		){
-		if(!localStorage.getItem("token")){
+	) {
+		if (!localStorage.getItem("token")) {
 			this.router.navigate(['/home']);
 		}
-		else{
+		else {
 			this.verifyToken();
 		}
 	}
 
-	verifyToken(){
+	ngOnInit() {
+
+		this.getLocation();
+
+	}
+
+	verifyToken() {
 		this.verifyTokenService.verifyToken(localStorage.getItem("token"))
+
 		.subscribe((res) =>{
 			console.log(res.results.kkdId);
 			this.idRoleService.id.emit(res.results.kkdId);
@@ -33,4 +51,51 @@ export class AppComponent {
 			alert("Invalid");
 		})
 	}
+
+
+		getLocation() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition((position) => {
+				//alert(position);
+				this.currentLat = position.coords.latitude;
+				this.currentLong = position.coords.longitude;
+				//alert(this.currentLat);
+				//alert(this.currentLong);
+				this.getAddress(this.currentLat, this.currentLong)
+				.then((location) => {
+					swal("You are in " +location);
+				}
+				)
+				.catch(console.error);
+			});
+		} else {
+			alert("Geolocation is not supported by this browser.");
+		}
+	}
+
+	getAddress(latitude, longitude) {
+		return new Promise(function (resolve, reject) {
+			var request = new XMLHttpRequest();
+
+			var method = 'GET';
+			var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&sensor=true';
+			var async = true;
+
+			request.open(method, url, async);
+			request.onreadystatechange = function () {
+				if (request.readyState == 4) {
+					if (request.status == 200) {
+						var data = JSON.parse(request.responseText);
+						var address = data.results[0].formatted_address;
+						var city = data.results[0].address_components[5].long_name;
+						resolve(city);
+					}
+					else {
+						reject(request.status);
+					}
+				}
+			};
+			request.send();
+		});
+	};
 }

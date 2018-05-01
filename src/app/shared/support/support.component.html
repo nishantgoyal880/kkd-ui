@@ -29,7 +29,7 @@
         <div class = "form-comp">
           <div class = "name"><label for="inputEmail">E-mail</label></div>
         <input type="text" class="form-control" id="inputEmail" placeholder="Enter Issue Heading" formControlName="inputEmail">
-        <div *ngIf="rForm.controls['inputEmail'].touched && rForm.controls['issueDescription'].invalid" class="alert">
+        <div *ngIf="rForm.controls['inputEmail'].touched && rForm.controls['inputEmail'].invalid" class="alert">
                 <div *ngIf="rForm.controls['inputEmail'].hasError('required')">
                   Email is required!
                 </div>

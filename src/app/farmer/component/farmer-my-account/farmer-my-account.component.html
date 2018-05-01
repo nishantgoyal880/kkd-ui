@@ -1,23 +1,36 @@
 <div class="home mt-100">
-  <div class="container-fluid display-table">
-    <div class="row display-table-row">
-      <div class="col-sm-4 hidden-xs display-table-cell v-align box" id="navigation">
-        <div class="navi">
-          <ul>
-            <li><a routerLink="/farmer/myAccount/addAddress">Add Address</a></li>
-            <li><a routerLink="/farmer/myAccount/changePassword">Change Password</a></li>
-            <li><a routerLink="/farmer/myAccount/alternateMobile">Alternate Mobile</a></li>
-            <li><a routerLink="/farmer/myAccount/deleteProfile">Delete Profile</a></li>
-          </ul>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1 btn">
+        <ul class="nav nav-tabs nav-justified sidebar-nav edit">
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#add" role="tab" aria-controls="add">Add Address</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#chPass" role="tab" aria-controls="chPass">Change Password</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#altMob" role="tab" aria-controls="altMob">Alternate Mobile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#delPro" role="tab" aria-controls="delPro">Delete Profile</a>
+          </li>
+        </ul>
       </div>
-      <div class="col-sm-8 display-table-cell v-align">
-        <div class="card-body" style="width: 200px; margin-left:50px">
-          <!-- <img class="card-img-top farmer-image" src="../../../../assets/images/farmer.jpg" alt="Card image" style="width:100%"> -->
-          <h5 class="card-title">{{farmerId}}</h5>
-          <p class="card-text">
-          <strong>{{farmerAddressLine}}</strong><br />{{farmerCity}} {{farmerDistrict}}<br />{{farmerState}} {{farmerPincode}} <br/>
-          </p>
+      <div class="col-md-10 marginComponent">
+        <div class="tab-content">
+          <div class="tab-pane" id="add" role="tabpanel">
+            <app-farmer-add-address></app-farmer-add-address>
+          </div>
+          <div class="tab-pane" id="chPass" role="tabpanel">
+            <app-farmer-change-password></app-farmer-change-password>
+          </div>
+          <div class="tab-pane" id="altMob" role="tabpanel">
+            <app-farmer-alternate-mobile></app-farmer-alternate-mobile>
+          </div>
+          <div class="tab-pane" id="delPro" role="tabpanel">
+            <app-farmer-delete-profile></app-farmer-delete-profile>
+          </div>
         </div>
       </div>
     </div>
