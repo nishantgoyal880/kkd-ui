@@ -26,47 +26,49 @@ export class AppComponent implements OnInit {
 		private verifyTokenService: VerifytokenService,
 		private idRoleService: IdRoleService
 	) {
+
+	}
+
+	ngOnInit() {
+
+		this.getLocation();
 		if (!localStorage.getItem("token")) {
 			this.router.navigate(['/home']);
 		}
 		else {
 			this.verifyToken();
 		}
-	}
-
-	ngOnInit() {
-
-		this.getLocation();
 
 	}
 
 	verifyToken() {
 		this.verifyTokenService.verifyToken(localStorage.getItem("token"))
 			.subscribe((res) => {
-				this.idRoleService.id = res.results.kkdId;
-				this.idRoleService.role = res.results.role;
+				console.log(res.results.kkdId + " " + res.results.role)
+				this.idRoleService.id.emit(res.results.kkdId);
+				this.idRoleService.role.emit(res.results.role);
 			}, (err) => {
 				alert("Invalid");
 			})
 	}
 
+
 	getLocation() {
-		console.log("herreeee");
 		if (navigator.geolocation) {
 			console.log("inside");
 			navigator.geolocation.getCurrentPosition((position) => {
 				//alert(position);
 				this.currentLat = position.coords.latitude;
 				this.currentLong = position.coords.longitude;
-				console.log("lat:" +this.currentLat);
+				console.log("lat:" + this.currentLat);
 				console.log(this.currentLong);
 				this.getAddress(this.currentLat, this.currentLong)
-				.then((location) => {
-					swal("You are in " +location);
-					//console.log("You are in " +location);
-				}
-				)
-				.catch(console.error);
+					.then((location) => {
+						swal("You are in " + location);
+						//console.log("You are in " +location);
+					}
+					)
+					.catch(console.error);
 			});
 		} else {
 			alert("Geolocation is not supported by this browser.");
@@ -76,11 +78,11 @@ export class AppComponent implements OnInit {
 	getAddress(latitude, longitude) {
 		return new Promise(function (resolve, reject) {
 			var request = new XMLHttpRequest();
-	
+
 			var method = 'GET';
 			var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&sensor=true';
 			var async = true;
-	
+
 			request.open(method, url, async);
 			request.onreadystatechange = function () {
 				if (request.readyState == 4) {
