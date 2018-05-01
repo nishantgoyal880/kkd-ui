@@ -14,11 +14,11 @@ import { IdRoleService } from '../../../../services/id-role/id-role.service'
 export class FarmerRegisterComponent implements OnInit {
 	@Input() aadhaarDataRecievedByRegister:any;
 	rForm: FormGroup;
-	post:any;   
+	post:any;
 	mobileNo:String;
 	password:String;
 	confirmPassword:String;
-	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router,private idRoleService: IdRoleService) { 
+	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router,private idRoleService: IdRoleService) {
 		this.rForm = fb.group({
 			'mobileNo': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
 			'password': [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
@@ -53,10 +53,9 @@ export class FarmerRegisterComponent implements OnInit {
 		}
 		this.registrationService.addFarmer(farmerToRegister).subscribe((res) =>{
 			localStorage.setItem("token",res.results.token);
-			//localStorage.setItem("id",res.results.kkdFarmId);
-			//localStorage.setItem("role",res.results.role);
 			this.idRoleService.id.emit(res.results.kkdFarmId);
 			this.idRoleService.role.emit(res.results.role);
+			this.idRoleService.isLoggedIn.emit(true);
 			alert(this.idRoleService.role)
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
@@ -69,4 +68,3 @@ export class FarmerRegisterComponent implements OnInit {
 		})
 	}
 }
-

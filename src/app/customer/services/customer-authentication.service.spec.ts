@@ -7,7 +7,7 @@ import {Customer} from '../component/customer-my-account/customer';
 import { Observable } from 'rxjs/Observable';
 import {DETAILS,USERDETAILS,USERDETAILSDELETE,CURRENTORDERS,PREVIOUSORDERS,CUSTOMERDETAILS} from '../component/customer-my-account/mock-data';
 
-fdescribe('CustomerAuthenticationService', () => {
+describe('CustomerAuthenticationService', () => {
   let details :any;
   let userDetails :any;
   let userDetailsDelete :any;
