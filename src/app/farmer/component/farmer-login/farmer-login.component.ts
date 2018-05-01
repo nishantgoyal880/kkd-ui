@@ -35,8 +35,6 @@ export class FarmerLoginComponent implements OnInit {
 
 		this.registrationService.loginFarmer(farmerCredentials).subscribe((res) =>{
 			localStorage.setItem("token",res.results.token);
-			//localStorage.setItem("id",res.results.kkdFarmId);
-			//localStorage.setItem("role",res.results.role);
 			this.idRoleService.id.emit(res.results.kkdFarmId);
 			this.idRoleService.role.emit(res.results.role);
 

@@ -12,15 +12,10 @@ export class HeaderComponent implements OnInit {
  public role:any;
 
  constructor(private idRoleService:IdRoleService) {
-   console.log("Header Component------------");
    this.idRoleService.role.subscribe((role) =>{
-     console.log("In header role")
-     console.log(role)
      this.role=role;
    })
    this.idRoleService.id.subscribe((id) =>{
-     console.log("In header id")
-     console.log(id)
    })
  }
 
