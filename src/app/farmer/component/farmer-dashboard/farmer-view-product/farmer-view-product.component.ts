@@ -16,15 +16,8 @@ export class FarmerViewProductComponent implements OnInit {
   public role: any;
   public id: any;
 
-  constructor(private farmerViewProductService: FarmerViewProductService, private idRoleService:IdRoleService) { 
-    this.idRoleService.role.subscribe((role) =>{
-      this.role=role;
-      console.log("role in view product ts: "+this.role);
-   })
-   this.idRoleService.id.subscribe((id) =>{
-     this.id=id;
-     console.log("id in view product ts: "+this.id);
-   })
+  constructor(private farmerViewProductService: FarmerViewProductService, private idRoleService: IdRoleService) {
+
   }
 
   public products: any = [];
@@ -43,9 +36,21 @@ export class FarmerViewProductComponent implements OnInit {
   // calling service to get all products of a particular farmer
   public getProducts() {
     console.log("hereeeee");
-    this.farmerViewProductService.getAllProducts(this.id).subscribe((res) => {
-      this.products = res;
-    }, error => this.handleError(error))
+
+    this.idRoleService.role.subscribe((role) => {
+      this.role = role;
+      console.log("role in view product ts: " + this.role);
+    })
+
+    this.idRoleService.id.subscribe((id) => {
+      this.id = id;
+      console.log("id in view product ts: " + this.id);
+      this.farmerViewProductService.getAllProducts(this.id).subscribe((res) => {
+        this.products = res;
+      }, error => this.handleError(error))
+    })
+
+
   }
 
   //saving id for deleting a farmer product
@@ -128,6 +133,7 @@ export class FarmerViewProductComponent implements OnInit {
   }
 
   ngOnInit() {
+
 
     this.getProducts();
   }
