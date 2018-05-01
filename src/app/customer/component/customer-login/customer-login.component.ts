@@ -40,9 +40,8 @@ export class CustomerLoginComponent implements OnInit {
 			localStorage.setItem("token",res.results.token);
 			//localStorage.setItem("id",res.results.kkdCustId);
 			//localStorage.setItem("role",res.results.role);
-			this.idRoleService.id=res.results.kkdFarmId;
-			this.idRoleService.role=res.results.role;
-			alert(this.idRoleService.role)
+			this.idRoleService.id.emit(res.results.kkdCustId);
+			this.idRoleService.role.emit(res.results.role);
 			this.router.navigate(['customer/myAccount']);
 		}, (err) =>{
 			if(err.status==401){
