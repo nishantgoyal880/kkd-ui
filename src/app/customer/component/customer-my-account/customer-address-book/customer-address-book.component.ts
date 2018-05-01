@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerAuthenticationService} from '../../../services/customer-authentication.service';
+import{IdRoleService} from '../../../../services/id-role/id-role.service'
 
 @Component({
   selector: 'app-customer-address-book',
@@ -10,7 +11,7 @@ import {CustomerAuthenticationService} from '../../../services/customer-authenti
 export class CustomerAddressBookComponent implements OnInit {
   details:any[];
   customerId:any;
-  constructor(private customerAuthenticationService : CustomerAuthenticationService) { }
+  constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
   handleSuccess(data){
 this.details=data.addresses;
   }
@@ -23,9 +24,13 @@ searchDetails(){
 }
   
   ngOnInit() {
-    this.customerAuthenticationService.changeCustomerId("KKDCUST2002");
-    this.customerId=CustomerAuthenticationService.cus;
-    this.searchDetails();
+    //this.customerAuthenticationService.changeCustomerId("KKDCUST2002");
+    //this.customerId=CustomerAuthenticationService.cus;
+    this.idRoleService.id.subscribe(id=>{
+      this.customerId =id;
+      this.searchDetails();
+    })
+    
   }
 
 }

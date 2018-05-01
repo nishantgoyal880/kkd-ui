@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FarmerDetailsService } from '../../../services/farmer-details/farmer-details.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IdRoleService } from '../../../../services/id-role/id-role.service';
 import swal from 'sweetalert2';
 
 @Component({
@@ -12,12 +13,20 @@ import swal from 'sweetalert2';
 })
 export class FarmerAlternateMobileComponent implements OnInit {
 
-  public searchedFarmerId: string="KKDFARM1000";
+  public searchedFarmerId: string;
+  public role: string;
   rForm: FormGroup;
 
-  constructor(private farmerDetailsService : FarmerDetailsService,private fb: FormBuilder,public router: Router) {
+  constructor(private farmerDetailsService : FarmerDetailsService,private fb: FormBuilder,
+    public router: Router,private idRoleService: IdRoleService) {
     this.rForm = fb.group({
       alternateMobileNumber :[null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])]
+  })
+  this.idRoleService.role.subscribe((role) =>{
+    this.role=role;
+  })
+  this.idRoleService.id.subscribe((id) =>{
+    this.searchedFarmerId=id;
   })
   }
    /* Function to update farmer's mobile number by his KKDId

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerAuthenticationService} from '../../../services/customer-authentication.service'
 import swal from 'sweetalert2';
+import{IdRoleService} from '../../../../services/id-role/id-role.service'
 
 @Component({
   selector: 'app-customer-previous-order',
@@ -12,7 +13,7 @@ export class CustomerPreviousOrderComponent implements OnInit {
 
   public customerId : string ;
   public previousOrders : any = [];
-   constructor(private customerAuthenticationService : CustomerAuthenticationService) { }
+   constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
 
    getdata(){
    this.customerAuthenticationService.getPreviousOrders(this.customerId).subscribe(results=>{
@@ -33,9 +34,14 @@ export class CustomerPreviousOrderComponent implements OnInit {
   });
  }
    ngOnInit() {
-    this.customerAuthenticationService.changeCustomerId("kkdcust3001");
+    this.idRoleService.id.subscribe(id=>{
+      this.customerId =id;
+      this.getdata();
+    })
+   
+    //this.customerAuthenticationService.changeCustomerId("kkdcust3001");
 
-    this.customerId = CustomerAuthenticationService.cus;
-     this.getdata();
+    //this.customerId = CustomerAuthenticationService.cus;
+     
 
    }}
