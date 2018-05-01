@@ -13,10 +13,10 @@
         <h5>Get started</h5>
         <ul>
           <li>
-            <a routerLink="/farmer/login">Farmer</a>
+            <a routerLink="/farmer/login" *ngIf="loggedIn==false">Farmer</a>
           </li>
           <li>
-            <a routerLink="/customer/login">Customer</a>
+            <a routerLink="/customer/login" *ngIf="loggedIn==false">Customer</a>
           </li>
           <li>
             <a routerLink="/about">About Us</a>
