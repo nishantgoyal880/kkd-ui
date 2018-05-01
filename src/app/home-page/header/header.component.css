@@ -1,3 +1,16 @@
+ul{
+  list-style-type:none ;
+}
+
+nav{
+  background-color: #ffffff;
+  opacity: 1.0;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+  color: #29a745;
+}
+
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child), .dropdown .dropbtn {
       display: none;
@@ -29,11 +42,4 @@
     }
   }
 
-  ul{
-    list-style-type:none ;
-  }
-
-  nav{
-    background-color: #3E3F43;
-    opacity: 0.9;
-  }
+  
