@@ -9,13 +9,13 @@ import { FarmerAddProductService } from '../../../services/farmer-add-product/fa
   selector: 'app-farmer-add-product',
   templateUrl: './farmer-add-product.component.html',
   styleUrls: ['./farmer-add-product.component.css'],
-  providers: [ FarmerAddProductService ]
+  providers: [ FarmerAddProductService, IdRoleService ]
 })
 export class FarmerAddProductComponent implements OnInit {
 
   rForm: FormGroup;
   post:any;
-  public kkdFarmId: any;
+  public kkdFarmId: any="";
   public role:string;
   public imageUrl:any;
   public description: any;

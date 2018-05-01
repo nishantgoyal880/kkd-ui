@@ -8,7 +8,7 @@ import swal from 'sweetalert2';
   selector: 'app-farmer-change-password',
   templateUrl: './farmer-change-password.component.html',
   styleUrls: ['./farmer-change-password.component.css'],
-  providers:[FarmerDetailsService]
+  providers:[FarmerDetailsService, IdRoleService]
 })
 export class FarmerChangePasswordComponent implements OnInit {
  
