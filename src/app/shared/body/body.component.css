@@ -29,9 +29,17 @@
 
  #carouselLine{
    font-size: 1.4rem;
-   font-family: 'Ubuntu', sans-serif;
  }
 
  #btn{
    margin: 10px;
+   background-color:#29a745;
+   border: #29a745;
+   color:#fff;
+ }
+
+ #btn:hover {
+   background-color:#fff;
+   border: #fff;
+   color:#000;
  }

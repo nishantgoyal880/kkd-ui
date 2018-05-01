@@ -43,7 +43,8 @@ hr {
 }
 
 .vl{
-  border-left: 0.9px solid rgb(120, 138, 114); 
+  border-left: 0.9px solid rgb(61, 77, 57);
+  opacity: 0.2; 
   height:auto; 
   margin-left: 2rem;
 }
