@@ -9,13 +9,15 @@
    <div class="container-fluid">
      <div class="navbar-collapse collapse nav" id="navbarTogglerDemo01">
        <ul class="navbar-nav mr-auto">
-         <li class="nav-item active">
+         <li class="nav-item active" *ngIf="loggedIn==false">
            <a class="nav-link" routerLink="/home"><i class="fa fa-home mr-1"></i>Home<span class="sr-only">(current)</span></a>
          </li>
-         <li class="nav-item active">
+         <li class="nav-item active" *ngIf="loggedIn==false">
            <a class="nav-link" routerLink="/productList"><i class="fa fa-product-hunt mr-1"></i>Products </a>
          </li>
-
+         <li class="nav-item active" *ngIf="loggedIn==true && role=='Customer'">
+           <a class="nav-link" routerLink="/customer/myAccount"><i class="fa fa-user-circle mr-1"></i>My Account</a>
+         </li>
          <li class="nav-item active">
            <a class="nav-link" routerLink="/help"><i class="fa fa-info-circle mr-1"></i>Help</a>
          </li>
@@ -46,9 +48,6 @@
       </ul>
 
       <ul class="navbar-nav justify-content-end" *ngIf="loggedIn==true && role=='Customer'">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/customer/myAccount"><i class="fa fa-user-circle mr-1"></i>My Account</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/customer/myCart"><i class="fa fa-cart-arrow-down mr-1"></i>My Cart</a>
         </li>
