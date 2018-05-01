@@ -51,16 +51,19 @@ export class AppComponent implements OnInit {
 	}
 
 	getLocation() {
+		console.log("herreeee");
 		if (navigator.geolocation) {
+			console.log("inside");
 			navigator.geolocation.getCurrentPosition((position) => {
 				//alert(position);
 				this.currentLat = position.coords.latitude;
 				this.currentLong = position.coords.longitude;
-				//alert(this.currentLat);
-				//alert(this.currentLong);
+				console.log("lat:" +this.currentLat);
+				console.log(this.currentLong);
 				this.getAddress(this.currentLat, this.currentLong)
 				.then((location) => {
 					swal("You are in " +location);
+					//console.log("You are in " +location);
 				}
 				)
 				.catch(console.error);
