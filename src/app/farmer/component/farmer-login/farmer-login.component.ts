@@ -38,8 +38,6 @@ export class FarmerLoginComponent implements OnInit {
 			this.idRoleService.id.emit(res.results.kkdFarmId);
 			this.idRoleService.role.emit(res.results.role);
 			this.idRoleService.isLoggedIn.emit(true);
-
-			alert(this.idRoleService.role);
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
 			if(err.status=401){

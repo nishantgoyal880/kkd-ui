@@ -14,13 +14,9 @@ export class HeaderComponent implements OnInit {
  constructor(private idRoleService:IdRoleService) {
    this.idRoleService.role.subscribe((role) =>{
       this.role=role;
-      console.log(this.role);
-   })
-   this.idRoleService.id.subscribe((id) =>{
    })
    this.idRoleService.isLoggedIn.subscribe((log) =>{
       this.loggedIn=log;
-      console.log(this.loggedIn);
    })
  }
 
