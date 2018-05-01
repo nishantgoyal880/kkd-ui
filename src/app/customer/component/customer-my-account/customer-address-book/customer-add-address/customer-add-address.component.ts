@@ -10,7 +10,7 @@ import swal from 'sweetalert2';
   providers:[CustomerHeaderService]
 })
 export class CustomerAddAddressComponent implements OnInit {
-  public customerId:string="KKDCUST2002";
+  public customerId:string="KKDCUST2000";
   rForm: FormGroup;
   public details;
   public addresses:Array<object>;

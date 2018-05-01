@@ -1,30 +1,20 @@
 <div class="container mt-100">
   <div class="row">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-9 offset-md-3">
-      <form class="form-inline mt-2 mt-md-0">
+    <div class="col-md-10">
+      <form class="form-inline mt-2 mt-md-0" style="margin-left: 13.9rem">
         <input class="form-control  searchText" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput" />
         <button class="btn btn-outline-primary my-2 my-sm-0 ml-1" type="submit" (click)='searchProduct()'>
           <i class="fa fa-search"></i>
         </button>
       </form>
     </div>
-    <div class="col-md-3">
-    </div>
-  </div>
-</div>
-<!-- end of header for customer-->
-<div class="container my-4">
-  <div class="row">
-    <div class="col-md-3">
-      <div class="dropdown ">
-
+    <div class="col-md-2">
+        <div class="dropdown ">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          Sort By Relevance
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        aria-expanded="false" style="margin-left: 4.5rem">
+        Sort By Relevance
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" (click)="sortBy('priceLH')">Price: Low to High</a>
           <a class="dropdown-item" (click)="sortBy('priceHL')">Price: High to Low</a>
           <a class="dropdown-item" (click)="sortBy('quantityLH')">Quantity: Low to High</a>
@@ -33,6 +23,13 @@
           <a class="dropdown-item" (click)="sortBy('popularity')">Popular</a>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<!-- end of header for customer-->
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-md-2" id="marLeft">
       <!-- filtered by price start-->
       <label class="my-3">
         <span>Filter By Price:</span>
@@ -50,10 +47,11 @@
       </ion-range-slider>
       <!-- filtered by Quantity end-->
     </div>
+    <div class="vl"></div>
     <!-- end of side bar-->
     <div *ngIf="products[0]; then prod else empty"></div>
     <ng-template #prod>
-      <div class="col-md-9">
+      <div class="col-md-9" style="margin-left: 1.5rem">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-lg-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">
