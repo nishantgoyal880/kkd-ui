@@ -16,7 +16,7 @@ export class CustomerMyCartComponent implements OnInit {
 
   @Input() kkdCustId: string;
   ngOnInit() {
-    this.kkdCustId = "KKDCUST2009";
+    this.kkdCustId = "KKDCUST2000";
     this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
       res => {
         this.customerInfo = res;

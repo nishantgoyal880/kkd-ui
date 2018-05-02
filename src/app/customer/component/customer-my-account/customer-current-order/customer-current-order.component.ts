@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {CustomerAuthenticationService} from '../../../services/customer-authentication.service'
 import swal from 'sweetalert2';
-
+import{IdRoleService} from '../../../../services/id-role/id-role.service'
 @Component({
   selector: 'app-customer-current-order',
   templateUrl: './customer-current-order.component.html',
@@ -11,7 +11,7 @@ import swal from 'sweetalert2';
 export class CustomerCurrentOrderComponent implements OnInit {
  public customerId : string ;
  public currentOrders : any = [];
-  constructor(private customerAuthenticationService : CustomerAuthenticationService) { }
+  constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
 
   getdata(){
   this.customerAuthenticationService.getCurrentOrders(this.customerId).subscribe(results=>{
@@ -34,7 +34,11 @@ export class CustomerCurrentOrderComponent implements OnInit {
 }
   
 ngOnInit() {
-    this.customerAuthenticationService.changeCustomerId("kkdcust3001");
-    this.customerId = CustomerAuthenticationService.cus;
-    this.getdata();
+    this.idRoleService.id.subscribe(id=>{
+      this.customerId =id;
+      this.getdata();
+    })
+    //this.customerAuthenticationService.changeCustomerId("kkdcust3001");
+    //this.customerId = CustomerAuthenticationService.cus;
+   
    }}

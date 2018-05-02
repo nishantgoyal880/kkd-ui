@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerDetailsService } from '../../../services/farmer-details/farmer-details.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IdRoleService } from '../../../../services/id-role/id-role.service';
 import swal from 'sweetalert2';
 
 @Component({
@@ -11,11 +12,13 @@ import swal from 'sweetalert2';
 })
 export class FarmerAddAddressComponent implements OnInit {
 
-  public searchedFarmerId: string="KKDFARM1000";
+  public searchedFarmerId: string;
   public farmerMobileNumber : string;
+  public role:string;
   rForm: FormGroup;
   public details;
-  constructor(private farmerDetailsService : FarmerDetailsService,private fb: FormBuilder) {
+  constructor(private farmerDetailsService : FarmerDetailsService,
+    private fb: FormBuilder,private idRoleService: IdRoleService) {
     this.rForm = fb.group({
       addressLine : [null, Validators.compose([Validators.required])],
       city : [null, Validators.compose([Validators.required])],
@@ -23,7 +26,14 @@ export class FarmerAddAddressComponent implements OnInit {
       state : [null, Validators.compose([Validators.required])],
       pincode : [null, Validators.compose([Validators.required])]
   })
+  this.idRoleService.role.subscribe((role) =>{
+    this.role=role;
+  })
+  this.idRoleService.id.subscribe((id) =>{
+    this.searchedFarmerId=id;
+  })
    }
+
   updateFarmerAddress(post){
     this.details = {
       "addressLine" : post.addressLine,
@@ -61,3 +71,7 @@ export class FarmerAddAddressComponent implements OnInit {
   ngOnInit() {
   }
 }
+
+
+
+

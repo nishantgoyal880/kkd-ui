@@ -12,10 +12,10 @@ import { IdRoleService } from '../../../services/id-role/id-role.service'
 	providers:[ RegistrationLoginService ]
 })
 export class CustomerRegisterComponent implements OnInit {
-	
-	
+
+
 	rForm: FormGroup;
-	post:any;   
+	post:any;
 	mobileNo:String;
 	password:String;
 	confirmPassword:String;
@@ -80,10 +80,9 @@ export class CustomerRegisterComponent implements OnInit {
 				//save customer details to db
 				this.registrationService.addCustomer(this.customerToRegister).subscribe((res) =>{
 					localStorage.setItem("token",res.results.token);
-					//localStorage.setItem("id",res.results.kkdCustId);
-					//localStorage.setItem("role",res.results.role);
-					this.idRoleService.id=res.results.kkdCustId;
-					this.idRoleService.role=res.results.role;
+					this.idRoleService.id.emit(res.results.kkdCustId);
+					this.idRoleService.role.emit(res.results.role);
+					this.idRoleService.isLoggedIn.emit(true);
 					this.router.navigate(['customer/homePage']);
 				}, (err) =>{
 					swal({
@@ -91,7 +90,7 @@ export class CustomerRegisterComponent implements OnInit {
 						title: 'Oops...',
 						text: 'Already Registered!',
 						footer: '<b>So Directly Login......</b>',
-					})	
+					})
 				})
 			}
 			else{
