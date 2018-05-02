@@ -4,6 +4,7 @@ import {FarmerAddProductComponent } from '../../component/farmer-dashboard/farme
 import {HttpClientModule} from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {MockBackend, MockConnection} from '@angular/http/testing';
+import {PRODUCTDETAILS} from '../farmer-add-product/mock-addProduct-data';
 import {
   TestBed,
   getTestBed,
@@ -20,9 +21,10 @@ import {ResponseOptions} from '@angular/http';
 
 fdescribe('FarmerAddProductService', () => {
   let mockBackend: MockBackend;
+  let productDetails: any;
 
   let service: FarmerAddProductService;
-  beforeEach(() => {
+  beforeEach(async() => {
     TestBed.configureTestingModule({
       providers: [FarmerAddProductService,
         MockBackend,BaseRequestOptions,
@@ -33,8 +35,7 @@ fdescribe('FarmerAddProductService', () => {
           (backend: XHRBackend, defaultOptions: BaseRequestOptions) => {
             return new Http(backend, defaultOptions);
           }
-     }
-      ],
+     }],
       imports: [ 
         HttpClientTestingModule,
       HttpClientModule,
@@ -43,6 +44,7 @@ fdescribe('FarmerAddProductService', () => {
     mockBackend = getTestBed().get(MockBackend);
 
     service = TestBed.get(FarmerAddProductService);
+    productDetails = PRODUCTDETAILS;
   });
 
   it('should be created', inject([FarmerAddProductService], (service: FarmerAddProductService) => {
@@ -54,52 +56,19 @@ fdescribe('FarmerAddProductService', () => {
     expect(service.update).toBeTruthy();
   }));
 
-  /*it('should insert new blog entries', async(() => {
-    let blogService: BlogService = getTestBed().get(BlogService);
-    mockBackend.connections.subscribe((connection: MockConnection) => {
-      // is it the correct REST type for an insert? (POST)
+  it('should insert new product', async(inject([FarmerAddProductService], (service: FarmerAddProductService) => {
+    mockBackend.connections.subscribe(connection => {
       expect(connection.request.method).toBe(RequestMethod.Post);
-   
-      connection.mockRespond(new Response(new ResponseOptions({status: 201})));
-    });
-   
-    let data: BlogEntry = new BlogEntry('Blog Entry', 
-                                        '<p><b>Hi</b></p>', '*Hi*', null);
-    blogService.saveBlog(data).subscribe(
-      (successResult) => {
-        expect(successResult).toBeDefined();
-        expect(successResult.status).toBe(201);
+      connection.mockRespond(new Response(new ResponseOptions({
+        //status: 201,
+        body: true
+        })));
+    });  
+    service.update("KKDFARM1002", productDetails).subscribe(
+      status => {
+        //expect(successResult).toBeDefined();
+        expect(status).toEqual(true);
       });
-  }));*/
-
-  it('should insert new product', async(() => {
-    let addProductService: FarmerAddProductService = getTestBed().get(FarmerAddProductService);
-    mockBackend.connections.subscribe((connection: MockConnection) => {
-
-      expect(connection.request.method).toBe(RequestMethod.Post);
-
-      connection.mockRespond(new Response(new ResponseOptions({status: 201})));
-    });
-    //let data: FarmerAddProductComponent = new FarmerAddProductComponent(addProductService,null,null,null);
-    
-    var productSubmission = {
-
-      kkdFarmId:"",
-      description:"string",
-      price:"price",
-      bulkOrderPrice:"bulkOrderPrice",
-      quantity:"quantity",
-      productName:"potato",
-      available:true,
-      imageUrl:"imageurl",
-      }
-
-    addProductService.update("KKDFARM1001", productSubmission).subscribe(
-      (successResult) => {
-        expect(successResult).toBeDefined();
-        expect(successResult.status).toBe(201);
-      });
-
-  }))
+  })));
 
 });
