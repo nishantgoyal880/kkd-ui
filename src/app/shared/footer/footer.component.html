@@ -10,13 +10,13 @@
         </h2>
       </div>
       <div class="col-sm-2">
-        <h5>Get started</h5>
+        <h5>{{ 'footer.get_started' | translate }}</h5>
         <ul>
           <li>
-            <a routerLink="/farmer/login" *ngIf="loggedIn==false">Farmer</a>
+            <a routerLink="/farmer/login" *ngIf="loggedIn==false">{{ 'footer.farmer' | translate }}</a>
           </li>
           <li>
-            <a routerLink="/customer/login" *ngIf="loggedIn==false">Customer</a>
+            <a routerLink="/customer/login" *ngIf="loggedIn==false">{{ 'footer.customer' | translate }}</a>
           </li>
           <li>
             <a routerLink="/about">{{ 'footer.about_us' | translate }}</a>

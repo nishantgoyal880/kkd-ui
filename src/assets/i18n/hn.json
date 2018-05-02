@@ -1,5 +1,16 @@
 {
     "footer":{
-    "support":"समर्थन"
+        "support":"समर्थन",
+        "get_started":"शुरू हो जाओ",
+        "farmer":"किसान",
+        "customer":"ग्राहक",
+        "about_us":"हमारे बारे में",
+        "company_information":"कंपनी की जानकारी",
+        "policies":"नीतियों",
+        "contact_us":"संपर्क करें",
+        "reviews":"समीक्षा",
+        "help":"मदद",
+        "forums":"मंच",
+        "kisan_ki_dukan":"किसान की दुकान"
     }
 }
