@@ -71,4 +71,19 @@ fdescribe('FarmerAddProductService', () => {
       });
   })));
 
+  it('should not insert new product', async(inject([FarmerAddProductService], (service: FarmerAddProductService) => {
+    mockBackend.connections.subscribe(connection => {
+      expect(connection.request.method).toBe(RequestMethod.Post);
+      connection.mockRespond(new Response(new ResponseOptions({
+        //status: 201,
+        body: false
+        })));
+    });  
+    service.update("KKDFARM1002", productDetails).subscribe(
+      status => {
+        //expect(successResult).toBeDefined();
+        expect(status).not.toEqual(true);
+      });
+  })));
+
 });
