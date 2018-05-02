@@ -64,14 +64,11 @@ export class CustomerMyAccountComponent implements OnInit {
     currentPassword : [null, Validators.compose([Validators.required])],
     newPassword : [null, Validators.compose([Validators.required])],
     reenterNewPassword: [null, Validators.compose([Validators.required])],
-
 })
    this.rFormDeleteProfile = fb.group({
     mobileNumberDeleteProfile : [null, Validators.compose([Validators.required])],
     currentPasswordDeleteProfile : [null, Validators.compose([Validators.required])],
-  
-
-})
+  })
 }
 
   ngOnInit() {}
@@ -163,9 +160,7 @@ export class CustomerMyAccountComponent implements OnInit {
     }
   }
   
-
-  deleteUser(post){
-    
+deleteUser(post){
     this.mobileNumberDeleteProfile=post.mobileNumberDeleteProfile;
     this.currentPasswordDeleteProfile=post.currentPasswordDeleteProfile;
     if(!(isNaN(+this.mobileNumberDeleteProfile)) && this.mobileNumberDeleteProfile.length==10 ){
@@ -196,8 +191,7 @@ export class CustomerMyAccountComponent implements OnInit {
                   text: 'Mobile number is not registered',
                 })
               }
-        
-        }, (error) =>{
+         }, (error) =>{
           swal({
             type: 'error',
             title: 'Oops...',

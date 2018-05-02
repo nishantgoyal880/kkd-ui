@@ -34,8 +34,9 @@ export class CustomerCurrentOrderComponent implements OnInit {
 }
   
 ngOnInit() {
-    this.idRoleService.id.subscribe(id=>{
+      this.idRoleService.id.subscribe(id=>{
       this.customerId =id;
+      alert(this.customerId )
       this.getdata();
     })
     //this.customerAuthenticationService.changeCustomerId("kkdcust3001");
