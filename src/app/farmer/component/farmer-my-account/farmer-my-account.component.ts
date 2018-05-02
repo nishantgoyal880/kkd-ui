@@ -38,6 +38,7 @@ export class FarmerMyAccountComponent implements OnInit {
   searchFarmer(){
     this.farmerDetailsService.getFarmerName(this.searchedFarmerId)
     .subscribe((res) =>{
+      if(res && res.aadhaarData) {
       this.farmerPhoto=res.aadhaarData.photoUrl;
       this.farmerId=res.kkdFarmId;
       this.farmerName=res.aadhaarData.firstName;
@@ -49,6 +50,7 @@ export class FarmerMyAccountComponent implements OnInit {
       this.farmerState=res.aadhaarData.permanentAddress.state;
       this.farmerPrimary=res.aadhaarData.permanentAddress.primary;
       this.farmerMobileNumber=res.mobileNo;
+    }
      },(error) =>{
     });
   }
