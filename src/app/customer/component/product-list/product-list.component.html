@@ -31,6 +31,7 @@
   <div class="row">
     <div class="col-md-2" id="marLeft">
       <!-- filtered by price start-->
+
       <label class="my-3">
         <span>Filter By Price:</span>
       </label>
@@ -46,12 +47,13 @@
         (onFinish)="myOnFinishQuantity($event)">
       </ion-range-slider>
       <!-- filtered by Quantity end-->
+      <div class="vl"></div>
     </div>
-    <div class="vl"></div>
+    
     <!-- end of side bar-->
     <div *ngIf="products[0]; then prod else empty"></div>
     <ng-template #prod>
-      <div class="col-md-9" style="margin-left: 1.5rem">
+      <div class="col-md-10">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-lg-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">

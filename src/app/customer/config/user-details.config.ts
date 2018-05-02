@@ -5,6 +5,7 @@ export class UserDetails{
     public static currentOrdersUrl = "http://10.151.60.206:8765/api/order-status-service/customerCurrentOrders/";
     public static previousOrdersUrl = "http://10.151.60.206:8765/api/order-status-service/customerPreviousOrders/";
     public static customerAddressBookUrl : string="http://10.151.60.206:8765/api/user-details-service/customer/";
+    public static updateAddress = "http://10.151.60.206:8765/api/user-details-service/customer/"
   }
     
     

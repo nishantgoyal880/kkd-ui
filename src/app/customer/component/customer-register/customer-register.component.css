@@ -17,14 +17,9 @@
     animation: 2s alertAnim forwards;
 }
 button{
-    background-color : #a9c056 !important;
     border : none;
     margin-top: 35px;
     margin-bottom: 20px;
-}
-button:hover {
-    background-color: #c1ed23 !important;
-    
 }
 button:focus{
     border-color : #f9f9f9 !important;
