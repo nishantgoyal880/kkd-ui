@@ -54,4 +54,9 @@ export class CartService {
         }
       );
   }
+  deleteAllCartItems(userId) {
+    return this.http
+      .delete(CartConfig.deleteAllCartItems + userId, this.authorization())
+      .map(data => {}, err => console.log(err));
+  }
 }
