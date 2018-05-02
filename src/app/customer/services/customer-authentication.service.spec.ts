@@ -168,13 +168,30 @@ fdescribe('CustomerAuthenticationService', () => {
 })));
 
  it('check deleteProfile function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  mockBackend.connections.subscribe(connection => {
+    // is it the correct REST type for an update? (PUT)
+    expect(connection.request.method).toBe(RequestMethod.Delete);
+    connection.mockRespond(new Response(new ResponseOptions({
+      //status: 204,
+      body:true
+        })));
+  });
   service. deleteProfile(userDetailsDelete).subscribe(status=>{
   console.log(status);
-   expect(status).toEqual(false);
+   expect(status).toEqual(true);
   });
 })));
 
  it('negative check deleteProfile function', async(inject([CustomerAuthenticationService], (service: CustomerAuthenticationService) => {
+  
+  mockBackend.connections.subscribe(connection => {
+    // is it the correct REST type for an update? (PUT)
+    expect(connection.request.method).toBe(RequestMethod.Delete);
+    connection.mockRespond(new Response(new ResponseOptions({
+      //status: 204,
+      body:false
+        })));
+  });
   service. deleteProfile(userDetailsDelete).subscribe(status=>{
   console.log(status);
    expect(status).not.toEqual(true);
