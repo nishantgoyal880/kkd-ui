@@ -21,8 +21,8 @@ export class CustomerHeaderService {
     private handleError(error: Response){
       return Observable.throw(error.statusText);
     }
-    updateCustomerAddress(searchedCustomer,updatedInfo){
-      return this.http.put(UserDetails.updatePasswordUrl+searchedCustomer,updatedInfo,{headers: this.headers})
+    updateCustomerAddress(userId,address){
+      return this.http.put(UserDetails.updateAddress+userId+"/update/address",address,{headers: this.headers})
       .map(data => 
         data.json(),
       (error: any)=>this.handleError(error));
