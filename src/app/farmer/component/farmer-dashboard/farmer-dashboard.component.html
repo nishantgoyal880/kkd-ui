@@ -1,6 +1,9 @@
 <div class="home mt-100">
-  <div class="container-fluid" style="width: 91%">
+  <div class="container-fluid">
     <ul class="nav nav-tabs nav-justified sidebar-nav edit" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#acc" role="tab" aria-controls="acc">My Account</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link " data-toggle="tab" href="#prod" role="tab" aria-controls="prod">Add Product</a>
       </li>
@@ -16,11 +19,11 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#view" role="tab" aria-controls="view">View Product</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#acc" role="tab" aria-controls="acc">My Account</a>
-      </li>
     </ul>
     <div class="tab-content">
+      <div class="tab-pane active" id="acc" role="tabpanel">
+        <app-farmer-my-account></app-farmer-my-account>
+      </div>
       <div class="tab-pane " id="prod" role="tabpanel">
         <app-farmer-add-product></app-farmer-add-product>
       </div>
@@ -35,9 +38,6 @@
       </div>
       <div class="tab-pane " id="view" role="tabpanel">
         <app-farmer-view-product></app-farmer-view-product>
-      </div>
-      <div class="tab-pane active" id="acc" role="tabpanel">
-        <app-farmer-my-account></app-farmer-my-account>
       </div>
     </div>
   </div>

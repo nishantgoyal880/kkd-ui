@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
 
  changeOnClickOfLogOut(){
    this.loggedIn=false;
+   this.idRoleService.isLoggedIn.emit(false);
    localStorage.removeItem("token");
  }
 

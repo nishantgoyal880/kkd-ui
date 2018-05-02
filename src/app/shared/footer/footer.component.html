@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-sm-3">
         <h2 class="logo">
-          <a routerLink="/home">
+          <a>
             <img src="../../../assets/Header/kkd_logo.png" class="mt-4 ml-5 foot-logo" width="120" height="120" alt="KKD Logo">
           </a>
         </h2>
@@ -13,10 +13,10 @@
         <h5>Get started</h5>
         <ul>
           <li>
-            <a routerLink="/farmer/login">Farmer</a>
+            <a routerLink="/farmer/login" *ngIf="loggedIn==false">Farmer</a>
           </li>
           <li>
-            <a routerLink="/customer/login">Customer</a>
+            <a routerLink="/customer/login" *ngIf="loggedIn==false">Customer</a>
           </li>
           <li>
             <a routerLink="/about">About Us</a>
@@ -49,7 +49,7 @@
             <a routerLink="/support">Support</a>
           </li>
           <li>
-            <a routerLink="/home">Forums</a>
+            <a>Forums</a>
           </li>
         </ul>
       </div>
