@@ -5,7 +5,16 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getBodyHeading() {
+    return element(by.css('app-body h1')).getText();
   }
+
+  getBodyText() {
+    return element(by.css('app-body p')).getText();
+  }
+
+  getFarmerButton() {
+    return element(by.css('[routerLink="/farmer/login"]')).getText();
+  }
+
 }

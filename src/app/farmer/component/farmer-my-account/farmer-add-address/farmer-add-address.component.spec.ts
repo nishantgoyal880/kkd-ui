@@ -48,44 +48,35 @@ fdescribe('FarmerAddAddressComponent', () => {
     expect(component).toBeTruthy();
   });
   
-  it('should render title in a h1 tag', async(() => {
-    fixture.detectChanges();
+  it('should render title in a h1 tag',() => {   
     const e1=fixture.nativeElement.querySelector('h1');
     expect(e1.innerText).toEqual('Add Alternate Address');
-  }));
+  });
 
-  it('should call the updateFarmerAddress method', async(() => {
-    fixture.detectChanges();
+  it('should call the updateFarmerAddress method',() => { 
     spyOn(component,'updateFarmerAddress');
     el=fixture.debugElement.query(By.css('button')).nativeElement;
     el.click();
     expect(component.updateFarmerAddress).toHaveBeenCalledTimes(0);
-  }));
+  });
 
-//   it('check getDetails function', async(inject([FarmerDetailsService], (service: FarmerDetailsService) => {
-//     service. getFarmerName('KKDFARM1000').subscribe(results=>{
-//     console.log(JSON.stringify(results));
-//      console.log(JSON.stringify(mockFarmer));
-//      expect(results).toEqual(mockFarmer);
-//     });
-//  })));
 
-  it('form should be invalid', async(() => {
+  it('form should be invalid',() => {
     component.rForm.controls['addressLine'].setValue('');
     component.rForm.controls['city'].setValue('');
     component.rForm.controls['district'].setValue('');
     component.rForm.controls['state'].setValue('');
     component.rForm.controls['pincode'].setValue('');
     expect(component.rForm.valid).toBeFalsy();
-  }));
+  });
 
-  it('form should be valid', async(() => {
+  it('form should be valid',() => {
     component.rForm.controls['addressLine'].setValue('subhash nagar');
     component.rForm.controls['city'].setValue('bhilai');
     component.rForm.controls['district'].setValue('durg');
     component.rForm.controls['state'].setValue('chattisgarh');
     component.rForm.controls['pincode'].setValue('234567');
     expect(component.rForm.valid).toBeTruthy();
-  }));
+  });
 
 });
