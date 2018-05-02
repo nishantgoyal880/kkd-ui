@@ -60,15 +60,9 @@ body {
     border-radius: 12px;
 }
 button{
-    background-color : #a9c056 !important;
     border : none;
     margin-top: 35px;
     margin-bottom: 20px;
-}
-
-button:hover {
-    background-color: #c1ed23 !important;
-    
 }
 
 button:focus{

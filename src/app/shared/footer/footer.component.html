@@ -10,46 +10,46 @@
         </h2>
       </div>
       <div class="col-sm-2">
-        <h5>Get started</h5>
+        <h5>{{ 'footer.get_started' | translate }}</h5>
         <ul>
           <li>
-            <a routerLink="/farmer/login" *ngIf="loggedIn==false">Farmer</a>
+            <a routerLink="/farmer/login" *ngIf="loggedIn==false">{{ 'footer.farmer' | translate }}</a>
           </li>
           <li>
-            <a routerLink="/customer/login" *ngIf="loggedIn==false">Customer</a>
+            <a routerLink="/customer/login" *ngIf="loggedIn==false">{{ 'footer.customer' | translate }}</a>
           </li>
           <li>
-            <a routerLink="/about">About Us</a>
+            <a routerLink="/about">{{ 'footer.about_us' | translate }}</a>
           </li>
 
         </ul>
       </div>
       <div class="col-sm-2">
-        <h5>Company Information</h5>
+        <h5>{{ 'footer.company_information' | translate }}</h5>
         <ul>
 
           <li>
-            <a routerLink="/policies">Policies</a>
+            <a routerLink="/policies">{{ 'footer.policies' | translate }}</a>
           </li>
           <li>
-            <a routerLink="/connect">Contact Us</a>
+            <a routerLink="/connect">{{ 'footer.contact_us' | translate }}</a>
           </li>
           <li>
-              <a routerLink="/reviews">Reviews</a>
+              <a routerLink="/reviews">{{ 'footer.reviews' | translate }}</a>
           </li>
         </ul>
       </div>
       <div class="col-sm-2">
-        <h5>Support</h5>
+        <h5> {{ 'footer.support' | translate }}</h5>
         <ul>
           <li>
-            <a routerLink="/help">Help</a>
+            <a routerLink="/help">{{ 'footer.help' | translate }}</a>
           </li>
           <li>
-            <a routerLink="/support">Support</a>
+            <a routerLink="/support">{{ 'footer.support' | translate }}</a>
           </li>
           <li>
-            <a>Forums</a>
+            <a>{{ 'footer.forums' | translate }}</a>
           </li>
         </ul>
       </div>
@@ -65,12 +65,12 @@
             <i class="fa fa-google-plus"></i>
           </a>
         </div>
-        <button type="button" class="btn btn-default" routerLink="/connect">Contact us</button>
+        <button type="button" class="btn btn-default" routerLink="/connect">{{ 'footer.contact_us' | translate }}</button>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
-    <p>© 2018 Kisan Ki Dukan </p>
+    <p>© 2018 {{ 'footer.kisan_ki_dukan' | translate }}</p>
   </div>
 </footer>
 <!--/.Footer-->

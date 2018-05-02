@@ -43,7 +43,7 @@
 
 		<div class = form-comp>
 			<div class = "name"><label for="bulkOrderPrice">Product Bulk Order Price per kg</label></div>
-		  <input type="text" class="form-control" id="bulkOrderPrice" placeholder="Enter Bulk Order Price" formControlName="bulkOrderPrice">
+		  <input type="text" class="form-control" placeholder="Enter Bulk Order Price" formControlName="bulkOrderPrice">
 		  <div *ngIf="rForm.controls['bulkOrderPrice'].touched && rForm.controls['bulkOrderPrice'].invalid" class="alert">
 				<div *ngIf="rForm.controls['bulkOrderPrice'].hasError('required')">
 				  Bulk Price is required!
@@ -53,7 +53,7 @@
 
 		  <div class = form-comp>
 			<div class = "name"><label for="quantity">Quantity</label></div>
-		  <input type="text" class="form-control" id="quantity" placeholder="Enter Quantity" formControlName="quantity">
+		  <input type="text" class="form-control" placeholder="Enter Quantity" formControlName="quantity">
 		  <div *ngIf="rForm.controls['quantity'].touched && rForm.controls['quantity'].invalid" class="alert">
 				<div *ngIf="rForm.controls['quantity'].hasError('required')">
 				  Quantity is required!
