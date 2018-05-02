@@ -70,7 +70,9 @@ export class CustomerMyCartComponent implements OnInit {
       this.cartService
         .postOrder(orders)
         .subscribe(
-          res => {},
+          res => {
+            this.cartService.deleteAllCartItems(this.kkdCustId).subscribe((data)=>{},err=> console.log(err));
+          },
           err => console.log(err)
         );
     } else {
