@@ -1,3 +1,16 @@
 {
-    "support":"Support"
+    "footer":{
+        "get_started":"Get started",
+        "farmer":"farmer",
+        "customer":"Customer",
+        "about_us":"About Us",
+        "company_information":"Company Information",
+        "policies":"Policies",
+        "contact_us":"Contact us",
+        "reviews":"Reviews",
+        "support":"Support",
+        "help":"Help",
+        "forums":"Forums",
+        "kisan_ki_dukan":"Kisan Ki Dukan"
+    }
 }
