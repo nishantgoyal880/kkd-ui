@@ -28,7 +28,7 @@ export class FarmerRegisterComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.rForm.get('mobileNo').setValue(this.aadhaarDataRecievedByRegister.mobileNumber);
+		this.rForm.get('mobileNo').setValue(this.aadhaarDataRecievedByRegister.mobileNo);
 		this.rForm.get('mobileNo').disable();
 	}
 
