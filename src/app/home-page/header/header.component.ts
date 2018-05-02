@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { IdRoleService } from '../../services/id-role/id-role.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
  public loggedIn:any=false;
  public role:any;
+ @Input() city: any;
 
  constructor(private idRoleService:IdRoleService) {
    this.idRoleService.role.subscribe((role) =>{
@@ -25,6 +26,7 @@ export class HeaderComponent implements OnInit {
 
  changeOnClickOfLogOut(){
    this.loggedIn=false;
+   this.idRoleService.isLoggedIn.emit(false);
    localStorage.removeItem("token");
  }
 

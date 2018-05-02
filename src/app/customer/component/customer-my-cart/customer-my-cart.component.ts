@@ -51,6 +51,8 @@ export class CustomerMyCartComponent implements OnInit {
   checkout() {
     if (this.customerInfo != null) {
       let orders: Array<object> = [];
+      let dateOfMonth:string;
+      let monthOfYear:string;
       this.items.map(ele => {
         let d = new Date();
         ele["kkdCustId"] = ele.custId;
@@ -60,8 +62,9 @@ export class CustomerMyCartComponent implements OnInit {
         ele["mobileNo"] = this.customerInfo["mobileNo"];
         ele["totalAmount"] = ele.quantity * ele.productPrice;
         ele["orderType"] = "Current";
-        ele["orderPlacingDate"] =
-          d.getFullYear() + "-0" + (d.getMonth() + 1) + "-" + d.getDate();
+        dateOfMonth=d.getDate()>9?''+(d.getDate()):'0'+(d.getDate());
+        monthOfYear=d.getMonth()>9?''+(d.getMonth()+1):'0'+(d.getMonth()+1);
+        ele["orderPlacingDate"] =d.getFullYear()+'-'+monthOfYear+'-'+dateOfMonth;
         orders.push(ele);
       });
       this.cartService
