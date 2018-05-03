@@ -11,10 +11,9 @@ export class FarmerAddProductService {
   constructor(private http: Http) { }
   private headers = new Headers({ 'Content-Type': 'application/json'});
 
-  private handleError(error: Response){
+  public handleError(error: Response){
     return Observable.throw(error.statusText);
   }    
-
 
   update(id,productSubmission){
        return this.http.post(addProductServiceUrl.nameMapping+id,productSubmission,this.authorization())
@@ -31,6 +30,4 @@ export class FarmerAddProductService {
       return new RequestOptions({ headers: headers });
     }
   }
-
-
 }
