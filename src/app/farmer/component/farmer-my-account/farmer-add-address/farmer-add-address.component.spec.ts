@@ -1,4 +1,3 @@
-import { FarmerDetailsService } from '../../../services/farmer-details/farmer-details.service';
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { BrowserModule, By } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -8,9 +7,8 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FarmerAddAddressComponent } from './farmer-add-address.component';
-import { mockFarmer } from '../../../mocks/farmerDetails.mocks';
 
-fdescribe('FarmerAddAddressComponent', () => {
+describe('FarmerAddAddressComponent', () => {
   let component: FarmerAddAddressComponent;
   let fixture: ComponentFixture<FarmerAddAddressComponent>;
   let debug: DebugElement;
@@ -26,11 +24,7 @@ fdescribe('FarmerAddAddressComponent', () => {
         RouterTestingModule,
         FormsModule,
         ReactiveFormsModule
-      ],
-      providers:[{
-        provide : FarmerDetailsService,
-        useClass : mockFarmer
-      }]
+      ]
     })
     .compileComponents();
   }));

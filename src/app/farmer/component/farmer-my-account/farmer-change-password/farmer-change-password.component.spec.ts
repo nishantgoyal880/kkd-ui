@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FarmerChangePasswordComponent } from './farmer-change-password.component';
 
-fdescribe('FarmerChangePasswordComponent', () => {
+describe('FarmerChangePasswordComponent', () => {
   let component: FarmerChangePasswordComponent;
   let fixture: ComponentFixture<FarmerChangePasswordComponent>;
   let debug: DebugElement;
