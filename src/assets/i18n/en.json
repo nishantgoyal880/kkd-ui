@@ -12,5 +12,30 @@
         "help":"Help",
         "forums":"Forums",
         "kisan_ki_dukan":"Kisan Ki Dukan"
+    },
+    "body":{
+        "kisan_ki_dukan":"Kisan Ki Dukan",
+        "i_am_farmer":"I'm a Farmer",
+        "i_am_customer":"I'm a Customer",
+        "caption":"It's not fresh if it's not from the farm."
+    },
+    "homepage":{
+        "why_choose_us":"WHY CHOOSE US",
+        "best_logistic":"Best Logistic",
+        "best_quality":"Best Quality",
+        "best_products":"Best Products",
+        "best_seeds":"Best Seeds",
+        "read_more":"Read More",
+        "our_aim":"Our Aim",
+        "our_offering":"Our Offering",
+        "our_prize":"Our Prize",
+        "our_aim_description":"",
+        "our_offering_description":"",
+        "our_prize_description":"",
+        "what_our_clients_say":"WHAT OUR CLIENTS SAY",
+        "best_logistic_description":"Best Logistic",
+        "best_quality_description":"Best Logistic",
+        "best_products_description":"Best Logistic",
+        "best_seeds_description":"qwerty"
     }
 }
