@@ -6,7 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import {IdRoleService} from '../../../../services/id-role/id-role.service'
 import { CustomerAddressBookComponent } from './customer-address-book.component';
 
-describe('CustomerAddressBookComponent', () => {
+fdescribe('CustomerAddressBookComponent', () => {
   let component: CustomerAddressBookComponent;
   let fixture: ComponentFixture<CustomerAddressBookComponent>;
  
@@ -47,9 +47,9 @@ describe('CustomerAddressBookComponent', () => {
     expect(component.searchDetails).toHaveBeenCalledTimes(0);
   }));
 
-  it('should call the handleSuccess method', async(() => {
+  it('should call the searchDetails method', async(() => {
     fixture.detectChanges();
-    spyOn(component,'handleSuccess');
-    expect(component.handleSuccess).toHaveBeenCalledTimes(0);
+    spyOn(component,'searchDetails');
+    expect(component.searchDetails).toHaveBeenCalledTimes(0);
   }));
 });
