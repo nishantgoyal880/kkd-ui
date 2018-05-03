@@ -93,6 +93,23 @@
     },
     "products":{
         "search":"खोज",
-        "sort_by_relevance":"प्रासंगिकता से क्रमबद्ध करें"
+        "sort_by_relevance":"प्रासंगिकता से क्रमबद्ध करें",
+        "price_low_to_high":"मूल्य नीचे से ऊपर",
+        "price_high_to_low":"मूल्य ऊपर से नीचे",
+        "quantity_low_to_high":"मात्रा नीचे से ऊपर",
+        "quantity_high_to_low":"मात्रा ऊपर से नीचे",
+        "distance":"दूरी",
+        "popular":"लोकप्रियता",
+        "filter_by_price":"कीमत से फ़िल्टर करें",
+        "filter_by_quantity":"मात्रा से फ़िल्टर करें",
+        "price":"कीमत",
+        "quantity":"मात्रा",
+        "description":"विवरण",
+        "bulk_order_price":"थोक आदेश कीमत",
+        "add_to_bag":"झोले में डालो",
+        "new_message":"नया संदेश",
+        "please_enter_qantity":"कृपया मात्रा दर्ज करें",
+        "close":"बंद करे",
+        "proceed":"आगे बढ़ो"
     }
 }
