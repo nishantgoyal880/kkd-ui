@@ -23,6 +23,15 @@ import { FarmerAlternateMobileComponent } from './component/farmer-my-account/fa
 import { FarmerDeleteProfileComponent } from './component/farmer-my-account/farmer-delete-profile/farmer-delete-profile.component';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 @NgModule({
   imports: [
     CommonModule,
@@ -36,7 +45,15 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
       customClass: 'modal-content',
       confirmButtonClass: 'btn btn-primary',
       cancelButtonClass: 'btn'
-  })
+  }),
+  HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+}),
   ],
 
   declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent,FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent, AadhaarComponent, FarmerAuthenticationAuthorizationComponent, ForgetPasswordComponent,FarmerAddAddressComponent, FarmerChangePasswordComponent, FarmerAlternateMobileComponent, FarmerDeleteProfileComponent],
