@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {MockBackend, MockConnection} from '@angular/http/testing';
 import {PRODUCTDETAILS} from '../farmer-add-product/mock-addProduct-data';
+import 'rxjs/add/observable/throw';
 import {
   TestBed,
   getTestBed,
@@ -85,5 +86,12 @@ fdescribe('FarmerAddProductService', () => {
         expect(status).not.toEqual(true);
       });
   })));
+
+  /*it('correctly handles error', inject([FarmerAddProductService], (service: FarmerAddProductService) => {
+    const spy = spyOn(console, 'log');
+    const error: Error = new Error('ERROR');
+    service.handleError(error);
+    expect(spy).toHaveBeenCalledWith(error);
+  }));*/
 
 });
