@@ -1,5 +1,5 @@
 <div class="container-fluid mt-100">
-  <h1> Login Farmer{{ 'farmer_login.login_farmer' | translate }}</h1>
+  <h1>{{ 'farmer_login.login_farmer' | translate }}</h1>
   <div class="card shadow cardwidth">
     <div class="card-body">
       <form [formGroup]="rForm" (ngSubmit)="loginFarmer(rForm.value)">
@@ -20,8 +20,8 @@
          </div>
          </div>
          <div class = "form-comp">
-            <div class = "name"><label for="exampleInputPassword1">{{ 'customer_login.password' | translate }}</label></div>
-         <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="{{ 'customer_login.password' | translate }}">
+            <div class = "name"><label for="exampleInputPassword1">{{ 'farmer_login.password' | translate }}</label></div>
+         <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="{{ 'farmer_login.password' | translate }}">
          <div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
           <div *ngIf="rForm.controls['password'].hasError('minlength')" >
             {{ 'farmer_login.less_than_6_digits' | translate }}
