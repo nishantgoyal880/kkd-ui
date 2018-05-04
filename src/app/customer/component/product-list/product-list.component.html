@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-10">
       <form class="form-inline mt-2 mt-md-0" style="margin-left: 13.9rem">
-        <input class="form-control  searchText" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput" />
+        <input class="form-control  searchText" type="text" name="q" placeholder="{{ 'products.search' | translate }}" [(ngModel)]="searchInput" />
         <button class="btn btn-outline-primary my-2 my-sm-0 ml-1" type="submit" (click)='searchProduct()'>
           <i class="fa fa-search"></i>
         </button>
@@ -12,15 +12,15 @@
         <div class="dropdown ">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false" style="margin-left: 4.5rem">
-        Sort By Relevance
+        {{ 'products.sort_by_relevance' | translate }}
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" (click)="sortBy('priceLH')">Price: Low to High</a>
-          <a class="dropdown-item" (click)="sortBy('priceHL')">Price: High to Low</a>
-          <a class="dropdown-item" (click)="sortBy('quantityLH')">Quantity: Low to High</a>
-          <a class="dropdown-item" (click)="sortBy('quantityHL')">Quantity: High to Low</a>
-          <a class="dropdown-item" (click)="sortBy('distance')">Distance</a>
-          <a class="dropdown-item" (click)="sortBy('popularity')">Popular</a>
+          <a class="dropdown-item" (click)="sortBy('priceLH')">{{ 'products.price_low_to_high' | translate }}</a>
+          <a class="dropdown-item" (click)="sortBy('priceHL')">{{ 'products.price_high_to_low' | translate }}</a>
+          <a class="dropdown-item" (click)="sortBy('quantityLH')">{{ 'products.quantity_low_to_high' | translate }}</a>
+          <a class="dropdown-item" (click)="sortBy('quantityHL')">{{ 'products.quantity_high_to_low' | translate }}</a>
+          <a class="dropdown-item" (click)="sortBy('distance')">{{ 'products.distance' | translate }}</a>
+          <a class="dropdown-item" (click)="sortBy('popularity')">{{ 'products.popular' | translate }}</a>
         </div>
       </div>
     </div>
@@ -33,17 +33,17 @@
       <!-- filtered by price start-->
 
       <label class="my-3">
-        <span>Filter By Price:</span>
+        <span>{{ 'products.filter_by_price' | translate }}</span>
       </label>
-      <ion-range-slider style="color:white" #sliderElement type="double" min="0" [max]=max_price [to_max]=max_price prefix="Price: "
+      <ion-range-slider style="color:white" #sliderElement type="double" min="0" [max]=max_price [to_max]=max_price prefix="{{ 'products.price' | translate }}:"
         postfix=" Rs" keyboard:true (onFinish)="myOnFinishPrice($event)">
       </ion-range-slider>
       <!-- filtered by price end-->
       <!-- filtered by quantity start-->
       <label class="my-3">
-        <span>Filter By Quantity:</span>
+        <span>{{ 'products.search' | translate }}</span>
       </label>
-      <ion-range-slider #sliderElement type="double" min="0" [max]=max_quantity [to_max]=max_quantity prefix="Quantity:" postfix=" Kg"
+      <ion-range-slider #sliderElement type="double" min="0" [max]=max_quantity [to_max]=max_quantity prefix="{{ 'products.quantity' | translate }}:" postfix=" Kg"
         (onFinish)="myOnFinishQuantity($event)">
       </ion-range-slider>
       <!-- filtered by Quantity end-->
@@ -70,17 +70,17 @@
                   <!-- Text -->
                   <div class="text-area">
                     <p class="card-text">
-                      <b>Description: </b>{{item.description}}</p>
+                      <b>{{ 'products.description' | translate }}: </b>{{item.description}}</p>
                     <p class="card-text">
-                      <b>Price: </b>{{item.price}}/kg.</p>
+                      <b>{{ 'products.price' | translate }}:</b>{{item.price}}/kg.</p>
                     <p class="card-text">
-                      <b>Bulk Order Price: </b>{{item.bulkOrderPrice}}/kg.</p>
+                      <b>{{ 'products.bulk_order_price' | translate }}:</b>{{item.bulkOrderPrice}}/kg.</p>
                     <p class="card-text">
-                      <b>Quantity: </b>{{item.quantity}} Kg</p>
+                      <b>{{ 'products.quantity' | translate }}:</b>{{item.quantity}} Kg</p>
                   </div>
                   <hr>
                   <span>
-                    <button type="button" class="btn btn-success mt-4" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1">Add to Bag</button>
+                    <button type="button" class="btn btn-success mt-4" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1">{{ 'products.add_to_bag' | translate }} </button>
                   </span>
                 </div>
               </div>
@@ -104,20 +104,20 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ 'products.new_message' | translate }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label for="recipient-name" class="col-form-label">Please Enter Quantity</label>
+          <label for="recipient-name" class="col-form-label">{{ 'products.please_enter_qantity' | translate }}</label>
           <input type="number" min="1" class="form-control" id="recipient-name" [(ngModel)]="enteredQuant">
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="proceed()">Proceed</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ 'products.close' | translate }}</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="proceed()">{{ 'products.proceed' | translate }}</button>
       </div>
     </div>
   </div>

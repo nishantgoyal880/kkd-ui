@@ -77,7 +77,7 @@
        "buying_products_description":"Buying products is also an easy task. Just search the product that you want and based on your location, the product list will be shown to you. Then you can view all the products from different farmers and their ratings. Thus, based on their ratings and your personal requirements, you can add the product to your cart and checkout at any time later.",
        "normal_v_bulk_description":"There is a limit on the quantity of a single product that you can buy as a general customer. If greater quantity is required to be bought, it falls under the categoury of the Bulk order. The difference between the two is in the price rate and also the quantity. It is done in order to avoid any chaos and provide some ease to the farmer end."
    },
-    "customerlogin":{
+    "customer_login":{
         "login_customer":"LOGIN CUSTOMER",
         "mobile_number":"Mobile Number*",
         "password":"Password*",
@@ -104,5 +104,42 @@
         "more_than_10_digits":"More than 10 digits",
         "less_than_6_digits":"less than 6 digits",
         "more_than_12_digits":"More than 12 digits"
+    },
+    "products":{
+        "search":"Search",
+        "sort_by_relevance":"Sort By Relevance",
+        "price_low_to_high":"Price: Low to High",
+        "price_high_to_low":"Price: High to Low",
+        "quantity_low_to_high":"Quantiy: Low to High",
+        "quantity_high_to_low":"Quantity: High to Low",
+        "distance":"Distance",
+        "popular":"Popularity",
+        "filter_by_price":"Filter By Price:",
+        "filter_by_quantity":"Filter By Quantity:",
+        "price":"Price",
+        "quantity":"Quantity",
+        "description":"Description",
+        "bulk_order_price":"Bulk Order Price",
+        "add_to_bag":"Add to Bag",
+        "new_message":"New message",
+        "please_enter_qantity":"Please Enter Quantity",
+        "close":"Close",
+        "proceed":"Proceed"
+    },
+    "policy":{
+        "policies":"POLICIES",
+        "description":"Returns is a scheme provided by respective sellers directly under this policy in terms of which the option of exchange, replacement and/ or refund is offered by the respective sellers to you. All products listed under a particular category may not have the same returns policy. For all products, the policy on the product page shall prevail over the general returns policy. Do refer the respective item's applicable return policy on the product page for any exceptions to the table below. The return policy is divided into three parts; Do read all sections carefully to understand the conditions and cases under which returns will be accepted. A privacy policy is a legal document that details how a website gathers, stores, shares, and sells data about its visitors. This data typically includes items such as a user’s name, address, birthday, marital status, medical history, and consumer behavior. The specific contents of this document depend upon the laws in the legal jurisdiction in which your business operates. Most countries have their own set of guidelines regarding what information is eligible for collection, and how that information may be used. When it comes to legal documents, it is best not to take chances. Fortunately, it’s easy to get a free website privacy policy in just a few minutes. All you have to do is fill up the blank spaces below and we will send you an email with your own personalized privacy policy for your business."
+    },
+    "connect_us":{
+        "contact_us":"CONTACT US",
+        "mail_us":"Mail Us",
+        "registered_office_address":"Registered Office Address",
+        "kisan_ki_dukan":"Kisan Ki Dukan",
+        "kkd":"KKD",
+        "publicis":"Publicis Sapient Pvt. Ltd.",
+        "unitech_infospace":"Unitech Infospace",
+        "sector_21 ":"Sector 21 ",
+        "gurugram":"Gurugram",
+        "india":"India, 122017"
     }
 }
