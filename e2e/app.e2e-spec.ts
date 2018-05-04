@@ -15,22 +15,22 @@ describe('kkd-ui App', () => {
 
   it('should display farmer Login button', () => {
     page.getLoginSignUpButton().click();
-    expect(page.getLoginFarmerDropDownButton()).toEqual('Login As Farmer');
+    expect(page.getLoginFarmerDropDownButton()).toEqual('Login as Farmer');
   });
 
   it('should display farmer SignUp button', () => {
     page.getLoginSignUpButton().click();
-    expect(page.getSignUpFarmerDropDownButton()).toEqual('Sign Up As Farmer');
+    expect(page.getSignUpFarmerDropDownButton()).toEqual('Sign Up as Farmer');
   });
 
   it('should display customer Login button', () => {
     page.getLoginSignUpButton().click();
-    expect(page.getLoginCustomerDropDownButton()).toEqual('Login As Customer');
+    expect(page.getLoginCustomerDropDownButton()).toEqual('Login as Customer');
   });
 
   it('should display customer SignUp button', () => {
     page.getLoginSignUpButton().click();
-    expect(page.getSignUpCustomerDropDownButton()).toEqual('Sign Up As Customer');
+    expect(page.getSignUpCustomerDropDownButton()).toEqual('Sign Up as Customer');
   });
 
   it('should display Kisan Ki Dukan message', () => {
@@ -62,40 +62,165 @@ describe('kkd-ui App', () => {
 
   it('should display forget password button after clicking farmer button', () => {
     page.getFarmerButton().click();
-    expect(page.getFarmerForgetPasswordButton().getText()).toEqual('Forgot password?');
+    expect(page.getFarmerForgetPasswordButton().getText()).toEqual('Forgot Password?');
   });
 
-  fit('should display login farmer button after clicking farmer button', () => {
+  it('should display login farmer button after clicking farmer button', () => {
     page.getFarmerButton().click();
     expect(page.getFarmerLoginButton()).toBeTruthy();
   });
 
   fit('should display My Account button after clicking login farmer button', () => {
+    page.getFarmerButton().click();
     page.getFarmerLoginButton().click();
     expect(page.getMyAccountButton()).toBeTruthy();  
   });
 
-  fit('should display Add Product button after clicking login farmer button', () => {
+  fit('should display Farmer Add Address button after clicking My Account Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getMyAccountButton().click();
+    expect(page.getFarmerAddAddressButton()).toBeTruthy();  
+  });
+
+  it('should display Farmer Change Password button after clicking My Account Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getMyAccountButton().click();
+    expect(page.getFarmerChangePasswordButton()).toBeTruthy();  
+  });
+
+  it('should display Farmer Alternate Mobile button after clicking My Account Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getMyAccountButton().click();
+    expect(page.getFarmerAlternateMobileButton()).toBeTruthy();  
+  });
+
+  it('should display Farmer Delete Profile button after clicking My Account Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getMyAccountButton().click();
+    expect(page.getFarmerDeleteProfileButton()).toBeTruthy();  
+  });
+
+  it('should display Add Product button after clicking login farmer button', () => {
+    page.getFarmerButton().click();
     page.getFarmerLoginButton().click();
     expect(page.getAddProductButton()).toBeTruthy();
   });
 
-  fit('should display Bank Details button after clicking login farmer button', () => {
+  fit('should display Add Product Title after clicking Add Product Button', () => {
+    page.getFarmerButton().click();
     page.getFarmerLoginButton().click();
-    expect(page.getBankDetailsButton()).toBeTruthy();;
+    page.getAddProductButton().click();
+    expect(page.getAddProductTitle()).toEqual('Upload Product');
   });
 
-  fit('should display Current Order button after clicking login farmer button', () => {
+  it('should display Choose product Dropdown after clicking Add Product Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getAddProductButton().click();
+    expect(page.getChooseProductDropDown()).toBeTruthy();
+  });
+
+  it('should display Product Description InputBox after clicking Add Product Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getAddProductButton().click();
+    expect(page.getProductDescriptionInputBox()).toBeTruthy();
+  });
+
+  it('should display Product Price Per Kg InputBox after clicking Add Product Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getAddProductButton().click();
+    expect(page.getProductPricePerKgInputBox()).toBeTruthy();
+  });
+
+  it('should display Product Bulk Order Price Per Kg InputBox after clicking Add Product Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getAddProductButton().click();
+    expect(page.getProductBulkOrderPricePerKgInputBox()).toBeTruthy();
+  });
+
+  it('should display Quantity InputBox after clicking Add Product Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getAddProductButton().click();
+    expect(page.getQuantityInputBox()).toBeTruthy();
+  });
+
+  it('should display Upload Image InputBox after clicking Add Product Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getAddProductButton().click();
+    expect(page.getUploadImageInputBox()).toBeTruthy();
+  });
+
+  it('should display Submit Product Button after clicking Add Product Button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getAddProductButton().click();
+    expect(page.getSubmitProductButton()).toBeTruthy();
+  });
+
+  it('should display Bank Details button after clicking login farmer button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    expect(page.getBankDetailsButton()).toBeTruthy();
+  });
+
+  fit('should display Farmer Bank Account Title after clicking Bank Details button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getBankDetailsButton().click();
+    expect(page.getFarmerBankDetailsTitle()).toEqual('Bank Details');
+  });
+
+  it('should display Farmer Bank Account Number after clicking Bank Details button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getBankDetailsButton().click();
+    expect(page.getFarmerBankAccountNumberInputBox()).toBeTruthy();;
+  });
+
+  it('should display Farmer Bank Account Holder Name after clicking Bank Details button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getBankDetailsButton().click();
+    expect(page.getFarmerBankAccountHolderNameInputBox()).toBeTruthy();;
+  });
+
+  it('should display Farmer Bank Account IFSC Code after clicking Bank Details button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getBankDetailsButton().click();
+    expect(page.getFarmerBankIfscCodeInputBox()).toBeTruthy();;
+  });
+
+  it('should display Farmer Bank Account Save Details Button after clicking Bank Details button', () => {
+    page.getFarmerButton().click();
+    page.getFarmerLoginButton().click();
+    page.getBankDetailsButton().click();
+    expect(page.getFarmerBankSaveDetailsButton()).toBeTruthy();;
+  });
+
+  it('should display Current Order button after clicking login farmer button', () => {
+    page.getFarmerButton().click();
     page.getFarmerLoginButton().click();
     expect(page.getCurrentOrderButton()).toBeTruthy();
   });
 
-  fit('should display Previous Order button after clicking login farmer button', () => {
+  it('should display Previous Order button after clicking login farmer button', () => {
+    page.getFarmerButton().click();
     page.getFarmerLoginButton().click();
     expect(page.getPreviousOrderButton()).toBeTruthy();
   });
 
-  fit('should display View Product button after clicking login farmer button', () => {
+  it('should display View Product button after clicking login farmer button', () => {
+    page.getFarmerButton().click();
     page.getFarmerLoginButton().click();
     expect(page.getViewProductButton()).toBeTruthy();;
   });
@@ -106,11 +231,13 @@ describe('kkd-ui App', () => {
   });
 
   it('should display aadhar inputBox', () => {
+    page.getFarmerButton().click();
     page.getFarmerRegisterButton().click();
     expect(page.getFarmerRegisterAadharInputBox()).toBeTruthy();
   });
 
   it('should display send OTP button', () => {
+    page.getFarmerButton().click();
     page.getFarmerRegisterButton().click();
     expect(page.getFarmerRegisterSendOtpButton()).toBeTruthy();
   });
@@ -136,35 +263,91 @@ describe('kkd-ui App', () => {
 
   it('should display forget password button after clicking customer button', () => {
     page.getCustomerButton().click();
-    expect(page.getCustomerForgetPasswordButton().getText()).toEqual('Forgot password?');
+    expect(page.getCustomerForgetPasswordButton().getText()).toEqual('Forgot Password');
   });
 
-  fit('should display login customer button after clicking customer button', () => {
+  it('should display login customer button after clicking customer button', () => {
     page.getCustomerButton().click();
     expect(page.getCustomerLoginButton()).toBeTruthy();
   });
 
-  fit('should display My Orders button after clicking login customer button', () => {
+  it('should display My Orders button after clicking login customer button', () => {
+    page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
     expect(page.getMyOrdersButton()).toBeTruthy();
   });
 
-  fit('should display Previous Orders button after clicking login customer button', () => {
+  it('should display Previous Orders button after clicking login customer button', () => {
+    page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
     expect(page.getPreviousOrdersButton()).toBeTruthy();
   });
 
-  fit('should display Address Book button after clicking login customer button', () => {
+  it('should display Address Book button after clicking login customer button', () => {
+    page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
     expect(page.getAddressBookButton()).toBeTruthy();
   });
 
-  fit('should display Change Password button after clicking login customer button', () => {
+  it('should display Change Password button after clicking login customer button', () => {
+    page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
-    expect(page.getChangePasswordButton()).toBeTruthy();
+    expect(page.getCustomerChangePasswordButton()).toBeTruthy();
   });
 
-  fit('should display Delete Profile button after clicking login customer button', () => {
+
+
+
+
+  fit('should display Change Password Title after clicking customer change password button', () => {
+    page.getCustomerButton().click();
+    page.getCustomerLoginButton().click();
+    page.getCustomerChangePasswordButton().click();
+    expect(page.getCustomerChangePasswordTitle()).toBeTruthy();
+  });
+
+  fit('should display Mobile Number InputBox after clicking customer change password button', () => {
+    page.getCustomerButton().click();
+    page.getCustomerLoginButton().click();
+    page.getCustomerChangePasswordButton().click();
+    expect(page.getCustomerMobileNumberInputBox()).toBeTruthy();
+  });
+
+  fit('should display Current Password InputBox after clicking customer change password button', () => {
+    page.getCustomerButton().click();
+    page.getCustomerLoginButton().click();
+    page.getCustomerChangePasswordButton().click();
+    expect(page.getCustomerCurrentPasswordInputBox()).toBeTruthy();
+  });
+
+  fit('should display New Password InputBox after clicking customer change password button', () => {
+    page.getCustomerButton().click();
+    page.getCustomerLoginButton().click();
+    page.getCustomerChangePasswordButton().click();
+    expect(page.getCustomerNewPasswordInputBox()).toBeTruthy();
+  });
+
+  fit('should display Reenter New Password InputBox after clicking customer change password button', () => {
+    page.getCustomerButton().click();
+    page.getCustomerLoginButton().click();
+    page.getCustomerChangePasswordButton().click();
+    expect(page.getCustomerReenterNewPasswordInputBox()).toBeTruthy();
+  });
+
+  fit('should display Submit Button after clicking customer change password button', () => {
+    page.getCustomerButton().click();
+    page.getCustomerLoginButton().click();
+    page.getCustomerChangePasswordButton().click();
+    expect(page.getCustomerChangePasswordSubmitButton()).toBeTruthy();
+  });
+
+
+
+
+
+
+  it('should display Delete Profile button after clicking login customer button', () => {
+    page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
     expect(page.getDeleteProfileButton()).toBeTruthy(); 
   });
@@ -174,32 +357,38 @@ describe('kkd-ui App', () => {
     expect(page.getCustomerRegisterButton()).toBeTruthy();
   });
 
-  fit('should display customer first name inputBox after clicking customer register button', () => {
+  it('should display customer first name inputBox after clicking customer register button', () => {
+    page.getCustomerButton().click();
     page.getCustomerRegisterButton().click();
     expect(page.getCustomerRegisterFirstNameInputBox()).toBeTruthy();
   });
 
-  fit('should display customer last name inputBox after clicking customer register button', () => {
+  it('should display customer last name inputBox after clicking customer register button', () => {
+    page.getCustomerButton().click();
     page.getCustomerRegisterButton().click();
     expect(page.getCustomerRegisterLastNameInputBox()).toBeTruthy();
   });
 
-  fit('should display customer mobile number inputBox after clicking customer register button', () => {
+  it('should display customer mobile number inputBox after clicking customer register button', () => {
+    page.getCustomerButton().click();
     page.getCustomerRegisterButton().click();
     expect(page.getCustomerRegisterMobileInputBox()).toBeTruthy();
   });
 
-  fit('should display customer password inputBox after clicking customer register button', () => {
+  it('should display customer password inputBox after clicking customer register button', () => {
+    page.getCustomerButton().click();
     page.getCustomerRegisterButton().click();
     expect(page.getCustomerRegisterPasswordInputBox()).toBeTruthy();
   });
 
-  fit('should display customer reenter password inputBox after clicking customer register button', () => {
+  it('should display customer reenter password inputBox after clicking customer register button', () => {
+    page.getCustomerButton().click();
     page.getCustomerRegisterButton().click();
     expect(page.getCustomerRegisterReenterPasswordInputBox()).toBeTruthy();
   });
 
-  fit('should display customer inputBox after clicking customer register button', () => {
+  it('should display customer inputBox after clicking customer register button', () => {
+    page.getCustomerButton().click();
     page.getCustomerRegisterButton().click();
     expect(page.getCustomerRegisterSendOtpButton()).toBeTruthy();
   });
@@ -214,7 +403,7 @@ describe('kkd-ui App', () => {
 
   it('should display help title', () => {
     page.getHelpButton().click();
-    expect(page.getHelpTitle().getText()).toEqual('Help');
+    expect(page.getHelpTitle().getText()).toEqual('HELP');
   });
 
   it('should display help subTitle1', () => {
