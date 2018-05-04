@@ -46,13 +46,16 @@ private authorization() {
       .map(data => data.json(),
       (error: any)=>this.handleError(error));
     }
-   // Function to handle errors
-    private handleError(error: Response){
-      return Observable.throw(error.statusText);
-    }
+   
+    // Function to change farmer's password
     updatePassword(passwordResetInfo){
       return this.http.put(App.changePasswordMapping,passwordResetInfo,this.authorization()).
       map( data=> data.json(),
       (error:any)=> this.handleError(error));
+    }
+
+    // Function to handle errors
+    private handleError(error: Response){
+      return Observable.throw(error.statusText);
     }
 }
