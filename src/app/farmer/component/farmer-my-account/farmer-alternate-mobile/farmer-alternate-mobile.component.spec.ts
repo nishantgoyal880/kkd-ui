@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FarmerAlternateMobileComponent } from './farmer-alternate-mobile.component';
 
-fdescribe('FarmerAlternateMobileComponent', () => {
+describe('FarmerAlternateMobileComponent', () => {
   let component: FarmerAlternateMobileComponent;
   let fixture: ComponentFixture<FarmerAlternateMobileComponent>;
   let debug: DebugElement;
