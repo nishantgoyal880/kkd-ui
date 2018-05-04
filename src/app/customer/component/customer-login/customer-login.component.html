@@ -1,5 +1,5 @@
     <div class="container mt-100">
-      <h1>Login Customer</h1>
+      <h1>{{ 'customer_login.login_customer' | translate }}</h1>
     </div>
 <div class="container-fluid">
   <div class="card shadow cardwidth">
@@ -7,40 +7,40 @@
       <form [formGroup]="rForm" (ngSubmit)="loginCustomer(rForm.value)">
         <div class="form-group">
             <div class = "form-comp-top">
-                <div class = "name"><label for="exampleInputEmail1">Mobile Number*</label></div>
-          <input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="Mobile Number">
+                <div class = "name"><label for="exampleInputEmail1">{{ 'customer_login.mobile_number' | translate }}</label></div>
+          <input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="{{ 'customer_login.mobile_number' | translate }}">
           <div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
             <div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
-              Less than 10 digits
+              {{ 'customer_login.less_than_10_digits' | translate }}
             </div>
             <div *ngIf="rForm.controls['mobileNo'].hasError('maxlength')">
-             More than 10 digits
+            {{ 'customer_login.more_than_10_digits' | translate }}
            </div>
            <div *ngIf="rForm.controls['mobileNo'].hasError('required')">
-             Mobile Number is required!
+             {{ 'customer_login.mobile_number_is_required' | translate }}
            </div>
          </div>
          </div>
          <div class = "form-comp">
-            <div class = "name"> <label for="exampleInputPassword1">Password*</label></div>
-         <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <div class = "name"> <label for="exampleInputPassword1">{{ 'customer_login.password' | translate }}</label></div>
+         <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="{{ 'customer_login.password' | translate }}">
          <div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
           <div *ngIf="rForm.controls['password'].hasError('maxlength')">
-           More than 12 digits
+          {{ 'customer_login.more_than_12_digits' | translate }}
          </div>
          <div *ngIf="rForm.controls['password'].hasError('required')">
-           Password is required!
+         {{ 'customer_login.password_is_required' | translate }}
          </div>
          <div *ngIf="rForm.controls['password'].hasError('pattern')">
-          Password Invalid (Atleast one lowercase, uppercase, specialcharacter, digit, minLength 6) !
+          {{ 'customer_login.password_invalid' | translate }}
         </div>
       </div>
     </div>
     </div>
-    <a routerLink="/customer/forgetPassword">Forgot password?</a>
+    <a routerLink="/customer/forgetPassword">{{ 'customer_login.forgot_password' | translate }}</a>
     <div class = "form-comp-button">
-    <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Login Customer</button>
-    <button type="submit" class="btn btn-primary" routerLink="/customer/register">Register Customer</button>
+    <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'customer_login.login' | translate }}</button>
+    <button type="submit" class="btn btn-success" routerLink="/customer/register">{{ 'customer_login.register' | translate }}</button>
     </div>
   </form>
 </div>

@@ -20,12 +20,14 @@ export class AppComponent implements OnInit {
 
 	currentLat: any;
 	currentLong: any;
+	city: any;
 
 	constructor(
 		public router: Router,
 		private verifyTokenService: VerifytokenService,
 		private idRoleService: IdRoleService
 	) {
+
 
 	}
 
@@ -43,30 +45,45 @@ export class AppComponent implements OnInit {
 
 	verifyToken() {
 		this.verifyTokenService.verifyToken(localStorage.getItem("token"))
-		.subscribe((res) =>{
-			console.log(res.results.kkdId+" "+res.results.role)
-			this.idRoleService.id.emit(res.results.kkdId);
-			this.idRoleService.role.emit(res.results.role);
-		}, (err) =>{
-			alert("Invalid");
-		})
+			.subscribe((res) => {
+				console.log(res.results.kkdId + " " + res.results.role)
+				this.idRoleService.id.emit(res.results.kkdId);
+				this.idRoleService.role.emit(res.results.role);
+				this.idRoleService.isLoggedIn.emit(true);
+			}, (err) => {
+				alert("Invalid");
+			})
 	}
 
 
-		getLocation() {
+	getLocation() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition((position) => {
-				//alert(position);
 				this.currentLat = position.coords.latitude;
 				this.currentLong = position.coords.longitude;
-				//alert(this.currentLat);
-				//alert(this.currentLong);
+				console.log("lat:" + this.currentLat);
+				console.log("lon:" + this.currentLong);
 				this.getAddress(this.currentLat, this.currentLong)
-				.then((location) => {
-					swal("You are in " +location);
+					.then((location) => {
+						this.city = location;
+					}
+					)
+					.catch((error) => {
+						console.log(error);
+					});
+			}, (error) => {
+				switch (error.code) {
+					case error.PERMISSION_DENIED:
+						console.log("User denied the request for Geolocation.");
+						break;
+					case error.POSITION_UNAVAILABLE:
+						console.log("Location information is unavailable.");
+						break;
+					case error.TIMEOUT:
+						console.log("The request to get user location timed out.");
+						break;
 				}
-				)
-				.catch(console.error);
+
 			});
 		} else {
 			alert("Geolocation is not supported by this browser.");

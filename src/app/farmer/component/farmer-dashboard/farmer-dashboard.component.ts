@@ -16,12 +16,9 @@ export class FarmerDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.idRoleService.role.subscribe((role) =>{
-      console.log('role8888888888888888888')
-      console.log(role)
     })
 
     this.idRoleService.id.subscribe((kkdId) =>{
-      console.log(kkdId)
     })
   }
 }

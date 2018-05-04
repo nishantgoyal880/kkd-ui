@@ -28,12 +28,6 @@ export class RegistrationLoginService {
 			(error: any)=>this.handleError(error));
 	}
 
-	addhaarData(aadhaarNo) {
-		return this.http.get(RegistrationLogin.aadhaar_api+aadhaarNo)
-		.map(data => data.json(),
-			(error: any)=>this.handleError(error));
-	}
-
 	addhaarDataVerify(aadhaarNo) {
 		return this.http.get(RegistrationLogin.aadhaar+aadhaarNo,this.authorization())
 		.map(data => data.json(),

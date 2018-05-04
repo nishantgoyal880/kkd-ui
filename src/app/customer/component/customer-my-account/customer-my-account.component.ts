@@ -64,34 +64,26 @@ export class CustomerMyAccountComponent implements OnInit {
     currentPassword : [null, Validators.compose([Validators.required])],
     newPassword : [null, Validators.compose([Validators.required])],
     reenterNewPassword: [null, Validators.compose([Validators.required])],
-
 })
    this.rFormDeleteProfile = fb.group({
     mobileNumberDeleteProfile : [null, Validators.compose([Validators.required])],
     currentPasswordDeleteProfile : [null, Validators.compose([Validators.required])],
-  
-
-})
+  })
 }
 
-  ngOnInit() {
-    
-   this.customerAuthenticationService.changeCustomerId("kkdcust2000");
-  }
+  ngOnInit() {}
   
-   onSubmit(post){
-    
+  onSubmit(post){
   this.mobileNumber=post.mobileNumber;
   this.currentPassword=post.currentPassword;
   this.newPassword=post.newPassword;
   this.reenterNewPassword=post.reenterNewPassword;
-    var regularExpression  = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  var regularExpression  = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if(!(isNaN(+this.mobileNumber)) && this.mobileNumber.length==10 ){
     if(this.currentPassword.length && this.newPassword.length && this.reenterNewPassword.length ){
     if(regularExpression.test(this.newPassword)){
       if(this.newPassword == this.reenterNewPassword)
     {
-    
       this.customerAuthenticationService.getUserDetails(this.mobileNumber)
             .subscribe((res) =>{
             if(!(res == null)){
@@ -168,9 +160,7 @@ export class CustomerMyAccountComponent implements OnInit {
     }
   }
   
-
-  deleteUser(post){
-    
+deleteUser(post){
     this.mobileNumberDeleteProfile=post.mobileNumberDeleteProfile;
     this.currentPasswordDeleteProfile=post.currentPasswordDeleteProfile;
     if(!(isNaN(+this.mobileNumberDeleteProfile)) && this.mobileNumberDeleteProfile.length==10 ){
@@ -201,8 +191,7 @@ export class CustomerMyAccountComponent implements OnInit {
                   text: 'Mobile number is not registered',
                 })
               }
-        
-        }, (error) =>{
+         }, (error) =>{
           swal({
             type: 'error',
             title: 'Oops...',

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../../services/order-service/order.service';
+import { IdRoleService } from '../../../../services/id-role/id-role.service';
 
 @Component({
   selector: 'app-farmer-current-order',
@@ -9,7 +10,7 @@ import { OrderService } from '../../../services/order-service/order.service';
 })
 export class FarmerCurrentOrderComponent implements OnInit {
 
-  constructor(private orderService:OrderService) { }
+  constructor(private orderService:OrderService,private idRoleService:IdRoleService) { }
 
   public orderList=[];
   public date:Date;
@@ -20,10 +21,16 @@ export class FarmerCurrentOrderComponent implements OnInit {
   public otpAuto:any;
   public otpVerified:Boolean=false;
   public avgRating:any;
+  public farmerId:any;
 
 
   ngOnInit() {
-      this.loadData();
+      this.idRoleService.role.subscribe((role) =>{
+      })
+      this.idRoleService.id.subscribe((id) =>{
+         this.farmerId=id;
+         this.loadData();
+      })
   }
 
   //Loading data on initialization
@@ -32,7 +39,7 @@ export class FarmerCurrentOrderComponent implements OnInit {
     //this.date=d.getFullYear()+'-0'+(d.getMonth()+1)+'-'+d.getDate();
     this.date=d;
     //code to get the list of orders according to farmer id
-    this.orderService.getCurrentOrderListFromFarmerId("kkdfarm1001").subscribe((res) =>{
+    this.orderService.getCurrentOrderListFromFarmerId(this.farmerId).subscribe((res) =>{
     this.orderList = res;
   }, (error) =>{})
   }

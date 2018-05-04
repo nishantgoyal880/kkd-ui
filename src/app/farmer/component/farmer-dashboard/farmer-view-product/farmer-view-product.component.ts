@@ -3,6 +3,7 @@ import { FarmerViewProductService } from '../../../services/farmer-view-product/
 import { viewProductServiceUrl } from '../../../config/viewProductServiceUrl.config';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
+import { IdRoleService } from '../../../../services/id-role/id-role.service';
 
 @Component({
   selector: 'app-farmer-view-product',
@@ -12,7 +13,12 @@ import swal from 'sweetalert2';
 })
 export class FarmerViewProductComponent implements OnInit {
 
-  constructor(private farmerViewProductService: FarmerViewProductService) { }
+  public role: any;
+  public id: any;
+
+  constructor(private farmerViewProductService: FarmerViewProductService, private idRoleService: IdRoleService) {
+
+  }
 
   public products: any = [];
   public productId: any;
@@ -29,9 +35,22 @@ export class FarmerViewProductComponent implements OnInit {
 
   // calling service to get all products of a particular farmer
   public getProducts() {
-    this.farmerViewProductService.getAllProducts().subscribe((res) => {
-      this.products = res;
-    }, error => this.handleError(error))
+    console.log("hereeeee");
+
+    this.idRoleService.role.subscribe((role) => {
+      this.role = role;
+      console.log("role in view product ts: " + this.role);
+    })
+
+    this.idRoleService.id.subscribe((id) => {
+      this.id = id;
+      console.log("id in view product ts: " + this.id);
+      this.farmerViewProductService.getAllProducts(this.id).subscribe((res) => {
+        this.products = res;
+      }, error => this.handleError(error))
+    })
+
+
   }
 
   //saving id for deleting a farmer product
@@ -114,6 +133,7 @@ export class FarmerViewProductComponent implements OnInit {
   }
 
   ngOnInit() {
+
 
     this.getProducts();
   }

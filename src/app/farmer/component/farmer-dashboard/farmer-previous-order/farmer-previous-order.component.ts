@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { OrderService } from '../../../services/order-service/order.service';
+import { IdRoleService } from '../../../../services/id-role/id-role.service';
 
 @Component({
   selector: 'app-farmer-previous-order',
@@ -11,16 +11,23 @@ import { OrderService } from '../../../services/order-service/order.service';
 
 export class FarmerPreviousOrderComponent implements OnInit {
 
-  constructor(private orderService:OrderService) { }
+  constructor(private orderService:OrderService,private idRoleService:IdRoleService) { }
 
   public orderList=[];
+  public farmerId:any;
 
   ngOnInit() {
-    //code to get the list of orders according to farmer id
-    this.orderService.getPreviousOrderListFromFarmerId("kkdfarm1001").subscribe((res) =>{
-      this.orderList = res;
-      console.log(this.orderList);
-    }, (error) =>{})
+
+    this.idRoleService.role.subscribe((role) =>{
+    })
+    this.idRoleService.id.subscribe((id) =>{
+       this.farmerId=id;
+       //code to get the list of orders according to farmer id
+       this.orderService.getPreviousOrderListFromFarmerId(this.farmerId).subscribe((res) =>{
+         this.orderList = res;
+       }, (error) =>{})
+    })
+
   }
 
 }

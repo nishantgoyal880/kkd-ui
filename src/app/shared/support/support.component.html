@@ -1,50 +1,58 @@
 <div class="mt-100">
-  <h1> Support </h1>
+  <h1> {{ 'support.support' | translate }} </h1>
 </div>
 <form [formGroup]="rForm" (ngSubmit)="submitIssue(rForm.value)">
 
-  <div class = "card shadow">
+  <div class="card shadow">
     <div class="form-group">
 
-    <div class = "form-comp-top">
-    <div class = "name"><label for="issueTitle">Issue Title</label></div>
-    <input type="text" class="form-control" id="issueTitle" placeholder="Enter Issue Heading" formControlName="issueTitle">
-    <div *ngIf="rForm.controls['issueTitle'].touched && rForm.controls['issueTitle'].invalid" class="alert">
-            <div *ngIf="rForm.controls['issueTitle'].hasError('required')">
-                Title is required!
-            </div>
+      <div class="form-comp-top">
+        <div class="name">
+          <label for="issueTitle">{{ 'support.issue_title' | translate }}</label>
         </div>
-      </div>
-
-      <div class = "form-comp">
-        <div class = "name"><label for="issueDescription">Issue Description</label></div>
-      <input type="textarea" class="form-control" id="issueDescription" placeholder="Enter Issue Heading" formControlName="issueDescription">
-      <div *ngIf="rForm.controls['issueDescription'].touched && rForm.controls['issueDescription'].invalid" class="alert">
-            <div *ngIf="rForm.controls['issueDescription'].hasError('required')">
-              Description is required!
-            </div>
-        </div>
-      </div>
-
-        <div class = "form-comp">
-          <div class = "name"><label for="inputEmail">E-mail</label></div>
-        <input type="text" class="form-control" id="inputEmail" placeholder="Enter Issue Heading" formControlName="inputEmail">
-        <div *ngIf="rForm.controls['inputEmail'].touched && rForm.controls['inputEmail'].invalid" class="alert">
-                <div *ngIf="rForm.controls['inputEmail'].hasError('required')">
-                  Email is required!
-                </div>
-            </div>
+        <input type="text" class="form-control" id="issueTitle" placeholder="{{ 'support.issue_title' | translate }}" formControlName="issueTitle">
+        <div *ngIf="rForm.controls['issueTitle'].touched && rForm.controls['issueTitle'].invalid" class="alert">
+          <div *ngIf="rForm.controls['issueTitle'].hasError('required')">
+              {{ 'support.title_is_required' | translate }}
           </div>
+        </div>
+      </div>
 
-            <div class = "form-comp">
-              <div class = "name"><label for="inputScreenshot">Screenshot</label></div>
+      <div class="form-comp">
+        <div class="name">
+          <label for="issueDescription">{{ 'support.issue_description' | translate }}</label>
+        </div>
+        <input type="textarea" class="form-control" id="issueDescription" placeholder="{{ 'support.issue_description' | translate }}" formControlName="issueDescription">
+        <div *ngIf="rForm.controls['issueDescription'].touched && rForm.controls['issueDescription'].invalid" class="alert">
+          <div *ngIf="rForm.controls['issueDescription'].hasError('required')">
+              {{ 'support.description_is_required' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-comp">
+        <div class="name">
+          <label for="inputEmail">{{ 'support.email' | translate }}</label>
+        </div>
+        <input type="text" class="form-control" id="inputEmail" placeholder="{{ 'support.email' | translate }}" formControlName="inputEmail">
+        <div *ngIf="rForm.controls['inputEmail'].touched && rForm.controls['inputEmail'].invalid" class="alert">
+          <div *ngIf="rForm.controls['inputEmail'].hasError('required')">
+              {{ 'support.email_is_required' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-comp">
+        <div class="name">
+          <label for="inputScreenshot">{{ 'support.screenshot' | translate }}</label>
+        </div>
         <input type="file" class="form-control" id="inputScreenshot">
+      </div>
+
+      <div class="form-comp-button">
+
+        <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'support.submit_issue' | translate }}</button>
+      </div>
     </div>
-
-    <div class ="form-comp-button">
-
-      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit Issue</button>
-   </div>
-   </div>
   </div>
 </form>

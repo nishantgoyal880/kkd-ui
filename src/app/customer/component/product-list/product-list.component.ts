@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SearchService } from "../../services/search.service";
+import { IdRoleService } from '../../../services/id-role/id-role.service'
 import swal from 'sweetalert2'
 @Component({
   selector: "app-product-list",
@@ -12,8 +13,21 @@ export class ProductListComponent implements OnInit {
   public products: Array<any> = [];
   public max_price: number;
   public max_quantity: number;
+  public min_price:number;
+  public min_quantity:number;
+  public role:string;
+  public loggedIn:boolean;
+  public userId:string;
 
-  constructor(private searchService: SearchService) {}
+  constructor(private searchService: SearchService, private idRoleService: IdRoleService) {
+    this.idRoleService.role.subscribe((role) =>{
+      this.role=role;
+   })
+   this.idRoleService.id.subscribe((id) =>{
+     this.userId=id;
+   })
+   console.log(localStorage.getItem("token"));
+  }
 
   ngOnInit() {
     this.searchService.getAllProducts(this.searchInput).subscribe(
@@ -129,6 +143,7 @@ export class ProductListComponent implements OnInit {
   }
 
   proceed() {
+    
     if (this.cartItem["quantity"] > this.enteredQuant) {
       this.cartItem["quantity"] = this.enteredQuant;
       this.searchService.addToCart(this.cartItem).subscribe(
