@@ -44,10 +44,10 @@ export class FarmerAddProductComponent implements OnInit {
         this.role=role;
       })
       this.idRoleService.id.subscribe((id) =>{
-        console.log(id+"fdhbdfhdf");
+        console.log(id+"id in add product");
         
         this.kkdFarmId=id;
-        console.log("vfdfvzsd"+this.kkdFarmId);
+        console.log("id"+this.kkdFarmId);
       })
     }
 
