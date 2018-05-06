@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div clas="mt-100">
-  <h1> Upload Product </h1>
+  <h1> {{ 'farmer_add_product.upload_product' | translate }} </h1>
 <form [formGroup]="rForm" (ngSubmit)="addProduct(rForm.value)">
 
   <div class = "card shadow">
@@ -8,73 +8,73 @@
 
 				<div class = form-comp>
 					<select class="form-control" (change)="selectChangeHandler($event)">
-						<option value="select">Choose Product Name</option>
-								 <option value="Onion">Onion</option>
-								 <option value="Tomato">Tomato</option>
-								 <option value="Brinjal">Brinjal</option>
-								 <option value="Cauliflower">Cauliflower</option>
-								 <option value="Carrot">Carrot</option>
-								 <option value="Garlic">Garlic</option>
-								 <option value="Lady Finger">Lady Finger</option>
-								 <option value="Orange">Orange</option>
-								 <option value="Lemon">Lemon</option>
+						<option value="select">{{ 'farmer_add_product.choose_product_name' | translate }}</option>
+								 <option value="Onion">{{ 'farmer_add_product.onion' | translate }}</option>
+								 <option value="Tomato">{{ 'farmer_add_product.tomato' | translate }}</option>
+								 <option value="Brinjal">{{ 'farmer_add_product.brinjal' | translate }}</option>
+								 <option value="Cauliflower">{{ 'farmer_add_product.cauliflower' | translate }}</option>
+								 <option value="Carrot">{{ 'farmer_add_product.carrot' | translate }}</option>
+								 <option value="Garlic">{{ 'farmer_add_product.garlic' | translate }}</option>
+								 <option value="Lady Finger">{{ 'farmer_add_product.lady_finger' | translate }}</option>
+								 <option value="Orange">{{ 'farmer_add_product.orange' | translate }}</option>
+								 <option value="Lemon">{{ 'farmer_add_product.lemon' | translate }}</option>
 					</select>
 				</div>
 
 		<div class = form-comp>
-			<div class = "name"><label for="description">Product description</label></div>
-			<textarea type="textarea" class="form-control" placeholder="Enter description" formControlName="description"></textarea>
+			<div class = "name"><label for="description">{{ 'farmer_add_product.product_description' | translate }}</label></div>
+			<textarea type="textarea" class="form-control" placeholder="{{ 'farmer_add_product.product_description' | translate }}" formControlName="description"></textarea>
 			<div *ngIf="rForm.controls['description'].touched && rForm.controls['description'].invalid" class="alert">
 					<div *ngIf="rForm.controls['description'].hasError('required')">
-						description is required!
+						{{ 'farmer_add_product.description_required' | translate }}
 					</div>
 				</div>
 			  </div>
 
       <div class = form-comp>
-		  <div class = "name"><label for="price">Product Price per kg</label></div>
-		<input type="text" class="form-control" placeholder="Enter Price" formControlName="price">
+		  <div class = "name"><label for="price">{{ 'farmer_add_product.product_price_per_kg' | translate }}</label></div>
+		<input type="text" class="form-control" placeholder="{{ 'farmer_add_product.enter_price' | translate }}" formControlName="price">
 		<div *ngIf="rForm.controls['price'].touched && rForm.controls['price'].invalid" class="alert">
 			  <div *ngIf="rForm.controls['price'].hasError('required')">
-				Price is required!
+				{{ 'farmer_add_product.price_required' | translate }}
 			  </div>
 		  </div>
 		</div>
 
 		<div class = form-comp>
-			<div class = "name"><label for="bulkOrderPrice">Product Bulk Order Price per kg</label></div>
-		  <input type="text" class="form-control" placeholder="Enter Bulk Order Price" formControlName="bulkOrderPrice">
+			<div class = "name"><label for="bulkOrderPrice">{{ 'farmer_add_product.bulk_product_price_per_kg' | translate }}</label></div>
+		  <input type="text" class="form-control" placeholder="{{ 'farmer_add_product.enter_bulk_order_price' | translate }}" formControlName="bulkOrderPrice">
 		  <div *ngIf="rForm.controls['bulkOrderPrice'].touched && rForm.controls['bulkOrderPrice'].invalid" class="alert">
 				<div *ngIf="rForm.controls['bulkOrderPrice'].hasError('required')">
-				  Bulk Price is required!
+				  {{ 'farmer_add_product.bulk_price_required' | translate }}
 				</div>
 			</div>
 		  </div>
 
 		  <div class = form-comp>
-			<div class = "name"><label for="quantity">Quantity</label></div>
-		  <input type="text" class="form-control" placeholder="Enter Quantity" formControlName="quantity">
+			<div class = "name"><label for="quantity">{{ 'farmer_add_product.quantity' | translate }}</label></div>
+		  <input type="text" class="form-control" placeholder="{{ 'farmer_add_product.enter_quantity' | translate }}" formControlName="quantity">
 		  <div *ngIf="rForm.controls['quantity'].touched && rForm.controls['quantity'].invalid" class="alert">
 				<div *ngIf="rForm.controls['quantity'].hasError('required')">
-				  Quantity is required!
+				  {{ 'farmer_add_product.quantity_required' | translate }}
 				</div>
 			</div>
 		  </div>
 
 		  <div class = form-comp>
-		  <input type="checkbox" name="available" formControlName="available" value="1"> In Stock
+		  <input type="checkbox" name="available" formControlName="available" value="1">{{ 'farmer_add_product.in_stock' | translate }}
 		</div>
 
       <div class = form-comp>
 					<div class = "name">
 					<label for="exampleInputFile">
-							Upload an image
+						{{ 'farmer_add_product.upload_image' | translate }}
 						</label></div>
 						<input type="file" (change)="onFileSelected($event)" class="form-control-file" id="exampleInputFile">
 			</div>
 
     <div class = form-comp-button>
-      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit Product</button>
+      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_add_product.submit_product' | translate }}</button>
 	 </div>
 
    </div>
