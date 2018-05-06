@@ -13,24 +13,29 @@ import { IdRoleService } from '../../../../services/id-role/id-role.service'
 })
 export class FarmerRegisterComponent implements OnInit {
 	@Input() aadhaarDataRecievedByRegister:any;
-	rForm: FormGroup;
-	post:any;
-	mobileNo:String;
-	password:String;
-	confirmPassword:String;
-	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router,private idRoleService: IdRoleService) {
-		this.rForm = fb.group({
-			'mobileNo': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
-			'password': [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
-			'confirmPassword' : ['',[Validators.required]],
-			'cities' : [false, Validators.required],
-		},{validator: this.checkIfMatchingPasswords});
-	}
+		//declaring a form group
+		rForm: FormGroup;
+		//variable to store form data
+		post:any;
+		constructor(private registrationService: RegistrationLoginService,
+			private fb: FormBuilder,
+			public router: Router,
+			private idRoleService: IdRoleService) {
+			//making a form group with fileds mobile number, password, confirm password and cities
+			this.rForm = fb.group({
+				'mobileNo': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
+				'password': [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
+				'confirmPassword' : ['',[Validators.required]],
+				'cities' : [false, Validators.required],
+			},{validator: this.checkIfMatchingPasswords});
+		}
 
-	ngOnInit() {
-		this.rForm.get('mobileNo').setValue(this.aadhaarDataRecievedByRegister.mobileNo);
-		this.rForm.get('mobileNo').disable();
-	}
+		ngOnInit() {
+			//setting the mobile number as the number coming from aadhaar
+			this.rForm.get('mobileNo').setValue(this.aadhaarDataRecievedByRegister.mobileNo);
+			//disabling the mobile number
+			this.rForm.get('mobileNo').disable();
+		}
 
 	//check if new password and confirm password is same
 	checkIfMatchingPasswords(group: FormGroup) {
@@ -43,22 +48,34 @@ export class FarmerRegisterComponent implements OnInit {
 		}
 	}
 
-	//function to register a farmer
+	/*
+	*to be called when farmer click register button
+	*their aadhaar data will be taken and passed to the registration service, and if the user is eligible to register ,id and role is returned, 
+	*token is stored in local storage 
+	*id and role is stored in a common service
+	*but if the user is not eligible a swal will be opened saying already registerd or service not working
+	*/
 	registerFarmer(post) {
+		//making json format which is to be send with request
 		var farmerToRegister={
 			'mobileNo':this.aadhaarDataRecievedByRegister.mobileNumber,
 			'password':post.password,
 			'aadhaarData':this.aadhaarDataRecievedByRegister,
 			'cities': post.cities
 		}
+		//calling registration service and passing farmer data
 		this.registrationService.addFarmer(farmerToRegister).subscribe((res) =>{
+			//in case of response
+			//storing token in local storage
 			localStorage.setItem("token",res.results.token);
+			//passing id and role to the service and emmiting a log in event which will be used in the header
 			this.idRoleService.id.emit(res.results.kkdFarmId);
 			this.idRoleService.role.emit(res.results.role);
 			this.idRoleService.isLoggedIn.emit(true);
-			alert(this.idRoleService.role)
+			//routing to farmer dashboard
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
+			//if the user is not eligible a swal will be opened saying already registerd 
 			swal({
 				type: 'error',
 				title: 'Oops...',
