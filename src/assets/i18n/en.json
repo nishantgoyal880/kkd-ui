@@ -303,11 +303,11 @@
         "account_holder_name":"Account Holder's name",
         "name_required":"Name is required",
         "more_than_20_characters_not_allowed":"More than 20 characters not allowed",
-        "minimun_2_digits_are_required":"Minimun 2 digits are required",
+        "minimun_2_digits_are_required":"Minimum 2 digits are required",
         "ifsc_code":"IFSC Code",
         "ifsc_required":"IFSC Code is required",
         "more_than_6_characters_not_allowed":"More than 6 characters not allowed",
-        "minimun_6_digits_are_required":"Minimun 6 digits are required",
+        "minimun_6_digits_are_required":"Minimum 6 digits are required",
         "save_details":"Save Details"
     },
     "farmer_current_order":{
@@ -330,7 +330,7 @@
         "delivery_date":"Delivery Date"
     },
     "farmer_view_product":{
-        "producid":"Priduct ID",
+        "producid":"Product ID",
         "description":"Description",
         "price":"Price",
         "bulk_ordr_price":"Bulk order Price",
@@ -375,7 +375,7 @@
     },
     "customer_add_address":{
         "add_alternate_address":"ADD ALTERNATE ADDRESS",
-        "address_line":"Aidddress Line",
+        "address_line":"Address Line",
         "enter_address_line":"Enter Address Line",
         "address_line_required":"Address Line Required",
         "city":"City",
@@ -418,10 +418,10 @@
         "mobile_number":"Mobile Number",
         "mobile_number_required":"Mobile number is required",
         "current_password":"Current Pssword",
-        "enter_current_password":"Enter the current pssword",
+        "enter_current_password":"Enter the current password",
         "current_password_required":"Current password is required",
         "new_password":"New Password",
-        "enter_new_password":"Enterthe new password",
+        "enter_new_password":"Enter the new password",
         "new_password_required":"New password is required",
         "re-enter_new_password":"Re-enter the new password",
         "re-enter_new_password_required":"Re-entering the new password is required",
@@ -433,7 +433,7 @@
         "pssword_required":"Password Required"       
     },
     "customer_my_cart":{
-        "your_cart":"your Cart",
+        "your_cart":"Your Cart",
         "items":"Items",
         "continue_shopping":"Continue Shopping",
         "qty":"Qty",
@@ -442,8 +442,7 @@
         "no_address_linked":"No Address linked",
         "add_address":"Add Address",
         "total":"Total",
-        "place_order":"Place Order",
-        "your_cart":"Your Cart"    
+        "place_order":"Place Order"
     },
     "customer_payment":{
         "payment_details":"PAYMENT DETAILS",
@@ -486,7 +485,7 @@
         "stakeholders_description3":" Product Owner: We as the product developers and owners will provide a platform for the farmers and the customers to interact.",
         "scope_and_impact":"Scope and Impact", 
         "scope":"Scope",
-        "scope_description1":"Small scale and large scale farmers",
+        "scope_description":"Small scale and large scale farmers",
         "scope_description1":"Consumers of products",
         "Impact":"Impact",
         "impact_description1":"Digitalization of supply chain",
