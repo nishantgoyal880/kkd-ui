@@ -1,17 +1,32 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+h2 {
+	color: #333;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Roboto;
+	font-weight: 400;
+	position: relative;
+	margin: 60px 0 60px;
+}
 
-.carousel {
-   margin-bottom: 4rem;
- }
+h2::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 3px;
+	background: #8fbc54;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+}
 
  .carousel-caption {
-   bottom: 3rem;
+   bottom: 8rem;
    z-index: 10;
  }
 
-
  .carousel-item {
-   height: 32rem;
+   height: 42rem;
    background-color: #777;
  }
  .carousel-item > img {
@@ -19,7 +34,7 @@
    top: 0;
    left: 0;
    min-width: 100%;
-   height: 32rem;
+   height: 42rem;
    filter: brightness(40%);
    -webkit-filter: brightness(40%);
    -moz-filter: brightness(40%);
@@ -43,3 +58,119 @@
    border: #fff;
    color:#000;
  }
+
+ /*-- about --*/
+h3.tittle {
+  color: #232323;
+  font-size: 58px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+h3.tittle span {
+  color: #56d25b;
+}
+.tittle-style {
+  position: relative;
+}
+.tittle-style:before {
+  content: "";
+  background: #000;
+  width: 7%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 46%;
+}
+.tittle-style:after {
+  content: "";
+  background: #56d25b;
+  width: 3%;
+  height: 5px;
+  position: absolute;
+  top: -2px;
+  left: 48%;
+  border-radius: 6px;
+}
+.title-div {
+  margin-bottom: 70px;
+}
+.title-div p {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: #000;
+  margin-top: 30px;
+  font-size: 17px;
+}
+.banner-bottom-w3l, .agileits-services, .contact, .team, .what-w3ls{
+  padding: 5em 0;
+}
+.banner_bottom_left h4 {
+  font-size: 33px;
+  color: #232323;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.banner_bottom_left h4 span{
+  color: #56d25b;
+}
+.banner_bottom_left {
+  padding: 0 20px 0 30px;
+  border-left: 2px solid #000;
+  height:240px;
+  position: relative;
+}
+h6.w3l-style {
+  color: #56d25b;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  position: absolute;
+  bottom: -42%;
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  left: -13%;
+}
+.banner_bottom_left p {
+  color: #888;
+  line-height: 2em;
+  margin-bottom: 1em;
+  font-size: 16px;
+}
+/*-- stats --*/
+.stats-info-agile {
+  background: url("../../../assets/Body/farmer.jpg") no-repeat center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  min-height: 390px;
+  padding:0;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(10, 10, 10, 0.47);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(10, 10, 10, 0.47);
+  box-shadow: 0px 3px 5px 0px rgba(10, 10, 10, 0.47);
+}
+.stats-grid {
+  padding: 1.5em 0;
+}
+.numscroller {
+  font-size: 58px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Rasa', serif;
+  line-height: 1;
+}
+.stats-info-agile p {
+  color: #000;
+  font-size: 16px;
+}
+.w3l-right-stats {
+  background: #56d25b;
+  width: 33%;
+  float: right;
+  text-align: center;
+}
+ /*-- about --*/
