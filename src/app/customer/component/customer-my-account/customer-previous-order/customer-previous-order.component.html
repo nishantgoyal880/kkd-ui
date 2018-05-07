@@ -1,6 +1,6 @@
 
    
-  <h1> Previous Orders </h1>
+  <h1> Previous Orders{{ 'customer_previous_order.previous_orders' | translate }}</h1>
   <div class="container-fluid previous-orders">
   <div class="row previous-orders-body">
       <div *ngFor="let order of previousOrders">
@@ -8,12 +8,12 @@
            <div class="card shadow " >
               <div class="card-body ">
                 <ul class="list-group list-group-flush ">
-                  <li class="list-group-item  item-id">OrderId           :   {{order.orderId}}</li>
-                  <li class="list-group-item previous-orders-card item">Product Name             :   {{order.name}} </li>                            
-                  <li class="list-group-item previous-orders-card item">Quantity(in Kg.)                 :   {{order.quantity}}</li>                            
-                  <li class="list-group-item previous-orders-card item">Price(in Rs.)                   :   {{order.totalAmount}}</li>
-                  <li class="list-group-item previous-orders-card item">Farmer-Rating                   :   {{order.avgRating}}</li>
-                  <li class="list-group-item previous-orders-card item">OTP                      :   {{order.otp}} </li>
+                  <li class="list-group-item  item-id">{{ 'customer_previous_order.orderid' | translate }}           :   {{order.orderId}}</li>
+                  <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.product_name' | translate }}             :   {{order.name}} </li>                            
+                  <li class="list-group-item previous-orders-card item">(in Kg.){{ 'customer_previous_order.quantity' | translate }}                 :   {{order.quantity}}</li>                            
+                  <li class="list-group-item previous-orders-card item">(in Rs.){{ 'customer_previous_order.price' | translate }}                   :   {{order.totalAmount}}</li>
+                  <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.farmer_rating' | translate }}                   :   {{order.avgRating}}</li>
+                  <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.otp' | translate }}                      :   {{order.otp}} </li>
                 </ul>
               </div>
             </div>

@@ -12,19 +12,19 @@
           <!-- Text -->
           <div class="text-area">
             <p class="card-text">
-              <b>Customer Id: </b>{{order.kkdCustId}}</p>
+              <b>{{ 'farmer_previous_order.customer_id' | translate }}: </b>{{order.kkdCustId}}</p>
             <p class="card-text">
-              <b>Product Name : </b>{{order.name}}</p>
+              <b>{{ 'farmer_previous_order.product_name' | translate }}: </b>{{order.name}}</p>
             <p class="card-text">
-              <b>Address : </b>{{order.address.addressLine}} {{order.address.city}} {{order.address.state}} {{order.address.district}} {{order.address.pincode}}</p>
+              <b>{{ 'farmer_previous_order.address' | translate }}: </b>{{order.address.addressLine}} {{order.address.city}} {{order.address.state}} {{order.address.district}} {{order.address.pincode}}</p>
             <p class="card-text">
-              <b>Quantity : </b>{{order.quantity}}</p>
+              <b>{{ 'farmer_previous_order.quantity' | translate }}: </b>{{order.quantity}}</p>
             <p class="card-text">
-              <b>Amount : </b>{{order.price}}</p>
+              <b>{{ 'farmer_previous_order.amount' | translate }}: </b>{{order.price}}</p>
             <p class="card-text">
-              <b>Order Status : </b>{{order.orderStatus}}</p>
+              <b>{{ 'farmer_previous_order.order_status' | translate }}: </b>{{order.orderStatus}}</p>
 							<div *ngIf="order.orderStatus=='Delivered'">
-								<p class="card-text"><b>Delivery Date : </b>{{order.orderReceivingDate}}</p>
+								<p class="card-text"><b>{{ 'farmer_previous_order.delivery_date' | translate }}: </b>{{order.orderReceivingDate}}</p>
 							</div>
           </div>
         </div>

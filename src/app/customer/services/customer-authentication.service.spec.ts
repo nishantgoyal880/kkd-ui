@@ -9,7 +9,7 @@ import {DETAILS,CUSTOMERDETAILSNEGATIVE,CURRENTORDERSNEGATIVE,PREVIOUSORDERSNEGA
 import {Headers, BaseRequestOptions,Response,Http, XHRBackend, RequestMethod} from '@angular/http';
 import {ResponseOptions} from '@angular/http';
 import {MockBackend, MockConnection} from '@angular/http/testing';
-fdescribe('CustomerAuthenticationService', () => {
+describe('CustomerAuthenticationService', () => {
   let details :any;
   let userDetails :any;
   let userDetailsDelete :any;
