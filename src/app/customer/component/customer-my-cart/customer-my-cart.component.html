@@ -4,13 +4,13 @@
 		<div class="container">
 			<div class="cart-dropdown-container">
 				<div class="row">
-					<div class="text-left col-md-6">Your Cart
-						<i class="fa fa-shopping-cart"></i> ({{items.length}} Items)</div>
+					<div class="text-left col-md-6">{{ 'customer_my_cart.your_cart' | translate }}
+						<i class="fa fa-shopping-cart"></i> ({{items.length}} {{ 'customer_my_cart.items' | translate }})</div>
 					<div class="text-right col-md-6">
 						<button type="button" class="btn btn-success btn-sm" routerLink="/productList">
 							<span>
 								<i class="fa fa-shopping-cart"></i>
-							</span> Continue shopping
+							</span>{{ 'customer_my_cart.continue_shopping' | translate }}
 						</button>
 					</div>
 				</div>
@@ -25,7 +25,7 @@
 							<td class="text-left">
 								<a href="#">{{item.productName}}</a>
 								<div>
-									<small>Qty: {{item.quantity}} Kg</small>
+									<small>{{ 'customer_my_cart.qty' | translate }}: {{item.quantity}} {{ 'customer_my_cart.kg' | translate }}</small>
 								</div>
 							</td>
 							<td class="text-right">₹{{item.productPrice*item.quantity}}</td>
@@ -41,13 +41,13 @@
 						<div class="col-md-6">
 							<div *ngIf="customerInfo; then address else emptyAddress"></div>
 							<ng-template #address>
-								<p> Products will be delivered to</p>
+								<p>{{ 'customer_my_cart.products_will_be_delivered_to' | translate }}</p>
 								<p><strong>{{customerInfo.primaryAddress.addressLine}}, {{customerInfo.primaryAddress.city}}</strong></p>
 								<p><strong>{{customerInfo.primaryAddress.district}}, {{customerInfo.primaryAddress.state}} -{{customerInfo.primaryAddress.pincode}}</strong></p>
 							</ng-template>
 							<ng-template #emptyAddress>
-								<p> No Address linked</p>
-								<button class="btn btn-success btn-sm" routerLink="/customer/myAccount">+Add Address</button>
+								<p> {{ 'customer_my_cart.no_address_linked' | translate }}</p>
+								<button class="btn btn-success btn-sm" routerLink="/customer/myAccount">+{{ 'customer_my_cart.add_address' | translate }}</button>
 							</ng-template>
 						</div>
 						<div class="col-md-6">
@@ -55,11 +55,11 @@
 								<div class="col-md-5">
 								</div>
 								<div class="col-md-3">
-									<span><strong>Total :₹{{x}}</strong></span>
+									<span><strong>{{ 'customer_my_cart.total' | translate }} :₹{{x}}</strong></span>
 								</div>
 								<div class="col-md-4">
 									<button type="button" class="btn btn-success" (click)="checkout()" routerLink="/customer/payment">
-										<i class="fa fa-hand-o-right"></i>Place Order
+										<i class="fa fa-hand-o-right"></i>{{ 'customer_my_cart.place_order' | translate }}
 									</button>
 								</div>
 							</div>
@@ -70,7 +70,7 @@
 	</ng-template>
 	<ng-template #empty>
 		<div class="container" style=" text-align: center;">
-			<div class="h6">Your Cart (0 Items)</div>
+			<div class="h6">{{ 'customer_my_cart.your_cart' | translate }}(0 Items)</div>
 		</div>
 		<div class="cart-header" style="margin-bottom: 8rem; text-align: center;">
 			<img src="./../../../../assets/images/empty_cart.jpg" alt="empty wishlist" class="img-fluid">
