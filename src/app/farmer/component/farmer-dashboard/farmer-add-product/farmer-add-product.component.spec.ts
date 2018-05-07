@@ -9,7 +9,7 @@ import { FarmerAddProductComponent } from './farmer-add-product.component';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
 
 
-fdescribe('FarmerAddProductComponent', () => {
+describe('FarmerAddProductComponent', () => {
   let component: FarmerAddProductComponent;
   let fixture: ComponentFixture<FarmerAddProductComponent>;
   let de: DebugElement;
