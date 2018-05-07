@@ -4,61 +4,61 @@
 			<form [formGroup]="rForm" (ngSubmit)="registerFarmer(rForm.value)">
 				<div class="form-group">
     			<div class = "form-comp-top">
-						<div class = "name"><label for="exampleInputEmail1">Mobile Number</label></div>
+						<div class = "name"><label for="exampleInputEmail1">{{ 'farmer_register.mobile_number' | translate }}</label></div>
 					<input class="form-control" type="text" id="mobileNo" formControlName="mobileNo">
 					<div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
 						<div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
-							Less than 10 digits
+							{{ 'farmer_register.less_than_10_digits' | translate }}
 						</div>
 						<div *ngIf="rForm.controls['mobileNo'].hasError('maxlength')">
-							More than 10 digits
+							{{ 'farmer_register.more_than_10_digits' | translate }}
 						</div>
 						<div *ngIf="rForm.controls['mobileNo'].hasError('required')">
-							Mobile Number is required!
+							{{ 'farmer_register.mobile_number_required' | translate }}!
 						</div>
 					</div>
 					</div>
 
     			<div class = "form-comp">
-						<div class = "name"><label for="citiestodeliever">Cities where you can diliever</label></div>
+						<div class = "name"><label for="citiestodeliever">{{ 'farmer_register.cities_where_you_can_deliver' | translate }}</label></div>
 					<select class="form-control" formControlName="cities" multiple>
-						<option>Delhi</option>
-						<option>Gurgaon</option>
-						<option>Noida</option>
+						<option>{{ 'farmer_register.delhi' | translate }}</option>
+						<option>{{ 'farmer_register.gurgaon' | translate }}</option>
+						<option>{{ 'farmer_register.cities_where_you_can_deliver' | translate }}</option>
 					</select>
 					</div>
 
     			<div class = "form-comp">
-						<div class = "name"><label for="exampleInputPassword1">Password</label></div>
-					<input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						<div class = "name"><label for="exampleInputPassword1">{{ 'farmer_register.password' | translate }}</label></div>
+					<input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="{{ 'farmer_register.password' | translate }}">
 					<div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
 						<div *ngIf="rForm.controls['password'].hasError('minlength')" >
-							Less than 6 digits
+							{{ 'farmer_register.less_than_6_digits' | translate }}
 						</div>
 						<div *ngIf="rForm.controls['password'].hasError('maxlength')">
-							More than 12 digits
+							{{ 'farmer_register.more_than_12_digits' | translate }}
 						</div>
 						<div *ngIf="rForm.controls['password'].hasError('required')">
-							Password is required!
+							{{ 'farmer_register.password_is_required' | translate }}!
 						</div>
 					</div>
 					</div>
 
     			<div class = "form-comp">
-						<div class = "name"><label>Re-enter Password</label></div>
-					<input type="password" formControlName="confirmPassword" class="form-control" placeholder="Password">
+						<div class = "name"><label>{{ 'farmer_register.enter_password' | translate }}</label></div>
+					<input type="password" formControlName="confirmPassword" class="form-control" placeholder="{{ 'farmer_register.password' | translate }}">
 					<div *ngIf="rForm.controls['confirmPassword'].touched && rForm.controls['confirmPassword'].errors">
 						<div class="alert"  *ngIf="rForm.controls['confirmPassword'].hasError('required')">
-							Password is required!
+							{{ 'farmer_register.password_is_required' | translate }}!
 						</div>
-						<div class="alert" *ngIf="rForm.controls['confirmPassword'].errors.notEquivalent">The new password and confirm password do not match
+						<div class="alert" *ngIf="rForm.controls['confirmPassword'].errors.notEquivalent">{{ 'farmer_register.new_confirm_password_did_not_match' | translate }}
 						</div>
 					</div>
 				</div>
 				</div>
 
 				<div class = "form-comp-button">
-				<button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">Submit</button>
+				<button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_register.submit' | translate }}</button>
 			</div>
 			</form>
 		</div>

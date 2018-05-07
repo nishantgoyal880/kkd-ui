@@ -1,29 +1,29 @@
 <div class="mt-100">
 <div *ngIf="!hideVar">
-    <h1> Register Farmer </h1>
+    <h1> {{ 'aadhaar.register_farmer' | translate }} </h1>
   <div class="container-fluid">
     <div class="card cardwidth">
       <div class="card-body">
         <form [formGroup]="rForm" (ngSubmit)="sendOtp(rForm.value)">
           <div class="form-group">
               <div class = "form-comp-top">
-                  <div class = "name"><label for="aadhaarNo">Aadhaar Number*</label></div>
-            <input id ="aadhaarNo" class="form-control" type="text" formControlName="aadhaarNo" placeholder="Aadhaar Number">
+                  <div class = "name"><label for="aadhaarNo">{{ 'aadhaar.aadhaar_number' | translate }}*</label></div>
+            <input id ="aadhaarNo" class="form-control" type="text" formControlName="aadhaarNo" placeholder="{{ 'aadhaar.aadhaar_number' | translate }}">
             <div *ngIf="rForm.controls['aadhaarNo'].touched && rForm.controls['aadhaarNo'].invalid" class="alert">
               <div *ngIf="rForm.controls['aadhaarNo'].hasError('minlength')" >
-                Less than 12 digits
+                {{ 'aadhaar.less_than_12_digits' | translate }}
               </div>
               <div *ngIf="rForm.controls['aadhaarNo'].hasError('maxlength')">
-               More than 12 digits
+                {{ 'aadhaar.more_than_12_digits' | translate }}
              </div>
              <div *ngIf="rForm.controls['aadhaarNo'].hasError('required')">
-               Aadhaar Number is required!
+              {{ 'aadhaar.aadhaar_number_required' | translate }}!
              </div>
            </div>
            </div>
          </div>
          <div class = "form-comp-button">
-         <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">Send OTP</button>
+         <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'aadhaar.send_otp' | translate }}</button>
       </div>
         </form>
      </div>
@@ -32,22 +32,22 @@
 </div>
 
 <div *ngIf="hideVar">
-    <h1> Verify OTP to Register Farmer </h1>
+    <h1> {{ 'aadhaar.verify_otp_to_register_farmer' | translate }} </h1>
   <div class="container-fluid">
     <div class="card cardwidth">
       <div class="card-body">
         <form [formGroup]="otpForm" (ngSubmit)="verifyOtp(otpForm.value)">
           <div class="form-group">
               <div class = "form-comp-top">
-                  <div class = "name"> <label for="exampleInputEmail1">Enter OTP*</label></div>
+                  <div class = "name"> <label for="exampleInputEmail1">{{ 'aadhaar.enter_otp' | translate }}*</label></div>
             <input class="form-control" type="text" id="otp" formControlName="otp">
             <div class="alert" *ngIf=" otpForm.controls['otp'].touched && otpForm.controls['otp'].hasError('required')">
-              OTP is required!
+              {{ 'aadhaar.otp_is_required' | translate }}!
             </div>
             </div>
           </div>
           <div class = "form-comp-button">
-          <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!otpForm.valid">Verify OTP</button>
+          <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!otpForm.valid"> {{ 'aadhaar.verify_otp' | translate }}</button>
        </div>
         </form>
       </div>
