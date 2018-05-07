@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { DebugElement } from '@angular/core';
 import { FarmerAddProductComponent } from './farmer-add-product.component';
 
-fdescribe('FarmerAddProductComponent', () => {
+describe('FarmerAddProductComponent', () => {
   let component: FarmerAddProductComponent;
   let fixture: ComponentFixture<FarmerAddProductComponent>;
   let de: DebugElement;

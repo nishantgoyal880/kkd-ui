@@ -47,7 +47,7 @@ describe('kkd-ui App', () => {
 
   it('should display title after clicking farmer button', () => {
     page.getFarmerButton().click();
-    expect(page.getFarmerLoginTitle().getText()).toEqual('Login Farmer');
+    expect(page.getFarmerLoginTitle().getText()).toEqual('LOGIN FARMER');
   });
 
   it('should display mobile number inputBox after clicking farmer button', () => {
@@ -70,13 +70,13 @@ describe('kkd-ui App', () => {
     expect(page.getFarmerLoginButton()).toBeTruthy();
   });
 
-  fit('should display My Account button after clicking login farmer button', () => {
+  it('should display My Account button after clicking login farmer button', () => {
     page.getFarmerButton().click();
     page.getFarmerLoginButton().click();
     expect(page.getMyAccountButton()).toBeTruthy();  
   });
 
-  fit('should display Farmer Add Address button after clicking My Account Button', () => {
+  it('should display Farmer Add Address button after clicking My Account Button', () => {
     page.getFarmerButton().click();
     page.getFarmerLoginButton().click();
     page.getMyAccountButton().click();
@@ -110,7 +110,7 @@ describe('kkd-ui App', () => {
     expect(page.getAddProductButton()).toBeTruthy();
   });
 
-  fit('should display Add Product Title after clicking Add Product Button', () => {
+  it('should display Add Product Title after clicking Add Product Button', () => {
     page.getFarmerButton().click();
     page.getFarmerLoginButton().click();
     page.getAddProductButton().click();
@@ -172,7 +172,7 @@ describe('kkd-ui App', () => {
     expect(page.getBankDetailsButton()).toBeTruthy();
   });
 
-  fit('should display Farmer Bank Account Title after clicking Bank Details button', () => {
+  it('should display Farmer Bank Account Title after clicking Bank Details button', () => {
     page.getFarmerButton().click();
     page.getFarmerLoginButton().click();
     page.getBankDetailsButton().click();
@@ -299,42 +299,42 @@ describe('kkd-ui App', () => {
 
 
 
-  fit('should display Change Password Title after clicking customer change password button', () => {
+  it('should display Change Password Title after clicking customer change password button', () => {
     page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
     page.getCustomerChangePasswordButton().click();
     expect(page.getCustomerChangePasswordTitle()).toBeTruthy();
   });
 
-  fit('should display Mobile Number InputBox after clicking customer change password button', () => {
+  it('should display Mobile Number InputBox after clicking customer change password button', () => {
     page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
     page.getCustomerChangePasswordButton().click();
     expect(page.getCustomerMobileNumberInputBox()).toBeTruthy();
   });
 
-  fit('should display Current Password InputBox after clicking customer change password button', () => {
+  it('should display Current Password InputBox after clicking customer change password button', () => {
     page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
     page.getCustomerChangePasswordButton().click();
     expect(page.getCustomerCurrentPasswordInputBox()).toBeTruthy();
   });
 
-  fit('should display New Password InputBox after clicking customer change password button', () => {
+  it('should display New Password InputBox after clicking customer change password button', () => {
     page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
     page.getCustomerChangePasswordButton().click();
     expect(page.getCustomerNewPasswordInputBox()).toBeTruthy();
   });
 
-  fit('should display Reenter New Password InputBox after clicking customer change password button', () => {
+  it('should display Reenter New Password InputBox after clicking customer change password button', () => {
     page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
     page.getCustomerChangePasswordButton().click();
     expect(page.getCustomerReenterNewPasswordInputBox()).toBeTruthy();
   });
 
-  fit('should display Submit Button after clicking customer change password button', () => {
+  it('should display Submit Button after clicking customer change password button', () => {
     page.getCustomerButton().click();
     page.getCustomerLoginButton().click();
     page.getCustomerChangePasswordButton().click();

@@ -10,7 +10,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import {IdRoleService} from '../../../services/id-role/id-role.service'
-fdescribe('CustomerMyAccountComponent', () => {
+describe('CustomerMyAccountComponent', () => {
   let component: CustomerMyAccountComponent;
   let fixture: ComponentFixture<CustomerMyAccountComponent>;
   let debug: DebugElement;
