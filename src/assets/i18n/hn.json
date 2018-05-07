@@ -2,16 +2,16 @@
     "footer":{
         "support":"सहायता",
         "get_started":"शुरू हो जाओ",
-        "farmer":"किसान",
-        "customer":"ग्राहक",
+        "home":"होम",
         "about_us":"हमारे बारे में",
-        "company_information":"कंपनी की जानकारी",
         "policies":"नीतियों",
         "contact_us":"संपर्क करें",
-        "reviews":"समीक्षा",
         "help":"मदद",
-        "forums":"मंच",
-        "kisan_ki_dukan":"किसान की दुकान"
+        "kisan_ki_dukan":"किसान की दुकान। सर्वाधिकार सुरक्षित",
+        "join_our_newsletter":"हमारे समाचार पत्र से जुड जाओ",
+        "connect_on_social":"सोशल पर हमसे जुड़ें",
+        "enter_your_email":"अपना ईमेल दर्ज करें",
+        "subscribe":"सदस्यता लें"
     },
     "body":{
         "kisan_ki_dukan":"किसान की दुकान",
@@ -275,7 +275,7 @@
         "carrot":"गाजर",
         "garlic":"लहसुन",
         "lady_finger":"भिन्डी",
-        "oarnge":"संतरा",
+        "orange":"संतरा",
         "lemon":"नींबू",
         "product_description":"उत्पाद वर्णन",
         "enter_description":"विवरण दर्ज करें",
@@ -315,9 +315,26 @@
         "address":"पता",
         "quantity":"मात्रा",
         "amount":"रकम",
+        "validity_of_order":"आदेश की वैधता",
+        "customer_mobileno":"ग्राहक मोबाइल नहीं",
         "delivered":"पहुंचा दिया",
-        "accept":"स्वीकार",
-        "decline":"पतन"
+        "accept":"स्वीकार करना",
+        "decline":"पतन",
+        "enter_delivery_info":"डिलिवरी जानकारी दर्ज करें",
+        "enter_delivery_date_and_time":"वितरण तिथि और समय दर्ज करें",
+        "close":"बंद करे",
+        "why_did_you_decline_the_order":"आपने ऑर्डर क्यों गिरा दिया",
+        "i_am_not_able_to_deliver_in_that_location":"मैं उस स्थान पर पहुंचने में सक्षम नहीं हूं",
+        "all_the_items_have_been_sold_out":"सभी वस्तुओं को बेचा गया है",
+        "the_order_quantity_is_not_sufficient":"आदेश मात्रा पर्याप्त नहीं है",
+        "i_am_not_in_a_good_health_condition":"मैं एक अच्छी स्वास्थ्य स्थिति में नहीं हूँ",
+        "other_reasons":"अन्य कारण",
+        "submit":"जमा करें",
+        "enter_otp_here":"यहां ओटीपी दर्ज करें",
+        "otp":"ओटीपी",
+        "confirms":"पुष्टि",
+        "rate_the_order":"ऑर्डर रेट करें"
+ 
     },
     "farmer_previous_order":{
         "customer_id":"ग्राहक आईडी",
@@ -424,12 +441,12 @@
         "new_password_required":"नया पासवर्ड आवश्यक है",
         "re-enter_new_password":"नया पासवर्ड दोबारा दर्ज करें",
         "re-enter_new_password_required":"नया पासवर्ड पुनः दर्ज करना आवश्यक है",
-        "change":"जमा करें",
+        "submit":"जमा करें",
         "delete_profile":"प्रोफ़ाइल हटाएं",
         "enter_10_digit_mobile_number":"अपना 10 अंकों का मोबाइल नंबर दर्ज करें",
         "password":"पारण शब्द",
         "enter_your_password":"अपना पासवर्ड डालें",
-        "pssword_required":"पासवर्ड आवश्यक"       
+        "password_required":"पासवर्ड आवश्यक"       
     },
     "customer_my_cart":{
         "your_cart":"आपका कार्ट",
