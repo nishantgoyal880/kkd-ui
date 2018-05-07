@@ -7,6 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { DebugElement } from '@angular/core';
 import { FarmerAddProductComponent } from './farmer-add-product.component';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
+import { IdRoleService } from '../../../../services/id-role/id-role.service';
 
 
 fdescribe('FarmerAddProductComponent', () => {
@@ -18,6 +19,7 @@ fdescribe('FarmerAddProductComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ FarmerAddProductComponent ],
+      providers: [ IdRoleService ],
       imports: [
         FormsModule,
         ReactiveFormsModule,
