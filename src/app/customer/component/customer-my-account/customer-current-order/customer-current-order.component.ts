@@ -11,35 +11,44 @@ import{IdRoleService} from '../../../../services/id-role/id-role.service'
 export class CustomerCurrentOrderComponent implements OnInit {
  public customerId : string ;
  public currentOrders : any = [];
-  constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
-
-  getdata(){
-  this.customerAuthenticationService.getCurrentOrders(this.customerId).subscribe(results=>{
-    console.log(results)
-    if(results == null){
-      swal({
-        type: 'error',
-        title: 'No current orders',
-        text: 'Currently there are no orders',
+  constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { 
+   }
+  
+  ngOnInit() {
+    if(IdRoleService.id1.length){
+      this.customerId=IdRoleService.id1;
+      alert(this.customerId );
+      this.getdata();
+    }
+    else{
+      this.idRoleService.id.subscribe(id=>{
+        this.customerId =id;
+      alert(this.customerId );
+      this.getdata();
       })
      }
-  this.currentOrders=results;
-  },error=> {
-    swal({
-      type: 'error',
-      title: 'Oops...',
-      text: 'Something went wrong!',
-    })
-  });
-}
+    }
+    
+  getdata(){
+    
+    this.customerAuthenticationService.getCurrentOrders(this.customerId).subscribe(results=>{
+          console.log(results)
+          if(results == null){
+            swal({
+              type: 'error',
+              title: 'No current orders',
+              text: 'Currently there are no orders',
+            })
+           }
+    this.currentOrders=results;
+        },error=> {
+          swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
+        });
+        
+      }
+    }
   
-ngOnInit() {
-      this.idRoleService.id.subscribe(id=>{
-      this.customerId =id;
-      alert(this.customerId )
-      this.getdata();
-    })
-    //this.customerAuthenticationService.changeCustomerId("kkdcust3001");
-    //this.customerId = CustomerAuthenticationService.cus;
-   
-   }}
