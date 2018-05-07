@@ -1,56 +1,56 @@
 <div class="mt-100">
-<h1>Add Alternate Address</h1>
+<h1>{{ 'add_address.add_alternate_address' | translate }}</h1>
   <form [formGroup]="rForm" (ngSubmit)="updateFarmerAddress(rForm.value)">
     <div class = "card">
       <div class="form-group">
       <div class = form-comp>
-      <div class = "name"><label for="addressLine">Address Line</label></div>
-      <input type="text" class="form-control" id="addressLine" placeholder="Enter Address Line" formControlName="addressLine">
+      <div class = "name"><label for="addressLine">{{ 'add_address.address_line' | translate }}</label></div>
+      <input type="text" class="form-control" id="addressLine" placeholder="{{ 'add_address.enter_address_line' | translate }}" formControlName="addressLine">
       <div *ngIf="rForm.controls['addressLine'].touched && rForm.controls['addressLine'].invalid" class="alert">
         <div *ngIf="rForm.controls['addressLine'].hasError('required')">
-          Address Line is required!
+          {{ 'add_address.address_line_required' | translate }}!
         </div>
       </div>
       </div>
       <div class = form-comp>
-        <div class = "name"><label for="city">City</label></div>
-        <input type="text" class="form-control" id="city" placeholder="Enter Your City" formControlName="city">
+        <div class = "name"><label for="city">{{ 'add_address.city' | translate }}</label></div>
+        <input type="text" class="form-control" id="city" placeholder="{{ 'add_address.enter_your_city' | translate }}" formControlName="city">
         <div *ngIf="rForm.controls['city'].touched && rForm.controls['city'].invalid" class="alert">
           <div *ngIf="rForm.controls['city'].hasError('required')">
-            City is required!
+            {{ 'add_address.city_required' | translate }}!
           </div>
         </div>
         </div>
       <div class = form-comp>
-        <div class = "name"><label for="district">District</label></div>
-        <input type="text" class="form-control" id="district" placeholder="Enter Your District" formControlName="district">
+        <div class = "name"><label for="district">{{ 'add_address.district' | translate }}</label></div>
+        <input type="text" class="form-control" id="district" placeholder="{{ 'add_address.enter_your_district' | translate }}" formControlName="district">
         <div *ngIf="rForm.controls['district'].touched && rForm.controls['district'].invalid" class="alert">
           <div *ngIf="rForm.controls['district'].hasError('required')">
-            District is required!
+            {{ 'add_address.district_required' | translate }}!
           </div>
         </div>
       </div>
       <div class = form-comp>
-        <div class = "name"><label for="state">State</label></div>
-        <input type="text" class="form-control" id="state" placeholder="Enter Your State" formControlName="state">
+        <div class = "name"><label for="state">{{ 'add_address.state' | translate }}</label></div>
+        <input type="text" class="form-control" id="state" placeholder="{{ 'add_address.enter_your_state' | translate }}" formControlName="state">
         <div *ngIf="rForm.controls['state'].touched && rForm.controls['state'].invalid" class="alert">
           <div *ngIf="rForm.controls['state'].hasError('required')">
-            State is required!
+            {{ 'add_address.state_required' | translate }}!
           </div>
         </div>
         </div>
       <div class = form-comp>
-        <div class = "name"><label for="pincode">Pincode</label></div>
-        <input type="number" class="form-control" id="pincode" placeholder="Enter Your Pincode" formControlName="pincode">
+        <div class = "name"><label for="pincode">{{ 'add_address.pincode' | translate }}</label></div>
+        <input type="number" class="form-control" id="pincode" placeholder="{{ 'add_address.enter_your_pincode' | translate }}" formControlName="pincode">
         <div *ngIf="rForm.controls['pincode'].touched && rForm.controls['pincode'].invalid" class="alert">
           <div *ngIf="rForm.controls['pincode'].hasError('required')">
-            Pincode is required!
+            {{ 'add_address.pincode_required' | translate }}!
           </div>
         </div>
       </div>
       </div>
       <div class = form-comp-button>
-      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Update</button>
+      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">{{ 'add_address.update' | translate }}</button>
       </div>
     </div>
   </form>

@@ -1,7 +1,7 @@
 
 
 
-    <h1>My Orders</h1>
+    <h1>{{ 'customer_current_order.my_orders' | translate }}</h1>
   
 
 <div class="container-fluid current-orders bg">
@@ -13,12 +13,12 @@
            <div class="card shadow" >
               <div class="card-body">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item item-id ">OrderId              :   {{order.orderId}}</li>
-                  <li class="list-group-item item">Product Name             :   {{order.name}} </li>                            
-                  <li class="list-group-item item">Quantity(in Kg.)                 :   {{order.quantity}}</li>                            
-                  <li class="list-group-item item">Price(in Rs.)                    :   {{order.totalAmount}}</li>
-                  <li class="list-group-item item">Rating                   :   {{order.avgRating}}</li>
-                  <li class="list-group-item item">OTP                      :   {{order.otp}} </li>
+                  <li class="list-group-item item-id ">{{ 'customer_current_order.orderid' | translate }}             :   {{order.orderId}}</li>
+                  <li class="list-group-item item">{{ 'customer_current_order.product_name' | translate }}            :   {{order.name}} </li>                            
+                  <li class="list-group-item item">{{ 'customer_current_order.quantity' | translate }}                :   {{order.quantity}}</li>                            
+                  <li class="list-group-item item">{{ 'customer_current_order.price' | translate }}                   :   {{order.totalAmount}}</li>
+                  <li class="list-group-item item">{{ 'customer_current_order.rating' | translate }}                  :   {{order.avgRating}}</li>
+                  <li class="list-group-item item">{{ 'customer_current_order.otp' | translate }}                     :   {{order.otp}} </li>
                 </ul>
               </div>
             </div>

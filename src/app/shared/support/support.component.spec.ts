@@ -44,7 +44,7 @@ fdescribe('SupportComponent', () => {
   it('should render title in a h1 tag', async(() => {
     fixture.detectChanges();
     const e1=fixture.nativeElement.querySelector('h1');
-    expect(e1.innerText).toEqual('SUPPORT');
+    expect(e1.innerText.toLowerCase()).toEqual('support');
   }));
 
   it('should call the submitIssue method', async(() => {
