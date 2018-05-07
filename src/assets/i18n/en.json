@@ -110,7 +110,7 @@
         "password_invalid":"Password Invalid (Atleast one lowercase, uppercase, specialcharacter, digit, minLength 6) !"
     },
     "farmer_login":{
-        "login_farmer":"LOGIN FARMER",
+        "login_farmer":"Login Farmer",
         "mobile_number":"Mobile Number*",
         "password":"Password*",
         "forgot_password":"Forgot Password?",
