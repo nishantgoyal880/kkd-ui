@@ -1,5 +1,5 @@
 <div class="mt-100">
-<h1> Bank Details </h1>
+<h1>{{ 'farmer_bank_details.bank_details' | translate }}</h1>
 
 <form [formGroup]="rForm" (ngSubmit)="addBankDetails(rForm.value)">
 
@@ -7,55 +7,55 @@
 		<div class="form-group">
 
 			<div class = "form-comp-top">
-				<div class = "name"><label for="accountNo">Accont Number</label></div>
-				<input type="text" class="form-control" id="accountNo" placeholder="Enter Accont Number" formControlName="accountNo">
+				<div class = "name"><label for="accountNo">{{ 'farmer_bank_details.account_number' | translate }}</label></div>
+				<input type="text" class="form-control" id="accountNo" placeholder="Enter Accont Number{{ 'farmer_bank_details.bank_details' | translate }}" formControlName="accountNo">
 				<div *ngIf="rForm.controls['accountNo'].touched && rForm.controls['accountNo'].invalid" class="alert">
 					<div *ngIf="rForm.controls['accountNo'].hasError('required')">
-						Account Number is required!
+						{{ 'farmer_bank_details.account_number_required' | translate }}
 					</div>
 					<div *ngIf="rForm.controls['accountNo'].hasError('maxlength')">
-						More than 12 digits not allowed.
+						{{ 'farmer_bank_details.more_than_12_digits' | translate }}
 					</div>
 					<div *ngIf="rForm.controls['accountNo'].hasError('minlength')">
-						Minimun 12 digits are required!
+						{{ 'farmer_bank_details.minimun_12_digits_are_required' | translate }}
 					</div>
 				</div>
 			</div>
 
 			<div class = "form-comp">
-				<div class = "name"><label for="accountName">Account Holder's Name</label></div>
-				<input type="textarea" class="form-control" id="accountName" placeholder="Enter Account Holder's Name" formControlName="accountName">
+				<div class = "name"><label for="accountName">{{ 'farmer_bank_details.account_holder_name' | translate }}</label></div>
+				<input type="textarea" class="form-control" id="accountName" placeholder="Enter Account Holder's Name{{ 'farmer_bank_details.bank_details' | translate }}" formControlName="accountName">
 				<div *ngIf="rForm.controls['accountName'].touched && rForm.controls['accountName'].invalid" class="alert">
 					<div *ngIf="rForm.controls['accountName'].hasError('required')">
-						Name is required!
+						{{ 'farmer_bank_details.name_required' | translate }}
 					</div>
 					<div *ngIf="rForm.controls['accountName'].hasError('maxlength')">
-						More than 20 characters not allowed.
+						{{ 'farmer_bank_details.more_than_20_characters_not_allowed' | translate }}
 					</div>
 					<div *ngIf="rForm.controls['accountName'].hasError('minlength')">
-						Minimun 2 digits are required!
+						{{ 'farmer_bank_details.minimun_2_digits_are_required' | translate }}
 					</div>
 				</div>
 			</div>
 
 			<div class = "form-comp">
-				<div class = "name"><label for="ifscCode">IFSC Code</label></div>
-				<input type="text" class="form-control" id="ifscCode" placeholder="Enter IFSC Code" formControlName="ifscCode">
+				<div class = "name"><label for="ifscCode">{{ 'farmer_bank_details.ifsc_code' | translate }}</label></div>
+				<input type="text" class="form-control" id="ifscCode" placeholder="Enter IFSC Code{{ 'farmer_bank_details.bank_details' | translate }}" formControlName="ifscCode">
 				<div *ngIf="rForm.controls['ifscCode'].touched && rForm.controls['accountName'].invalid" class="alert">
 					<div *ngIf="rForm.controls['ifscCode'].hasError('required')">
-						IFSC code is required!
+						{{ 'farmer_bank_details.ifsc_required' | translate }}
 					</div>
 					<div *ngIf="rForm.controls['ifscCode'].hasError('maxlength')">
-						More than 6 characters not allowed.
+						{{ 'farmer_bank_details.more_than_6_characters_not_allowed' | translate }}
 					</div>
 					<div *ngIf="rForm.controls['accountName'].hasError('minlength')">
-						Minimun 6 digits are required!
+						{{ 'farmer_bank_details.minimun_6_digits_are_required' | translate }}
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class ="form-comp-button">
-			<button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Save Details</button>
+			<button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_bank_details.save_details' | translate }}</button>
 		</div>
 	</div>
 </form>
