@@ -1,4 +1,4 @@
-<h1>Address Details</h1>
+<h1>{{ 'customer_address_book.address_details' | translate }}</h1>
 <div class="container-fluid address">
   <div class="row">
     <div *ngIf="details[0]">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="col-md-12">
-      <button><a routerLink="/customer/addressBook/addAddress">+Add Address</a></button>
+      <button><a routerLink="/customer/addressBook/addAddress">+{{ 'customer_address_book.add_address' | translate }}</a></button>
     </div>
   </div>
 </div>
