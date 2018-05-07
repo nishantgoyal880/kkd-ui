@@ -1,17 +1,17 @@
 {
     "footer":{
         "get_started":"Get started",
-        "farmer":"Farmer",
-        "customer":"Customer",
+        "home":"Home",
         "about_us":"About Us",
-        "company_information":"Company Information",
         "policies":"Policies",
         "contact_us":"Contact us",
-        "reviews":"Reviews",
         "support":"Support",
         "help":"Help",
-        "forums":"Forums",
-        "kisan_ki_dukan":"Kisan Ki Dukan"
+        "join_our_newsletter":"Join our Newsletter",
+        "connect_on_social":"Connect with us on Social",
+        "enter_your_email":"Enter your E-mail",
+        "subscribe":"Subscribe",
+        "kisan_ki_dukan":"Kisan Ki Dukan. All Rights Reserved"
     },
     "body":{
         "kisan_ki_dukan":"Kisan Ki Dukan",
@@ -275,8 +275,8 @@
         "cauliflower":"Cauliflower",
         "carrot":"Carrot",
         "garlic":"Garlic",
-        "lady_finger":"Lady Finger",
-        "oarnge":"Orange",
+        "lady_finger":"Ladyfinger",
+        "orange":"Orange",
         "lemon":"Lemon",
         "product_description":"Prouct Description",
         "enter_description":"Enter the description",
@@ -316,9 +316,26 @@
         "address":"Address",
         "quantity":"Quantity",
         "amount":"Amount",
+        "validity_of_order":"Validity Of Order",
+        "customer_mobileno":"Customer MobileNo",
         "delivered":"Delivered",
         "accept":"Accept",
-        "decline":"Decline"
+        "decline":"Decline",
+        "enter_delivery_info":"Enter Delivery Info",
+        "enter_delivery_date_and_time":"Enter delivery date and time",
+        "close":"Close",
+        "why_did_you_decline_the_order":"Why did you decline the order",
+        "i_am_not_able_to_deliver_in_that_location":"I am not able to deliver in that location",
+        "all_the_items_have_been_sold_out":"All the items have been sold out",
+        "the_order_quantity_is_not_sufficient":"The order quantity is not sufficient",
+        "i_am_not_in_a_good_health_condition":"I am not in a good health condition",
+        "other_reasons":"Other reasons",
+        "submit":"Submit",
+        "enter_otp_here":"Enter OTP here",
+        "otp":"OTP",
+        "confirms":"CONFIRMS",
+        "rate_the_order":"Rate the Order"
+
     },
     "farmer_previous_order":{
         "customer_id":"Customer ID",
@@ -330,7 +347,7 @@
         "delivery_date":"Delivery Date"
     },
     "farmer_view_product":{
-        "producid":"Product ID",
+        "productid":"Product ID",
         "description":"Description",
         "price":"Price",
         "bulk_ordr_price":"Bulk order Price",
@@ -393,7 +410,7 @@
         "update":"Update"
     },
     "customer_current_order":{
-        "my_orders":"My Orders",
+        "my_orders":"MY ORDERS",
         "orderid":"Order ID",
         "product_name":"Product Name",
         "quantity":"Quantity(in kg)",
@@ -425,12 +442,12 @@
         "new_password_required":"New password is required",
         "re-enter_new_password":"Re-enter the new password",
         "re-enter_new_password_required":"Re-entering the new password is required",
-        "change":"Submit",
+        "submit":"Submit",
         "delete_profile":"Delete Profile",
         "enter_10_digit_mobile_number":"Enter your 10 digit mobile number",
         "password":"Password",
         "enter_your_password":"Enter your password",
-        "pssword_required":"Password Required"       
+        "password_required":"Password is Required"       
     },
     "customer_my_cart":{
         "your_cart":"Your Cart",
