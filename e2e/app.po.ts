@@ -58,27 +58,95 @@ export class AppPage {
   }
   
   getMyAccountButton(){
-    return element(by.css('app-farmer-dashboardhref="#acc"]'));
+    return element(by.css('[href="#acc"]'));
+  }
+
+  getFarmerAddAddressButton(){
+    return element(by.css('[href="#add"]'));
+  }
+
+  getFarmerChangePasswordButton(){
+    return element(by.css('[href="#chPass"]'));
+  }
+
+  getFarmerAlternateMobileButton(){
+    return element(by.css('[href="#altMob"]'));
+  }
+
+  getFarmerDeleteProfileButton(){
+    return element(by.css('[href="#delPro"]'));
   }
 
   getAddProductButton(){
-    return element(by.css('app-farmer-dashboardhref="#prod"]'));
+    return element(by.css('[href="#prod"]'));
+  }
+
+  getAddProductTitle() {
+    return element(by.css('app-farmer-add-product h1')).getText();
+  }
+
+  getChooseProductDropDown() {
+    return element(by.cssContainingText('option','Choose Product Name'));
+  }
+
+  getProductDescriptionInputBox() {
+    return element(by.cssContainingText('label','Product description'));
+  }
+
+  getProductPricePerKgInputBox() {
+    return element(by.cssContainingText('label','Product Price per kg'));
+  }
+
+  getProductBulkOrderPricePerKgInputBox() {
+    return element(by.cssContainingText('label','Product Bulk Order Price per kg'));
+  }
+
+  getQuantityInputBox() {
+    return element(by.cssContainingText('label','Quantity'));
+  }
+
+  getUploadImageInputBox() {
+    return element(by.cssContainingText('label','Upload an image'));
+  }
+
+  getSubmitProductButton(){
+    return element(by.buttonText('Submit Product'));
   }
 
   getBankDetailsButton(){
-    return element(by.css('app-farmer-dashboardhref="#bank"]'));
+    return element(by.css('[href="#bank"]'));
+  }
+
+  getFarmerBankDetailsTitle() {
+    return element(by.css('app-farmer-bank-details h1')).getText();
+  }
+
+  getFarmerBankAccountNumberInputBox() {
+    return element(by.cssContainingText('label','Accont Number'));
+  }
+
+  getFarmerBankAccountHolderNameInputBox() {
+    return element(by.cssContainingText('label','Account Holder\'s Name'));
+  }
+
+  getFarmerBankIfscCodeInputBox() {
+    return element(by.cssContainingText('label','IFSC Code'));
+  }
+
+  getFarmerBankSaveDetailsButton(){
+    return element(by.buttonText('Save Details'));
   }
 
   getCurrentOrderButton(){
-    return element(by.css('app-farmer-dashboardhref="#curr"]'));
+    return element(by.css('[href="#curr"]'));
   }
 
   getPreviousOrderButton(){
-    return element(by.css('app-farmer-dashboardhref="#prev"]'));
+    return element(by.css('[href="#prev"]'));
   }
 
   getViewProductButton(){
-    return element(by.css('app-farmer-dashboardhref="#view"]'));
+    return element(by.css('[href="#view"]'));
   }
 
   getFarmerRegisterButton(){
@@ -118,23 +186,45 @@ export class AppPage {
   }
 
   getMyOrdersButton(){
-    return element(by.css('app-customer-my-account [href="#home"]'));
+    return element(by.css('[href="#home"]'));
   }
 
   getPreviousOrdersButton(){
-    return element(by.css('app-customer-my-account [href="#profile"]'));
+    return element(by.css('[href="#profile"]'));
   }
 
   getAddressBookButton(){
-    return element(by.css('app-customer-my-account [href="#messages"]'));
+    return element(by.css('[href="#messages"]'));
   }
 
-  getChangePasswordButton(){
-    return element(by.css('app-customer-my-account [href="#settings"]'));
+  getCustomerChangePasswordButton(){
+    return element(by.css('[href="#settings"]'));
   }
+
+  getCustomerChangePasswordTitle() {
+    return element(by.id('settings')&&by.css('app-customer-my-account h1'));
+  }
+
+  getCustomerMobileNumberInputBox() {
+    return element(by.cssContainingText('label','Mobile No'));
+  }
+
+  getCustomerCurrentPasswordInputBox() {
+    return element(by.cssContainingText('label','Current Password'));
+  }
+  getCustomerNewPasswordInputBox() {
+    return element(by.cssContainingText('label','New Password'));
+  }
+  getCustomerReenterNewPasswordInputBox() {
+    return element(by.cssContainingText('label','Re-enter new Password'));
+  }
+
+  getCustomerChangePasswordSubmitButton(){
+    return element(by.buttonText('Submit'));
+    }
 
   getDeleteProfileButton(){
-    return element(by.css('app-customer-my-account [href="#settings1"]'));
+    return element(by.css('[href="#settings1"]'));
   }
 
   getCustomerRegisterButton(){

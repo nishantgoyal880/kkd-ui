@@ -1,20 +1,20 @@
 <div class="mt-100">
-<h1>Delete Profile</h1>
+<h1>{{ 'delete_profile.delete_profile' | translate }}</h1>
 <form [formGroup]="rForm" (ngSubmit)="deleteFarmerProfile(rForm.value)">
   <div class = "card">
     <div class="form-group">
     <div class = form-comp>
-    <div class = "name"><label for="currentPassword">Enter Password</label></div>
-    <input type="password" class="form-control" placeholder="Enter Current Password" formControlName="currentPassword">
+    <div class = "name"><label for="currentPassword">{{ 'delete_profile.enter_password' | translate }}</label></div>
+    <input type="password" class="form-control" placeholder="{{ 'delete_profile.enter_current_password' | translate }}" formControlName="currentPassword">
     <div *ngIf="rForm.controls['currentPassword'].touched && rForm.controls['currentPassword'].invalid" class="alert">
       <div *ngIf="rForm.controls['currentPassword'].hasError('required')">
-        Current Password is required!
+        {{ 'delete_profile.current_password_required' | translate }}!
       </div>
     </div>
     </div>
     </div>
     <div class = form-comp-button>
-    <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Delete</button>
+    <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">{{ 'delete_profile.delete' | translate }}</button>
     </div>
   </div>
 </form>

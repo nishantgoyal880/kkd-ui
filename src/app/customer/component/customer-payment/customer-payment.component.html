@@ -4,7 +4,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
-            Payment Details
+            {{ 'customer_payment.payment_details' | translate }}
           </h3>
         </div>
         <div class="panel-body">
@@ -15,30 +15,30 @@
             <div class="checkbox ">
               <!--Cash on delivery checkbox-->
               <label>
-                <input type="radio" formControlName="rad" value="cod" (change)="radioClick(true)" /> Cash On Delivery
+                <input type="radio" formControlName="rad" value="cod" (change)="radioClick(true)" /> {{ 'customer_payment.cash_on_delivery' | translate }}
               </label>
             </div>
             <div class="checkbox ">
               <!--Online payment checkbox-->
               <label>
-                <input type="radio" formControlName="rad" value="card" (change)="radioClick(false)" /> Credit/Debit Card
+                <input type="radio" formControlName="rad" value="card" (change)="radioClick(false)" /> {{ 'customer_payment.credit_debit_card' | translate }}
               </label>
             </div>
             <div class="form-group">
               <label for="cardNumber">
-                CARD NUMBER</label>
+                {{ 'customer_payment.Card_number' | translate }}</label>
               <div class="input-group">
-                <input type="text" class="form-control" formControlName="cardNumber" placeholder="Valid Card Number" />
+                <input type="text" class="form-control" formControlName="cardNumber" placeholder=" {{ 'customer_payment.Card_number' | translate }}" />
                 <!--Input field for Card Number-->
                 <div *ngIf="rForm.controls['cardNumber'].touched && rForm.controls['cardNumber'].invalid" class="alert">
                   <div *ngIf="rForm.controls['cardNumber'].hasError('minlength')">
-                    Less than 16 digits
+                    {{ 'customer_payment.less_than_16_digits' | translate }}
                   </div>
                   <div *ngIf="rForm.controls['cardNumber'].hasError('maxlength')">
-                    More than 16 digits
+                    {{ 'customer_payment.more_than_16_digits' | translate }}
                   </div>
                   <div *ngIf="rForm.controls['cardNumber'].hasError('required')">
-                    Card Number is required!
+                    {{ 'customer_payment.card_number_is_required' | translate }}!
                   </div>
                 </div>
               </div>
@@ -47,20 +47,20 @@
               <div class="col-sm-7 col-md-7">
                 <div class="form-group">
                   <label for="expiryMonth">
-                    EXPIRY DATE</label>
+                    {{ 'customer_payment.expiry_date' | translate }}</label>
                   <div class="row">
                     <div class="col-sm-6 pl-ziro">
                       <input type="text" class="form-control mb-1" formControlName="expiryMonth" placeholder="MM" required />
                       <!--Input field for Month-->
                       <div *ngIf="rForm.controls['expiryMonth'].touched && rForm.controls['expiryMonth'].invalid" class="alert">
                         <div *ngIf="rForm.controls['expiryMonth'].hasError('minlength')">
-                          Less than 1 digit
+                          {{ 'customer_payment.less_than_1_digits' | translate }}
                         </div>
                         <div *ngIf="rForm.controls['expiryMonth'].hasError('maxlength')">
-                          More than 2 digits
+                          {{ 'customer_payment.more_than_2_digits' | translate }}
                         </div>
                         <div *ngIf="rForm.controls['expiryMonth'].hasError('required')">
-                          Month is required!
+                          {{ 'customer_payment.month_is_required' | translate }}!
                         </div>
                       </div>
                     </div>
@@ -69,13 +69,13 @@
                       <!--Input field for Year-->
                       <div *ngIf="rForm.controls['expiryYear'].touched && rForm.controls['expiryYear'].invalid" class="alert">
                         <div *ngIf="rForm.controls['expiryYear'].hasError('minlength')">
-                          Less than 1 digit
+                          {{ 'customer_payment.less_than_1_digits' | translate }}
                         </div>
                         <div *ngIf="rForm.controls['expiryYear'].hasError('maxlength')">
-                          More than 2 digits
+                          {{ 'customer_payment.more_than_2_digits' | translate }}
                         </div>
                         <div *ngIf="rForm.controls['expiryYear'].hasError('required')">
-                          Year is required!
+                          {{ 'customer_payment.year_is_required' | translate }}!
                         </div>
                       </div>
                     </div>
@@ -85,24 +85,24 @@
               <div class="col-sm-5 col-md-5 pull-right">
                 <div class="form-group">
                   <label for="cvCode">
-                    CV CODE</label>
+                    {{ 'customer_payment.cvv_code' | translate }}</label>
                   <input type="password" class="form-control" formControlName="cvCode" placeholder="CV" required />
                   <!--Input field for CVV number-->
                   <div *ngIf="rForm.controls['cvCode'].touched && rForm.controls['cvCode'].invalid" class="alert">
                     <div *ngIf="rForm.controls['cvCode'].hasError('minlength')">
-                      Less than 3 digits
+                      {{ 'customer_payment.less_than_3_digits' | translate }}
                     </div>
                     <div *ngIf="rForm.controls['cvCode'].hasError('maxlength')">
-                      More than 3 digits
+                      {{ 'customer_payment.more_than_3_digits' | translate }}
                     </div>
                     <div *ngIf="rForm.controls['cvCode'].hasError('required')">
-                      CVV is required!
+                      {{ 'customer_payment.cvv_is_required' | translate }}!
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <button class="btn btn-success btn-lg btn-block" [disabled]="rForm.invalid">Make Payment</button>
+            <button class="btn btn-success btn-lg btn-block" [disabled]="rForm.invalid">{{ 'customer_payment.make_payment' | translate }}</button>
             <!--Submit Button-->
           </form>
         </div>
