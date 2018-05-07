@@ -10,7 +10,7 @@ import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-trans
 import { IdRoleService } from '../../../../services/id-role/id-role.service';
 
 
-fdescribe('FarmerAddProductComponent', () => {
+describe('FarmerAddProductComponent', () => {
   let component: FarmerAddProductComponent;
   let fixture: ComponentFixture<FarmerAddProductComponent>;
   let de: DebugElement;
