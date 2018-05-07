@@ -2,16 +2,16 @@
     "footer":{
         "support":"सहायता",
         "get_started":"शुरू हो जाओ",
-        "farmer":"किसान",
-        "customer":"ग्राहक",
+        "home":"होम",
         "about_us":"हमारे बारे में",
-        "company_information":"कंपनी की जानकारी",
         "policies":"नीतियों",
         "contact_us":"संपर्क करें",
-        "reviews":"समीक्षा",
         "help":"मदद",
-        "forums":"मंच",
-        "kisan_ki_dukan":"किसान की दुकान। सर्वाधिकार सुरक्षित"
+        "kisan_ki_dukan":"किसान की दुकान। सर्वाधिकार सुरक्षित",
+        "join_our_newsletter":"हमारे समाचार पत्र से जुड जाओ",
+        "connect_on_social":"सोशल पर हमसे जुड़ें",
+        "enter_your_email":"अपना ईमेल दर्ज करें",
+        "subscribe":"सदस्यता लें"
     },
     "body":{
         "kisan_ki_dukan":"किसान की दुकान",

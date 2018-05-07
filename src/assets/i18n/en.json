@@ -1,17 +1,17 @@
 {
     "footer":{
         "get_started":"Get started",
-        "farmer":"Farmer",
-        "customer":"Customer",
+        "home":"Home",
         "about_us":"About Us",
-        "company_information":"Company Information",
         "policies":"Policies",
         "contact_us":"Contact us",
-        "reviews":"Reviews",
         "support":"Support",
         "help":"Help",
-        "forums":"Forums",
-        "kisan_ki_dukan":"Kisan Ki Dukan"
+        "kisan_ki_dukan":"Kisan Ki Dukan",
+        "join_our_newsletter":"Join our Newsletter",
+        "connect_on_social":"Connect with us on Social",
+        "enter_your_email":"Enter your E-mail",
+        "subscribe":"Subscribe"
     },
     "body":{
         "kisan_ki_dukan":"Kisan Ki Dukan",
