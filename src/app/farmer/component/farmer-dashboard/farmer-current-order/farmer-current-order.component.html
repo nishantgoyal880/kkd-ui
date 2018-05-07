@@ -12,39 +12,43 @@
           <!-- Text -->
           <div class="text-area">
             <p class="card-text">
-              <b>Customer Id: </b>{{order.kkdCustId}}</p>
+              <b>{{ 'farmer_current_order.customer_id' | translate }}: </b>{{order.kkdCustId}}</p>
             <p class="card-text">
-              <b>Product Name : </b>{{order.name}}</p>
+              <b>{{ 'farmer_current_order.product_name' | translate }}: </b>{{order.name}}</p>
             <p class="card-text">
-              <b>Address : </b>{{order.address.addressLine}} {{order.address.city}} {{order.address.state}} {{order.address.district}} {{order.address.pincode}}</p>
+              <b>{{ 'farmer_current_order.address' | translate }}: </b>{{order.address.addressLine}} {{order.address.city}}
+              {{order.address.state}} {{order.address.district}} {{order.address.pincode}}</p>
             <p class="card-text">
-              <b>Quantity : </b>{{order.quantity}}</p>
+              <b>{{ 'farmer_current_order.quantity' | translate }}: </b>{{order.quantity}}</p>
             <p class="card-text">
-              <b>Amount : </b>{{order.price}}</p>
-							<div *ngIf="order.farmerStatus=='Accept'">
-								<p class="card-text"><b>Validity Of Order : </b>{{order.validityOfOrder}}</p>
-								<p class="card-text"><b>Customer MobileNo : </b>{{order.mobileNo}}</p>
-							</div>
+              <b>{{ 'farmer_current_order.amount' | translate }}: </b>{{order.price}}</p>
+            <div *ngIf="order.farmerStatus=='Accept'">
+              <p class="card-text">
+                <b>{{ 'farmer_current_order.validity_of_order' | translate }}: </b>{{order.validityOfOrder}}</p>
+              <p class="card-text">
+                <b>{{ 'farmer_current_order.customer_mobileno' | translate }}: </b>{{order.mobileNo}}</p>
+            </div>
           </div>
-					<hr>
-					<span *ngIf="order.farmerStatus=='Accept'" >
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" (click)="setDataOtp(order.orderId,order.otp)" style="margin-top:13px;">
-							Delivered
-						</button>
-					</span>
-					<span *ngIf="order.farmerStatus==null">
-						<button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModal1" (click)="setData(order.orderId)">
-							Accept
-						</button>
+          <hr>
+          <span *ngIf="order.farmerStatus=='Accept'">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" (click)="setDataOtp(order.orderId,order.otp)"
+              style="margin-top:13px;">
+              {{ 'farmer_current_order.delivered' | translate }}
+            </button>
+          </span>
+          <span *ngIf="order.farmerStatus==null">
+            <button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModal1" (click)="setData(order.orderId)">
+              {{ 'farmer_current_order.accept' | translate }}
+            </button>
 
-						<button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModal2" (click)="setData(order.orderId)">
-							Decline
-						</button>
-     			</span>
+            <button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModal2" (click)="setData(order.orderId)">
+              {{ 'farmer_current_order.decline' | translate }}
+            </button>
+          </span>
         </div>
       </div>
-		</div>
-	</div>
+    </div>
+  </div>
 </div>
 <pagination-controls (pageChange)="p=$event"></pagination-controls>
 
@@ -59,20 +63,20 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Enter Delivery Info</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ 'farmer_current_order.enter_delivery_info' | translate }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-				<form >
-  				Enter delivery date and time:
-  				<input type="date" name="deliveryInfo" [(ngModel)]="date">
-					<input type="time" name="deliveryTime"[(ngModel)]="time">
-				</form>
+        <form>
+          {{ 'farmer_current_order.enter_delivery_date_and_time' | translate }}:
+          <input type="date" name="deliveryInfo" [(ngModel)]="date">
+          <input type="time" name="deliveryTime" [(ngModel)]="time">
+        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ 'farmer_current_order.close' | translate }}</button>
         <input class="btn btn-primary" type="submit" value="Submit" data-dismiss="modal" (click)="setDeliveryDetails()">
       </div>
     </div>
@@ -84,46 +88,50 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Why did you decline the order:</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ 'farmer_current_order.why_did_you_decline_the_order' | translate }}:</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-				<div class="form-check">
-  				<input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="declineReason" value="I am not able to deliver in that location" checked>
-  				<label class="form-check-label" for="exampleRadios1">
-    				I am not able to deliver in that location
-  				</label>
-				</div>
-				<div class="form-check">
-  				<input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="declineReason" value="All the items have been sold out" checked>
-  				<label class="form-check-label" for="exampleRadios1">
-    				All the items have been sold out
-  				</label>
-				</div>
-				<div class="form-check">
-  				<input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="declineReason" value="The order quantity is not sufficient" checked>
-  				<label class="form-check-label" for="exampleRadios1">
-    				The order quantity is not sufficient
-  				</label>
-				</div>
-				<div class="form-check">
-  				<input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="declineReason" value="I am not in a good health condition" checked>
-  				<label class="form-check-label" for="exampleRadios1">
-    				I am not in a good health condition
-  				</label>
-				</div>
-				<div class="form-check">
-  				<input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="declineReason" value="Other reasons" checked>
-  				<label class="form-check-label" for="exampleRadios1">
-    				Other reasons
-  				</label>
-				</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="declineReason" value="I am not able to deliver in that location"
+            checked>
+          <label class="form-check-label" for="exampleRadios1">
+            {{ 'farmer_current_order.i_am_not_able_to_deliver_in_that_location' | translate }}
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="declineReason" value="All the items have been sold out"
+            checked>
+          <label class="form-check-label" for="exampleRadios1">
+            {{ 'farmer_current_order.all_the_items_have_been_sold_out' | translate }}
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="declineReason" value="The order quantity is not sufficient"
+            checked>
+          <label class="form-check-label" for="exampleRadios1">
+            {{ 'farmer_current_order.the_order_quantity_is_not_sufficient' | translate }}
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="declineReason" value="I am not in a good health condition"
+            checked>
+          <label class="form-check-label" for="exampleRadios1">
+            {{ 'farmer_current_order.i_am_not_in_a_good_health_condition' | translate }}
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="declineReason" value="Other reasons" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            {{ 'farmer_current_order.other_reasons' | translate }}
+          </label>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="setDeclineReason()">Submit</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ 'farmer_current_order.close' | translate }}</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="setDeclineReason()">{{ 'farmer_current_order.submit' | translate }}</button>
       </div>
     </div>
   </div>
@@ -134,20 +142,20 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Enter OTP here</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ 'farmer_current_order.enter_otp_here' | translate }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-				<div class="form-group col-md-4">
-	      <label for="inputOtp">OTP</label>
-	      <input type="text" class="form-control" id="inputOtp" [(ngModel)]="otp">
-	    </div>
+        <div class="form-group col-md-4">
+          <label for="inputOtp">{{ 'farmer_current_order.otp' | translate }}</label>
+          <input type="text" class="form-control" id="inputOtp" [(ngModel)]="otp">
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#exampleModal4" (click)="checkingOtp()">
-					CONFIRMS</button>
+          {{ 'farmer_current_order.confirms' | translate }}</button>
       </div>
     </div>
   </div>
@@ -155,32 +163,42 @@
 
 <!-- Rating Modal -->
 <div *ngIf="otpVerified==true">
-<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Rate the Order</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-				<fieldset class="rating">
-    			<input type="radio" id="star5" name="rating" value="5" [(ngModel)]="avgRating" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-    			<input type="radio" id="star4half" name="rating" value="4.5" [(ngModel)]="avgRating"/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-    			<input type="radio" id="star4" name="rating" value="4" [(ngModel)]="avgRating"/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-    			<input type="radio" id="star3half" name="rating" value="3.5" [(ngModel)]="avgRating"/><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-    			<input type="radio" id="star3" name="rating" value="3" [(ngModel)]="avgRating"/><label class = "full" for="star3" title="Meh - 3 stars"></label>
-    			<input type="radio" id="star2half" name="rating" value="2.5" [(ngModel)]="avgRating"/><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-    			<input type="radio" id="star2" name="rating" value="2" [(ngModel)]="avgRating"/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-    			<input type="radio" id="star1half" name="rating" value="1.5" [(ngModel)]="avgRating"/><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-    			<input type="radio" id="star1" name="rating" value="1" [(ngModel)]="avgRating"/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-    			<input type="radio" id="starhalf" name="rating" value="0.5" [(ngModel)]="avgRating"/><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-			</fieldset>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="rateCustomer()">Submit</button>
+  <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ 'farmer_current_order.rate_the_order' | translate }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <fieldset class="rating">
+            <input type="radio" id="star5" name="rating" value="5" [(ngModel)]="avgRating" />
+            <label class="full" for="star5" title="Awesome - 5 stars"></label>
+            <input type="radio" id="star4half" name="rating" value="4.5" [(ngModel)]="avgRating" />
+            <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+            <input type="radio" id="star4" name="rating" value="4" [(ngModel)]="avgRating" />
+            <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+            <input type="radio" id="star3half" name="rating" value="3.5" [(ngModel)]="avgRating" />
+            <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+            <input type="radio" id="star3" name="rating" value="3" [(ngModel)]="avgRating" />
+            <label class="full" for="star3" title="Meh - 3 stars"></label>
+            <input type="radio" id="star2half" name="rating" value="2.5" [(ngModel)]="avgRating" />
+            <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+            <input type="radio" id="star2" name="rating" value="2" [(ngModel)]="avgRating" />
+            <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+            <input type="radio" id="star1half" name="rating" value="1.5" [(ngModel)]="avgRating" />
+            <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+            <input type="radio" id="star1" name="rating" value="1" [(ngModel)]="avgRating" />
+            <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+            <input type="radio" id="starhalf" name="rating" value="0.5" [(ngModel)]="avgRating" />
+            <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+          </fieldset>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="rateCustomer()">{{ 'farmer_current_order.submit' | translate }}</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
