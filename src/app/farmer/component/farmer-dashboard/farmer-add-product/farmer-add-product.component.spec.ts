@@ -2,10 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, By} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-import {HttpModule} from '@angular/http';
+import {HttpModule, Http} from '@angular/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DebugElement } from '@angular/core';
 import { FarmerAddProductComponent } from './farmer-add-product.component';
+import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
+
 
 fdescribe('FarmerAddProductComponent', () => {
   let component: FarmerAddProductComponent;
@@ -20,7 +22,12 @@ fdescribe('FarmerAddProductComponent', () => {
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule, HttpModule,
-        RouterTestingModule
+        RouterTestingModule,
+        TranslateModule.forRoot({
+          provide: TranslateLoader,
+          useFactory: (http: Http) => new TranslateStaticLoader(http, 'public/assets/i18n', '.json'),
+          deps: [Http]
+      })
       ]
     })
     .compileComponents()  ;
@@ -42,7 +49,7 @@ fdescribe('FarmerAddProductComponent', () => {
     fixture.detectChanges();
     const el=fixture.nativeElement.querySelector('h1');
     console.log(el.innerText);
-    expect(el.innerText).toEqual('Upload Product');
+    expect(el.innerText.toLowerCase()).toEqual('farmer_add_product.upload_product');
   }));
 
   it('should call the onFileSelected method', async(() => {

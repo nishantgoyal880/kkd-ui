@@ -30,15 +30,13 @@ export class FarmerAddProductComponent implements OnInit {
   }
  
 
-  constructor(private productService: FarmerAddProductService,private fb: FormBuilder,
-    public router: Router,private idRoleService: IdRoleService) { 
+  constructor(private productService: FarmerAddProductService,private fb: FormBuilder, public router: Router,private idRoleService: IdRoleService) { 
     this.rForm = fb.group({
       description : [null, Validators.compose([Validators.required])],
       price : [null, Validators.compose([Validators.required])],
       bulkOrderPrice : [null, Validators.compose([Validators.required])],
       quantity : [null, Validators.compose([Validators.required])],
       available : ''
-
       })
       this.idRoleService.role.subscribe((role) =>{
         this.role=role;
@@ -62,7 +60,8 @@ export class FarmerAddProductComponent implements OnInit {
       var reader = new FileReader();
   
       reader.onload = (event:any) => {
-        this.imageUrl = event.target.result      }
+        this.imageUrl = event.target.result 
+        }
   
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -110,6 +109,5 @@ export class FarmerAddProductComponent implements OnInit {
       text: 'Bulk Order Price should be less than Product Price',
     })
   }
-
   }
 }
