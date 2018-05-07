@@ -1,12 +1,12 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<div clas="mt-100">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
+<div clas="">
   <h1> {{ 'farmer_add_product.upload_product' | translate }} </h1>
 <form [formGroup]="rForm" (ngSubmit)="addProduct(rForm.value)">
 
   <div class = "card shadow">
     <div class="form-group">
 
-				<div class = form-comp>
+				<!-- <div class = form-comp>
 					<select class="form-control" (change)="selectChangeHandler($event)">
 						<option value="select">{{ 'farmer_add_product.choose_product_name' | translate }}</option>
 								 <option value="Onion">{{ 'farmer_add_product.onion' | translate }}</option>
@@ -19,7 +19,15 @@
 								 <option value="Orange">{{ 'farmer_add_product.orange' | translate }}</option>
 								 <option value="Lemon">{{ 'farmer_add_product.lemon' | translate }}</option>
 					</select>
+				</div> -->
+
+				<div class = form-comp >
+					<select class="form-control" (change)="selectChangeHandler($event)" >
+						<option disabled>{{ 'farmer_add_product.choose_product_name' | translate }}</option>
+						<option value="selected" *ngFor="let item of items">{{item}}</option>
+					</select>
 				</div>
+					
 
 		<div class = form-comp>
 			<div class = "name"><label for="description">{{ 'farmer_add_product.product_description' | translate }}</label></div>

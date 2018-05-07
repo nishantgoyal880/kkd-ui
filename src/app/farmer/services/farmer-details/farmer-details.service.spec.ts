@@ -14,7 +14,7 @@ import { MOCKFARMER,
          from '../../mocks/farmerDetails.mocks';
 import { FarmerDetailsService } from './farmer-details.service';
 
-fdescribe('FarmerDetailsService', () => {
+describe('FarmerDetailsService', () => {
   let mockFarmer:any;
   let mockFarmerAddress:any;
   let mockFarmerNegative:any;  

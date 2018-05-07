@@ -6,7 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import {IdRoleService} from '../../../../services/id-role/id-role.service'
 import { CustomerPreviousOrderComponent } from './customer-previous-order.component';
 
-fdescribe('CustomerPreviousOrderComponent', () => {
+describe('CustomerPreviousOrderComponent', () => {
   let component: CustomerPreviousOrderComponent;
   let fixture: ComponentFixture<CustomerPreviousOrderComponent>;
   let el: HTMLElement;
