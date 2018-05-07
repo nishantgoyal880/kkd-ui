@@ -4,15 +4,17 @@ import { Router } from '@angular/router';
 import { IdRoleService } from '../../../../services/id-role/id-role.service';
 import swal from 'sweetalert2';
 import { FarmerAddProductService } from '../../../services/farmer-add-product/farmer-add-product.service';
+import { ProductList } from '../../../config/productList';
 
 @Component({
   selector: 'app-farmer-add-product',
   templateUrl: './farmer-add-product.component.html',
   styleUrls: ['./farmer-add-product.component.css'],
-  providers: [ FarmerAddProductService, IdRoleService ]
+  providers: [ FarmerAddProductService ]
 })
 export class FarmerAddProductComponent implements OnInit {
 
+  items = ProductList.products;
   rForm: FormGroup;
   post:any;
   public kkdFarmId: any="";
@@ -30,44 +32,50 @@ export class FarmerAddProductComponent implements OnInit {
   }
  
 
-  constructor(private productService: FarmerAddProductService,private fb: FormBuilder,
-    public router: Router,private idRoleService: IdRoleService) { 
+  constructor(private productService: FarmerAddProductService,
+    private fb: FormBuilder, 
+    public router: Router,
+    private idRoleService: IdRoleService) { 
     this.rForm = fb.group({
       description : [null, Validators.compose([Validators.required])],
       price : [null, Validators.compose([Validators.required])],
       bulkOrderPrice : [null, Validators.compose([Validators.required])],
       quantity : [null, Validators.compose([Validators.required])],
       available : ''
-
       })
       this.idRoleService.role.subscribe((role) =>{
-        this.role=role;
+      this.role=role;
+      console.log(this.role)
       })
       this.idRoleService.id.subscribe((id) =>{
         console.log(id+"id in add product");
         
         this.kkdFarmId=id;
         console.log("id"+this.kkdFarmId);
-      })
+      })      
     }
 
 
+  //function to select product name
   selectChangeHandler (event: any){
     this.productName=event.target.value;
   }
 
+  //function to upload image
   onFileSelected(event: any){
     console.log(event);
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
   
       reader.onload = (event:any) => {
-        this.imageUrl = event.target.result      }
+        this.imageUrl = event.target.result 
+        }
   
       reader.readAsDataURL(event.target.files[0]);
     }
   }
 
+  //function to add product
   addProduct(post){
     this.productSubmission = {
 
@@ -110,6 +118,5 @@ export class FarmerAddProductComponent implements OnInit {
       text: 'Bulk Order Price should be less than Product Price',
     })
   }
-
   }
 }

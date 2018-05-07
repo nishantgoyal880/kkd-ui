@@ -4,15 +4,13 @@ form{
 }
 
 h1 {
-    font-weight: normal;
+    font-weight: 400;
     font-family: 'Roboto', sans-serif;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
-    color: #4b5320;
-    font-size: 50px;
+    color: #28a745;
     line-height: 42px;
-    text-shadow: 0 2px white, 0 3px #777;
     }
 
 /* h1{
@@ -97,4 +95,8 @@ button:focus{
     background-color: #f9f9f9;
     width : 70%;
     margin : auto;
+}
+
+.bank-det{
+    margin-top: 4rem;
 }

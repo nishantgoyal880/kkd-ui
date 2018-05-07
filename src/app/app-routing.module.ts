@@ -11,8 +11,6 @@ import { AppComponent } from './app.component';
 import { FarmerComponent } from './farmer/farmer.component';
 import { CustomerComponent } from './customer/customer.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { DemoComponent } from './demo/demo.component';
-
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component:HomePageComponent },
@@ -24,7 +22,6 @@ const routes: Routes = [
     { path: 'support', component:SupportComponent },
     { path: 'farmer', component:FarmerComponent },
     { path: 'customer', component:CustomerComponent },
-      { path: 'demo', component:DemoComponent },
 
   ];
 

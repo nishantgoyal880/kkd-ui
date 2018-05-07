@@ -47,32 +47,26 @@
   </div>
   <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    <span class="sr-only">{{ 'body.previous' | translate }}</span>
   </a>
   <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+    <span class="sr-only">{{ 'body.next' | translate }}</span>
   </a>
 </div>
 
 
 <div class="banner-bottom-w3l" id="about">
-  <div class="container">
+  <div class="container-fluid">
 
-      <h2>Welcome</h2>
+      <h2>{{ 'body.welcome' | translate }}</h2>
     <div class="welcome-sub-wthree">
-      <div class="row">
+      <div class="row" id="welcome_card">
         <div class="col-md-5 banner_bottom_left">
-          <h4>About
+          <h4>{{ 'body.about' | translate }}
             <span>K</span>isan <span>K</span>i <span>D</span>ukan
           </h4>
-          <p>The project Kisan Ki Dukan(KKD) is the launch of trend that focuses on delivering goods 
-            directly to the customer from the farm.</p> <p>As we know, it’s not fresh if it’s not from farm. 
-            And so, an online approach is being implemented by providing a platform to the customer
-             and the farmers where the farmers can find and get in touch with the right customers to
-              sell their goods and in a similar fashion the customers can request for goods from the 
-              farmers based on their preferences of location or price and avail the quality raw goods 
-              for their use.</p>
+          <p>{{ 'body.about_description' | translate }}</p>
           <h6 class="w3l-style">kkdonline.com</h6>
         </div>
         <!-- Stats-->
