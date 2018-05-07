@@ -29,15 +29,13 @@
           <a class="nav-link " routerLink="/support">{{ 'header.you_are_in' | translate }}<i class="fa fa-map-marker mr-1 ml-2"></i>{{city}}</a>
         </li>
         <span class="col-sm-12 col-md-auto">
-          <li><button class="btn btn-sm btn-outline-success mx-1" (click)="switchLanguage('en')">en</button></li>
-
-         <li><button class="btn btn-sm btn-outline-success mx-1" (click)="switchLanguage('hn')">hn</button></li>
-
-         <li><button class="btn btn-sm  btn-outline-success mx-1" (click)="switchLanguage('tm')">tm</button></li>
-
-         <li><button class="btn btn-sm btn-outline-success mx-1" (click)="switchLanguage('tl')">tl</button></li>
-
-         <li><button class="btn btn-sm btn-outline-success mx-1" (click)="switchLanguage('pn')">pn</button></li>
+            <div>
+                <label class="text-heading">
+                  <select class="btn btn-success select-btn" #langSelect (change)="translate.use(langSelect.value)">
+                  <option class="btn btn-light select-btn" *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+                  </select>
+                </label>
+                </div>
         </span>
         
       </ul>
