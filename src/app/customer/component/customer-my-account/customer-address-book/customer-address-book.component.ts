@@ -10,24 +10,30 @@ import{IdRoleService} from '../../../../services/id-role/id-role.service'
 })
 export class CustomerAddressBookComponent implements OnInit {
   details:Array<any>=[];
-  customerId:string="KKDCUST2000";
+  customerId:string="";
   constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
+
+ngOnInit() {
+    if(IdRoleService.id1.length){
+      this.customerId=IdRoleService.id1;
+      alert(this.customerId );
+      this.searchDetails();
+    }
+    else{
+      this.idRoleService.id.subscribe(id=>{
+        this.customerId =id;
+      alert(this.customerId );
+      this.searchDetails();
+      })
+     }
+    
+  }
 searchDetails(){
-  return this.customerAuthenticationService.getDetails(this.customerId).subscribe(
+    return this.customerAuthenticationService.getDetails(this.customerId).subscribe(
     data => this.details=data.addresses,
     error=> console.log(error)
   )
 }
   
-  ngOnInit() {
-    //this.customerAuthenticationService.changeCustomerId("KKDCUST2002");
-    //this.customerId=CustomerAuthenticationService.cus;
-    // this.idRoleService.id.subscribe(id=>{
-    //   this.customerId =id;
-    //   this.searchDetails();
-    // })
-    this.searchDetails();
-    
-  }
-
+  
 }

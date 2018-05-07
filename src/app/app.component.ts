@@ -48,7 +48,9 @@ export class AppComponent implements OnInit {
 			.subscribe((res) => {
 				console.log(res.results.kkdId + " " + res.results.role)
 				this.idRoleService.id.emit(res.results.kkdId);
+				IdRoleService.id1 = res.results.kkdId;
 				this.idRoleService.role.emit(res.results.role);
+				IdRoleService.role1=res.results.role;
 				this.idRoleService.isLoggedIn.emit(true);
 			}, (err) => {
 				alert("Invalid");
