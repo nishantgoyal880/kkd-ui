@@ -22,7 +22,7 @@
         "next":"Next",
         "welcome":"Welcome",
         "about":"About",
-        "about_description":"The project Kisan Ki Dukan(KKD) is the launch of trend that focuses on delivering goods  directly to the customer from the farm.</p> <p>As we know, it’s not fresh if it’s not from farm.  And so, an online approach is being implemented by providing a platform to the customer and the farmers where the farmers can find and get in touch with the right customers to sell their goods and in a similar fashion the customers can request for goods from the  farmers based on their preferences of location or price and avail the quality raw goods for their use.",
+        "about_description":"The project Kisan Ki Dukan(KKD) is the launch of trend that focuses on delivering goods  directly to the customer from the farm. As we know, it’s not fresh if it’s not from farm. And so, an online approach is being implemented by providing a platform to the customer and the farmers where the farmers can find and get in touch with the right customers to sell their goods and in a similar fashion the customers can request for goods from the  farmers based on their preferences of location or price and avail the quality raw goods for their use.",
         "farmer_joined":"Farmers Joined",
         "kg_vegetables_sold":"Kgs of Vegetables Sold",
         "happy_customers":"Happy Customers"
@@ -270,7 +270,7 @@
         "change":"Change"
     },
     "alternate_mobile_number":{
-        "alternate_mobile_number":"ALTERNATE MOBILE Number",
+        "alternate_mobile_number":"ALTERNATE MOBILE NUMBER",
         "enter_mobile_number":"Enter the mobile number",
         "less_than_10_digits":"Less than 10 digits",
         "more_than_10_digits":"More than 10 digits",

@@ -174,3 +174,17 @@ h6.w3l-style {
   text-align: center;
 }
  /*-- about --*/
+
+ #about{
+   margin-top: -4rem;
+ }
+
+ #welcome_card{
+  width: 80%; 
+  margin: auto;
+  margin-top: 5rem;
+ }
+
+ #numscroller{
+   overflow: hidden;
+ }
