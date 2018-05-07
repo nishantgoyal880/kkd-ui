@@ -10,10 +10,11 @@
         <div class="name">
           <label for="issueTitle">{{ 'support.issue_title' | translate }}</label>
         </div>
-        <input type="text" class="form-control" id="issueTitle" placeholder="{{ 'support.issue_title' | translate }}" formControlName="issueTitle">
+
+        <input type="text" class="form-control" id="issueTitle" placeholder='{{ "support.issue_title" | translate }}' formControlName="issueTitle">
         <div *ngIf="rForm.controls['issueTitle'].touched && rForm.controls['issueTitle'].invalid" class="alert">
           <div *ngIf="rForm.controls['issueTitle'].hasError('required')">
-              {{ 'support.title_is_required' | translate }}
+           {{ 'support.title_is_required' | translate }}
           </div>
         </div>
       </div>

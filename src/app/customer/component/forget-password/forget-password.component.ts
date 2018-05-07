@@ -12,29 +12,35 @@ import { IdRoleService } from '../../../services/id-role/id-role.service'
 	providers: [RegistrationLoginService]
 })
 export class ForgetPasswordComponent implements OnInit {
-	select: any = 0;
+	//declaring a form group for new password
 	newPasswordForm: FormGroup;
+	//declaring a form group for number Form
 	numberForm: FormGroup;
+	//declaring a form group for otp Form
 	otpForm: FormGroup;
+	//variable yo store the form data
 	post: any;
+	//variable to store the mobile number
 	mobileNo: String;
-	password: String;
-	confirmPassword: String;
+	//variable to hide and display the elements
 	hideVar: boolean = false;
 	hideVar2: boolean = false;
 	hideVar3: boolean = false;
 
-
-	constructor(private registrationService: RegistrationLoginService, private fb: FormBuilder, public router: Router,private idRoleService: IdRoleService) {
+	constructor(private registrationService: RegistrationLoginService,
+		private fb: FormBuilder,
+		public router: Router,
+		private idRoleService: IdRoleService) {
+		//making a form group with fileds password, confirmpassword
 		this.newPasswordForm = fb.group({
 			'password': [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12), Validators.maxLength(12), Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$")])],
 			'confirmPassword': ['', [Validators.required]],
 		}, { validator: this.checkIfMatchingPasswords });
-
+		//making a form group with fileds mobile number
 		this.numberForm = fb.group({
 			'mobileNo': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
 		});
-
+		//making a form group with fileds otp 
 		this.otpForm = fb.group({
 			'otp': [null, Validators.required],
 		});
@@ -42,16 +48,17 @@ export class ForgetPasswordComponent implements OnInit {
 
 	ngOnInit() {
 	}
-
+	//function to check password and confirm password 
 	checkIfMatchingPasswords(group: FormGroup) {
 		let passwordField = group.controls.password,
-			confirmPasswordField = group.controls.confirmPassword;
+		confirmPasswordField = group.controls.confirmPassword;
 		if (passwordField.value !== confirmPasswordField.value) {
 			return confirmPasswordField.setErrors({ notEquivalent: true })
 		} else {
 			return confirmPasswordField.setErrors(null);
 		}
 	}
+	//function to send otp
 	sendOtp(post) {
 		this.mobileNo = post.mobileNo;
 		this.hideVar = true;
@@ -76,6 +83,7 @@ export class ForgetPasswordComponent implements OnInit {
 				this.hideVar3 = true;
 			}
 			else {
+				//in case when otp is wrong
 				swal({
 					type: 'error',
 					title: 'Oops...',
@@ -84,6 +92,7 @@ export class ForgetPasswordComponent implements OnInit {
 				})
 			}
 		}, (err) => {
+			//if otp is invalid
 			if (err.status = 401) {
 				swal({
 					type: 'error',
@@ -93,6 +102,7 @@ export class ForgetPasswordComponent implements OnInit {
 				})
 			}
 			else {
+				//if server is down
 				swal({
 					type: 'error',
 					title: 'Oops...',
@@ -102,13 +112,16 @@ export class ForgetPasswordComponent implements OnInit {
 			}
 		})
 	}
+	//function to reset the password of customer
 	resetPasswordCustomer(post) {
+		//creating json to be send to registration service to reset the credentials
 		var customerNewCredentials = {
 			'mobileNo': this.mobileNo,
 			'password': post.password,
 		}
 
 		this.registrationService.forgetPassword(customerNewCredentials).subscribe((res) => {
+			//in case of response
 			swal({
 				position: 'top-end',
 				type: 'success',
@@ -116,12 +129,15 @@ export class ForgetPasswordComponent implements OnInit {
 				showConfirmButton: false,
 				timer: 1000
 			})
+			//storing the token in the locql storage
 			localStorage.setItem("token", res.results.token);
+			//passing id and role to the service and emmiting a log in event which will be used in the header
 			this.idRoleService.id.emit(res.results.kkdCustId);
 			this.idRoleService.role.emit(res.results.role);
 			this.idRoleService.isLoggedIn.emit(true);
-			this.router.navigate(['/customer/homePage']);
+			this.router.navigate(['productList']);
 		}, (err) => {
+			//in case of error
 			swal({
 				type: 'error',
 				title: 'Oops...',

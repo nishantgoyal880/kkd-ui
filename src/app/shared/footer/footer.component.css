@@ -266,3 +266,20 @@
 }
 /*-- //copyright --*/
 /*-- //footer --*/
+
+@media(max-width:800px){
+    #foot-menu{
+        overflow: visible;
+    }
+    #news-button{
+        width: auto;
+        margin-top: 1rem;
+    }
+    #news-input{
+        width: auto;
+    }
+    #foot-connect{
+        width:min-content;
+        overflow: auto;
+    }
+}

@@ -19,7 +19,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { IdRoleService } from './services/id-role/id-role.service'
 import { NgxPermissionsModule } from 'ngx-permissions';
-import { DemoComponent } from './demo/demo.component';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -42,7 +41,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   PoliciesComponent,
   ConnectUsComponent,
   HomePageComponent,
-  DemoComponent,
   ],
   imports: [
   BrowserModule,

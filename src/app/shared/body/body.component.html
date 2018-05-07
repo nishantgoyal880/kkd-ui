@@ -57,11 +57,11 @@
 
 
 <div class="banner-bottom-w3l" id="about">
-  <div class="container">
+  <div class="container-fluid">
 
       <h2>{{ 'body.welcome' | translate }}</h2>
     <div class="welcome-sub-wthree">
-      <div class="row">
+      <div class="row" id="welcome_card">
         <div class="col-md-5 banner_bottom_left">
           <h4>{{ 'body.about' | translate }}
             <span>K</span>isan <span>K</span>i <span>D</span>ukan
@@ -73,15 +73,15 @@
         <div class="col-md-7 stats-info-agile">
           <div class="w3l-right-stats">
             <div class="stats-grid stat-border">
-              <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='200' data-delay='.5' data-increment="1">200</div>
+              <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='200' data-delay='.5' data-increment="1" id="numscroller">200</div>
               <p>{{ 'body.farmer_joined' | translate }}</p>
             </div>
             <div class="stats-grid">
-              <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='120' data-delay='.5' data-increment="1">120</div>
+              <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='120' data-delay='.5' data-increment="1" id="numscroller">120</div>
               <p>{{ 'body.kg_vegetables_sold' | translate }}</p>
             </div>
             <div class="stats-grid stat-border border-st2">
-              <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='500' data-delay='.5' data-increment="1">500</div>
+              <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='500' data-delay='.5' data-increment="1" id="numscroller">500</div>
               <p>{{ 'body.happy_customers' | translate }}</p>
             </div>
           </div>
