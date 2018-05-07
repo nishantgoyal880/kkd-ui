@@ -22,14 +22,10 @@ a{
       float: right;
       display: block;
     }
-    .col-sm-12 li{
-        display: inline;
+    ul{
+      display: block;
     }
   }
-
-  .col-sm-12 li{
-    display: inline;
-}
 
   @media screen and (max-width: 600px) {
     .topnav.responsive {position: relative;}
