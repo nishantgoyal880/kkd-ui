@@ -38,7 +38,7 @@
 							</div>
 						</div>
 						<div class = "form-comp">
-							<div class = "name"><label for="exampleInputPassword1">Password{{ 'customer_register.password' | translate }}*</label></div>
+							<div class = "name"><label for="exampleInputPassword1">{{ 'customer_register.password' | translate }}*</label></div>
 							<input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="{{ 'customer_register.password' | translate }}">
 							<div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
 								<div *ngIf="rForm.controls['password'].hasError('minlength')" >
@@ -48,7 +48,6 @@
 									{{ 'customer_register.more_than_12_digits' | translate }}
 								</div>
 								<div *ngIf="rForm.controls['password'].hasError('pattern')">
-									(Atleast one lowercase, uppercase, specialcharacter, digit, minLength 6) !
 									{{ 'customer_register.password_invalid' | translate }}
 								</div>
 								<div *ngIf="rForm.controls['password'].hasError('required')">

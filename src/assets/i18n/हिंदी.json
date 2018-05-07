@@ -160,11 +160,12 @@
         "india":"इंडिया, 122017"
     },
     "customer_register":{
-        "register_customer":"रजिस्ट्रार ग्राहक",
+        "register_customer":"रजिस्ट्र ग्राहक",
         "first_name":"पहला नाम",
         "less_than_3_digits":"3 अंकों से कम",
         "first_name_is_required":"पहला नाम आवश्यक है!",
         "last_name":"अंतिम नाम",
+        "mobile_number":"मोबाइल नंबर",
         "less_than_10_digits":"10 अंकों से कम",
         "more_than_10_digits":"10 से अधिक अंक",
         "mobile_number_is_required":"मोबाइल नंबर की आवश्यकता है!",
