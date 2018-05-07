@@ -10,7 +10,7 @@ import{IdRoleService} from '../../../../services/id-role/id-role.service'
 })
 export class CustomerAddressBookComponent implements OnInit {
   details:Array<any>=[];
-  customerId:string="KKDCUST2000";
+  customerId:string="";
   constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
 searchDetails(){
   return this.customerAuthenticationService.getDetails(this.customerId).subscribe(
@@ -21,12 +21,12 @@ searchDetails(){
   
   ngOnInit() {
     //this.customerAuthenticationService.changeCustomerId("KKDCUST2002");
-    //this.customerId=CustomerAuthenticationService.cus;
-    // this.idRoleService.id.subscribe(id=>{
-    //   this.customerId =id;
-    //   this.searchDetails();
-    // })
-    this.searchDetails();
+    this.customerId=CustomerAuthenticationService.cus;
+     this.idRoleService.id.subscribe(id=>{
+       this.customerId =id;
+       this.searchDetails();
+   })
+    
     
   }
 
