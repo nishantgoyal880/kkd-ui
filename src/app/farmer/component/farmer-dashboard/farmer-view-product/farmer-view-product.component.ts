@@ -40,28 +40,10 @@ export class FarmerViewProductComponent implements OnInit {
 
   // calling service to get all products of a particular farmer
   public getProducts() {
-    //  console.log("hereeeee");
 
-    // check whether
-    if (IdRoleService.id1.length) {
-      this.id = IdRoleService.id1;
-      this.role = IdRoleService.role1;
-      console.log(this.id);
-      console.log(this.role);
-    }
-
-    else {
-      this.idRoleService.id.subscribe(id => {
-        this.id = id;
-        console.log(this.id);
-      });
-
-      this.idRoleService.role.subscribe((role) => {
-        this.role = role;
-        console.log(this.role);
-      });
-    }
-
+    // Getting Farmer id from local Storage
+    this.id = localStorage.getItem("id");
+    
     console.log("id in view product ts: " + this.id);
     this.farmerViewProductService.getAllProducts(this.id).subscribe((res) => {
       this.products = res;
