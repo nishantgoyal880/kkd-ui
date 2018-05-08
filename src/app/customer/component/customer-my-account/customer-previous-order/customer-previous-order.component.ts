@@ -18,14 +18,12 @@ export class CustomerPreviousOrderComponent implements OnInit {
   ngOnInit() {
     if(IdRoleService.id1.length){
       this.customerId=IdRoleService.id1;
-      alert(this.customerId );
       this.getdata();
     }
     else{
       this.idRoleService.id.subscribe(id=>{
         this.customerId =id;
-      alert(this.customerId );
-      this.getdata();
+        this.getdata();
       })
      }
    }
