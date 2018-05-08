@@ -65,3 +65,21 @@ a{
       border-left-color: rgb(53, 160, 65);
   border-radius: .25rem;
 }
+.footer-bottom { background: #28a745; text-align: left; color: #fff; height: 1.5rem;}
+
+#top-nav { background: #28a745; backface-visibility: hidden}
+
+#location{
+  margin-top:-.4rem;
+  color: #fff;
+  margin-left:2rem; 
+}
+
+#lang-drop{
+  margin-top: -.4rem;
+  margin-right:2rem; 
+}
+
+#lang-div{
+  text-align: end;
+}
