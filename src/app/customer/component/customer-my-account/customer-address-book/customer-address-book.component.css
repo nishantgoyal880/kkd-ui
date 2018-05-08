@@ -17,7 +17,6 @@
 
 h1 {
     font-weight: normal;
-    font-family: 'Roboto', sans-serif;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
@@ -47,7 +46,6 @@ form{
 
 h1 {
     font-weight: normal;
-    font-family: 'Roboto', sans-serif;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
@@ -63,7 +61,6 @@ h1 {
     padding-top: 10px;
     color :#d84b6b;
     font-weight: normal;
-    font-family: 'Roboto', sans-serif;   
     font-size: 50px;
     line-height: 42px;
     text-transform: uppercase;

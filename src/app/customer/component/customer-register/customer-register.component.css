@@ -26,7 +26,6 @@ button:focus{
 }
 h1 {
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
@@ -48,7 +47,6 @@ h1 {
 
 body {
     background:#e8e8e8;
-    font-family: 'Muli';
 }
 
 .cardwidth{

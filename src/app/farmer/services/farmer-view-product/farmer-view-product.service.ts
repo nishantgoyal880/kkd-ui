@@ -15,9 +15,9 @@ export class FarmerViewProductService {
   // private headers = new Headers({ 'Content-Type': 'application/json'});
 
   //getting all data of particular farmer from database service
-  public getAllProducts(id:any) {
-    console.log("in product service:"+id);
-    return this.http.get(viewProductServiceUrl.viewProductUrl+id+"/product",this.authorization())
+  public getAllProducts() {
+    console.log("in product service:");
+    return this.http.get(viewProductServiceUrl.viewProductUrl+"product",this.authorization())
     .map(data => data.json(),
       error => this.handleError(error)
     )
