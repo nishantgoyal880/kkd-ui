@@ -50,8 +50,8 @@ export class FarmerRegisterComponent implements OnInit {
 
 	/*
 	*to be called when farmer click register button
-	*their aadhaar data will be taken and passed to the registration service, and if the user is eligible to register ,id and role is returned, 
-	*token is stored in local storage 
+	*their aadhaar data will be taken and passed to the registration service, and if the user is eligible to register ,id and role is returned,
+	*token is stored in local storage
 	*id and role is stored in a common service
 	*but if the user is not eligible a swal will be opened saying already registerd or service not working
 	*/
@@ -68,6 +68,7 @@ export class FarmerRegisterComponent implements OnInit {
 			//in case of response
 			//storing token in local storage
 			localStorage.setItem("token",res.results.token);
+			localStorage.setItem("id",res.results.kkdFarmId);
 			//passing id and role to the service and emmiting a log in event which will be used in the header
 			this.idRoleService.id.emit(res.results.kkdFarmId);
 			this.idRoleService.role.emit(res.results.role);
@@ -75,7 +76,7 @@ export class FarmerRegisterComponent implements OnInit {
 			//routing to farmer dashboard
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
-			//if the user is not eligible a swal will be opened saying already registerd 
+			//if the user is not eligible a swal will be opened saying already registerd
 			swal({
 				type: 'error',
 				title: 'Oops...',
