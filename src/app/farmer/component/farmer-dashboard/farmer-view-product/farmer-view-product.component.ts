@@ -15,6 +15,7 @@ export class FarmerViewProductComponent implements OnInit {
 
   public role: any;
   public id: any;
+  public p : any;
 
   constructor(private farmerViewProductService: FarmerViewProductService, private idRoleService: IdRoleService) {
 
@@ -31,7 +32,7 @@ export class FarmerViewProductComponent implements OnInit {
   public productName: any;
   public available: any;
   public cities: any = [];
-  productSubmission;
+  public productSubmission : any;
 
   ngOnInit() {
       this.getProducts();
