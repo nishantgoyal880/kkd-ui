@@ -9,7 +9,6 @@ import { addProductServiceUrl } from '../../config/addProductServiceUrl.config';
 export class FarmerAddProductService {
 
   constructor(private http: Http) { }
-  private headers = new Headers({ 'Content-Type': 'application/json'});
 
   public handleError(error: Response){
     return Observable.throw(error.statusText);

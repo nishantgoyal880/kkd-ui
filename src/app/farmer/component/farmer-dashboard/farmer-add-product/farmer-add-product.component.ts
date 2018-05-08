@@ -29,6 +29,17 @@ export class FarmerAddProductComponent implements OnInit {
   productSubmission;
 
   ngOnInit() {
+    //assign role and farmer id
+    this.idRoleService.role.subscribe((role) =>{
+      this.role=role;
+      console.log(this.role)
+      })
+      this.idRoleService.id.subscribe((id) =>{
+        console.log(id+"id in add product");
+        
+        this.kkdFarmId=id;
+        console.log("id"+this.kkdFarmId);
+      })      
   }
  
 
@@ -43,16 +54,7 @@ export class FarmerAddProductComponent implements OnInit {
       quantity : [null, Validators.compose([Validators.required])],
       available : ''
       })
-      this.idRoleService.role.subscribe((role) =>{
-      this.role=role;
-      console.log(this.role)
-      })
-      this.idRoleService.id.subscribe((id) =>{
-        console.log(id+"id in add product");
-        
-        this.kkdFarmId=id;
-        console.log("id"+this.kkdFarmId);
-      })      
+      
     }
 
 
@@ -77,6 +79,7 @@ export class FarmerAddProductComponent implements OnInit {
 
   //function to add product
   addProduct(post){
+    console.log(this.kkdFarmId+"@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     this.productSubmission = {
 
     "kkdFarmId":this.kkdFarmId,
