@@ -33,23 +33,36 @@ export class FarmerViewProductComponent implements OnInit {
   public cities: any = [];
   productSubmission;
 
+  ngOnInit() {
+       this.getProducts();
+  }
+
   // calling service to get all products of a particular farmer
   public getProducts() {
-    console.log("hereeeee");
+    //  console.log("hereeeee");
+    // if (IdRoleService.id1.length) {
+    //   this.id = IdRoleService.id1;
+    //   this.role = IdRoleService.role1;
+    //   alert(this.id);
+    //   alert(this.role);
+    // }
 
-    this.idRoleService.role.subscribe((role) => {
-      this.role = role;
-      console.log("role in view product ts: " + this.role);
-    })
+    // else {
+    //   this.idRoleService.id.subscribe(id => {
+    //     this.id = id;
+    //     alert(this.id);
+    //   });
 
-    this.idRoleService.id.subscribe((id) => {
-      this.id = id;
-      console.log("id in view product ts: " + this.id);
-      this.farmerViewProductService.getAllProducts(this.id).subscribe((res) => {
-        this.products = res;
-      }, error => this.handleError(error))
-    })
-
+    //   this.idRoleService.role.subscribe((role) => {
+    //     this.role = role;
+    //     alert(this.role);
+    //   });
+    // }
+    
+    console.log("id in view product ts: " + this.id);
+    this.farmerViewProductService.getAllProducts().subscribe((res) => {
+      this.products = res;
+    }, error => this.handleError(error));
 
   }
 
@@ -130,12 +143,6 @@ export class FarmerViewProductComponent implements OnInit {
         text: 'Something went wrong!',
       })
     });
-  }
-
-  ngOnInit() {
-
-
-    this.getProducts();
   }
 
   // Handling errors
