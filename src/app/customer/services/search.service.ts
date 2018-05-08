@@ -26,12 +26,12 @@ export class SearchService {
     } else {
       url = SearchConfig.searchProducts;
     }
-    return this.http.get(url).map(data => data.json(), err => console.log(err));
+    return this.http.get(url,this.authorization()).map(data => data.json(), err => console.log(err));
   }
 
   addToCart(cartItem) {
     return this.http
-      .post(CartConfig.addToCart, cartItem, { headers: this.headers })
+      .post(CartConfig.addToCart, cartItem, this.authorization())
       .map(
         data => {},
         err => err.json()
