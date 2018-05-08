@@ -9,7 +9,7 @@ import swal from 'sweetalert2';
   selector: 'app-farmer-alternate-mobile',
   templateUrl: './farmer-alternate-mobile.component.html',
   styleUrls: ['./farmer-alternate-mobile.component.css'],
-  providers:[FarmerDetailsService, IdRoleService]
+  providers: [FarmerDetailsService, IdRoleService]
 })
 export class FarmerAlternateMobileComponent implements OnInit {
 
@@ -17,49 +17,53 @@ export class FarmerAlternateMobileComponent implements OnInit {
   public role: string;
   rForm: FormGroup;
 
-  constructor(private farmerDetailsService : FarmerDetailsService,private fb: FormBuilder,
-    public router: Router,private idRoleService: IdRoleService) {
+  constructor(private farmerDetailsService: FarmerDetailsService, private fb: FormBuilder,
+    public router: Router, private idRoleService: IdRoleService) {
     this.rForm = fb.group({
-      alternateMobileNumber :[null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])]
-  })
-  this.idRoleService.role.subscribe((role) =>{
-    this.role=role;
-  })
-  this.idRoleService.id.subscribe((id) =>{
-    this.searchedFarmerId=id;
-  })
+      alternateMobileNumber: [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])]
+    })
+    this.idRoleService.role.subscribe((role) => {
+      this.role = role;
+    })
+    this.idRoleService.id.subscribe((id) => {
+      this.searchedFarmerId = id;
+    })
   }
-   /* Function to update farmer's mobile number by his KKDId
-  and make service call to update farmer's mobile number from app */
-  updateFarmerMobile(post){
+  /* 
+  Function to update farmer's mobile number by his KKDId
+  and make service call to update farmer's mobile number from app 
+  */
+  updateFarmerMobile(post) {
+    //service call to get farmer's details
     this.farmerDetailsService.getFarmerName(this.searchedFarmerId)
-             .subscribe((res) =>{
-                   res.alternateNo = post.alternateMobileNumber;
-                   this.farmerDetailsService.updateFarmerMobile(this.searchedFarmerId,res)
-                   .subscribe((updatedInfo) =>{
-                    swal({
-                      position: 'top',
-                      type: 'success',
-                      title: 'Your alternate mobile number has updated',
-                      showConfirmButton: false,
-                      timer: 1500
-                    });
-                    this.router.navigate(['/farmer/dashboard']);
-                     }, (error) =>{
-                      swal({
-                        type: 'error',
-					              title: 'Oops...',
-					              text: 'Something went wrong',
-                      })
-                     });
-             }, (error) =>{
-              swal({
-                type: 'error',
-                title: 'Oops...',
-                text: 'Server down',
-                footer: 'Try Again Later......',
-              })
-             });
+      .subscribe((res) => {
+        res.alternateNo = post.alternateMobileNumber;
+        //service call to update farmer's alternate mobile number
+        this.farmerDetailsService.updateFarmerMobile(this.searchedFarmerId, res)
+          .subscribe((updatedInfo) => {
+            swal({
+              position: 'top',
+              type: 'success',
+              title: 'Your alternate mobile number has updated',
+              showConfirmButton: false,
+              timer: 1500
+            });
+            this.router.navigate(['/farmer/dashboard']);
+          }, (error) => {
+            swal({
+              type: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong',
+            })
+          });
+      }, (error) => {
+        swal({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Server down',
+          footer: 'Try Again Later......',
+        })
+      });
   }
   ngOnInit() {
   }

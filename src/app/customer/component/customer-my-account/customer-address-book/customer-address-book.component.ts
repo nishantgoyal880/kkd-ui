@@ -1,37 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import {CustomerAuthenticationService} from '../../../services/customer-authentication.service';
-import{IdRoleService} from '../../../../services/id-role/id-role.service'
+import { CustomerAuthenticationService } from '../../../services/customer-authentication.service';
+import { IdRoleService } from '../../../../services/id-role/id-role.service'
 
 @Component({
   selector: 'app-customer-address-book',
   templateUrl: './customer-address-book.component.html',
   styleUrls: ['./customer-address-book.component.css'],
-  providers:[CustomerAuthenticationService],
+  providers: [CustomerAuthenticationService],
 })
 export class CustomerAddressBookComponent implements OnInit {
-  details:Array<any>=[];
-  customerId:string="";
-  constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
+  details: Array<any> = [];
+  customerId: string = "";
+  constructor(private customerAuthenticationService: CustomerAuthenticationService, private idRoleService: IdRoleService) { }
 
-ngOnInit() {
-    if(IdRoleService.id1.length){
-      this.customerId=IdRoleService.id1;
+  ngOnInit() {
+    if (IdRoleService.id1.length) {
+      this.customerId = IdRoleService.id1;
       this.searchDetails();
     }
-    else{
-      this.idRoleService.id.subscribe(id=>{
-        this.customerId =id;
+    else {
+      this.idRoleService.id.subscribe(id => {
+        this.customerId = id;
         this.searchDetails();
       })
-     }
-    
+    }
+
   }
-searchDetails(){
+  /* 
+  Function to display customer's address by his KKDId and 
+  make service call to display customer's address from UserDetails
+  */
+  searchDetails() {
     return this.customerAuthenticationService.getDetails(this.customerId).subscribe(
-    data => this.details=data.addresses,
-    error=> console.log(error)
-  )
-}
-  
-  
+      data => this.details = data.addresses,
+      error => console.log(error)
+    )
+  }
 }

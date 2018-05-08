@@ -15,11 +15,11 @@ export class FarmerDeleteProfileComponent implements OnInit {
   public searchedFarmerId: string;
   public role: string;
   public delete:boolean;
-  rForm: FormGroup;
+  rform: FormGroup;
 
   constructor(private farmerDetailsService : FarmerDetailsService,
-    private fb: FormBuilder,private idRoleService: IdRoleService) {
-    this.rForm = fb.group({
+    private formBuilder: FormBuilder,private idRoleService: IdRoleService) {
+    this.rform = formBuilder.group({
       currentPassword : [null, Validators.compose([Validators.required])]
   });
   this.idRoleService.role.subscribe((role) =>{
@@ -33,13 +33,16 @@ export class FarmerDeleteProfileComponent implements OnInit {
 
   }
 
-  /* Function to delete farmer's profile by his KKDId
-  and make service call to delete farmer's profile from app */
+  /* 
+  Function to delete farmer's profile by his KKDId
+  and make service call to delete farmer's profile from app 
+  */
   deleteFarmerProfile(post){
     let userInfo={
       kkdFarmId:this.searchedFarmerId,
       password:post.currentPassword
     };
+    //service call to delete farmer's profile
     this.farmerDetailsService.deleteFarmerProfile(userInfo).subscribe((data:boolean)=>{
         if(data==true){
           swal({
