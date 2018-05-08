@@ -22,7 +22,7 @@ export class FarmerPreviousOrderComponent implements OnInit {
        //code to get the list of orders according to farmer id
        this.orderService.getPreviousOrderListFromFarmerId(localStorage.getItem("id")).subscribe((res) =>{
          this.orderList = res;
-       
-  }
+       }, (error) =>{})
 
+}
 }
