@@ -41,10 +41,14 @@
               aria-selected="true">
               <i class="fa fa-home mr-1"></i>DashBoard</a>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item" *ngIf="loggedIn==false">
             <a class="nav-link" id="profile-tab" data-toggle="tab" routerLink="/productList" role="tab" aria-controls="profile" aria-selected="false">
               <i class="fa fa-product-hunt mr-1"></i>{{ 'header.products' | translate }}</a>
-          </li> -->
+          </li>
+          <li class="nav-item" *ngIf="loggedIn==true && role=='Customer'">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" routerLink="/productList" role="tab" aria-controls="profile" aria-selected="false">
+              <i class="fa fa-product-hunt mr-1"></i>{{ 'header.products' | translate }}</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" id="messages-tab" data-toggle="tab" routerLink="/help" role="tab" aria-controls="messages" aria-selected="false">
               <i class="fa fa-info-circle mr-1"></i>{{ 'header.help' | translate }}</a>
@@ -67,12 +71,6 @@
             </div>
           </li>
         </ul>
-        <!-- <ul class="nav nav-tabs" id="myTab" role="tablist" *ngIf="loggedIn==true && role=='Farmer'">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/home" role="tab" (click)="changeOnClickOfLogOut()">
-              <i class="fa fa-sign-out mr-1"></i>{{ 'header.logout' | translate }}</a>
-          </li>
-        </ul> -->
         <ul class="nav nav-tabs" id="myTab" role="tablist" *ngIf="loggedIn==true && role=='Customer'">
           <li class="nav-item active">
             <a class="nav-link" routerLink="/customer/myCart" role="tab" data-toggle="tab">
