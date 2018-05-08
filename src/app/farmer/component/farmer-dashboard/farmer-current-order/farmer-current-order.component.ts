@@ -25,12 +25,13 @@ export class FarmerCurrentOrderComponent implements OnInit {
 
 
   ngOnInit() {
+    this.loadData();
       this.idRoleService.role.subscribe((role) =>{
       })
-      this.idRoleService.id.subscribe((id) =>{
-         this.farmerId=id;
-         this.loadData();
-      })
+      // this.idRoleService.id.subscribe((id) =>{
+      //    this.farmerId=id;
+      //    this.loadData();
+      // })
   }
 
   //Loading data on initialization
