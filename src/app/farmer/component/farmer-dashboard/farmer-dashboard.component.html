@@ -1,44 +1,44 @@
 <div class="home mt-100">
-  <div class="container-fluid">
-    <ul class="nav nav-tabs nav-justified sidebar-nav edit" id="myTab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#acc" role="tab" aria-controls="acc">{{ 'farmer_dashboard.my_account' | translate }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " data-toggle="tab" href="#prod" role="tab" aria-controls="prod">{{ 'farmer_dashboard.add_product' | translate }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#bank" role="tab" aria-controls="bank">{{ 'farmer_dashboard.bank_details' | translate }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#curr" role="tab" aria-controls="curr">{{ 'farmer_dashboard.current_order' | translate }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#prev" role="tab" aria-controls="prev">{{ 'farmer_dashboard.previous_orders' | translate }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#view" role="tab" aria-controls="view">{{ 'farmer_dashboard.view_product' | translate }}</a>
-      </li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane active" id="acc" role="tabpanel">
-        <app-farmer-my-account></app-farmer-my-account>
-      </div>
-      <div class="tab-pane " id="prod" role="tabpanel">
-        <app-farmer-add-product></app-farmer-add-product>
-      </div>
-      <div class="tab-pane " id="bank" role="tabpanel">
-        <app-farmer-bank-details></app-farmer-bank-details>
-      </div>
-      <div class="tab-pane " id="curr" role="tabpanel">
-        <app-farmer-current-order></app-farmer-current-order>
-      </div>
-      <div class="tab-pane " id="prev" role="tabpanel">
-        <app-farmer-previous-order></app-farmer-previous-order>
-      </div>
-      <div class="tab-pane " id="view" role="tabpanel">
-        <app-farmer-view-product></app-farmer-view-product>
+    <div class="container-fluid">
+      <ul class="nav nav-tabs nav-justified sidebar-nav edit" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#acc" role="tab" aria-controls="acc" (click)="setCurrTab('my-account')">{{ 'farmer_dashboard.my_account' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " data-toggle="tab" href="#prod" role="tab" aria-controls="prod" (click)="setCurrTab('add-product')">{{ 'farmer_dashboard.add_product' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#bank" role="tab" aria-controls="bank"  (click)="setCurrTab('bank-details')">{{ 'farmer_dashboard.bank_details' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#curr" role="tab" aria-controls="curr"  (click)="setCurrTab('current-order')">{{ 'farmer_dashboard.current_order' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#prev" role="tab" aria-controls="prev"  (click)="setCurrTab('previous-order')">{{ 'farmer_dashboard.previous_orders' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#view" role="tab" aria-controls="view"  (click)="setCurrTab('view-product')">{{ 'farmer_dashboard.view_product' | translate }}</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div *ngIf="currentTab === 'my-account' || currentTab === ''" class="tab-pane active" id="acc" role="tabpanel">
+          <app-farmer-my-account></app-farmer-my-account>
+        </div>
+        <div *ngIf="currentTab === 'add-product'" class="tab-pane " id="prod" role="tabpanel">
+          <app-farmer-add-product></app-farmer-add-product>
+        </div>
+        <div *ngIf="currentTab === 'bank-details'" class="tab-pane " id="bank" role="tabpanel">
+          <app-farmer-bank-details></app-farmer-bank-details>
+        </div>
+        <div  *ngIf="currentTab === 'current-order'" class="tab-pane " id="curr" role="tabpanel">
+          <app-farmer-current-order></app-farmer-current-order>
+        </div>
+        <div *ngIf="currentTab === 'previous-order'" class="tab-pane " id="prev" role="tabpanel">
+          <app-farmer-previous-order></app-farmer-previous-order>
+        </div>
+        <div *ngIf="currentTab === 'view-product'" class="tab-pane " id="view" role="tabpanel">
+          <app-farmer-view-product></app-farmer-view-product>
+        </div> 
       </div>
     </div>
   </div>
-</div>

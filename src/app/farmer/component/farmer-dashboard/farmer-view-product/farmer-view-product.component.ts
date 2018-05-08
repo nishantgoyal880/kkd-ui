@@ -34,33 +34,35 @@ export class FarmerViewProductComponent implements OnInit {
   productSubmission;
 
   ngOnInit() {
-       this.getProducts();
+      this.getProducts();
   }
 
   // calling service to get all products of a particular farmer
   public getProducts() {
     //  console.log("hereeeee");
-    // if (IdRoleService.id1.length) {
-    //   this.id = IdRoleService.id1;
-    //   this.role = IdRoleService.role1;
-    //   alert(this.id);
-    //   alert(this.role);
-    // }
 
-    // else {
-    //   this.idRoleService.id.subscribe(id => {
-    //     this.id = id;
-    //     alert(this.id);
-    //   });
+    // check whether 
+    if (IdRoleService.id1.length) {
+      this.id = IdRoleService.id1;
+      this.role = IdRoleService.role1;
+      console.log(this.id);
+      console.log(this.role);
+    }
 
-    //   this.idRoleService.role.subscribe((role) => {
-    //     this.role = role;
-    //     alert(this.role);
-    //   });
-    // }
+    else {
+      this.idRoleService.id.subscribe(id => {
+        this.id = id;
+        console.log(this.id);
+      });
+
+      this.idRoleService.role.subscribe((role) => {
+        this.role = role;
+        console.log(this.role);
+      });
+    }
     
     console.log("id in view product ts: " + this.id);
-    this.farmerViewProductService.getAllProducts().subscribe((res) => {
+    this.farmerViewProductService.getAllProducts(this.id).subscribe((res) => {
       this.products = res;
     }, error => this.handleError(error));
 
