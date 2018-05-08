@@ -52,6 +52,7 @@ export class AppComponent implements OnInit {
 				this.idRoleService.role.emit(res.results.role);
 				IdRoleService.role1=res.results.role;
 				this.idRoleService.isLoggedIn.emit(true);
+				IdRoleService.isLoggedIn=true;
 			}, (err) => {
 				alert("Invalid");
 			})
