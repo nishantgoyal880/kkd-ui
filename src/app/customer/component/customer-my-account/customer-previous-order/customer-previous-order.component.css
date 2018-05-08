@@ -1,5 +1,7 @@
 
-
+.bg{
+    padding-left: 130px;
+}
 
 .cards{
     padding-top:30px;
@@ -24,7 +26,6 @@
 
 h1 {
     font-weight: normal;
-    font-family: 'Roboto', sans-serif;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
@@ -54,7 +55,6 @@ form{
 
 h1 {
     font-weight: normal;
-    font-family: 'Roboto', sans-serif;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;

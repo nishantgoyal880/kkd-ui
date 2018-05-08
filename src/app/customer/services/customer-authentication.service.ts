@@ -8,7 +8,6 @@ import{UserDetails} from '../config/user-details.config';
 export class CustomerAuthenticationService {
   public static cus :string;
   constructor(private http : Http) { }
-  private headers = new Headers({ 'Content-Type': 'application/json'});
 
   changeCustomerId(customerId : string){
     CustomerAuthenticationService.cus = customerId;

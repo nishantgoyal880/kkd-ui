@@ -12,6 +12,7 @@ import { BankDetailsService } from '../../../../services/bank-details.service'
 })
 export class FarmerBankDetailsComponent implements OnInit {
 
+  /* form to get farmer's bank details */
 	rForm: FormGroup;
 	accountNo : String;
   accountName : String;
@@ -23,16 +24,17 @@ export class FarmerBankDetailsComponent implements OnInit {
   	this.rForm = fb.group({
       accountNo : [null, Validators.compose([Validators.required,Validators.minLength(12),Validators.maxLength(12)])],
       accountName : [null, Validators.compose([Validators.required,Validators.minLength(2),Validators.maxLength(20)])],
-      ifscCode : [null, Validators.compose([Validators.required,Validators.minLength(6),Validators.maxLength(6)])],
+      ifscCode : [null, Validators.compose([Validators.required,Validators.minLength(6),Validators.maxLength(12)])],
   })
   }
 
+  /* storing the data in object and saving it into the database using bankDetailsService */
   addBankDetails(post){
     console.log(post);
   	this.bankDetailsSubmission = {
-      "accountNo" : post.accountNo,
-      "accountName" : post.accountName,
-      "ifscCode" : post.ifscCode,
+      'accountNo' : post.accountNo,
+      'accountName' : post.accountName,
+      'ifscCode': post.ifscCode,
     }
     console.log(this.bankDetailsSubmission)
     this.bankDetailsService.saveAccountDetails(this.bankDetailsSubmission).subscribe((res) => {
