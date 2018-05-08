@@ -46,9 +46,9 @@
 						{{ 'farmer_bank_details.ifsc_required' | translate }}
 					</div>
 					<div *ngIf="rForm.controls['ifscCode'].hasError('maxlength')">
-						{{ 'farmer_bank_details.more_than_6_characters_not_allowed' | translate }}
+						{{ 'farmer_bank_details.more_than_12_characters_not_allowed' | translate }}
 					</div>
-					<div *ngIf="rForm.controls['accountName'].hasError('minlength')">
+					<div *ngIf="rForm.controls['ifscCode'].hasError('minlength')">
 						{{ 'farmer_bank_details.minimun_6_digits_are_required' | translate }}
 					</div>
 				</div>

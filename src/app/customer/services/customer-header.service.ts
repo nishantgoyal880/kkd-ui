@@ -10,7 +10,15 @@ export class CustomerHeaderService {
 
   constructor(private http : Http) { }
 
-  private headers = new Headers({ 'Content-Type': 'application/json'});
+//code to send token in the header
+  private authorization() {
+  let token=localStorage.getItem("token");
+  if (token) {
+    let headers =new Headers();
+    headers.append('Authorization', token);
+    return new RequestOptions({ headers: headers });
+  }
+}
 
    // Function to get customer name and make service call to get customer name from App
    searchCustomer(searchedCustomer) {
@@ -22,7 +30,7 @@ export class CustomerHeaderService {
       return Observable.throw(error.statusText);
     }
     updateCustomerAddress(userId,address){
-      return this.http.put(UserDetails.updateAddress+userId+"/update/address",address,{headers: this.headers})
+      return this.http.put(UserDetails.updateAddress+userId+"/update/address",address,this.authorization())
       .map(data => 
         data.json(),
       (error: any)=>this.handleError(error));

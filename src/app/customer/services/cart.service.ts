@@ -8,8 +8,6 @@ import "rxjs/add/operator/map";
 export class CartService {
   constructor(private http: Http) {}
 
-  private headers = new Headers({ "Content-Type": "application/json" });
-
   //code to send token in the header
   private authorization() {
     let token = localStorage.getItem("token");

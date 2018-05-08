@@ -2,17 +2,13 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { viewProductServiceUrl } from '../../config/viewProductServiceUrl.config';
 import { Http,Headers, Response,RequestOptions } from '@angular/http';
-// import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class FarmerViewProductService {
   private header;
   constructor(private http: Http) {
     this.header = new Headers();
-    // this.header.append('Content-Type', 'application/json');
-    this.header.append('Authorization','String');
   }
-  // private headers = new Headers({ 'Content-Type': 'application/json'});
 
   //getting all data of particular farmer from database service
   public getAllProducts() {
