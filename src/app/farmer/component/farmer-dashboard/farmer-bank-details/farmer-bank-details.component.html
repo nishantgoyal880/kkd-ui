@@ -1,6 +1,7 @@
-<div class="">
+<div id="bgimg" style="margin-top: 0.1rem; padding-bottom: 3rem">
+<div style="padding-top: 1.7rem">
 <h1>{{ 'farmer_bank_details.bank_details' | translate }}</h1>
-
+</div>
 <form [formGroup]="rForm" (ngSubmit)="addBankDetails(rForm.value)">
 
 	<div class = "card shadow">
@@ -8,7 +9,7 @@
 
 			<div class = "form-comp-top">
 				<div class = "name"><label for="accountNo">{{ 'farmer_bank_details.account_number' | translate }}</label></div>
-				<input type="text" class="form-control" id="accountNo" placeholder="Enter Accont Number{{ 'farmer_bank_details.bank_details' | translate }}" formControlName="accountNo">
+				<input type="text" class="form-control" id="accountNo" placeholder="{{ 'farmer_bank_details.account_number' | translate }}" formControlName="accountNo">
 				<div *ngIf="rForm.controls['accountNo'].touched && rForm.controls['accountNo'].invalid" class="alert">
 					<div *ngIf="rForm.controls['accountNo'].hasError('required')">
 						{{ 'farmer_bank_details.account_number_required' | translate }}
@@ -24,7 +25,7 @@
 
 			<div class = "form-comp">
 				<div class = "name"><label for="accountName">{{ 'farmer_bank_details.account_holder_name' | translate }}</label></div>
-				<input type="textarea" class="form-control" id="accountName" placeholder="Enter Account Holder's Name{{ 'farmer_bank_details.bank_details' | translate }}" formControlName="accountName">
+				<input type="textarea" class="form-control" id="accountName" placeholder="{{ 'farmer_bank_details.account_holder_name' | translate }}" formControlName="accountName">
 				<div *ngIf="rForm.controls['accountName'].touched && rForm.controls['accountName'].invalid" class="alert">
 					<div *ngIf="rForm.controls['accountName'].hasError('required')">
 						{{ 'farmer_bank_details.name_required' | translate }}
@@ -40,7 +41,7 @@
 
 			<div class = "form-comp">
 				<div class = "name"><label for="ifscCode">{{ 'farmer_bank_details.ifsc_code' | translate }}</label></div>
-				<input type="text" class="form-control" id="ifscCode" placeholder="Enter IFSC Code{{ 'farmer_bank_details.bank_details' | translate }}" formControlName="ifscCode">
+				<input type="text" class="form-control" id="ifscCode" placeholder="{{ 'farmer_bank_details.ifsc_code' | translate }}" formControlName="ifscCode">
 				<div *ngIf="rForm.controls['ifscCode'].touched && rForm.controls['accountName'].invalid" class="alert">
 					<div *ngIf="rForm.controls['ifscCode'].hasError('required')">
 						{{ 'farmer_bank_details.ifsc_required' | translate }}
@@ -55,8 +56,9 @@
 			</div>
 		</div>
 		<div class ="form-comp-button">
-			<button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_bank_details.save_details' | translate }}</button>
+			<button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_bank_details.save_details' | translate }}</button>
 		</div>
 	</div>
 </form>
 </div>
+

@@ -21,10 +21,15 @@ a{
 }
 
 h1 {
-    font-weight: 400;
+    font-weight: 600;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
-    color: #458839;
+    color: #29a745;
     line-height: 42px;
-    }
+	}
+	#bgimg{
+		background-image: url(../../../assets/images/backg4.jpg); 
+		background-size: cover;
+		background-repeat: no-repeat;
+	}

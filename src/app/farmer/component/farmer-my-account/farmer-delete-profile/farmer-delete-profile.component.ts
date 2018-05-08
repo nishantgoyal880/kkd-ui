@@ -15,11 +15,11 @@ export class FarmerDeleteProfileComponent implements OnInit {
   public searchedFarmerId: string;
   public role: string;
   public delete:boolean;
-  rform: FormGroup;
+  rForm: FormGroup;
 
   constructor(private farmerDetailsService : FarmerDetailsService,
     private formBuilder: FormBuilder,private idRoleService: IdRoleService) {
-    this.rform = formBuilder.group({
+    this.rForm = formBuilder.group({
       currentPassword : [null, Validators.compose([Validators.required])]
   });
   this.idRoleService.role.subscribe((role) =>{

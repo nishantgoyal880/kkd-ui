@@ -4,7 +4,7 @@ form{
 }
 
 h1 {
-    font-weight: 400;
+    font-weight: 600;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
@@ -88,4 +88,9 @@ button:focus{
     background-color: #f9f9f9;
     width : 70%;
     margin : auto;
+}
+#bgimg{
+    background-image: url(../../../assets/images/backg4.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
 }
