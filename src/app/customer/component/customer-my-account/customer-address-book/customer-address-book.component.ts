@@ -16,14 +16,12 @@ export class CustomerAddressBookComponent implements OnInit {
 ngOnInit() {
     if(IdRoleService.id1.length){
       this.customerId=IdRoleService.id1;
-      alert(this.customerId );
       this.searchDetails();
     }
     else{
       this.idRoleService.id.subscribe(id=>{
         this.customerId =id;
-      alert(this.customerId );
-      this.searchDetails();
+        this.searchDetails();
       })
      }
     
