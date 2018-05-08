@@ -1,4 +1,5 @@
-<div *ngIf="!hideVar" class="mt-100">
+<div id="bgimg" style="margin-top: 5.4rem; padding-bottom: 3rem">
+<div *ngIf="!hideVar" style="padding-top: 1.7rem">
 	<h1>{{ 'customer_register.register_customer' | translate }}</h1>
 	<div class="container-fluid">
 		<div class="card shadow cardwidth">
@@ -75,7 +76,7 @@
 		</div>
 	</div>
 </div>
-<div *ngIf="hideVar" class="mt-100">
+<div *ngIf="hideVar" style="padding-top: 1.7rem">
 	<h1>{{ 'customer_register.verify_otp_to_register_customer' | translate }}</h1>
 	<div class="container-fluid">
 		<div class="card shadow cardwidth">
@@ -97,4 +98,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>

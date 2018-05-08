@@ -4,7 +4,7 @@ form{
 }
 
 h1 {
-    font-weight: 400;
+    font-weight: 600;
     font-family: 'Roboto', sans-serif;
     padding: 0.5em 0 40px 0;
     text-align: center;
@@ -83,10 +83,6 @@ button{
     margin-bottom: 20px;
 }
 
-button:hover {
-    background-color: #c1ed23 !important;
-}
-
 button:focus{
     border-color : #f9f9f9 !important;
 }
@@ -99,4 +95,9 @@ button:focus{
 
 .bank-det{
     margin-top: 4rem;
+}
+#bgimg{
+    background-image: url(../../../../../assets/images/backg4.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
 }

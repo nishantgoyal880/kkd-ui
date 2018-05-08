@@ -1,5 +1,7 @@
+
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
-<div clas="">
+<div id="bgimg" style="margin-top: 0.1rem; padding-bottom: 3rem">
+<div style="padding-top: 1.7rem">
   <h1> {{ 'farmer_add_product.upload_product' | translate }} </h1>
 <form [formGroup]="rForm" (ngSubmit)="addProduct(rForm.value)">
 
@@ -82,10 +84,11 @@
 			</div>
 
     <div class = form-comp-button>
-      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_add_product.submit_product' | translate }}</button>
+      <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_add_product.submit_product' | translate }}</button>
 	 </div>
 
    </div>
    </div>
 </form>
+</div>
 </div>

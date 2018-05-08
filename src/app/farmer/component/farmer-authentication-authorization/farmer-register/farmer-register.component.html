@@ -1,4 +1,5 @@
-<div class="container-fluid mt-100">
+<div id="bgimg" style="margin-top: 5.4rem; padding-bottom: 3rem">
+<div class="container-fluid" style="padding-top: 1.7rem">
 	<div class="card cardwidth">
 		<div class="card-body">
 			<form [formGroup]="rForm" (ngSubmit)="registerFarmer(rForm.value)">
@@ -24,7 +25,7 @@
 					<select class="form-control" formControlName="cities" multiple>
 						<option>{{ 'farmer_register.delhi' | translate }}</option>
 						<option>{{ 'farmer_register.gurgaon' | translate }}</option>
-						<option>{{ 'farmer_register.cities_where_you_can_deliver' | translate }}</option>
+						<option>{{ 'farmer_register.noida' | translate }}</option>
 					</select>
 					</div>
 
@@ -45,7 +46,7 @@
 					</div>
 
     			<div class = "form-comp">
-						<div class = "name"><label>{{ 'farmer_register.enter_password' | translate }}</label></div>
+						<div class = "name"><label>{{ 'farmer_register.password' | translate }}</label></div>
 					<input type="password" formControlName="confirmPassword" class="form-control" placeholder="{{ 'farmer_register.password' | translate }}">
 					<div *ngIf="rForm.controls['confirmPassword'].touched && rForm.controls['confirmPassword'].errors">
 						<div class="alert"  *ngIf="rForm.controls['confirmPassword'].hasError('required')">
@@ -64,3 +65,5 @@
 		</div>
 	</div>
 </div>
+</div>
+

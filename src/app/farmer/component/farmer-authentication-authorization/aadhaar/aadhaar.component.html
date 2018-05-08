@@ -1,5 +1,6 @@
-<div class="mt-100">
-<div *ngIf="!hideVar">
+<div id="bgimg" style="margin-top: 5.4rem; padding-bottom: 3rem">
+<div>
+<div *ngIf="!hideVar" style="padding-top: 1.7rem">
     <h1> {{ 'aadhaar.register_farmer' | translate }} </h1>
   <div class="container-fluid">
     <div class="card cardwidth">
@@ -28,10 +29,10 @@
         </form>
      </div>
    </div>
- </div>
+ </div></div>
 </div>
 
-<div *ngIf="hideVar">
+<div *ngIf="hideVar" style="padding-top: 1.7rem">
     <h1> {{ 'aadhaar.verify_otp_to_register_farmer' | translate }} </h1>
   <div class="container-fluid">
     <div class="card cardwidth">
@@ -49,9 +50,10 @@
           <div class = "form-comp-button">
           <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!otpForm.valid"> {{ 'aadhaar.verify_otp' | translate }}</button>
        </div>
-        </form>
+        </form></div>
       </div>
     </div>
   </div>
 </div>
-</div>
+
+
