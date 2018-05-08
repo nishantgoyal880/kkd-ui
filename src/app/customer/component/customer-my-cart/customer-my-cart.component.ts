@@ -15,7 +15,7 @@ export class CustomerMyCartComponent implements OnInit {
     private cartService: CartService,
     private router: Router
   ) {}
-  public items :any;
+  public items :Array<any>=[];
   public x: number;
   public customerInfo: object = {};
 

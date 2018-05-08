@@ -30,7 +30,7 @@
       <label class="my-3">
         <span>{{ 'products.filter_by_price' | translate }}</span>
       </label>
-      <ion-range-slider #sliderElement type="double" min="0" [max]=max_price [to_max]=max_price [to]=max_price prefix="{{ 'products.price' | translate }}:"
+      <ion-range-slider #sliderElement type="double" min="0" [max]=max_price [to]=max_price prefix="{{ 'products.price' | translate }}:"
         postfix=" Rs" keyboard:true (onFinish)="myOnFinishPrice($event)">
       </ion-range-slider>
       <!-- filtered by price end-->
@@ -38,7 +38,7 @@
       <label class="my-3">
         <span>{{ 'products.search' | translate }}</span>
       </label>
-      <ion-range-slider #sliderElement type="double" min="0" [max]=max_quantity [to_max]=max_quantity [to]=max_price prefix="{{ 'products.quantity' | translate }}:"
+      <ion-range-slider #sliderElement type="double" min="0" [max]=max_quantity [to]=max_quantity prefix="{{ 'products.quantity' | translate }}:"
         postfix=" Kg" (onFinish)="myOnFinishQuantity($event)">
       </ion-range-slider>
       <!-- filtered by Quantity end-->
