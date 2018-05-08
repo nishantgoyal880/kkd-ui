@@ -31,6 +31,7 @@ export class FarmerViewProductComponent implements OnInit {
   public productName: any;
   public available: any;
   public cities: any = [];
+  public p:any;
   productSubmission;
 
   ngOnInit() {
@@ -41,7 +42,7 @@ export class FarmerViewProductComponent implements OnInit {
   public getProducts() {
     //  console.log("hereeeee");
 
-    // check whether 
+    // check whether
     if (IdRoleService.id1.length) {
       this.id = IdRoleService.id1;
       this.role = IdRoleService.role1;
@@ -60,7 +61,7 @@ export class FarmerViewProductComponent implements OnInit {
         console.log(this.role);
       });
     }
-    
+
     console.log("id in view product ts: " + this.id);
     this.farmerViewProductService.getAllProducts(this.id).subscribe((res) => {
       this.products = res;

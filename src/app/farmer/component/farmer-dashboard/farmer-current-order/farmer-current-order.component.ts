@@ -22,6 +22,7 @@ export class FarmerCurrentOrderComponent implements OnInit {
   public otpVerified:Boolean=false;
   public avgRating:any;
   public farmerId:any;
+  public p:any;
 
 
   ngOnInit() {
