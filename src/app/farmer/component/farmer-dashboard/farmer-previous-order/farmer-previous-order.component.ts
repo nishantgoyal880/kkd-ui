@@ -15,6 +15,7 @@ export class FarmerPreviousOrderComponent implements OnInit {
 
   public orderList=[];
   public farmerId:any;
+  public p:any;
 
   ngOnInit() {
 
