@@ -25,16 +25,7 @@ export class FarmerCurrentOrderComponent implements OnInit {
 
 
   ngOnInit() {
-    if(IdRoleService.id1.length){
-      this.farmerId=IdRoleService.id1;
-      this.loadData();
-    }
-    else{
-      this.idRoleService.id.subscribe(id=>{
-        this.farmerId=id;
-        this.loadData();
-      })
-     }
+  this.loadData();
   }
 
   //Loading data on initialization
@@ -43,7 +34,7 @@ export class FarmerCurrentOrderComponent implements OnInit {
     //this.date=d.getFullYear()+'-0'+(d.getMonth()+1)+'-'+d.getDate();
     this.date=d;
     //code to get the list of orders according to farmer id
-    this.orderService.getCurrentOrderListFromFarmerId(this.farmerId).subscribe((res) =>{
+    this.orderService.getCurrentOrderListFromFarmerId(localStorage.getItem("id")).subscribe((res) =>{
     this.orderList = res;
     console.log(res);
   }, (error) =>{})
