@@ -25,13 +25,16 @@ export class FarmerCurrentOrderComponent implements OnInit {
 
 
   ngOnInit() {
-    this.loadData();
-      this.idRoleService.role.subscribe((role) =>{
+    if(IdRoleService.id1.length){
+      this.farmerId=IdRoleService.id1;
+      this.loadData();
+    }
+    else{
+      this.idRoleService.id.subscribe(id=>{
+        this.farmerId=id;
+        this.loadData();
       })
-      // this.idRoleService.id.subscribe((id) =>{
-      //    this.farmerId=id;
-      //    this.loadData();
-      // })
+     }
   }
 
   //Loading data on initialization
@@ -42,6 +45,7 @@ export class FarmerCurrentOrderComponent implements OnInit {
     //code to get the list of orders according to farmer id
     this.orderService.getCurrentOrderListFromFarmerId(this.farmerId).subscribe((res) =>{
     this.orderList = res;
+    console.log(res);
   }, (error) =>{})
   }
 

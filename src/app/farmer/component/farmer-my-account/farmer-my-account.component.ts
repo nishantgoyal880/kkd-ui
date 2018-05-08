@@ -1,4 +1,3 @@
-//import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FarmerDetailsService } from '../../services/farmer-details/farmer-details.service';
 import { IdRoleService } from '../../../services/id-role/id-role.service';
@@ -34,21 +33,27 @@ export class FarmerMyAccountComponent implements OnInit {
     })
     }
 
-  // Function to get farmer details by his KKDId and make service call to get farmer details from app
+  /* 
+  Function to get farmer details by his KKDId and 
+  make service call to get farmer details from app
+  */
   searchFarmer(){
     this.farmerDetailsService.getFarmerName(this.searchedFarmerId)
     .subscribe((res) =>{
       if(res && res.aadhaarData) {
+      //getting farmer's aadhar details
       this.farmerPhoto=res.aadhaarData.photoUrl;
       this.farmerId=res.kkdFarmId;
       this.farmerName=res.aadhaarData.firstName;
       this.farmerPhoto=res.aadhaarData.photoUrl;
+      //getting farmer's permanent address
       this.farmerPincode=res.aadhaarData.permanentAddress.pincode;
       this.farmerAddressLine=res.aadhaarData.permanentAddress.addressLine;
       this.farmerCity=res.aadhaarData.permanentAddress.city;
       this.farmerDistrict=res.aadhaarData.permanentAddress.district;
       this.farmerState=res.aadhaarData.permanentAddress.state;
       this.farmerPrimary=res.aadhaarData.permanentAddress.primary;
+      //getting farmer's mobile number
       this.farmerMobileNumber=res.mobileNo;
     }
      },(error) =>{
