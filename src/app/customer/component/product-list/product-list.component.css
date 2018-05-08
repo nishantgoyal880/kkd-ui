@@ -44,3 +44,29 @@ hr {
   height:auto; 
   margin-left: 2rem;
 }
+
+form{
+  margin-left: 8.3rem;
+}
+
+@media screen and (max-width: 600px) {
+    form{
+  margin-left: 0px;
+}
+form input{
+  width: 100% !important;
+}
+form button{
+  margin: 1rem auto !important;
+}
+label{
+  width: 100% !important;
+}
+  select{
+    width: 100% !important;    
+  }
+
+  .emptyList {
+    width: 90%;
+  }
+  }
