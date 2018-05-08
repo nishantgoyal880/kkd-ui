@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     overflow-x: hidden !important;
-    font-family: Roboto;
+    font-family: 'Ubuntu', sans-serif;
 }
 .mt-100 {
   margin-top:100px;
@@ -10,11 +10,11 @@ body {
 @media screen and (max-width: 800px) {
     body {
         overflow-x: hidden !important;
-        font-family: Roboto;
+        font-family: 'Ubuntu', sans-serif;
     }
 
     div {
         overflow-x: hidden !important;
-        font-family: Roboto;
+        font-family: 'Ubuntu', sans-serif;
     }
 }
