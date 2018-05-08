@@ -15,11 +15,11 @@ export class FarmerAddAddressComponent implements OnInit {
   public searchedFarmerId: string;
   public farmerMobileNumber: string;
   public role: string;
-  form: FormGroup;
+  rform: FormGroup;
   public details;
   constructor(private farmerDetailsService: FarmerDetailsService,
     private formBuilder: FormBuilder, private idRoleService: IdRoleService) {
-    this.form = formBuilder.group({
+    this.rform = formBuilder.group({
       addressLine: [null, Validators.compose([Validators.required])],
       city: [null, Validators.compose([Validators.required])],
       district: [null, Validators.compose([Validators.required])],
