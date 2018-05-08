@@ -18,11 +18,11 @@ export class FarmerChangePasswordComponent implements OnInit {
   public reenterNewPassword: string;
   public currentPassword: string;
   public details;
-  form: FormGroup;
+  rform: FormGroup;
 
   constructor(private farmerDetailsService: FarmerDetailsService,
     private formBuilder: FormBuilder, private idRoleService: IdRoleService) {
-    this.form = formBuilder.group({
+    this.rform = formBuilder.group({
       currentPassword: [null, Validators.compose([Validators.required])],
       newPassword: [null, Validators.compose([Validators.required])],
       reenterNewPassword: [null, Validators.compose([Validators.required])]
