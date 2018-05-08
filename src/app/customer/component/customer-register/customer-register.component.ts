@@ -18,7 +18,7 @@ export class CustomerRegisterComponent implements OnInit {
 	post:any;
 	//variable to hide and display the elements
 	hideVar:boolean=false;
-	//variable to store 
+	//variable to store
 	customerToRegister:any;
 	//declaring an otp form group
 	otpForm: FormGroup;
@@ -43,7 +43,7 @@ export class CustomerRegisterComponent implements OnInit {
 
 	ngOnInit() {
 	}
-	//function to check password and confirm password 
+	//function to check password and confirm password
 	checkIfMatchingPasswords(group: FormGroup) {
 		let passwordField= group.controls.password,
 		confirmPasswordField = group.controls.confirmPassword;
@@ -84,6 +84,7 @@ export class CustomerRegisterComponent implements OnInit {
 				//save customer details to db
 				this.registrationService.addCustomer(this.customerToRegister).subscribe((res) =>{
 					localStorage.setItem("token",res.results.token);
+					localStorage.setItem("id",res.results.kkdCustId);
 					this.idRoleService.id.emit(res.results.kkdCustId);
 					this.idRoleService.role.emit(res.results.role);
 					this.idRoleService.isLoggedIn.emit(true);

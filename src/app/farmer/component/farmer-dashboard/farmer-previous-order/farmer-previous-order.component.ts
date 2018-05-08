@@ -18,16 +18,11 @@ export class FarmerPreviousOrderComponent implements OnInit {
 
   ngOnInit() {
 
-    this.idRoleService.role.subscribe((role) =>{
-    })
-    this.idRoleService.id.subscribe((id) =>{
-       this.farmerId=id;
+
        //code to get the list of orders according to farmer id
-       this.orderService.getPreviousOrderListFromFarmerId(this.farmerId).subscribe((res) =>{
+       this.orderService.getPreviousOrderListFromFarmerId(localStorage.getItem("id")).subscribe((res) =>{
          this.orderList = res;
        }, (error) =>{})
-    })
 
-  }
-
+}
 }
