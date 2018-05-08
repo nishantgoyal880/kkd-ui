@@ -23,15 +23,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(private searchService: SearchService, private idRoleService: IdRoleService) {
     this.productsToShowInOnePage=SearchConfig.productsToShowInOnePage;
-    this.idRoleService.role.subscribe((role) =>{
-      this.role=role;
-   })
-   this.idRoleService.id.subscribe((id) =>{
-     this.userId=id;
-   })
-   this.idRoleService.isLoggedIn.subscribe((loggedIn) =>{
-    this.loggedIn=loggedIn;
-  })
+   
   }
 
   ngOnInit() {
@@ -42,6 +34,16 @@ export class ProductListComponent implements OnInit {
       },
       err => console.log(err)
     );
+    this.idRoleService.role.subscribe((role) =>{
+      this.role=role;
+      console.log(role)
+   })
+   this.idRoleService.id.subscribe((id) =>{
+     this.userId=id;
+   })
+   this.idRoleService.isLoggedIn.subscribe((loggedIn) =>{
+    this.loggedIn=loggedIn;
+  })
   }
 
   calculatingMax() {

@@ -15,29 +15,33 @@ export class CustomerMyCartComponent implements OnInit {
     private cartService: CartService,
     private router: Router
   ) {}
-  public items = [];
+  public items :any;
   public x: number;
   public customerInfo: object = {};
 
   public kkdCustId: string;
   ngOnInit() {
     debugger
-    this.idRoleService.id.subscribe(id => {;
+    this.idRoleService.id.subscribe(id => {
       this.kkdCustId = id;
       this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
         res => {
           this.customerInfo = res;
-          this.getCartItems();
+          console.log(res.kkdCustId)
+          
         },
         err => console.log(err)
       );
     });
+    this.kkdCustId=IdRoleService.id1;
+    this.getCartItems();
   }
 
   getCartItems() {
     this.cartService.getCartItems(this.kkdCustId).subscribe(
       res => {
         this.items = res;
+        console.log(res);
         this.x = this.items.reduce(function(sum, cartItem) {
           return sum + cartItem.productPrice * cartItem.quantity;
         }, 0);

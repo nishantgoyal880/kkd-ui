@@ -13,35 +13,40 @@ export class CustomerPreviousOrderComponent implements OnInit {
 
   public customerId : string ;
   public previousOrders : any = [];
-   constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
+  constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
 
-   getdata(){
-   this.customerAuthenticationService.getPreviousOrders(this.customerId).subscribe(results=>{
-     if(results == null){
-      swal({
-        type: 'error',
-        title: 'No previous orders',
-        text: 'No previous orders available to show',
+  ngOnInit() {
+    if(IdRoleService.id1.length){
+      this.customerId=IdRoleService.id1;
+      alert(this.customerId );
+      this.getdata();
+    }
+    else{
+      this.idRoleService.id.subscribe(id=>{
+        this.customerId =id;
+      alert(this.customerId );
+      this.getdata();
       })
      }
-   this.previousOrders=results;
-   },error=> {
-    swal({
-      type: 'error',
-      title: 'Oops...',
-      text: 'Something went wrong!',
-    })
-  });
- }
-   ngOnInit() {
-    this.idRoleService.id.subscribe(id=>{
-      this.customerId =id;
-      this.getdata();
-    })
+   }
    
-    //this.customerAuthenticationService.changeCustomerId("kkdcust3001");
-
-    //this.customerId = CustomerAuthenticationService.cus;
-     
-
-   }}
+   getdata(){
+    
+    this.customerAuthenticationService.getPreviousOrders(this.customerId).subscribe(results=>{
+        if(results == null){
+         swal({
+           type: 'error',
+           title: 'No previous orders',
+           text: 'No previous orders available to show',
+         })
+        }
+      this.previousOrders=results;
+      },error=> {
+       swal({
+         type: 'error',
+         title: 'Oops...',
+         text: 'Something went wrong!',
+       })
+      });
+    }
+   }
