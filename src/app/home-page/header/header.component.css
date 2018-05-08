@@ -15,9 +15,6 @@ a{
 }
 
 @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child), .dropdown .dropbtn {
-      display: none;
-    }
     .topnav a.icon {
       float: right;
       display: block;
@@ -29,7 +26,7 @@ a{
 
   @media screen and (max-width: 600px) {
     .topnav.responsive {position: relative;}
-    .topnav.responsive .icon {
+    .topnav.responsive .icon { 
       position: absolute;
       right: 0;
       top: 0;
