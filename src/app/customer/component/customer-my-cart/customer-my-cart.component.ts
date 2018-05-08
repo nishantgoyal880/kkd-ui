@@ -21,39 +21,22 @@ export class CustomerMyCartComponent implements OnInit {
 
   public kkdCustId: string;
   ngOnInit() {
-    if(IdRoleService.id1.length){
-      this.kkdCustId=IdRoleService.id1;
-      this.getCartItems();
-    }
-    else{
-      this.idRoleService.id.subscribe(id => {
-        this.kkdCustId = id;
-        this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
-          res => {
-            this.customerInfo = res;
-            console.log(res.kkdCustId)
-            
-          },
-          err => console.log(err)
-        );
-        this.getCartItems();
-      });
-     }
     
-    // debugger
-    // this.idRoleService.id.subscribe(id => {
-    //   this.kkdCustId = id;
-    //   this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
-    //     res => {
-    //       this.customerInfo = res;
-    //       console.log(res.kkdCustId)
+    
+    debugger
+    this.idRoleService.id.subscribe(id => {
+      this.kkdCustId = id;
+      this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
+        res => {
+          this.customerInfo = res;
+          console.log(res.kkdCustId)
           
-    //     },
-    //     err => console.log(err)
-    //   );
-    // });
-    // this.kkdCustId=IdRoleService.id1;
-    // this.getCartItems();
+        },
+        err => console.log(err)
+      );
+    });
+    this.kkdCustId=IdRoleService.id1;
+    this.getCartItems();
   }
 
   getCartItems() {
