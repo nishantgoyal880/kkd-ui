@@ -36,8 +36,8 @@ export class CustomerAddAddressComponent implements OnInit {
   });
   }
 
-  /* 
-  Function to add customer's address by his KKDId and 
+  /*
+  Function to add customer's address by his KKDId and
   make service call to add customer's address from UserDetails
   */
   updateCustomerAddress(post) {
