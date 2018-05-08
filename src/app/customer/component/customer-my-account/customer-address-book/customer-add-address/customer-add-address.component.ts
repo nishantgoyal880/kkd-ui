@@ -13,7 +13,7 @@ import { IdRoleService } from '../../../../../services/id-role/id-role.service';
 export class CustomerAddAddressComponent implements OnInit {
   public customerId: string;
   public role:string;
-  rform: FormGroup;
+  rForm: FormGroup;
   public details;
   public addresses: Array<any> = [];
 
@@ -21,7 +21,7 @@ export class CustomerAddAddressComponent implements OnInit {
     private customerHeaderService: CustomerHeaderService,
     private formBuilder: FormBuilder, private idRoleService: IdRoleService
   ) {
-    this.rform = formBuilder.group({
+    this.rForm = formBuilder.group({
       addressLine: [null, Validators.compose([Validators.required])],
       city: [null, Validators.compose([Validators.required])],
       district: [null, Validators.compose([Validators.required])],
@@ -36,8 +36,8 @@ export class CustomerAddAddressComponent implements OnInit {
   });
   }
 
-  /* 
-  Function to add customer's address by his KKDId and 
+  /*
+  Function to add customer's address by his KKDId and
   make service call to add customer's address from UserDetails
   */
   updateCustomerAddress(post) {
