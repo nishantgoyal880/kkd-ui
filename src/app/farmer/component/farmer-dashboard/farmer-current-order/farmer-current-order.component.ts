@@ -103,7 +103,8 @@ export class FarmerCurrentOrderComponent implements OnInit {
       'orderId':this.orderId,
       'orderStatus':"Delivered",
       'orderType':"Previous",
-      'otpVerified':true
+      'otpVerified':true,
+      'orderReceivingDate':this.date
     }
     this.orderService.updateDeliveryDetails(updatedDelivery).subscribe((res) =>{
       this.loadData();

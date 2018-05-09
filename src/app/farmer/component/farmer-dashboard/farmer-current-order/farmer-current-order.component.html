@@ -1,7 +1,12 @@
-<div class="container mb-2 mt-5">
   <div class="row">
-    <div *ngFor="let order of orderList | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
-      <div class="card shadow p-2 mb-3" style="height: 30rem;">
+  <div *ngFor="let order of orderList | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
+    <div class="block">
+
+      <div class="top">
+            <span class="converse">{{order.orderId}}</span>
+      </div>
+
+      <div class="middle">
         <div *ngFor="let item of items">
           <div *ngIf="order.name==item">
             <!-- Card image -->
@@ -10,59 +15,35 @@
             </div>
           </div>
         </div>
-        <!-- Card content -->
-        <div class="card-body text-center">
-          <!-- Title -->
-          <h5 class="card-title py-2">
-            <strong>{{order.orderId}}</strong>
-          </h5>
-          <!-- Text -->
-          <div class="text-area">
-            <!-- <p class="card-text py-1">
-              <b>{{ 'farmer_current_order.customer_id' | translate }}: </b>{{order.kkdCustId}}</p> -->
-            <p class="card-text py-1">
-              <b>{{ 'farmer_current_order.product_name' | translate }}: </b>{{order.name}}</p>
-            <p class="card-text py-1">
-              <b>{{ 'farmer_current_order.address' | translate }}: </b>{{order.address?.addressLine}} {{order.address?.city}}
-              {{order.address?.state}} {{order.address?.district}} {{order.address?.pincode}}</p>
-            <p class="card-text py-1">
-              <b>{{ 'farmer_current_order.quantity' | translate }}: </b>{{order.quantity}}</p>
-            <p class="card-text py-1">
-              <b>{{ 'farmer_current_order.amount' | translate }}: </b>{{order.price}}</p>
-            <div *ngIf="order.farmerStatus=='Accept'">
-              <p class="card-text py-1">
-                <b>{{ 'farmer_current_order.validity_of_order' | translate }}: </b>{{order.validityOfOrder}}</p>
-              <p class="card-text py-1">
-                <b>{{ 'farmer_current_order.customer_mobileno' | translate }}: </b>{{order.mobileNo}}</p>
-            </div>
-          </div>
-          <hr>
-          <span *ngIf="order.farmerStatus=='Accept'">
-            <a data-toggle="modal" data-target="#exampleModal3" (click)="setDataOtp(order.orderId,order.otp)"
-              style="margin-top:13px;">
-              {{ 'farmer_current_order.delivered' | translate }}
-            </a>
-          </span>
-          <span *ngIf="order.farmerStatus==null">
-            <a class="mt-10" data-toggle="modal" data-target="#exampleModal1" (click)="setData(order.orderId)">
-              {{ 'farmer_current_order.accept' | translate }}
-            </a>
-            <a class="ml-3 mt-10" data-toggle="modal" data-target="#exampleModal2" (click)="setData(order.orderId)">
-              {{ 'farmer_current_order.decline' | translate }}
-            </a>
-          </span>
-        </div>
       </div>
+
+      <div class="bottom">
+        <div class="name">{{ 'farmer_current_order.product_name' | translate }}:{{order.name}}</div>
+        <div class="address">{{ 'farmer_current_order.address' | translate }}:{{order.address?.addressLine}} {{order.address?.city}}
+        {{order.address?.state}} {{order.address?.district}} {{order.address?.pincode}}</div>
+        <div class="quantity">{{ 'farmer_current_order.quantity' | translate }}:{{order.quantity}} Kg</div>
+        <div class="price">{{ 'farmer_current_order.amount' | translate }}: ₹{{order.totalAmount}}</div>
+        <!-- <div *ngIf="order.farmerStatus=='Accept'" class="validity">{{ 'farmer_current_order.validity_of_order' | translate }}:{{order.validityOfOrder}}</div> -->
+        <div *ngIf="order.farmerStatus=='Accept'" class="mobile">{{ 'farmer_current_order.customer_mobileno' | translate }}:{{order.mobileNo}}</div>
+      </div>
+      <span *ngIf="order.farmerStatus=='Accept'">
+        <a id="delivered" data-toggle="modal" data-target="#exampleModal3" (click)="setDataOtp(order.orderId,order.otp)"
+          style="margin-top:13px;">
+          {{ 'farmer_current_order.delivered' | translate }}
+        </a>
+      </span>
+      <span *ngIf="order.farmerStatus==null">
+        <a id="accept" data-toggle="modal" data-target="#exampleModal1" (click)="setData(order.orderId)">
+          {{ 'farmer_current_order.accept' | translate }}
+        </a> |
+        <a id="decline" class="ml-2" data-toggle="modal" data-target="#exampleModal2" (click)="setData(order.orderId)">
+          {{ 'farmer_current_order.decline' | translate }}
+        </a>
+      </span>
     </div>
   </div>
 </div>
 <pagination-controls (pageChange)="p=$event"></pagination-controls>
-
-
-
-
-
-
 
 <!-- Accept Modal -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

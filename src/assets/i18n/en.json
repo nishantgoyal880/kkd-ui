@@ -324,7 +324,7 @@
         "product_name":"Product Name",
         "address":"Address",
         "quantity":"Quantity",
-        "amount":"Amount",
+        "amount":"Total Amount",
         "validity_of_order":"Validity Of Order",
         "customer_mobileno":"Customer MobileNo",
         "delivered":"DELIVERED",
@@ -351,7 +351,7 @@
         "product_name":"Product Name",
         "address":"Address",
         "quantity":"Quantity",
-        "amount":"Amount",
+        "amount":"Total Amount",
         "order_status":"Order Status",
         "delivery_date":"Delivery Date"
     },
