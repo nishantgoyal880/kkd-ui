@@ -9,7 +9,9 @@ nav{
 
 a{
   color: #29a745;
+  cursor: pointer;
 }
+
 .show{
   color:#767a82;
 }
@@ -102,6 +104,12 @@ a{
     .btn-default
     {
      background-color: green;
+     color: white;
+   }
+
+   .btn-default:hover
+    {
+     background-color: black;
      color: white;
    }
 

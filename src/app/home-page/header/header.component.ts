@@ -52,6 +52,7 @@ export class HeaderComponent implements OnInit {
 
  set(city) {
    this.city = city;
+   localStorage.setItem("user-location",this.city);
  }
 
 }
