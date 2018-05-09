@@ -30,18 +30,11 @@ export class FarmerAddProductComponent implements OnInit {
 
   ngOnInit() {
     //assign role and farmer id
-    this.idRoleService.role.subscribe((role) =>{
-      this.role=role;
-      console.log(this.role)
-      })
-      this.idRoleService.id.subscribe((id) =>{
-        console.log(id+"id in add product");
-        
-        this.kkdFarmId=id;
-        console.log("id"+this.kkdFarmId);
-      })      
+    
+    this.kkdFarmId=localStorage.getItem("id");
+    
   }
- 
+  
 
   constructor(private productService: FarmerAddProductService,
     private fb: FormBuilder, 
@@ -53,9 +46,9 @@ export class FarmerAddProductComponent implements OnInit {
       bulkOrderPrice : [null, Validators.compose([Validators.required])],
       quantity : [null, Validators.compose([Validators.required])],
       available : ''
-      })
-      
-    }
+    })
+    
+  }
 
 
   //function to select product name
@@ -68,58 +61,57 @@ export class FarmerAddProductComponent implements OnInit {
     console.log(event);
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
-  
+      
       reader.onload = (event:any) => {
         this.imageUrl = event.target.result 
-        }
-  
+      }
+      
       reader.readAsDataURL(event.target.files[0]);
     }
   }
 
   //function to add product
   addProduct(post){
-    console.log(this.kkdFarmId+"@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     this.productSubmission = {
 
-    "kkdFarmId":this.kkdFarmId,
-    "description":post.description,
-    "price":post.price,
-    "bulkOrderPrice":post.bulkOrderPrice,
-    "quantity":post.quantity,
-    "productName":this.productName,
-    "available":post.available,
-    "imageUrl":this.imageUrl,
+      "kkdFarmId":this.kkdFarmId,
+      "description":post.description,
+      "price":post.price,
+      "bulkOrderPrice":post.bulkOrderPrice,
+      "quantity":post.quantity,
+      "productName":this.productName,
+      "available":post.available,
+      "imageUrl":this.imageUrl,
     }
     console.log(this.productSubmission)
 
     if(post.bulkOrderPrice<=post.price){
-    this.productService.update(this.kkdFarmId,this.productSubmission).subscribe((res) => {
-      console.log(res);
-      swal({
-        position: 'center',
-        type: 'success',
-        title: 'Your product has been added',
-        showConfirmButton: false,
-        timer: 1500
-      })
-      this.router.navigate(['farmer/viewProduct']);
+      this.productService.update(this.kkdFarmId,this.productSubmission).subscribe((res) => {
+        console.log(res);
+        swal({
+          position: 'center',
+          type: 'success',
+          title: 'Your product has been added',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.router.navigate(['farmer/viewProduct']);
 
-    },(error) => {
-      console.log(error)
+      },(error) => {
+        console.log(error)
+        swal({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+        })
+      });
+    }
+    else{
       swal({
         type: 'error',
         title: 'Oops...',
-        text: 'Something went wrong!',
+        text: 'Bulk Order Price should be less than Product Price',
       })
-    });
-  }
-  else{
-    swal({
-      type: 'error',
-      title: 'Oops...',
-      text: 'Bulk Order Price should be less than Product Price',
-    })
-  }
+    }
   }
 }

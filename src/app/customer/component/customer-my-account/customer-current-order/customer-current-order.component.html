@@ -1,28 +1,26 @@
+<h1>
+  {{ 'customer_current_order.my_orders' | translate }}
+</h1>
 
-
-
-    <h1>{{ 'customer_current_order.my_orders' | translate }}</h1>
-  
 
 <div class="container-fluid current-orders bg">
-  
-  <div class="row current-orders-body" *ngIf=" currentOrders[0].orderId != null">
-    <div *ngFor="let order of currentOrders">
-
-      <div class="col-md-4 cards" >
-           <div class="card shadow" >
-              <div class="card-body">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item item-id ">{{ 'customer_current_order.orderid' | translate }}             :   {{order?.orderId}}</li>
-                  <li class="list-group-item item">{{ 'customer_current_order.product_name' | translate }}            :   {{order?.name}} </li>                            
-                  <li class="list-group-item item">{{ 'customer_current_order.quantity' | translate }}                :   {{order?.quantity}}</li>                            
-                  <li class="list-group-item item">{{ 'customer_current_order.price' | translate }}                   :   {{order?.totalAmount}}</li>
-                  <li class="list-group-item item">{{ 'customer_current_order.rating' | translate }}                  :   {{order?.avgRating}}</li>
-                  <li class="list-group-item item">{{ 'customer_current_order.otp' | translate }}                     :   {{order?.otp}} </li>
-                </ul>
-              </div>
-            </div>
+  <div class="col-md-12">
+    <div class="row current-orders-body">
+      <div *ngFor="let order of currentOrders" class="col-md-4">
+        <div class="card shadow my-3">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item item-id ">{{ 'customer_current_order.orderid' | translate }} : {{order.orderId}}</li>
+              <li class="list-group-item item">{{ 'customer_current_order.product_name' | translate }} : {{order.name}} </li>
+              <li class="list-group-item item">{{ 'customer_current_order.quantity' | translate }} : {{order.quantity}}</li>
+              <li class="list-group-item item">{{ 'customer_current_order.price' | translate }} : {{order.totalAmount}}</li>
+              <li class="list-group-item item">{{ 'customer_current_order.rating' | translate }} : {{order.avgRating}}</li>
+              <li class="list-group-item item">{{ 'customer_current_order.otp' | translate }} : {{order.otp}} </li>
+            </ul>
           </div>
-          </div>
-          </div> </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
   
