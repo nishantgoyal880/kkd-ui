@@ -119,11 +119,6 @@ button:focus{
     background-color: #FFFFFF;
 }
 
-#bgimg{
-    background-image: url(../../../../assets/images/backg4.jpg); 
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 h1 {
     font-weight: 600;
     padding: 0.5em 0 40px 0;

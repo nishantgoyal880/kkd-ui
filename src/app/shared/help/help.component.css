@@ -18,9 +18,3 @@ h1 {
     color: #29a745;
     line-height: 42px;
 	}
-/* Background image */
-#bgimg{
-	background-image: url(../../../assets/images/backg4.jpg); 
-	background-size: cover;
-	background-repeat: no-repeat;
-	}
