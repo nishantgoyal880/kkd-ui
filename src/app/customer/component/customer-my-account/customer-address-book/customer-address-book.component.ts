@@ -25,7 +25,10 @@ export class CustomerAddressBookComponent implements OnInit {
   */
   searchDetails() {
     return this.customerAuthenticationService.getDetails(this.customerId).subscribe(
-      data => this.details = data.addresses,
+      data =>{
+      if(data!==null)
+      {this.details = data.addresses}}
+      ,
       error => console.log(error)
     )
   }

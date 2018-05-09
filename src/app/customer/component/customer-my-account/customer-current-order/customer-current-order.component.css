@@ -1,21 +1,11 @@
-
-.bg{
-    padding-left: 130px;
-}
-
-.cards{
-    padding-top:30px;
-}
 .card{
     background-color: #f9f9f9;
-    width : 340px;
     margin : auto;
    
 }
 .item{
     background-color: #f9f9f9;
     padding-left : 5px;
-    font-size : 18px;
 }
 
 .title{
@@ -52,29 +42,6 @@ form{
     width : 70%;
     margin : 0 auto;
 }
-
-h1 {
-    font-weight: normal;
-    padding: 0.5em 0 40px 0;
-    text-align: center;
-    margin: 0;
-    color: #4b5320;
-    font-size: 50px;
-    line-height: 42px;
-    text-shadow: 0 2px white, 0 3px #777;
-    }
-
-/* h1{
-    text-align : center;
-    margin: 15px 0 0.5em 0;
-    padding-top: 10px;
-    color :#d84b6b;
-    font-weight: normal;  
-    font-size: 50px;
-    line-height: 42px;
-    text-transform: uppercase;
-    text-shadow: 0 2px white, 0 3px #777;   
-} */
 
 .display-4{
     color : white;
