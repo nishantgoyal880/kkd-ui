@@ -56,9 +56,9 @@
                       <i *ngFor="let city of farmerInfo.cities" lass="fa fa-map-marker" aria-hidden="true">{{city}}</i>
                     </p>
                     <p>
-                      <i class="fa fa-quote-left"></i> Aadhaar Address: {{farmerInfo.aadhaarData.permanentAddress.addressLine}}, {{farmerCity}}, distt.
-                      {{farmerDistrict}}</p>
-                    <p>{{farmerState}}, {{farmerPincode}}</p>
+                      <i class="fa fa-quote-left"></i> Aadhaar Address: {{farmerInfo.aadhaarData.permanentAddress.addressLine}}, {{farmerInfo.aadhaarData.permanentAddress.city}}, distt.
+                      {{farmerInfo.aadhaarData.permanentAddress.district}}</p>
+                    <p>{{farmerInfo.aadhaarData.permanentAddress.state}}, {{farmerInfo.aadhaarData.permanentAddress.pincode}}</p>
                   </div>
                 </div>
               </div>

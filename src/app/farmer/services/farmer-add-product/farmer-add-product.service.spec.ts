@@ -1,10 +1,10 @@
 
 import { FarmerAddProductService } from './farmer-add-product.service';
-import {FarmerAddProductComponent } from '../../component/farmer-dashboard/farmer-add-product/farmer-add-product.component';
-import {HttpClientModule} from '@angular/common/http';
+import { FarmerAddProductComponent } from '../../component/farmer-dashboard/farmer-add-product/farmer-add-product.component';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import {MockBackend, MockConnection} from '@angular/http/testing';
-import {PRODUCTDETAILS} from '../farmer-add-product/mock-addProduct-data';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { PRODUCTDETAILS } from '../farmer-add-product/mock-addProduct-data';
 import 'rxjs/add/observable/throw';
 import {
   TestBed,
@@ -16,8 +16,7 @@ import {
   Headers, BaseRequestOptions,
   Response, HttpModule, Http, XHRBackend, RequestMethod
 } from '@angular/http';
-
-import {ResponseOptions} from '@angular/http';
+import { ResponseOptions } from '@angular/http';
 
 
 describe('FarmerAddProductService', () => {
@@ -57,32 +56,30 @@ describe('FarmerAddProductService', () => {
     expect(service.update).toBeTruthy();
   }));
 
+  //testcase for update function (post request)
   it('should insert new product', async(inject([FarmerAddProductService], (service: FarmerAddProductService) => {
     mockBackend.connections.subscribe(connection => {
       expect(connection.request.method).toBe(RequestMethod.Post);
       connection.mockRespond(new Response(new ResponseOptions({
-        //status: 201,
         body: true
         })));
     });  
     service.update("KKDFARM1002", productDetails).subscribe(
       status => {
-        //expect(successResult).toBeDefined();
         expect(status).toEqual(true);
       });
   })));
 
+  //negative testcase for update function (post request)
   it('should not insert new product', async(inject([FarmerAddProductService], (service: FarmerAddProductService) => {
     mockBackend.connections.subscribe(connection => {
       expect(connection.request.method).toBe(RequestMethod.Post);
       connection.mockRespond(new Response(new ResponseOptions({
-        //status: 201,
         body: false
         })));
     });  
     service.update("KKDFARM1002", productDetails).subscribe(
       status => {
-        //expect(successResult).toBeDefined();
         expect(status).not.toEqual(true);
       });
   })));
