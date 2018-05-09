@@ -46,18 +46,18 @@ describe('SupportComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render title in a h1 tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('h1');
-    expect(e1.innerText.toLowerCase()).toEqual('support');
-  }));
-
   it('should call the submitIssue method', async(() => {
     fixture.detectChanges();
     spyOn(component,'submitIssue');
     el=fixture.debugElement.query(By.css('button')).nativeElement;
     el.click();
     expect(component.submitIssue).toHaveBeenCalledTimes(0);
+  }));
+
+  it('should call the onFileSelected method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'onFileSelected');
+    expect(component.onFileSelected).toHaveBeenCalledTimes(0);
   }));
 
   it('form should be invalid', async(() => {

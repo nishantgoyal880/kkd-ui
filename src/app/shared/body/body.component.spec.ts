@@ -44,18 +44,6 @@ describe('BodyComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should render title in a h1 tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('h1');
-    expect(e1.innerText).toEqual('Kisan Ki Dukan');
-  }));
-
-  it('should render title in a p tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('p');
-    expect(e1.innerText).toEqual('It\'s not fresh if it\'s not from the farm.');
-  }));
 });
 
 

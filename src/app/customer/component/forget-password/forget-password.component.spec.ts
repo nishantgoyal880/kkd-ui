@@ -11,7 +11,7 @@ import { IdRoleService } from '../../../services/id-role/id-role.service'
 
 import { ForgetPasswordComponent } from './forget-password.component';
 
-fdescribe('ForgetPasswordComponent', () => {
+describe('ForgetPasswordComponent', () => {
   let component: ForgetPasswordComponent;
   let fixture: ComponentFixture<ForgetPasswordComponent>;
   let el: HTMLElement;
@@ -95,8 +95,8 @@ fdescribe('ForgetPasswordComponent', () => {
   }));
 
   it('newPassword form should be valid', async(() => {
-    component.newPasswordForm.controls['password'].setValue('qwerty');
-    component.newPasswordForm.controls['confirmPassword'].setValue('qwerty');
+    component.newPasswordForm.controls['password'].setValue('Qwerty');
+    component.newPasswordForm.controls['confirmPassword'].setValue('Qwerty');
     expect(component.newPasswordForm.valid).toBeTruthy();
   }));
 

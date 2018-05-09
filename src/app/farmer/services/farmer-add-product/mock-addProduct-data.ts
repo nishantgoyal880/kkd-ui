@@ -1,3 +1,4 @@
+//mock data for running testcases
 export const PRODUCTDETAILS ={
     "kkdFarmId":"KKDFARM1002",
     "description":"good",

@@ -40,6 +40,7 @@ export class FarmerAddProductComponent implements OnInit {
     private fb: FormBuilder, 
     public router: Router,
     private idRoleService: IdRoleService) { 
+      //putting validation in reactive form
     this.rForm = fb.group({
       description : [null, Validators.compose([Validators.required])],
       price : [null, Validators.compose([Validators.required])],
