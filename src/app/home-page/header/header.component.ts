@@ -49,6 +49,10 @@ export class HeaderComponent implements OnInit {
    this.changedCity = this.city;
  }
 
+ set(city) {
+   this.city = city;
+ }
+
 }
 
 
