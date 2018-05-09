@@ -9,7 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FarmerLoginComponent } from './farmer-login.component';
 import { IdRoleService } from '../../../services/id-role/id-role.service'
 
-fdescribe('FarmerLoginComponent', () => {
+describe('FarmerLoginComponent', () => {
   let component: FarmerLoginComponent;
   let fixture: ComponentFixture<FarmerLoginComponent>;
   let debug: DebugElement;

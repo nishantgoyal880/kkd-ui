@@ -13,7 +13,6 @@ import { FarmerAlternateMobileComponent } from './farmer-alternate-mobile.compon
 describe('FarmerAlternateMobileComponent', () => {
   let component: FarmerAlternateMobileComponent;
   let fixture: ComponentFixture<FarmerAlternateMobileComponent>;
-  let debug: DebugElement;
   let el: HTMLElement;
 
   beforeEach(async(() => {
@@ -39,20 +38,12 @@ describe('FarmerAlternateMobileComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FarmerAlternateMobileComponent);
     component = fixture.componentInstance;
-    debug=fixture.debugElement.query(By.css('form'));
-    el=debug.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should render title in a h1 tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('h1');
-    expect(e1.innerText).toEqual('Alternate Mobile Number');
-  }));
 
   it('should call the updateFarmerMobile method', async(() => {
     fixture.detectChanges();
