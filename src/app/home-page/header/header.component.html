@@ -87,29 +87,85 @@
     </div>
   </nav>
 </div>
-</header>]
+</header>
 
 <!-- Location Modal -->
 <div class="modal fade" id="locationModal" role="dialog">
-    <div class="modal-dialog">
-     <!-- Modal content-->
+    <div class="modal-dialog modal-lg">
      <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id= "Modallabel">Change City</h4>
+        <h4 class="modal-title modallabel">Change City</h4>
       </div>
-      <!--         this is for body for dropdown to select city-->
-      <div class="modal-body">
-        <select class="dropdown btn btn-light dropdown-toggle mr-2 col-md-2 col-lg-4 col-sm-2" [(ngModel)]="changedCity">
+      <!-- this is for body for dropdown to select city -->
+      <div class="modal-body p-2">
+       <select class="dropdown btn btn-light dropdown-toggle " [(ngModel)]="changedCity">
          <option *ngFor=" let changedCity of cities" value={{changedCity}}>{{changedCity}}</option>
        </select>
-     </div>
-     <p ml-4>Your Changed City is {{changedCity}}</p>
-     <div class="modal-footer">
-      <span>
-        <button type="button" class="btn btn-default " data-dismiss="modal">Cancel</button>
+       <br>
+       <ul>
+         <li>
+          <button  id="_setImg" (click)="set('Delhi')" data-dismiss="modal">
+            <span >
+             <img src="../../../assets/images/delhi.png" class="maincities" alt="Delhi"/>
+             <p >Delhi</p>
+           </span>
+         </button>
+       </li>
+
+       <li>
+        <button id="_setImg"  (click)="set('Mumbai')" data-dismiss="modal">
+         <span>
+          <img src="../../../assets/images/mumbai.png" class="maincities" alt="Mumbai">
+          <p>Mumbai</p>
+        </span>
+      </button>
+    </li>
+
+    <li>
+     <button id="_setImg"  (click)="set('Chandigarh')" data-dismiss="modal">
+       <span>
+         <img src="../../../assets/images/chandigarh.png" class="maincities" alt="Chandigarh">
+         <p>Chandigarh</p>
+       </span>
+     </button>
+   </li>
+
+   <li>
+      <button id="_setImg"  (click)="set('Ahmedabad')" data-dismiss="modal">
+        <span>
+          <img src="../../../assets/images/ahmedabad.png" class="maincities" alt="Ahmedabad">
+          <p>Ahmedabad</p>
+        </span>
+      </button>
+    </li>
+
+    <li>
+        <button id="_setImg"  (click)="set('Hyderabad')" data-dismiss="modal">
+          <span>
+            <img src="../../../assets/images/hyderabad.png" class="maincities" alt="Hyderabad">
+            <p>Hyderabad</p>
+          </span>
+        </button>
+      </li>
+
+      <li>
+          <button id="_setImg"  (click)="set('Chennai')" data-dismiss="modal">
+            <span>
+              <img src="../../../assets/images/chennai.png" class="maincities" alt="Chennai">
+              <p>Chennai</p>
+            </span>
+          </button>
+        </li>
+
+ </ul>
+
+</div>
+<div class="modal-footer">
+  <span>
+    <button type="button" class="btn btn-default " data-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-default " data-dismiss="modal" (click)="changeCity()">Save</button>
-      </span>
-    </div>
-  </div>
-  </div>
-  </div>
+  </span>
+</div>
+</div>
+</div>
+</div>
