@@ -13,7 +13,6 @@ import { FarmerChangePasswordComponent } from './farmer-change-password.componen
 describe('FarmerChangePasswordComponent', () => {
   let component: FarmerChangePasswordComponent;
   let fixture: ComponentFixture<FarmerChangePasswordComponent>;
-  let debug: DebugElement;
   let el: HTMLElement;
 
   beforeEach(async(() => {
@@ -39,20 +38,12 @@ describe('FarmerChangePasswordComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FarmerChangePasswordComponent);
     component = fixture.componentInstance;
-    debug=fixture.debugElement.query(By.css('form'));
-    el=debug.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
-  it('should render title in a h1 tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('h1');
-    expect(e1.innerText).toEqual('Change Password');
-  }));
 
   it('should call the resetPassword method', async(() => {
     fixture.detectChanges();
