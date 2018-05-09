@@ -30,10 +30,7 @@ export class FarmerBankDetailsComponent implements OnInit {
       accountName : [null, Validators.compose([Validators.required,Validators.minLength(2),Validators.maxLength(20)])],
       ifscCode : [null, Validators.compose([Validators.required,Validators.minLength(6),Validators.maxLength(12)])],
   });
-    this.idRoleService.id.subscribe((id) => {
-      this.farmerId = id;
-    })
-  }
+      }
 
   /* storing the data in object and saving it into the database using bankDetailsService */
   addBankDetails(post) {
@@ -42,8 +39,7 @@ export class FarmerBankDetailsComponent implements OnInit {
       'accountName' : post.accountName,
       'ifscCode': post.ifscCode,
     };
-    console.log(this.farmerId);
-    this.bankDetailsService.saveAccountDetails(this.farmerId,this.bankDetailsSubmission).subscribe((res) => {
+    this.bankDetailsService.saveAccountDetails(localStorage.getItem("id"),this.bankDetailsSubmission).subscribe((res) => {
 
       alert('Your bank account details has been successfully added.');
 
