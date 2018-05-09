@@ -15,25 +15,19 @@ export class CustomerMyCartComponent implements OnInit {
     private cartService: CartService,
     private router: Router
   ) {}
-  public items :any;
+  public items :Array<any>=[];
   public x: number;
   public customerInfo: object = {};
 
   public kkdCustId: string;
   ngOnInit() {
-    debugger
-    this.idRoleService.id.subscribe(id => {
-      this.kkdCustId = id;
-      this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
+      this.cartService.getCustomerInfo(localStorage.getItem("id")).subscribe(
         res => {
           this.customerInfo = res;
-          console.log(res.kkdCustId)
-          
         },
         err => console.log(err)
       );
-    });
-    this.kkdCustId=IdRoleService.id1;
+    this.kkdCustId=localStorage.getItem("id");
     this.getCartItems();
   }
 

@@ -2,12 +2,12 @@
   <div class=" fixed-top">
     <div class="footer-bottom">
         <div class="container-fluid">
-          <div class="row">  
+          <div class="row">
             <div class=" col-3">
                   <a class="nav-link " routerLink="#" id="location">{{ 'header.you_are_in' | translate }}
                     <i class="fa fa-map-marker mr-1 ml-2"></i>{{city}}</a>
                   </div>
-             <div class="col-9" id="lang-div">     
+             <div class="col-9" id="lang-div">
               <select  class="btn btn-success" #langSelect (change)="translate.use(langSelect.value)" id="lang-drop">
                  <option class="btn btn-light" *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
               </select>
@@ -36,7 +36,16 @@
               aria-selected="true">
               <i class="fa fa-home mr-1"></i>{{ 'header.my_account' | translate }}</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="loggedIn==true && role=='Farmer'">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" routerLink="/farmer/dashboard" role="tab" aria-controls="home"
+              aria-selected="true">
+              <i class="fa fa-home mr-1"></i>DashBoard</a>
+          </li>
+          <li class="nav-item" *ngIf="loggedIn==false">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" routerLink="/productList" role="tab" aria-controls="profile" aria-selected="false">
+              <i class="fa fa-product-hunt mr-1"></i>{{ 'header.products' | translate }}</a>
+          </li>
+          <li class="nav-item" *ngIf="loggedIn==true && role=='Customer'">
             <a class="nav-link" id="profile-tab" data-toggle="tab" routerLink="/productList" role="tab" aria-controls="profile" aria-selected="false">
               <i class="fa fa-product-hunt mr-1"></i>{{ 'header.products' | translate }}</a>
           </li>
@@ -62,17 +71,13 @@
             </div>
           </li>
         </ul>
-        <ul class="nav nav-tabs" id="myTab" role="tablist" *ngIf="loggedIn==true && role=='Farmer'">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/home" role="tab" (click)="changeOnClickOfLogOut()">
-              <i class="fa fa-sign-out mr-1"></i>{{ 'header.logout' | translate }}</a>
-          </li>
-        </ul>
         <ul class="nav nav-tabs" id="myTab" role="tablist" *ngIf="loggedIn==true && role=='Customer'">
           <li class="nav-item active">
             <a class="nav-link" routerLink="/customer/myCart" role="tab" data-toggle="tab">
               <i class="fa fa-cart-arrow-down mr-1"></i>{{ 'header.my_cart' | translate }}</a>
           </li>
+        </ul>
+        <ul class="nav nav-tabs" id="myTab" role="tablist" *ngIf="loggedIn==true">
           <li class="nav-item">
             <a class="nav-link" routerLink="/home" (click)="changeOnClickOfLogOut()" role="tab" data-toggle="tab">
               <i class="fa fa-sign-out mr-1"></i>{{ 'header.logout' | translate }}</a>

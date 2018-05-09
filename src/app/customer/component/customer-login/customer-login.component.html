@@ -1,4 +1,7 @@
-    <div class="container mt-100">
+
+   <div id="bgimg" style="margin-top: 5.4rem; padding-bottom: 3rem">
+
+   <div class="container" style="padding-top: 1.7rem">
       <h1>{{ 'customer_login.login_customer' | translate }}</h1>
     </div>
 <div class="container-fluid">
@@ -37,12 +40,13 @@
       </div>
     </div>
     </div>
-    <a routerLink="/customer/forgetPassword">{{ 'customer_login.forgot_password' | translate }}</a>
+    <a routerLink="/customer/forgetPassword">{{ 'customer_login.forgot_password' | translate }}?</a>
     <div class = "form-comp-button">
     <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'customer_login.login' | translate }}</button>
     <button type="submit" class="btn btn-success" routerLink="/customer/register">{{ 'customer_login.register' | translate }}</button>
     </div>
   </form>
+</div>
 </div>
 </div>
 </div>
