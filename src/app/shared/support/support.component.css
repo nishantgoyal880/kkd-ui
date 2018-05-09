@@ -89,8 +89,3 @@ button:focus{
     width : 70%;
     margin : auto;
 }
-#bgimg{
-    background-image: url(../../../assets/images/backg4.jpg); 
-    background-size: cover;
-    background-repeat: no-repeat;
-}

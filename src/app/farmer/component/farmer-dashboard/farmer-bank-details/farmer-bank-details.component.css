@@ -82,8 +82,3 @@ button:focus{
 .bank-det{
     margin-top: 4rem;
 }
-#bgimg{
-    background-image: url(../../../../../assets/images/backg4.jpg); 
-    background-size: cover;
-    background-repeat: no-repeat;
-}

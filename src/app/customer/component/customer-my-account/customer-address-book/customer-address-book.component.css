@@ -137,3 +137,6 @@ button:focus{
     width: 8rem;
     height: 8rem;
 }
+.container{
+    padding-bottom: 3rem;
+}
