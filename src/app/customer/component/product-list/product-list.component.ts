@@ -34,16 +34,14 @@ export class ProductListComponent implements OnInit {
       },
       err => console.log(err)
     );
-    this.idRoleService.role.subscribe((role) =>{
-      this.role=role;
-      console.log(role)
-   })
-   this.idRoleService.id.subscribe((id) =>{
-     this.userId=id;
-   })
-   this.idRoleService.isLoggedIn.subscribe((loggedIn) =>{
-    this.loggedIn=loggedIn;
-  })
+    this.userId=localStorage.getItem("id");
+    if(this.userId){
+      if(this.userId.search("CUST")){
+        this.role="Customer";
+        this.loggedIn=true;
+      }
+      
+    }
   }
 
   calculatingMax() {

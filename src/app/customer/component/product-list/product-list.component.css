@@ -15,11 +15,9 @@ p {
   margin: 0em;
   font-size: 12px;
   text-align: left;
-  font-family: Roboto;
 }
 
 h5 {
-  font-family: Roboto;
 }
 
 hr {
@@ -49,6 +47,7 @@ form{
   margin-left: 8.3rem;
 }
 
+/* Media query for Form and dropdown list */
 @media screen and (max-width: 600px) {
     form{
   margin-left: 0px;
@@ -65,7 +64,7 @@ label{
   select{
     width: 100% !important;    
   }
-
+  /* Class to make no product found image responsive */
   .emptyList {
     width: 90%;
   }

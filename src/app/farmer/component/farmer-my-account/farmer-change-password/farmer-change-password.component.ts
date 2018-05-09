@@ -8,76 +8,76 @@ import swal from 'sweetalert2';
   selector: 'app-farmer-change-password',
   templateUrl: './farmer-change-password.component.html',
   styleUrls: ['./farmer-change-password.component.css'],
-  providers:[FarmerDetailsService, IdRoleService]
+  providers: [FarmerDetailsService, IdRoleService]
 })
 export class FarmerChangePasswordComponent implements OnInit {
- 
+
   public searchedFarmerId: string;
   public role: string;
-  public newPassword:string;
-  public reenterNewPassword:string;
-  public currentPassword:string;
+  public newPassword: string;
+  public reenterNewPassword: string;
+  public currentPassword: string;
   public details;
   rForm: FormGroup;
 
-  constructor(private farmerDetailsService : FarmerDetailsService,
-    private fb: FormBuilder,private idRoleService: IdRoleService) { 
-    this.rForm = fb.group({
-      currentPassword : [null, Validators.compose([Validators.required])],
-      newPassword : [null, Validators.compose([Validators.required])],
-      reenterNewPassword : [null, Validators.compose([Validators.required])]
-  })
-  this.idRoleService.role.subscribe((role) =>{
-    this.role=role;
-  })
-  this.idRoleService.id.subscribe((id) =>{
-    this.searchedFarmerId=id;
-  })
+  constructor(private farmerDetailsService: FarmerDetailsService,
+    private formBuilder: FormBuilder, private idRoleService: IdRoleService) {
+    this.rForm = formBuilder.group({
+      currentPassword: [null, Validators.compose([Validators.required])],
+      newPassword: [null, Validators.compose([Validators.required])],
+      reenterNewPassword: [null, Validators.compose([Validators.required])]
+    })
+    this.idRoleService.role.subscribe((role) => {
+      this.role = role;
+    })
+    this.idRoleService.id.subscribe((id) => {
+      this.searchedFarmerId = id;
+    })
   }
 
-  ngOnInit(){
-    
+  ngOnInit() {
+
   }
 
   /* Function to change farmer's password by his KKDId
   and make service call to change farmer's password from app */
-  resetPassword(post){
+  resetPassword(post) {
     this.details = {
-      "currentPassword" : post.currentPassword,
-      "newPassword" : post.newPassword,
-      "reenterNewPassword" : post.reenterNewPassword
-    }    
-    if(this.newPassword == this.reenterNewPassword)
-    {
-      let resetPassInfo={
-        userId:this.searchedFarmerId,
-        currentPassword:post.currentPassword,
-        newPassword:post.newPassword
+      "currentPassword": post.currentPassword,
+      "newPassword": post.newPassword,
+      "reenterNewPassword": post.reenterNewPassword
+    }
+    if (this.newPassword == this.reenterNewPassword) {
+      let resetPassInfo = {
+        userId: this.searchedFarmerId,
+        currentPassword: post.currentPassword,
+        newPassword: post.newPassword
       }
-      this.farmerDetailsService.updatePassword(resetPassInfo).subscribe((res:boolean)=>{
-        if(res==true){
+      //service call to change farmer's password
+      this.farmerDetailsService.updatePassword(resetPassInfo).subscribe((res: boolean) => {
+        if (res == true) {
           swal({
             position: 'top-end',
             type: 'success',
             title: 'Your password has changed successfully',
             showConfirmButton: false,
             timer: 1500
-            })
+          })
         }
-        else{
+        else {
           swal("Re-enter the password correctly");
         }
-      },(error)=>{
+      }, (error) => {
         swal({
           type: 'error',
           title: 'Oops...',
           text: 'Something went wrong!',
         });
       });
+    }
+    else {
+      swal("Re-enter the new password correctly");
+    }
   }
-  else{
-    swal("Re-enter the new password correctly");
-  }
-  }
-  
+
 }

@@ -21,8 +21,7 @@
     margin-top: 3rem;
 }
 h1 {
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
@@ -44,7 +43,6 @@ h1 {
 
 body {
     background:#e8e8e8;
-    font-family: 'Muli';
 }
 .cardwidth{
     margin: 0 auto;
@@ -77,4 +75,9 @@ button:focus{
 
 .form-comp{
     margin-top: 25px;
+}
+#bgimg{
+    background-image: url(../../../../../assets/images/backg4.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
 }

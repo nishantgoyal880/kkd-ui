@@ -110,7 +110,7 @@
         "password_invalid":"Password Invalid (Atleast one lowercase, uppercase, specialcharacter, digit, minLength 6) !"
     },
     "farmer_login":{
-        "login_farmer":"Login Farmer",
+        "login_farmer":"LOGIN FARMER",
         "mobile_number":"Mobile Number*",
         "password":"Password*",
         "forgot_password":"Forgot Password?",
@@ -367,7 +367,7 @@
         "cancel":"Cancel"
     },
     "aadhaar":{
-        "register_farmer":"Register Farmer",
+        "register_farmer":"REGISTER FARMER",
         "aadhaar_number":"Aadhaar Number",
         "less_than_12_digits":"less than 12 digits",
         "more_than_12_digits":"More than 12 digits",
@@ -490,7 +490,7 @@
         "make_payment":"Make Payment"       
     },
     "about_us":{
-        "about_us_heading":"About Us",
+        "about_us_heading":"ABOUT US",
         "problem_statement":"Problem Statement",
         "in_the_global_market":"In the Global Market",
         "problem_statement_description1":"the actual price of the products is not prevalent in the supply chain.",   
