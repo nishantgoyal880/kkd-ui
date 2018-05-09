@@ -15,16 +15,10 @@ export class CustomerCurrentOrderComponent implements OnInit {
    }
   
   ngOnInit() {
-    if(IdRoleService.id1.length){
-      this.customerId=IdRoleService.id1;
+
+      this.customerId=localStorage.getItem("id");
       this.getdata();
-    }
-    else{
-      this.idRoleService.id.subscribe(id=>{
-        this.customerId =id;
-        this.getdata();
-      })
-     }
+   
     }
     
   getdata(){

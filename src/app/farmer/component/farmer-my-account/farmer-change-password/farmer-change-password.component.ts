@@ -30,9 +30,9 @@ export class FarmerChangePasswordComponent implements OnInit {
     this.idRoleService.role.subscribe((role) => {
       this.role = role;
     })
-    this.idRoleService.id.subscribe((id) => {
-      this.searchedFarmerId = id;
-    })
+    
+      this.searchedFarmerId = localStorage.getItem("id");
+   
   }
 
   ngOnInit() {

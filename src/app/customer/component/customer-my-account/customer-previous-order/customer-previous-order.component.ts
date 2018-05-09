@@ -16,16 +16,10 @@ export class CustomerPreviousOrderComponent implements OnInit {
   constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
 
   ngOnInit() {
-    if(IdRoleService.id1.length){
-      this.customerId=IdRoleService.id1;
+   
+      this.customerId=localStorage.getItem("id");
       this.getdata();
-    }
-    else{
-      this.idRoleService.id.subscribe(id=>{
-        this.customerId =id;
-        this.getdata();
-      })
-     }
+   
    }
    
    getdata(){

@@ -22,15 +22,11 @@ export class FarmerCurrentOrderComponent implements OnInit {
   public otpVerified:Boolean=false;
   public avgRating:any;
   public farmerId:any;
+  public p:any;
 
 
   ngOnInit() {
-      this.idRoleService.role.subscribe((role) =>{
-      })
-      this.idRoleService.id.subscribe((id) =>{
-         this.farmerId=id;
-         this.loadData();
-      })
+  this.loadData();
   }
 
   //Loading data on initialization
@@ -39,8 +35,9 @@ export class FarmerCurrentOrderComponent implements OnInit {
     //this.date=d.getFullYear()+'-0'+(d.getMonth()+1)+'-'+d.getDate();
     this.date=d;
     //code to get the list of orders according to farmer id
-    this.orderService.getCurrentOrderListFromFarmerId(this.farmerId).subscribe((res) =>{
+    this.orderService.getCurrentOrderListFromFarmerId(localStorage.getItem("id")).subscribe((res) =>{
     this.orderList = res;
+    console.log(res);
   }, (error) =>{})
   }
 

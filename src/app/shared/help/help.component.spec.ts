@@ -41,14 +41,7 @@ describe('HelpComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should render title in a h1 tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('h1');
-    expect(e1.innerText).toEqual('Help');
-  }));
-  
+  }); 
 });
