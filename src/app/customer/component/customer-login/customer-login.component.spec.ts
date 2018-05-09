@@ -10,7 +10,7 @@ import { CustomerLoginComponent } from './customer-login.component';
 import { IdRoleService } from '../../../services/id-role/id-role.service';
 
 
-fdescribe('CustomerLoginComponent', () => {
+describe('CustomerLoginComponent', () => {
   let component: CustomerLoginComponent;
   let fixture: ComponentFixture<CustomerLoginComponent>;
   let de: DebugElement;

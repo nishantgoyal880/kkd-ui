@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { IdRoleService } from '../../services/id-role/id-role.service';
 import { TranslateService } from '@ngx-translate/core';
-import {LanguagesConfig} from '../config/languages.config'
+import { LanguagesConfig } from '../config/languages.config'
+import { LocationConfig } from '../config/cities.config'
 
 @Component({
  selector: 'app-header',
@@ -14,6 +15,8 @@ export class HeaderComponent implements OnInit {
  public role:any;
  @Input() city: any;
  public languages=LanguagesConfig.language;
+ public cities = LocationConfig.cities;
+ public changedCity:any;
 
  constructor(private idRoleService:IdRoleService, public translate: TranslateService) {
   translate.addLangs(this.languages);
@@ -36,6 +39,16 @@ export class HeaderComponent implements OnInit {
    this.idRoleService.isLoggedIn.emit(false);
    localStorage.removeItem("token");
  }
+
+ changeCity() {
+    this.city = this.changedCity;
+    localStorage.setItem("user-location",this.city);
+ }
+
+ select() {
+   this.changedCity = this.city;
+ }
+
 }
 
 

@@ -20,3 +20,5 @@ export class HomePageComponent implements OnInit {
     this.searchInput=event.search;
   }
 }
+
+
