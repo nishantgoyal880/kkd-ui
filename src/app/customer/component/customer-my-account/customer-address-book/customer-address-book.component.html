@@ -1,21 +1,27 @@
 <h1>{{ 'customer_address_book.address_details' | translate }}</h1>
-<div class="container-fluid address bg">
+<div class="container">
   <div class="row">
-    <div *ngIf="details[0]">
-      <div *ngFor="let address of details">
-        <div class="col-md-12">
-          <div class="card shadow">
-            <div class="card-body">
-              <p class = "name">{{address.pincode}},{{address.addressLine}},{{address.city}},{{address.district}},{{address.state}}</p>
+    <div class="col-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ 'customer_address_book.add_address' | translate }}</h5>
+          <a routerLink="/customer/addressBook/addAddress" class="btn btn-primary">+</a>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let address of details">
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <div class="card-text">
+              <ul>
+                <li><b>ADDRESS LINE :</b>{{address.addressLine}}</li>
+                <li><b>CITY :</b>{{address.city}}</li>
+                <li><b>DISTRICT :</b>{{address.district}}</li>
+                <li><b>STATE :</b>{{address.state}}</li>
+                <li><b>PINCODE :</b>{{address.pincode}}</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-12">
-      <button><a routerLink="/customer/addressBook/addAddress">+{{ 'customer_address_book.add_address' | translate }}</a></button>
-    </div>
-  </div>
-</div>
-
-
