@@ -14,12 +14,12 @@ export class CustomerAddressBookComponent implements OnInit {
   constructor(private customerAuthenticationService: CustomerAuthenticationService, private idRoleService: IdRoleService) { }
 
   ngOnInit() {
-  
+  //getting customer id of the actively logged in customer
       this.customerId = localStorage.getItem("id");
       this.searchDetails();
-    
-  }
-  /* 
+    }
+  
+    /* 
   Function to display customer's address by his KKDId and 
   make service call to display customer's address from UserDetails
   */

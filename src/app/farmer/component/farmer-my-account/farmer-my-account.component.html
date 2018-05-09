@@ -1,10 +1,10 @@
-<div class="home mt-100">
+<div class="home" style="margin-bottom: 3rem">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-1 btn">
         <ul class="nav nav-tabs nav-justified sidebar-nav edit">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#profile" role="tab" aria-controls="add">profile</a>
+            <a class="nav-link active" data-toggle="tab" href="#profile" role="tab" aria-controls="add">Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#add" role="tab" aria-controls="add">{{ 'my_account.add_address' | translate }}</a>
@@ -20,9 +20,9 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-10 marginComponent" style="margin-top:-7rem">
+      <div class="col-md-10 marginComponent" style="margin-top:-1rem">
         <div class="tab-content">
-          <div class="tab-pane active" id="profile" role="tabpanel">
+          <div class="tab-pane active mt-90" id="profile" role="tabpanel">
             <div class="container mt-4">
               <div class="">
 
@@ -34,7 +34,7 @@
                   </div>
 
                   <!-- Avatar -->
-                  <div class="avatar mx-auto white">
+                  <div class="avatar mx-auto white pt-2">
                     <img src="./../../../../assets/images/user_img.jpeg" class="rounded-circle">
                   </div>
 
@@ -44,21 +44,38 @@
                     <hr>
                     <!-- Quotation -->
                     <p *ngIf="farmerInfo.currentAddress">
-                      <i class="fa fa-quote-left"></i> Current Address: {{farmerInfo.currentAddress.addressLine}}, {{farmerInfo.currentAddress.city}},
-                      distt. {{farmerInfo.currentAddress.district}}
-                      <br> {{farmerInfo.currentAddress.state}}, {{farmerInfo.currentAddress.pincode}}</p>
-                    <p>Alternate
-                      <i class="fa fa-phone" aria-hidden="true"></i>{{farmerInfo.mobileNo}}</p>
-                    <p>Current
-                      <i class="fa fa-phone" aria-hidden="true"></i>{{farmerInfo.alternateNo}}</p>
+                      <span class="font-weight-bold">Current Address: </span>
+                      {{farmerInfo.currentAddress.addressLine}}, {{farmerInfo.currentAddress.city}}, 
+                      distt. {{farmerInfo.currentAddress.district}} {{farmerInfo.currentAddress.state}}, {{farmerInfo.currentAddress.pincode}}
+                    </p>
+                    <p>
+                      <span class="font-weight-bold">Alternate</span>
+                      <i class="fa fa-phone" aria-hidden="true"></i>{{farmerInfo.mobileNo}}
+                    </p>
+                    <p>
+                      <span class="font-weight-bold">
+                        Current
+                      </span>
+                      <i class="fa fa-phone" aria-hidden="true"></i>{{farmerInfo.alternateNo}}
+                    </p>
                     <p *ngIf="farmerInfo.cities"> Places where i can deliver</p>
                     <p>
                       <i *ngFor="let city of farmerInfo.cities" lass="fa fa-map-marker" aria-hidden="true">{{city}}</i>
                     </p>
                     <p>
-                      <i class="fa fa-quote-left"></i> Aadhaar Address: {{farmerInfo.aadhaarData.permanentAddress.addressLine}}, {{farmerInfo.aadhaarData.permanentAddress.city}}, distt.
-                      {{farmerInfo.aadhaarData.permanentAddress.district}}</p>
-                    <p>{{farmerInfo.aadhaarData.permanentAddress.state}}, {{farmerInfo.aadhaarData.permanentAddress.pincode}}</p>
+                      <span class="font-weight-bold">Aadhaar Address: </span>
+                      {{farmerInfo.aadhaarData.permanentAddress.addressLine}}, {{farmerInfo.aadhaarData.permanentAddress.city}}, distt. {{farmerInfo.aadhaarData.permanentAddress.district}},
+                      {{farmerInfo.aadhaarData.permanentAddress.state}}, {{farmerInfo.aadhaarData.permanentAddress.pincode}}
+                    </p>
+                    <p *ngIf="farmerInfo.bankDetails">
+                      <span class="font-weight-bold">Bank Details</span>
+                      <br>
+                      <span>Account Owner: {{farmerInfo.bankDetails.accountName}}</span>
+                      <br>
+                      <span>Account Name: {{farmerInfo.bankDetails.accountNo}}</span>
+                      <br>
+                      <span>Account IFSC:{{farmerInfo.bankDetails.ifscCode}}</span>
+                    </p>
                   </div>
                 </div>
               </div>
