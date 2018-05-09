@@ -11,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import {IdRoleService} from '../../../services/id-role/id-role.service';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
-fdescribe('CustomerMyAccountComponent', () => {
+
+describe('CustomerMyAccountComponent', () => {
   let component: CustomerMyAccountComponent;
   let fixture: ComponentFixture<CustomerMyAccountComponent>;
   let debug: DebugElement;
@@ -40,7 +41,6 @@ fdescribe('CustomerMyAccountComponent', () => {
     fixture = TestBed.createComponent(CustomerMyAccountComponent);
     component = fixture.componentInstance;
     debug=fixture.debugElement.query(By.css('form'));
-    //el=debug.nativeElement;
     fixture.detectChanges();
   });
   it('should create', () => {
