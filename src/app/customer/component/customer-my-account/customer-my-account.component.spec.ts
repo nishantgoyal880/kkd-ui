@@ -6,11 +6,13 @@ import {CustomerAddressBookComponent} from './customer-address-book/customer-add
 import { BrowserModule, By } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DebugElement } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpModule,Http } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import {IdRoleService} from '../../../services/id-role/id-role.service'
-describe('CustomerMyAccountComponent', () => {
+import {IdRoleService} from '../../../services/id-role/id-role.service';
+import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
+
+fdescribe('CustomerMyAccountComponent', () => {
   let component: CustomerMyAccountComponent;
   let fixture: ComponentFixture<CustomerMyAccountComponent>;
   let debug: DebugElement;
@@ -24,7 +26,12 @@ describe('CustomerMyAccountComponent', () => {
         HttpModule,
         RouterTestingModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TranslateModule.forRoot({
+          provide: TranslateLoader,
+          useFactory: (http: Http) => new TranslateStaticLoader(http, 'public/assets/i18n', '.json'),
+          deps: [Http]
+      })
       ],
       providers:[IdRoleService],
     })
@@ -47,7 +54,7 @@ describe('CustomerMyAccountComponent', () => {
     fixture.detectChanges();
     const e1=fixture.nativeElement.querySelector('h1');
     console.log(e1.innerText);
-    expect(e1.innerText).toEqual('My Orders');
+    expect(e1.innerText).toEqual('customer_current_order.my_orders');
   }));
 
   it('should call the onSubmit method', async(() => {
