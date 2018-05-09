@@ -39,7 +39,7 @@ export class OrderService {
   }
 
   //Error handler
-  private handleError(error: Response){
+  public handleError(error: Response){
      return Observable.throw(error.statusText);
   }
 

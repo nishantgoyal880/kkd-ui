@@ -11,10 +11,7 @@ import { FarmerViewProductService } from './farmer-view-product.service';
 
 describe('FarmerViewProductService', () => {
   let mockFarmerProduct:any;
-//  let mockFarmerAddress:any;
   let mockFarmerProductNegative:any;  
-//  let mockFarmerDelete:any;
-//  let mockFarmerNewPassword:any;
  let mockBackend: MockBackend;
  beforeEach(async() => {
   TestBed.configureTestingModule({
@@ -33,16 +30,28 @@ describe('FarmerViewProductService', () => {
   });
   mockBackend = getTestBed().get(MockBackend);
   mockFarmerProduct=MOCKFARMERPRODUCT;
-  // mockFarmerAddress=MOCKFARMERADDRESS;
   mockFarmerProductNegative=MOCKFARMERPRODUCTNEGATIVE;
-  // mockFarmerDelete=MOCKFARMERDELETE;
-  // mockFarmerNewPassword=MOCKFARMERPASSWORD;
 });
 
   it('should be created', inject([FarmerViewProductService], (service: FarmerViewProductService) => {
     expect(service).toBeTruthy();
   }));
 
+  it('getAllProducts method should be created', inject([FarmerViewProductService], (service: FarmerViewProductService) => {
+    expect(service.getAllProducts).toBeTruthy();
+  }));
+
+  it('deleteParticularProduct method should be created', inject([FarmerViewProductService], (service: FarmerViewProductService) => {
+    expect(service.deleteParticularProduct).toBeTruthy();
+  }));
+
+  it('update method should be created', inject([FarmerViewProductService], (service: FarmerViewProductService) => {
+    expect(service.update).toBeTruthy();
+  }));
+
+  it('handleError method should be created', inject([FarmerViewProductService], (service: FarmerViewProductService) => {
+    expect(service.handleError).toBeTruthy();
+  }));
 
  it('should get Particular Farmer Products', async(inject([FarmerViewProductService], (service: FarmerViewProductService) => {
    mockBackend.connections.subscribe(
@@ -149,58 +158,5 @@ it('should delete Farmer Product', async(inject([FarmerViewProductService], (ser
     expect(status).not.toEqual(true);
    });
  })));
-
-  // it('should update Farmer Address', async(inject([FarmerDetailsService], (service: FarmerDetailsService) => {
-
-  //      mockBackend.connections.subscribe(connection => {
-  //        expect(connection.request.method).toBe(RequestMethod.Put);
-  //        connection.mockRespond(new Response(new ResponseOptions({
-  //          body:true
-  //            })));
-  //      });
-  //      service. updateFarmerAddress('1234567890',mockFarmerAddress).subscribe(status=>{
-  //       expect(status).toEqual(true);
-  //      });
-  //    })));
-
-//  it('should not get Farmer Details', async(inject([FarmerDetailsService], (service: FarmerDetailsService) => {
-//    mockBackend.connections.subscribe(
-//      (connection: MockConnection) => {
-//        connection.mockRespond(new Response(
-//          new ResponseOptions({
-//              body: mockFarmer
-//            }
-//          )));
-//      });  
-//    service. getFarmerName('KKDFARM1008').subscribe(results=>{
-//       expect(results).not.toEqual(mockFarmerNegative);
-//      });
-//  })));
-
-//  it('should update Farmer Address', async(inject([FarmerDetailsService], (service: FarmerDetailsService) => {
-
-//    mockBackend.connections.subscribe(connection => {
-//      expect(connection.request.method).toBe(RequestMethod.Put);
-//      connection.mockRespond(new Response(new ResponseOptions({
-//        body:true
-//          })));
-//    });
-//    service. updateFarmerAddress('1234567890',mockFarmerAddress).subscribe(status=>{
-//     expect(status).toEqual(true);
-//    });
-//  })));
-
-//  it('should not update Farmer Address', async(inject([FarmerDetailsService], (service: FarmerDetailsService) => {
-
-//    mockBackend.connections.subscribe(connection => {
-//      expect(connection.request.method).toBe(RequestMethod.Put);
-//      connection.mockRespond(new Response(new ResponseOptions({
-//        body:false
-//          })));
-//    });
-//    service. updateFarmerAddress('1234567890',mockFarmerAddress).subscribe(status=>{
-//     expect(status).not.toEqual(true);
-//    });
-//  })));
 
 });
