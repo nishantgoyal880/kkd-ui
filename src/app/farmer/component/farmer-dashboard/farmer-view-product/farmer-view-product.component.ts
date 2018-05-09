@@ -15,6 +15,7 @@ export class FarmerViewProductComponent implements OnInit {
 
   public role: any;
   public id: any;
+  public p : any;
 
   constructor(private farmerViewProductService: FarmerViewProductService, private idRoleService: IdRoleService) {
 
@@ -31,25 +32,22 @@ export class FarmerViewProductComponent implements OnInit {
   public productName: any;
   public available: any;
   public cities: any = [];
-  productSubmission;
+  public productSubmission : any;
+
+  ngOnInit() {
+      this.getProducts();
+  }
 
   // calling service to get all products of a particular farmer
   public getProducts() {
-    console.log("hereeeee");
 
-    this.idRoleService.role.subscribe((role) => {
-      this.role = role;
-      console.log("role in view product ts: " + this.role);
-    })
-
-    this.idRoleService.id.subscribe((id) => {
-      this.id = id;
-      console.log("id in view product ts: " + this.id);
-      this.farmerViewProductService.getAllProducts(this.id).subscribe((res) => {
-        this.products = res;
-      }, error => this.handleError(error))
-    })
-
+    // Getting Farmer id from local Storage
+    this.id = localStorage.getItem("id");
+    
+    console.log("id in view product ts: " + this.id);
+    this.farmerViewProductService.getAllProducts(this.id).subscribe((res) => {
+      this.products = res;
+    }, error => this.handleError(error));
 
   }
 
@@ -130,12 +128,6 @@ export class FarmerViewProductComponent implements OnInit {
         text: 'Something went wrong!',
       })
     });
-  }
-
-  ngOnInit() {
-
-
-    this.getProducts();
   }
 
   // Handling errors

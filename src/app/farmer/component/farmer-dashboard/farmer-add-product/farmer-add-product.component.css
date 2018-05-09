@@ -4,15 +4,12 @@ form{
 }
 
 h1 {
-    font-weight: normal;
-    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
-    color: #4b5320;
-    font-size: 50px;
+    color: #28a745;
     line-height: 42px;
-    text-shadow: 0 2px white, 0 3px #777;
     }
 
 .jumbotron{
@@ -74,11 +71,6 @@ button{
     margin-bottom: 20px;
 }
 
-button:hover {
-    background-color: #c1ed23 !important;
-    
-}
-
 button:focus{
     border-color : #f9f9f9 !important;
 }
@@ -87,4 +79,13 @@ button:focus{
     background-color: #f9f9f9;
     width : 600px;
     margin : auto;
+}
+
+.add-prod{
+    margin-top: 4rem;
+}
+#bgimg{
+    background-image: url(../../../../../assets/images/backg4.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
 }

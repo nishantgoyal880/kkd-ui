@@ -32,7 +32,7 @@ export class FarmerLoginComponent implements OnInit {
 
 	/*
 	*to be called when farmer click login button
-	*their credentials will be taken and are verified, it they are valid then token ,id and role is returned, token is stored in local storage 
+	*their credentials will be taken and are verified, it they are valid then token ,id and role is returned, token is stored in local storage
 	*id and role is stored in a common service
 	*but if the credentials are not correct a swal will be opened saying invalid credentials
 	*/
@@ -48,6 +48,7 @@ export class FarmerLoginComponent implements OnInit {
 			//in case of response
 			//storing token in local storage
 			localStorage.setItem("token",res.results.token);
+			localStorage.setItem("id",res.results.kkdFarmId);
 			//passing id and role to the service and emmiting a log in event which will be used in the header
 			this.idRoleService.id.emit(res.results.kkdFarmId);
 			this.idRoleService.role.emit(res.results.role);

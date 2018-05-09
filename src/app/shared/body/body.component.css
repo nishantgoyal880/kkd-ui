@@ -2,7 +2,6 @@ h2 {
 	color: #333;
 	text-align: center;
 	text-transform: uppercase;
-	font-family: Roboto;
 	font-weight: 400;
 	position: relative;
 	margin: 60px 0 60px;
@@ -160,7 +159,6 @@ h6.w3l-style {
   color: #fff;
   font-weight: 600;
   letter-spacing: 1px;
-  font-family: 'Rasa', serif;
   line-height: 1;
 }
 .stats-info-agile p {
@@ -174,3 +172,17 @@ h6.w3l-style {
   text-align: center;
 }
  /*-- about --*/
+
+ #about{
+   margin-top: -4rem;
+ }
+
+ #welcome_card{
+  width: 80%; 
+  margin: auto;
+  margin-top: 5rem;
+ }
+
+ #numscroller{
+   overflow: hidden;
+ }

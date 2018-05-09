@@ -1,28 +1,23 @@
 <div class="container mt-100">
   <div class="row">
-    <div class="col-md-10">
-      <form class="form-inline mt-2 mt-md-0" style="margin-left: 13.9rem">
-        <input class="form-control  searchText" type="text" name="q" placeholder="{{ 'products.search' | translate }}" [(ngModel)]="searchInput" />
+    <div class="col-sm-12 col-md-10">
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control  searchText" type="text" name="q" placeholder="{{ 'products.search' | translate }}" [(ngModel)]="searchInput"
+        />
         <button class="btn btn-outline-primary my-2 my-sm-0 ml-1" type="submit" (click)='searchProduct()'>
           <i class="fa fa-search"></i>
         </button>
       </form>
     </div>
-    <div class="col-md-2">
-        <div class="dropdown ">
-        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false" style="margin-left: 4.5rem">
-        {{ 'products.sort_by_relevance' | translate }}
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" (click)="sortBy('priceLH')">{{ 'products.price_low_to_high' | translate }}</a>
-          <a class="dropdown-item" (click)="sortBy('priceHL')">{{ 'products.price_high_to_low' | translate }}</a>
-          <a class="dropdown-item" (click)="sortBy('quantityLH')">{{ 'products.quantity_low_to_high' | translate }}</a>
-          <a class="dropdown-item" (click)="sortBy('quantityHL')">{{ 'products.quantity_high_to_low' | translate }}</a>
-          <a class="dropdown-item" (click)="sortBy('distance')">{{ 'products.distance' | translate }}</a>
-          <a class="dropdown-item" (click)="sortBy('popularity')">{{ 'products.popular' | translate }}</a>
-        </div>
-      </div>
+    <div class="col-sm-12 col-md-2">
+      <label class="text-heading">
+        <select class="btn btn-success select-btn">
+          <option class="btn btn-light select-btn" (click)="sortBy('priceLH')">{{ 'products.price_low_to_high' | translate }}</option>
+          <option class="btn btn-light select-btn" (click)="sortBy('priceHL')">{{ 'products.price_high_to_low' | translate }}</option>
+          <option class="btn btn-light select-btn" (click)="sortBy('quantityLH')">{{ 'products.quantity_low_to_high' | translate }}</option>
+          <option class="btn btn-light select-btn" (click)="sortBy('quantityHL')">{{ 'products.quantity_high_to_low' | translate }}</option>
+        </select>
+      </label>
     </div>
   </div>
 </div>
@@ -35,7 +30,7 @@
       <label class="my-3">
         <span>{{ 'products.filter_by_price' | translate }}</span>
       </label>
-      <ion-range-slider style="color:white" #sliderElement type="double" min="0" [max]=max_price [to_max]=max_price prefix="{{ 'products.price' | translate }}:"
+      <ion-range-slider #sliderElement type="double" min="0" [max]=max_price [to]=max_price prefix="{{ 'products.price' | translate }}:"
         postfix=" Rs" keyboard:true (onFinish)="myOnFinishPrice($event)">
       </ion-range-slider>
       <!-- filtered by price end-->
@@ -43,19 +38,19 @@
       <label class="my-3">
         <span>{{ 'products.search' | translate }}</span>
       </label>
-      <ion-range-slider #sliderElement type="double" min="0" [max]=max_quantity [to_max]=max_quantity prefix="{{ 'products.quantity' | translate }}:" postfix=" Kg"
-        (onFinish)="myOnFinishQuantity($event)">
+      <ion-range-slider #sliderElement type="double" min="0" [max]=max_quantity [to]=max_quantity prefix="{{ 'products.quantity' | translate }}:"
+        postfix=" Kg" (onFinish)="myOnFinishQuantity($event)">
       </ion-range-slider>
       <!-- filtered by Quantity end-->
     </div>
-    
+
     <!-- end of side bar-->
     <div *ngIf="products[0]; then prod else empty"></div>
     <ng-template #prod>
       <div class="col-md-10">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 col-lg-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">
+            <div class="col-md-6 col-lg-4" *ngFor="let item of products | paginate:{itemsPerPage:productsToShowInOnePage,currentPage:p}">
               <div class="card shadow p-2 mb-3">
                 <!-- Card image -->
                 <div class="view overlay zoom">
@@ -79,7 +74,7 @@
                       <b>{{ 'products.quantity' | translate }}:</b>{{item.quantity}} Kg</p>
                   </div>
                   <hr>
-                  <span>
+                  <span *ngIf="role=='Customer'">
                     <button type="button" class="btn btn-success mt-4" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1">{{ 'products.add_to_bag' | translate }} </button>
                   </span>
                 </div>
@@ -88,12 +83,12 @@
           </div>
         </div>
         <!-- end of search results-->
-        <pagination-controls (pageChange)="p=$event" *ngIf="products[0]"></pagination-controls>
+        <pagination-controls *ngIf="products.length>productsToShowInOnePage" (pageChange)="p=$event"></pagination-controls>
       </div>
     </ng-template>
     <ng-template #empty>
-      <div class="col-md-9">
-        <img src="./../../../../assets/images/not-found.png" alt="no products found">
+      <div class="col-md-9 col-sm-12">
+        <img src="./../../../../assets/images/not-found.png" alt="no products found" class="emptyList">
       </div>
     </ng-template>
   </div>

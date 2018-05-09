@@ -26,7 +26,7 @@ export class FarmerViewProductService {
   //deleting a particular product from database service
   public deleteParticularProduct(id : any) {
       return this.http.delete(viewProductServiceUrl.Url+id,this.authorization())
-      .map(data => data.status,
+      .map(data => data.json(),
         error => this.handleError(error)
       )
   }

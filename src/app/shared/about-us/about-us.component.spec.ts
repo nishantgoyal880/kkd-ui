@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AboutUsComponent } from './about-us.component';
 
-fdescribe('AboutUsComponent', () => {
+describe('AboutUsComponent', () => {
   let component: AboutUsComponent;
   let fixture: ComponentFixture<AboutUsComponent>;
   let debug: DebugElement;

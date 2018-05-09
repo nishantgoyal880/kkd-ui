@@ -1,101 +1,102 @@
-<div *ngIf="!hideVar" class="mt-100">
-		<h1>{{ 'customer_register.register_customer' | translate }}</h1>
+<div id="bgimg" style="margin-top: 5.4rem; padding-bottom: 3rem">
+<div *ngIf="!hideVar" style="padding-top: 1.7rem">
+	<h1>{{ 'customer_register.register_customer' | translate }}</h1>
 	<div class="container-fluid">
 		<div class="card shadow cardwidth">
 			<div class="card-body">
 				<form [formGroup]="rForm" (ngSubmit)="sendOtp(rForm.value)">
 					<div class="form-group">
-							<div class = "form-comp-top">
-									<div class = "name"><label for="exampleInputName1">{{ 'customer_register.first_name' | translate }}*</label></div>
-						<input class="form-control" type="text" id="FirstName" formControlName="firstName" placeholder="{{ 'customer_register.first_name' | translate }}">
-						<div *ngIf="rForm.controls['firstName'].touched && rForm.controls['firstName'].invalid" class="alert">
-							<div *ngIf="rForm.controls['firstName'].hasError('minlength')" >
-								{{ 'customer_register.less_than_3_digits' | translate }}
+						<div class = "form-comp-top">
+							<div class = "name"><label for="exampleInputName1">{{ 'customer_register.first_name' | translate }}*</label></div>
+							<input class="form-control" type="text" id="FirstName" formControlName="firstName" placeholder="{{ 'customer_register.first_name' | translate }}">
+							<div *ngIf="rForm.controls['firstName'].touched && rForm.controls['firstName'].invalid" class="alert">
+								<div *ngIf="rForm.controls['firstName'].hasError('minlength')" >
+									{{ 'customer_register.less_than_3_digits' | translate }}
+								</div>
+								<div *ngIf="rForm.controls['firstName'].hasError('required')">
+									{{ 'customer_register.first_name_is_required' | translate }}
+								</div>
 							</div>
-							<div *ngIf="rForm.controls['firstName'].hasError('required')">
-								{{ 'customer_register.first_name_is_required' | translate }}
-							</div>
-						</div>
 						</div>
 						<div class = "form-comp">
-						<label for="exampleInputName2">{{ 'customer_register.last_name' | translate }}</label>
-						<input class="form-control" type="text" id="LastName" placeholder="{{ 'customer_register.last_name' | translate }}">
+							<label for="exampleInputName2">{{ 'customer_register.last_name' | translate }}</label>
+							<input class="form-control" type="text" id="LastName" placeholder="{{ 'customer_register.last_name' | translate }}">
 						</div>
 						<div class = "form-comp">
 
-								<div class = "name"><label for="exampleInputEmail1">{{ 'customer_register.mobile_number' | translate }}*</label></div>
-						<input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="{{ 'customer_register.mobile_number' | translate }}">
-						<div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
-							<div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
-								{{ 'customer_register.less_than_10_digits' | translate }}
-							</div>
-							<div *ngIf="rForm.controls['mobileNo'].hasError('maxlength')">
-								{{ 'customer_register.more_than_10_digits' | translate }}
-							</div>
-							<div *ngIf="rForm.controls['mobileNo'].hasError('required')">
-								{{ 'customer_register.mobile_number_is_required' | translate }}
-							</div>
-						</div>
-						</div>
-						<div class = "form-comp">
-								<div class = "name"><label for="exampleInputPassword1">Password{{ 'customer_register.password' | translate }}*</label></div>
-						<input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="{{ 'customer_register.password' | translate }}">
-						<div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
-							<div *ngIf="rForm.controls['password'].hasError('minlength')" >
-								{{ 'customer_register.less_than_6_digits' | translate }}
-							</div>
-							<div *ngIf="rForm.controls['password'].hasError('maxlength')">
-								{{ 'customer_register.more_than_12_digits' | translate }}
-							</div>
-							<div *ngIf="rForm.controls['password'].hasError('pattern')">
-								(Atleast one lowercase, uppercase, specialcharacter, digit, minLength 6) !
-								{{ 'customer_register.password_invalid' | translate }}
-							</div>
-							<div *ngIf="rForm.controls['password'].hasError('required')">
-								{{ 'customer_register.password_is_required' | translate }}
-							</div>
+							<div class = "name"><label for="exampleInputEmail1">{{ 'customer_register.mobile_number' | translate }}*</label></div>
+							<input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="{{ 'customer_register.mobile_number' | translate }}">
+							<div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
+								<div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
+									{{ 'customer_register.less_than_10_digits' | translate }}
+								</div>
+								<div *ngIf="rForm.controls['mobileNo'].hasError('maxlength')">
+									{{ 'customer_register.more_than_10_digits' | translate }}
+								</div>
+								<div *ngIf="rForm.controls['mobileNo'].hasError('required')">
+									{{ 'customer_register.mobile_number_is_required' | translate }}
+								</div>
 							</div>
 						</div>
 						<div class = "form-comp">
-								<div class = "name">	<label>{{ 'customer_register.Re_enter_Password' | translate }}*</label></div>
-						<input type="password" formControlName="confirmPassword" class="form-control" placeholder="{{ 'customer_register.Re_enter_Password' | translate }}">
-						<div *ngIf="rForm.controls['confirmPassword'].touched && rForm.controls['confirmPassword'].errors">
-							<div class="alert"  *ngIf="rForm.controls['confirmPassword'].hasError('required')">
-								{{ 'customer_register.password_is_required' | translate }}
-							</div>
-							<div class="alert" *ngIf="rForm.controls['confirmPassword'].errors.notEquivalent">{{ 'customer_register.password_match' | translate }}
+							<div class = "name"><label for="exampleInputPassword1">{{ 'customer_register.password' | translate }}*</label></div>
+							<input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="{{ 'customer_register.password' | translate }}">
+							<div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
+								<div *ngIf="rForm.controls['password'].hasError('minlength')" >
+									{{ 'customer_register.less_than_6_digits' | translate }}
+								</div>
+								<div *ngIf="rForm.controls['password'].hasError('maxlength')">
+									{{ 'customer_register.more_than_12_digits' | translate }}
+								</div>
+								<div *ngIf="rForm.controls['password'].hasError('pattern')">
+									{{ 'customer_register.password_invalid' | translate }}
+								</div>
+								<div *ngIf="rForm.controls['password'].hasError('required')">
+									{{ 'customer_register.password_is_required' | translate }}
+								</div>
 							</div>
 						</div>
+						<div class = "form-comp">
+							<div class = "name">	<label>{{ 'customer_register.Re_enter_Password' | translate }}*</label></div>
+							<input type="password" formControlName="confirmPassword" class="form-control" placeholder="{{ 'customer_register.Re_enter_Password' | translate }}">
+							<div *ngIf="rForm.controls['confirmPassword'].touched && rForm.controls['confirmPassword'].errors">
+								<div class="alert"  *ngIf="rForm.controls['confirmPassword'].hasError('required')">
+									{{ 'customer_register.password_is_required' | translate }}
+								</div>
+								<div class="alert" *ngIf="rForm.controls['confirmPassword'].errors.notEquivalent">{{ 'customer_register.password_match' | translate }}
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class = form-comp-button>
-					<button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'customer_register.send_otp' | translate }}</button>
+						<button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'customer_register.send_otp' | translate }}</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
-<div *ngIf="hideVar" class="mt-100">
-		<h1>{{ 'customer_register.verify_otp_to_register_customer' | translate }}</h1>
+<div *ngIf="hideVar" style="padding-top: 1.7rem">
+	<h1>{{ 'customer_register.verify_otp_to_register_customer' | translate }}</h1>
 	<div class="container-fluid">
 		<div class="card shadow cardwidth">
 			<div class="card-body">
 				<form [formGroup]="otpForm" (ngSubmit)="verifyOtp(otpForm.value)">
 					<div class="form-group">
-							<div class = "form-comp-top">
+						<div class = "form-comp-top">
 							<div class = "name"><label for="exampleInputEmail1">{{ 'customer_register.enter_otp' | translate }}</label></div>
-						<input class="form-control" type="text" id="otp" formControlName="otp">
-						<div class="alert" *ngIf=" otpForm.controls['otp'].touched && otpForm.controls['otp'].hasError('required')">
-							{{ 'customer_register.otp_is_required' | translate }}
+							<input class="form-control" type="text" id="otp" formControlName="otp">
+							<div class="alert" *ngIf=" otpForm.controls['otp'].touched && otpForm.controls['otp'].hasError('required')">
+								{{ 'customer_register.otp_is_required' | translate }}
+							</div>
 						</div>
 					</div>
-					</div>
 					<div class = "form-comp-button">
-					<button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!otpForm.valid">{{ 'customer_register.verify_otp' | translate }}</button>
+						<button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!otpForm.valid">{{ 'customer_register.verify_otp' | translate }}</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+</div>
 </div>

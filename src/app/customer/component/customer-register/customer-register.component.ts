@@ -12,26 +12,30 @@ import { IdRoleService } from '../../../services/id-role/id-role.service'
 	providers:[ RegistrationLoginService ]
 })
 export class CustomerRegisterComponent implements OnInit {
-
-
+	//declaring a form group
 	rForm: FormGroup;
+	//variable to store form data
 	post:any;
-	mobileNo:String;
-	password:String;
-	confirmPassword:String;
+	//variable to hide and display the elements
 	hideVar:boolean=false;
-	customerToRegister;
+	//variable to store
+	customerToRegister:any;
+	//declaring an otp form group
 	otpForm: FormGroup;
-	select : any=0;
-
-	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router,private idRoleService: IdRoleService) {
+	//variable to store mobile number
+	mobileNo:String;
+	constructor(private registrationService: RegistrationLoginService,
+		private fb: FormBuilder,
+		public router: Router,
+		private idRoleService: IdRoleService) {
+		//making a form group with fileds firstname, mobileno, password, confirmpassword
 		this.rForm = fb.group({
 			'firstName':[null, Validators.compose([Validators.required, Validators.minLength(3)])],
 			'mobileNo': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
 			'password': [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12), Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$")])],
 			'confirmPassword' : ['',[Validators.required]],
 		},{validator: this.checkIfMatchingPasswords});
-
+		//making a form group with fileds otp
 		this.otpForm = fb.group({
 			'otp' : [null, Validators.required],
 		});
@@ -39,7 +43,7 @@ export class CustomerRegisterComponent implements OnInit {
 
 	ngOnInit() {
 	}
-
+	//function to check password and confirm password
 	checkIfMatchingPasswords(group: FormGroup) {
 		let passwordField= group.controls.password,
 		confirmPasswordField = group.controls.confirmPassword;
@@ -49,9 +53,8 @@ export class CustomerRegisterComponent implements OnInit {
 			return confirmPasswordField.setErrors(null);
 		}
 	}
-
+	//function to send otp
 	sendOtp(post) {
-
 		this.customerToRegister={
 			'mobileNo':post.mobileNo,
 			'password':post.password,
@@ -68,8 +71,9 @@ export class CustomerRegisterComponent implements OnInit {
 		})
 	}
 
+	//function to verify the otp
 	verifyOtp(post) {
-
+		//creating json data to be send to the verify otp sevice
 		var otpData={
 			'mobileNo':this.mobileNo,
 			'otp':post.otp
@@ -80,11 +84,13 @@ export class CustomerRegisterComponent implements OnInit {
 				//save customer details to db
 				this.registrationService.addCustomer(this.customerToRegister).subscribe((res) =>{
 					localStorage.setItem("token",res.results.token);
+					localStorage.setItem("id",res.results.kkdCustId);
 					this.idRoleService.id.emit(res.results.kkdCustId);
 					this.idRoleService.role.emit(res.results.role);
 					this.idRoleService.isLoggedIn.emit(true);
-					this.router.navigate(['customer/homePage']);
+					this.router.navigate(['productList']);
 				}, (err) =>{
+					//if customer is already registered
 					swal({
 						type: 'error',
 						title: 'Oops...',
@@ -95,6 +101,7 @@ export class CustomerRegisterComponent implements OnInit {
 			}
 			else{
 				swal({
+					//if otp is wrong
 					type: 'error',
 					title: 'Oops...',
 					text: 'Wrong OTP!',
@@ -103,6 +110,7 @@ export class CustomerRegisterComponent implements OnInit {
 			}
 		}, (err) =>{
 			swal({
+				//if server is down
 				type: 'error',
 				title: 'Oops...',
 				text: 'Server Down!',

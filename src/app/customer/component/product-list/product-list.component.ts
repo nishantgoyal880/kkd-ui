@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SearchService } from "../../services/search.service";
 import { IdRoleService } from '../../../services/id-role/id-role.service'
+import { SearchConfig } from '../../config/search.config'
 import swal from 'sweetalert2'
 @Component({
   selector: "app-product-list",
@@ -18,15 +19,11 @@ export class ProductListComponent implements OnInit {
   public role:string;
   public loggedIn:boolean;
   public userId:string;
+  public productsToShowInOnePage:number;
 
   constructor(private searchService: SearchService, private idRoleService: IdRoleService) {
-    this.idRoleService.role.subscribe((role) =>{
-      this.role=role;
-   })
-   this.idRoleService.id.subscribe((id) =>{
-     this.userId=id;
-   })
-   console.log(localStorage.getItem("token"));
+    this.productsToShowInOnePage=SearchConfig.productsToShowInOnePage;
+   
   }
 
   ngOnInit() {
@@ -37,6 +34,14 @@ export class ProductListComponent implements OnInit {
       },
       err => console.log(err)
     );
+    this.userId=localStorage.getItem("id");
+    if(this.userId){
+      if(this.userId.search("CUST")){
+        this.role="Customer";
+        this.loggedIn=true;
+      }
+      
+    }
   }
 
   calculatingMax() {
@@ -55,13 +60,6 @@ export class ProductListComponent implements OnInit {
     },
     byQuantity: function(firstProduct, secondProduct) {
       return firstProduct.quantity - secondProduct.quantity;
-    },
-    byDistance: function(firstProduct, secondProduct) {
-      return firstProduct.distance - secondProduct.distance;
-    },
-    byPopularity: function(firstProduct, secondProduct) {
-      // in reverse order by default
-      return secondProduct.avgRating - firstProduct.avgRating;
     }
   };
 
@@ -82,15 +80,6 @@ export class ProductListComponent implements OnInit {
 
       case "quantityHL":
         this.products.sort(this.sorters.byQuantity);
-        this.products.reverse();
-        break;
-
-      case "distance":
-        this.products.sort(this.sorters.byDistance);
-        break;
-
-      case "popularity":
-        this.products.sort(this.sorters.byPopularity);
         this.products.reverse();
         break;
     }
@@ -132,7 +121,7 @@ export class ProductListComponent implements OnInit {
   addToCart(item) {
     this.cartItem = {
       productId: item.productId,
-      custId: "KKDCUST1000",
+      custId: this.userId,
       kkdFarmID: item.kkdFarmId,
       productName: item.productName,
       productPrice: item.price,

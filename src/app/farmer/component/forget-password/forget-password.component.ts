@@ -134,8 +134,9 @@ export class ForgetPasswordComponent implements OnInit {
 				showConfirmButton: false,
 				timer: 1000
 			})
-			//storing the token in the locql storage
+			//storing the token in the local storage
 			localStorage.setItem("token",res.results.token);
+			localStorage.setItem("id",res.results.kkdFarmId);
 			//passing id and role to the service and emmiting a log in event which will be used in the header
 			this.idRoleService.id.emit(res.results.kkdFarmId);
 			this.idRoleService.role.emit(res.results.role);

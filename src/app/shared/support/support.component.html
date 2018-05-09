@@ -1,4 +1,5 @@
-<div class="mt-100">
+<div id="bgimg" style="margin-top: 5.4rem; padding-bottom: 3rem">
+<div style="padding-top: 1.7rem">
   <h1> {{ 'support.support' | translate }} </h1>
 </div>
 <form [formGroup]="rForm" (ngSubmit)="submitIssue(rForm.value)">
@@ -10,10 +11,11 @@
         <div class="name">
           <label for="issueTitle">{{ 'support.issue_title' | translate }}</label>
         </div>
-        <input type="text" class="form-control" id="issueTitle" placeholder="{{ 'support.issue_title' | translate }}" formControlName="issueTitle">
+
+        <input type="text" class="form-control" id="issueTitle" placeholder='{{ "support.issue_title" | translate }}' formControlName="issueTitle">
         <div *ngIf="rForm.controls['issueTitle'].touched && rForm.controls['issueTitle'].invalid" class="alert">
           <div *ngIf="rForm.controls['issueTitle'].hasError('required')">
-              {{ 'support.title_is_required' | translate }}
+           {{ 'support.title_is_required' | translate }}
           </div>
         </div>
       </div>
@@ -56,3 +58,4 @@
     </div>
   </div>
 </form>
+</div>

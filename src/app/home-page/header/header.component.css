@@ -15,25 +15,18 @@ a{
 }
 
 @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child), .dropdown .dropbtn {
-      display: none;
-    }
     .topnav a.icon {
       float: right;
       display: block;
     }
-    .col-sm-12 li{
-        display: inline;
+    ul{
+      display: block;
     }
   }
 
-  .col-sm-12 li{
-    display: inline;
-}
-
   @media screen and (max-width: 600px) {
     .topnav.responsive {position: relative;}
-    .topnav.responsive .icon {
+    .topnav.responsive .icon { 
       position: absolute;
       right: 0;
       top: 0;
@@ -68,4 +61,22 @@ a{
       border-bottom-color: rgb(53, 160, 65);
       border-left-color: rgb(53, 160, 65);
   border-radius: .25rem;
+}
+.footer-bottom { background: #28a745; text-align: left; color: #fff; height: 2rem;}
+
+#top-nav { background: #28a745; backface-visibility: hidden}
+
+#location{
+  margin-top:-.4rem;
+  color: #fff;
+  margin-left:2rem; 
+}
+
+#lang-drop{
+  margin-top: -.2rem;
+  margin-right:2rem; 
+}
+
+#lang-div{
+  text-align: end;
 }

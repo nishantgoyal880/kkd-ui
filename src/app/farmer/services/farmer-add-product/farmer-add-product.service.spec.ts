@@ -20,7 +20,7 @@ import {
 import {ResponseOptions} from '@angular/http';
 
 
-fdescribe('FarmerAddProductService', () => {
+describe('FarmerAddProductService', () => {
   let mockBackend: MockBackend;
   let productDetails: any;
 
