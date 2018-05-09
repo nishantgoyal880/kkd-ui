@@ -31,6 +31,7 @@
         <app-customer-address-book></app-customer-address-book>
   </div>
   <div class="tab-pane change-password" id="settings" role="tabpanel">
+      <div id="bgimg" style="padding-top: 3rem; padding-bottom: 3rem">
         <h1> {{ 'customer_my_account.change_password' | translate }} </h1>
 
         <form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
@@ -83,9 +84,11 @@
 
                         <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">{{ 'customer_my_account.submit' | translate }}</button>
                      </div></div></form>
+</div>
   </div>
 
         <div class="tab-pane change-password" id="settings1" role="tabpanel">
+            <div id="bgimg" style="padding-top: 5.4rem; padding-bottom: 3rem">
                 <h1> {{ 'customer_my_account.delete_profile' | translate }} </h1>
 
                 <form [formGroup]="rFormDeleteProfile" (ngSubmit)="deleteUser(rFormDeleteProfile.value)">
@@ -117,5 +120,6 @@
 
                         <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rFormDeleteProfile.valid">{{ 'customer_my_account.submit' | translate }}</button>
                      </div></div></form>
+                     </div>
         </div>
 </div></div>

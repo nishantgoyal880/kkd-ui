@@ -15,16 +15,15 @@ export class CustomerCurrentOrderComponent implements OnInit {
    }
   
   ngOnInit() {
-
+//getting customer id of the actively logged in customer
       this.customerId=localStorage.getItem("id");
       this.getdata();
-   
-    }
+   }
     
-  getdata(){
-    
+  //function to retreive the current orders of the customer
+    getdata(){
+     //calling the service to retreive the current orders 
     this.customerAuthenticationService.getCurrentOrders(this.customerId).subscribe(results=>{
-          
           if(results == null){
             swal({
               type: 'error',
@@ -40,7 +39,6 @@ export class CustomerCurrentOrderComponent implements OnInit {
             text: 'Something went wrong!',
           })
         });
-        
-      }
+        }
     }
   

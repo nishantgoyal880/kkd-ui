@@ -16,14 +16,14 @@ export class CustomerPreviousOrderComponent implements OnInit {
   constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
 
   ngOnInit() {
-   
+   //getting customer id of the actively logged in customer
       this.customerId=localStorage.getItem("id");
       this.getdata();
-   
    }
    
+  //function to retreive the previous orders of the customer 
    getdata(){
-    
+  //calling the service to retreive the previous orders 
     this.customerAuthenticationService.getPreviousOrders(this.customerId).subscribe(results=>{
         if(results == null){
          swal({
