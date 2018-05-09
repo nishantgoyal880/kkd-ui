@@ -10,8 +10,7 @@ import { IdRoleService } from '../../../services/id-role/id-role.service';
 })
 export class FarmerMyAccountComponent implements OnInit {
    public farmerInfo:object;
-   constructor(private farmerDetailsService : FarmerDetailsService,
-    private idRoleService: IdRoleService) {
+   constructor(private farmerDetailsService : FarmerDetailsService) {
     }
 
  // farmer details are fetched on ngOnInit
