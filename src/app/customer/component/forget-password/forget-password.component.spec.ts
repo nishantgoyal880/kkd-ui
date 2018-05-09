@@ -95,8 +95,8 @@ describe('ForgetPasswordComponent', () => {
   }));
 
   it('newPassword form should be valid', async(() => {
-    component.newPasswordForm.controls['password'].setValue('Qwerty');
-    component.newPasswordForm.controls['confirmPassword'].setValue('Qwerty');
+    component.newPasswordForm.controls['password'].setValue('Qwerty@123');
+    component.newPasswordForm.controls['confirmPassword'].setValue('Qwerty@123');
     expect(component.newPasswordForm.valid).toBeTruthy();
   }));
 

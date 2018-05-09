@@ -48,10 +48,4 @@ describe('FarmerMyAccountComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call the searchFarmer method', async(() => {
-    fixture.detectChanges();
-    spyOn(component,'searchFarmer');
-    expect(component.searchFarmer).toHaveBeenCalledTimes(0);
-  }));
-
 });
