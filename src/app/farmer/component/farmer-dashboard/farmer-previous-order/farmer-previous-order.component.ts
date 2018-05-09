@@ -18,8 +18,6 @@ export class FarmerPreviousOrderComponent implements OnInit {
   public p:any;
 
   ngOnInit() {
-
-
        //code to get the list of orders according to farmer id
        this.orderService.getPreviousOrderListFromFarmerId(localStorage.getItem("id")).subscribe((res) =>{
          this.orderList = res;

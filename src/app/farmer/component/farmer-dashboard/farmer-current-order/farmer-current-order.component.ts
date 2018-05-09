@@ -37,7 +37,6 @@ export class FarmerCurrentOrderComponent implements OnInit {
     //code to get the list of orders according to farmer id
     this.orderService.getCurrentOrderListFromFarmerId(localStorage.getItem("id")).subscribe((res) =>{
     this.orderList = res;
-    console.log(res);
   }, (error) =>{})
   }
 
@@ -82,7 +81,6 @@ export class FarmerCurrentOrderComponent implements OnInit {
 
   //checking OTP For order delivery
   public checkingOtp(){
-  console.log(this.otpAuto+" "+this.otp);
     if(this.otpAuto==this.otp){
       this.otpVerified=true;
     }else{
@@ -93,12 +91,10 @@ export class FarmerCurrentOrderComponent implements OnInit {
   //Rating the customer
   public rateCustomer(){
     this.otpStatus();
-    console.log(this.avgRating);
   }
 
   //Updating the Otp Status
   public otpStatus(){
-    console.log(this.otpVerified);
     var updatedDelivery={
       'orderId':this.orderId,
       'orderStatus':"Delivered",
