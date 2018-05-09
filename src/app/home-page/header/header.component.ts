@@ -38,6 +38,7 @@ export class HeaderComponent implements OnInit {
    this.loggedIn=false;
    this.idRoleService.isLoggedIn.emit(false);
    localStorage.removeItem("token");
+   localStorage.removeItem("id");
  }
 
  changeCity() {
@@ -54,5 +55,3 @@ export class HeaderComponent implements OnInit {
  }
 
 }
-
-

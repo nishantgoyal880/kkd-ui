@@ -23,6 +23,8 @@ export class FarmerCurrentOrderComponent implements OnInit {
   public avgRating:any;
   public farmerId:any;
   public p:any;
+  public starList: boolean[] = [true,true,true,true,true];       // create a list which contains status of 5 stars
+  public rating:number;
 
 
   ngOnInit() {
@@ -37,7 +39,6 @@ export class FarmerCurrentOrderComponent implements OnInit {
     //code to get the list of orders according to farmer id
     this.orderService.getCurrentOrderListFromFarmerId(localStorage.getItem("id")).subscribe((res) =>{
     this.orderList = res;
-    console.log(res);
   }, (error) =>{})
   }
 
@@ -82,7 +83,6 @@ export class FarmerCurrentOrderComponent implements OnInit {
 
   //checking OTP For order delivery
   public checkingOtp(){
-  console.log(this.otpAuto+" "+this.otp);
     if(this.otpAuto==this.otp){
       this.otpVerified=true;
     }else{
@@ -93,12 +93,10 @@ export class FarmerCurrentOrderComponent implements OnInit {
   //Rating the customer
   public rateCustomer(){
     this.otpStatus();
-    console.log(this.avgRating);
   }
 
   //Updating the Otp Status
   public otpStatus(){
-    console.log(this.otpVerified);
     var updatedDelivery={
       'orderId':this.orderId,
       'orderStatus':"Delivered",
@@ -111,5 +109,20 @@ export class FarmerCurrentOrderComponent implements OnInit {
       this.loadData();
     })
   }
+
+  //Create a function which receives the value counting of stars click,
+  //and according to that value we do change the value of that star in list.
+  setStar(data:any){
+      this.rating=data+1;
+      for(var i=0;i<=4;i++){
+        if(i<=data){
+          this.starList[i]=false;
+        }
+        else{
+          this.starList[i]=true;
+        }
+     }
+ }
+
 
 }
