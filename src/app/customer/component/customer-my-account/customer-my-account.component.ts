@@ -75,6 +75,7 @@ this.rFormDeleteProfile = fb.group({
 
   ngOnInit() {}
   
+  //function to perform change password operation
   onSubmit(post){
   this.mobileNumber=post.mobileNumber;
   this.currentPassword=post.currentPassword;
@@ -167,13 +168,16 @@ this.rFormDeleteProfile = fb.group({
     }
   }
   
-deleteUser(post){
+//function to perform delete profile operation
+  deleteUser(post){
     this.mobileNumberDeleteProfile=post.mobileNumberDeleteProfile;
     this.currentPasswordDeleteProfile=post.currentPasswordDeleteProfile;
+    //checking whether the mobile number is of 10 digits 
     if(!(isNaN(+this.mobileNumberDeleteProfile)) && this.mobileNumberDeleteProfile.length==10 ){
     if(this.currentPasswordDeleteProfile.length){
       this.userDetailsDelete.mobileNo=this.mobileNumberDeleteProfile;
       this.userDetailsDelete.password = this.currentPasswordDeleteProfile;
+    //calling service to perform delete profile  operation using the customer mobile number 
       this.customerAuthenticationService.deleteProfile(this.userDetailsDelete)
             .subscribe((status) =>{
               if(!(status == null)){
