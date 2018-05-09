@@ -22,6 +22,10 @@ export class FarmerMyAccountComponent implements OnInit {
    public farmerState: string;
    public farmerPrimary: boolean;
    public farmerMobileNumber : string;
+   public accountName:string;
+   public accountNo:string;
+   public ifscCode:string;
+   public alternateNo:string;
 
    constructor(private farmerDetailsService : FarmerDetailsService,
     private idRoleService: IdRoleService) {
@@ -45,7 +49,6 @@ export class FarmerMyAccountComponent implements OnInit {
       this.farmerPhoto=res.aadhaarData.photoUrl;
       this.farmerId=res.kkdFarmId;
       this.farmerName=res.aadhaarData.firstName;
-      this.farmerPhoto=res.aadhaarData.photoUrl;
       //getting farmer's permanent address
       this.farmerPincode=res.aadhaarData.permanentAddress.pincode;
       this.farmerAddressLine=res.aadhaarData.permanentAddress.addressLine;
@@ -55,6 +58,12 @@ export class FarmerMyAccountComponent implements OnInit {
       this.farmerPrimary=res.aadhaarData.permanentAddress.primary;
       //getting farmer's mobile number
       this.farmerMobileNumber=res.mobileNo;
+      //getting bank details of farmer
+      this.accountName=res.bankDetails.accountName;
+      this.accountNo=res.bankDetails.accountNo;
+      this.ifscCode=res.bankDetails.ifscCode;
+      //getting alternate mobile number of farmer
+      this.alternateNo=res.alternateNo;
     }
      },(error) =>{
     });

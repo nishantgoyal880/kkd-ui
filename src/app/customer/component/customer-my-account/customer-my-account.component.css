@@ -1,19 +1,47 @@
-form{
-    width : 70%;
-    margin : 0 auto;
+.card{
+    background-color: #f9f9f9;
+    margin : auto;
+   
+}
+.item{
+    background-color: #f9f9f9;
+    padding-left : 5px;
+    font-size : 18px;
+}
+
+.title{
+    color : white;
+    margin-top : -30px;
+    font-style: roboto;
 }
 
 h1 {
-    font-weight: normal;
-    padding: 0.5em 20px 30px 0px;
-   
+    font-weight: 600;
+    padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
-    color: #4b5320;
-    font-size: 50px;
+    color: #28a745;
     line-height: 42px;
-    text-shadow: 0 2px white, 0 3px #777;
-    } 
+    }
+
+
+.jumbotron{
+    background-color : #a9c056;
+    margin-top : -15px;
+    height : 30px;
+    
+}
+
+.item-id{
+    background-color: #a9c056;
+    padding-left : 5px;
+    font-size : 18px;
+}
+
+form{
+    width : 90%;
+    margin : 0 auto;
+}
 
 .display-4{
     color : white;
@@ -81,12 +109,3 @@ button:focus{
     border-color : #f9f9f9 !important;
 }
 
-.card{
-    background-color: #f9f9f9;
-    width : 600px;
-    margin : auto;
-}
-
-.main-body{
-    background-color: #FFFFFF;
-}

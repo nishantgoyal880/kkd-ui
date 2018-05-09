@@ -1,5 +1,5 @@
 form{
-    width : 70%;
+    width : 90%;
     margin : 0 auto;
 }
 
@@ -12,19 +12,6 @@ h1 {
     line-height: 42px;
     }
 
-/* h1{
-    text-align : center;
-    margin: 15px 0 0.5em 0;
-    padding-top: 10px;
-    color :#d84b6b;
-    font-weight: normal;
-    font-family: 'Roboto', sans-serif;   
-    font-size: 50px;
-    line-height: 42px;
-    text-transform: uppercase;
-    text-shadow: 0 2px white, 0 3px #777;   
-} */
-
 .display-4{
     color : white;
     margin-top : -30px;
@@ -33,7 +20,7 @@ h1 {
 
 .form-group{
     font-style: roboto;
-    width : 85%;
+    width : 90%;
     margin : auto;
 }
 
@@ -88,7 +75,7 @@ button:focus{
 
 .card{
     background-color: #f9f9f9;
-    width : 70%;
+    width : 90%;
     margin : auto;
 }
 

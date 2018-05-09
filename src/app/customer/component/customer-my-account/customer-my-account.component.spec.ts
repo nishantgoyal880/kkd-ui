@@ -40,7 +40,6 @@ describe('CustomerMyAccountComponent', () => {
     fixture = TestBed.createComponent(CustomerMyAccountComponent);
     component = fixture.componentInstance;
     debug=fixture.debugElement.query(By.css('form'));
-    //el=debug.nativeElement;
     fixture.detectChanges();
   });
   it('should create', () => {

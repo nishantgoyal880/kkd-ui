@@ -64,14 +64,5 @@ export class SupportComponent implements OnInit {
 
     })
   }
-
-    // console.log(post.issueTitle);
-    // console.log(post.issueDescription);
-    // console.log(post.email);
-    // console.log(post.screenshotUrl);
-
-
-    //this.supportService.addIssue()
-
     }
 
