@@ -4,7 +4,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class=" col-3">
-                  <a class="nav-link " routerLink="#" id="location">{{ 'header.you_are_in' | translate }}
+                  <a class="nav-link" (click)="select()" data-toggle="modal" data-target="#locationModal" id="location">{{ 'header.you_are_in' | translate }}
                     <i class="fa fa-map-marker mr-1 ml-2"></i>{{city}}</a>
                   </div>
              <div class="col-9" id="lang-div">
@@ -87,4 +87,29 @@
     </div>
   </nav>
 </div>
-</header>
+</header>]
+
+<!-- Location Modal -->
+<div class="modal fade" id="locationModal" role="dialog">
+    <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id= "Modallabel">Change City</h4>
+      </div>
+      <!--         this is for body for dropdown to select city-->
+      <div class="modal-body">
+        <select class="dropdown btn btn-light dropdown-toggle mr-2 col-md-2 col-lg-4 col-sm-2" [(ngModel)]="changedCity">
+         <option *ngFor=" let changedCity of cities" value={{changedCity}}>{{changedCity}}</option>
+       </select>
+     </div>
+     <p ml-4>Your Changed City is {{changedCity}}</p>
+     <div class="modal-footer">
+      <span>
+        <button type="button" class="btn btn-default " data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-default " data-dismiss="modal" (click)="changeCity()">Save</button>
+      </span>
+    </div>
+  </div>
+  </div>
+  </div>
