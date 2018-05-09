@@ -64,8 +64,8 @@ export class AppComponent implements OnInit {
 			navigator.geolocation.getCurrentPosition((position) => {
 				this.currentLat = position.coords.latitude;
 				this.currentLong = position.coords.longitude;
-				alert("lat:" + this.currentLat);
-				alert("lon:" + this.currentLong);
+				//alert("lat:" + this.currentLat);
+				//alert("lon:" + this.currentLong);
 				this.getAddress(this.currentLat, this.currentLong)
 					.then((location) => {
 						this.city = location;
@@ -81,19 +81,20 @@ export class AppComponent implements OnInit {
 			}, (error) => {
 				switch (error.code) {
 					case error.PERMISSION_DENIED:
-						alert("User denied the request for Geolocation.");
+						console.log("User denied the request for Geolocation.");
 						break;
 					case error.POSITION_UNAVAILABLE:
-						alert("Location information is unavailable.");
+						console.log("Location information is unavailable.");
 						break;
 					case error.TIMEOUT:
 						this.city = "Gurgaon";
+						localStorage.setItem("user-location",this.city);
 						break;
 				}
 
-			},{maximumAge:60000, timeout:10000, enableHighAccuracy:true});
+			},{maximumAge:60000, timeout:5000, enableHighAccuracy:true});
 		} else {
-			alert("Geolocation is not supported by this browser.");
+			console.log("Geolocation is not supported by this browser.");
 		}
 	}
 
