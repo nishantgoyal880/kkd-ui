@@ -1,8 +1,18 @@
-form{
-    width : 70%;
-    margin : 0 auto;
+.card{
+    background-color: #f9f9f9;
+    margin : auto;
+}
+.item{
+    background-color: #f9f9f9;
+    padding-left : 5px;
+    font-size : 18px;
 }
 
+.title{
+    color : white;
+    margin-top : -30px;
+    font-style: roboto;
+}
 h1 {
     font-weight: 600;
     padding: 0.5em 0 40px 0;
@@ -15,7 +25,19 @@ h1 {
 .jumbotron{
     background-color : #a9c056;
     margin-top : -15px;
-    height : 0px;    
+    height : 30px;
+    
+}
+
+.item-id{
+    background-color: #a9c056;
+    padding-left : 5px;
+    font-size : 18px;
+}
+
+form{
+    width : 90%;
+    margin : 0 auto;
 }
 
 .display-4{
@@ -28,6 +50,10 @@ h1 {
     font-style: roboto;
     width : 85%;
     margin : auto;
+}
+
+.form-comp-top{
+    margin-top: 40px;
 }
 
 .form-comp{
@@ -71,21 +97,12 @@ button{
     margin-bottom: 20px;
 }
 
+button:hover {
+    background-color: #c1ed23 !important;
+    
+}
+
 button:focus{
     border-color : #f9f9f9 !important;
 }
 
-.card{
-    background-color: #f9f9f9;
-    width : 600px;
-    margin : auto;
-}
-
-.add-prod{
-    margin-top: 4rem;
-}
-#bgimg{
-    background-image: url(../../../../../assets/images/backg4.jpg); 
-    background-size: cover;
-    background-repeat: no-repeat;
-}

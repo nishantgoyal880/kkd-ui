@@ -47,40 +47,41 @@ describe('FarmerAddProductComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  //testcase for header tag
   it('should render title in a h1 tag', async(() => {
     fixture.detectChanges();
     const el=fixture.nativeElement.querySelector('h1');
-    console.log(el.innerText);
     expect(el.innerText.toLowerCase()).toEqual('farmer_add_product.upload_product');
   }));
 
+  //testcase for onFileSelected method
   it('should call the onFileSelected method', async(() => {
     fixture.detectChanges();
     spyOn(component,'onFileSelected');
     el=fixture.debugElement.query(By.css('input')).nativeElement;
     el.click();
-    //console.log(component.onFileSelected);
     expect(component.onFileSelected).toHaveBeenCalledTimes(0);
   }));
 
+  //testcase for addProduct method
   it('should call the addProduct method', async(() => {
     fixture.detectChanges();
     spyOn(component,'addProduct');
     el=fixture.debugElement.query(By.css('button')).nativeElement;
     el.click();
-    //console.log(component.addProduct);
     expect(component.addProduct).toHaveBeenCalledTimes(0);
   }));
 
+  //testcase for selected dropdown
   it('should call the selectChangeHandler method', async(() => {
     fixture.detectChanges();
     spyOn(component,'selectChangeHandler');
     el=fixture.debugElement.query(By.css('select')).nativeElement;
     el.click();
-    //console.log(component.selectChangeHandler);
     expect(component.selectChangeHandler).toHaveBeenCalledTimes(0);
   }));
 
+  //negative testcase for form
   it('form should be invalid', async(() => {
     component.rForm.controls['description'].setValue('');
     component.rForm.controls['price'].setValue('');
@@ -89,6 +90,7 @@ describe('FarmerAddProductComponent', () => {
     expect(component.rForm.valid).toBeFalsy();
   }));
 
+  //positive testcase for form
   it('form should be valid', async(() => {
     component.rForm.controls['description'].setValue('good');
     component.rForm.controls['price'].setValue('50');

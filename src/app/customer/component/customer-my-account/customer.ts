@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 
+//Model customer data structure
 export class Customer {
     kkdCustId: string;
     mobileNo: string;

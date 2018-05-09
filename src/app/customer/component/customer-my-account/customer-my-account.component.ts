@@ -59,13 +59,15 @@ export class CustomerMyAccountComponent implements OnInit {
   public currentPasswordDeleteProfile: string="";
 
   constructor(private customerAuthenticationService :CustomerAuthenticationService,private fb: FormBuilder,public router: Router) { 
+//Validation for change password reactive form 
     this.rForm = fb.group({
     mobileNumber : [null, Validators.compose([Validators.required])],
     currentPassword : [null, Validators.compose([Validators.required])],
     newPassword : [null, Validators.compose([Validators.required])],
     reenterNewPassword: [null, Validators.compose([Validators.required])],
 })
-   this.rFormDeleteProfile = fb.group({
+//Validation for delete profile reactive form
+this.rFormDeleteProfile = fb.group({
     mobileNumberDeleteProfile : [null, Validators.compose([Validators.required])],
     currentPasswordDeleteProfile : [null, Validators.compose([Validators.required])],
   })
@@ -73,23 +75,29 @@ export class CustomerMyAccountComponent implements OnInit {
 
   ngOnInit() {}
   
+  //function to perform change password operation
   onSubmit(post){
   this.mobileNumber=post.mobileNumber;
   this.currentPassword=post.currentPassword;
   this.newPassword=post.newPassword;
   this.reenterNewPassword=post.reenterNewPassword;
   var regularExpression  = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    if(!(isNaN(+this.mobileNumber)) && this.mobileNumber.length==10 ){
+  //checking whether the mobile number is of 10 digits 
+  if(!(isNaN(+this.mobileNumber)) && this.mobileNumber.length==10 ){
     if(this.currentPassword.length && this.newPassword.length && this.reenterNewPassword.length ){
-    if(regularExpression.test(this.newPassword)){
+  //checking validation of the new password  
+      if(regularExpression.test(this.newPassword)){
+  //checking whether new password and re-entered passwords match
       if(this.newPassword == this.reenterNewPassword)
     {
+  //retreiving the user details using mobile number
       this.customerAuthenticationService.getUserDetails(this.mobileNumber)
             .subscribe((res) =>{
             if(!(res == null)){
                   this.userDetails.currentPassword=this.currentPassword;
                   this.userDetails.userId=res.kkdCustId;
                   this.userDetails.newPassword=this.newPassword;
+              //calling service to perform change password operation using the customer id
                   this.customerAuthenticationService.updatePassword(this.userDetails )
                   .subscribe((updatedInfo) =>{
                     if( updatedInfo == true){
@@ -160,13 +168,16 @@ export class CustomerMyAccountComponent implements OnInit {
     }
   }
   
-deleteUser(post){
+//function to perform delete profile operation
+  deleteUser(post){
     this.mobileNumberDeleteProfile=post.mobileNumberDeleteProfile;
     this.currentPasswordDeleteProfile=post.currentPasswordDeleteProfile;
+    //checking whether the mobile number is of 10 digits 
     if(!(isNaN(+this.mobileNumberDeleteProfile)) && this.mobileNumberDeleteProfile.length==10 ){
     if(this.currentPasswordDeleteProfile.length){
       this.userDetailsDelete.mobileNo=this.mobileNumberDeleteProfile;
       this.userDetailsDelete.password = this.currentPasswordDeleteProfile;
+    //calling service to perform delete profile  operation using the customer mobile number 
       this.customerAuthenticationService.deleteProfile(this.userDetailsDelete)
             .subscribe((status) =>{
               if(!(status == null)){

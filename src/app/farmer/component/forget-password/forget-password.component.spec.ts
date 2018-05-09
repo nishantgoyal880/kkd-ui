@@ -11,10 +11,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { RegistrationLoginService } from '../../services/registration-login-service/registration-login.service';
 import { IdRoleService } from '../../../services/id-role/id-role.service'
 
-fdescribe('ForgetPasswordComponent', () => {
+describe('ForgetPasswordComponent', () => {
   let component: ForgetPasswordComponent;
   let fixture: ComponentFixture<ForgetPasswordComponent>;
-  let debug: DebugElement;
   let el: HTMLElement;
 
 
@@ -42,8 +41,6 @@ fdescribe('ForgetPasswordComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ForgetPasswordComponent);
     component = fixture.componentInstance;
-    debug=fixture.debugElement.query(By.css('form'));
-    el=debug.nativeElement;
     fixture.detectChanges();
   });
 
@@ -76,13 +73,13 @@ fdescribe('ForgetPasswordComponent', () => {
   }));
 
 
-  it('form should be invalid', async(() => {
-    component.newPasswordForm.controls['mobileNo'].setValue('');
+  it(' newPassword form should be invalid', async(() => {
+    component.newPasswordForm.controls['password'].setValue('');
     component.newPasswordForm.controls['confirmPassword'].setValue('');
     expect(component.newPasswordForm.valid).toBeFalsy();
   }));
 
-  it('form should be invalid', async(() => {
+  it('otp form should be invalid', async(() => {
     component.otpForm.controls['otp'].setValue('');
     expect(component.otpForm.valid).toBeFalsy();
   }));
@@ -92,18 +89,18 @@ fdescribe('ForgetPasswordComponent', () => {
     expect(component.numberForm.valid).toBeFalsy();
   }));
 
-  it('form should be invalid', async(() => {
-    component.newPasswordForm.controls['mobileNo'].setValue('qwerty');
+  it('newPassword form should be valid', async(() => {
+    component.newPasswordForm.controls['password'].setValue('qwerty');
     component.newPasswordForm.controls['confirmPassword'].setValue('qwerty');
     expect(component.newPasswordForm.valid).toBeTruthy();
   }));
 
-  it('form should be invalid', async(() => {
+  it('otp form should be valid', async(() => {
     component.otpForm.controls['otp'].setValue('7777');
     expect(component.otpForm.valid).toBeTruthy();
   }));
 
-  it('form should be invalid', async(() => {
+  it('form should be valid', async(() => {
     component.numberForm.controls['mobileNo'].setValue('9468075105');
     expect(component.numberForm.valid).toBeTruthy();
   }));
