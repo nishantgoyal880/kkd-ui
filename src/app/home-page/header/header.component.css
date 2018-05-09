@@ -26,7 +26,7 @@ a{
 
   @media screen and (max-width: 600px) {
     .topnav.responsive {position: relative;}
-    .topnav.responsive .icon { 
+    .topnav.responsive .icon {
       position: absolute;
       right: 0;
       top: 0;
@@ -69,12 +69,12 @@ a{
 #location{
   margin-top:-.4rem;
   color: #fff;
-  margin-left:2rem; 
+  margin-left:2rem;
 }
 
 #lang-drop{
   margin-top: -.2rem;
-  margin-right:2rem; 
+  margin-right:2rem;
 }
 
 #lang-div{
@@ -86,25 +86,25 @@ a{
       .small {
         display: none;
       }
- 
+
     }
- 
+
     @media (max-width: 160rem) {
       .large {
         display: none;
       }
- 
+
       .logo {
         font-size: 1rem;
       }
     }
- 
+
     .btn-default
     {
      background-color: green;
      color: white;
    }
- 
+
    .maincities
    {
      height: 4.5rem;
@@ -112,7 +112,7 @@ a{
      margin-right: 1.5rem;
      margin-left: 1rem;
    }
- 
+
    .maincitiestext
    {
      font-weight: bold;
@@ -120,29 +120,26 @@ a{
      padding-left: 1.70rem;
      font-size: 0.75rem;
    }
- 
+
    .dropdown-toggle
    {
      margin-left: 5rem;
      margin-bottom: 1rem;
    }
- 
- 
+
+
   ul {
    list-style-type: none;
    margin: 0;
    padding: 0;
-   overflow: hidden;
  }
- 
- 
+
+
  li {
    float: left;
  }
- 
+
  #_setImg {
   background-color: transparent;
   border: none;
  }
- 
- 

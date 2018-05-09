@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../../services/order-service/order.service';
 import { IdRoleService } from '../../../../services/id-role/id-role.service';
+import { ProductList } from '../../../config/productList';
 
 @Component({
   selector: 'app-farmer-current-order',
@@ -12,6 +13,7 @@ export class FarmerCurrentOrderComponent implements OnInit {
 
   constructor(private orderService:OrderService,private idRoleService:IdRoleService) { }
 
+  items = ProductList.products;
   public orderList=[];
   public date:Date;
   public time:Date;
