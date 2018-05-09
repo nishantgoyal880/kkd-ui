@@ -30,16 +30,29 @@ export class FarmerAddProductComponent implements OnInit {
 
   ngOnInit() {
     //assign role and farmer id
-    this.idRoleService.role.subscribe((role) =>{
-      this.role=role;
-      console.log(this.role)
+
+    if(IdRoleService.id1.length){
+      this.kkdFarmId=IdRoleService.id1;
+      console.log(this.kkdFarmId+"id in add product");
+      //this.addProduct(post);
+    }
+    else{
+      this.idRoleService.id.subscribe(id=>{
+        this.kkdFarmId =id;
+       // this.addProduct(post);
       })
-      this.idRoleService.id.subscribe((id) =>{
-        console.log(id+"id in add product");
+     }
+
+    // this.idRoleService.role.subscribe((role) =>{
+    //   this.role=role;
+    //   console.log(this.role)
+    //   })
+    //   this.idRoleService.id.subscribe((id) =>{
+    //     console.log(id+"id in add product");
         
-        this.kkdFarmId=id;
-        console.log("id"+this.kkdFarmId);
-      })      
+    //     this.kkdFarmId=id;
+    //     console.log("id"+this.kkdFarmId);
+    //   })      
   }
  
 
