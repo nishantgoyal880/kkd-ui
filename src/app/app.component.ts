@@ -69,10 +69,10 @@ export class AppComponent implements OnInit {
 				this.getAddress(this.currentLat, this.currentLong)
 					.then((location) => {
 						this.city = location;
-						if(this.city!==null)
-							localStorage.setItem("user-location",this.city);
+						if (this.city !== null)
+							localStorage.setItem("user-location", this.city);
 						else
-						localStorage.setItem("user-location","Gurgaon");
+							localStorage.setItem("user-location", "Gurgaon");
 					}
 					)
 					.catch((error) => {
@@ -88,11 +88,11 @@ export class AppComponent implements OnInit {
 						break;
 					case error.TIMEOUT:
 						this.city = "Gurgaon";
-						localStorage.setItem("user-location",this.city);
+						localStorage.setItem("user-location", this.city);
 						break;
 				}
 
-			},{maximumAge:60000, timeout:5000, enableHighAccuracy:true});
+			}, { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true });
 		} else {
 			console.log("Geolocation is not supported by this browser.");
 		}
