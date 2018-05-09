@@ -31,9 +31,9 @@ export class CustomerAddAddressComponent implements OnInit {
     this.idRoleService.role.subscribe((role) =>{
       this.role=role;
     });
-    this.idRoleService.id.subscribe((id) =>{
-      this.customerId=id;
-  });
+   
+      this.customerId=localStorage.getItem("id");
+ 
   }
 
   /*

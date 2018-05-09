@@ -1,14 +1,39 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { BrowserModule, By } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DebugElement } from '@angular/core';
+import { HttpModule, Http } from '@angular/http';
+import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
 
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
+import { CartService } from "../../services/cart.service";
+import { IdRoleService } from "./../../../services/id-role/id-role.service";
 import { CustomerMyCartComponent } from './customer-my-cart.component';
 
 describe('CustomerMyCartComponent', () => {
   let component: CustomerMyCartComponent;
   let fixture: ComponentFixture<CustomerMyCartComponent>;
+  let debug: DebugElement;
+  let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomerMyCartComponent ]
+      declarations: [ CustomerMyCartComponent ],
+      imports: [
+        BrowserModule,
+        HttpClientModule,
+        HttpModule,
+        RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule.forRoot({
+          provide: TranslateLoader,
+          useFactory: (http: Http) => new TranslateStaticLoader(http, 'public/assets/i18n', '.json'),
+          deps: [Http]
+      })
+      ],
+      providers:[IdRoleService, CartService]
     })
     .compileComponents();
   }));
@@ -16,10 +41,32 @@ describe('CustomerMyCartComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CustomerMyCartComponent);
     component = fixture.componentInstance;
+    debug=fixture.debugElement.query(By.css('form'));
+    el=debug.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call the getCartItems method',() => { 
+    spyOn(component,'getCartItems');
+    expect(component.getCartItems).toHaveBeenCalledTimes(0);
+  });
+
+  it('should call the deleteItem method',() => { 
+    spyOn(component,'deleteItem');
+    el=fixture.debugElement.query(By.css('button')).nativeElement;
+    el.click();
+    expect(component.deleteItem).toHaveBeenCalledTimes(0);
+  });
+
+  it('should call the checkout method',() => { 
+    spyOn(component,'checkout');
+    el=fixture.debugElement.query(By.css('button')).nativeElement;
+    el.click();
+    expect(component.checkout).toHaveBeenCalledTimes(0);
+  });
+
 });

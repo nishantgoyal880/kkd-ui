@@ -32,7 +32,7 @@ export class CustomerMyCartComponent implements OnInit {
   }
 
   getCartItems() {
-    this.cartService.getCartItems(this.kkdCustId).subscribe(
+    this.cartService.getCartItems(localStorage.getItem("id")).subscribe(
       res => {
         this.items = res;
         console.log(res);

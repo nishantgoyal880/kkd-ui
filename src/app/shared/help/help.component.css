@@ -1,25 +1,15 @@
-body{
-	background-color:rgba(0,0,0,.03);
-}
-.jumbotron{
-	background-color:#a9c056;
-	width: 100%;
-	color:white;
-}
-
+/* CSS for card header */
 .card-header{
 	background: white;
 	height: 70px;
 	padding-top: 20px;
 	font-size: 20px;
 }
-
-
+/* Color for text in Anchor */
 a{
 	color:#29a745;
-
 }
-
+/* CSS for Heading text */
 h1 {
     font-weight: 600;
     padding: 0.5em 0 40px 0;
@@ -28,8 +18,9 @@ h1 {
     color: #29a745;
     line-height: 42px;
 	}
-	#bgimg{
-		background-image: url(../../../assets/images/backg4.jpg); 
-		background-size: cover;
-		background-repeat: no-repeat;
+/* Background image */
+#bgimg{
+	background-image: url(../../../assets/images/backg4.jpg); 
+	background-size: cover;
+	background-repeat: no-repeat;
 	}
