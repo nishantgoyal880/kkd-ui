@@ -11,8 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import {IdRoleService} from '../../../services/id-role/id-role.service';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
-
-describe('CustomerMyAccountComponent', () => {
+fdescribe('CustomerMyAccountComponent', () => {
   let component: CustomerMyAccountComponent;
   let fixture: ComponentFixture<CustomerMyAccountComponent>;
   let debug: DebugElement;
@@ -37,7 +36,6 @@ describe('CustomerMyAccountComponent', () => {
     })
     .compileComponents();
   }));
-
   beforeEach(() => {
     fixture = TestBed.createComponent(CustomerMyAccountComponent);
     component = fixture.componentInstance;
@@ -45,18 +43,15 @@ describe('CustomerMyAccountComponent', () => {
     //el=debug.nativeElement;
     fixture.detectChanges();
   });
-
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
   it('should render title in a h1 tag', async(() => {
     fixture.detectChanges();
     const e1=fixture.nativeElement.querySelector('h1');
     console.log(e1.innerText);
     expect(e1.innerText).toEqual('customer_current_order.my_orders');
   }));
-
   it('should call the onSubmit method', async(() => {
     fixture.detectChanges();
     spyOn(component,'onSubmit');
@@ -64,7 +59,6 @@ describe('CustomerMyAccountComponent', () => {
     el.click();
     expect(component.onSubmit).toHaveBeenCalledTimes(0);
   }));
-
   it('should call the deleteUser method', async(() => {
     fixture.detectChanges();
     spyOn(component,'deleteUser');
@@ -72,7 +66,6 @@ describe('CustomerMyAccountComponent', () => {
     el.click();
     expect(component.deleteUser).toHaveBeenCalledTimes(0);
   }));
-
   it('Change password form should be valid', async(() => {
     component.rForm.controls['mobileNumber'].setValue('7418832509');
     component.rForm.controls['currentPassword'].setValue('Sriz3196#');
@@ -94,7 +87,6 @@ describe('CustomerMyAccountComponent', () => {
     component.rFormDeleteProfile .controls['currentPasswordDeleteProfile'].setValue('Sriz3196#');
     expect(component.rFormDeleteProfile .valid).toBeTruthy();
   }));
-
   it('Delete Profile form should be invalid', async(() => {
     component.rFormDeleteProfile .controls['mobileNumberDeleteProfile'].setValue('');
     component.rFormDeleteProfile .controls['currentPasswordDeleteProfile'].setValue('');

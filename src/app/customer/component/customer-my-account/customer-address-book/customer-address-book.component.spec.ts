@@ -1,12 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserModule, By } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
+import { HttpModule,Http } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import {IdRoleService} from '../../../../services/id-role/id-role.service'
 import { CustomerAddressBookComponent } from './customer-address-book.component';
+import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
 
-describe('CustomerAddressBookComponent', () => {
+fdescribe('CustomerAddressBookComponent', () => {
   let component: CustomerAddressBookComponent;
   let fixture: ComponentFixture<CustomerAddressBookComponent>;
  
@@ -18,6 +19,11 @@ describe('CustomerAddressBookComponent', () => {
         HttpClientModule,
         HttpModule,
         RouterTestingModule,
+        TranslateModule.forRoot({
+          provide: TranslateLoader,
+          useFactory: (http: Http) => new TranslateStaticLoader(http, 'public/assets/i18n', '.json'),
+          deps: [Http]
+      })
       ],
       providers:[IdRoleService],
     })
@@ -38,7 +44,7 @@ describe('CustomerAddressBookComponent', () => {
     fixture.detectChanges();
     const e1=fixture.nativeElement.querySelector('h1');
     console.log(e1.innerText);
-    expect(e1.innerText).toEqual('Address Details');
+    expect(e1.innerText).toEqual('customer_address_book.address_details');
   }));
 
   it('should call the searchDetails method', async(() => {
