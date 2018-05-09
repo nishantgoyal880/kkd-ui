@@ -42,7 +42,6 @@ export class FarmerBankDetailsComponent implements OnInit {
       'accountName' : post.accountName,
       'ifscCode': post.ifscCode,
     };
-    console.log(this.farmerId);
     this.bankDetailsService.saveAccountDetails(this.farmerId,this.bankDetailsSubmission).subscribe((res) => {
 
       alert('Your bank account details has been successfully added.');
