@@ -15,14 +15,12 @@
 }
 
 h1 {
-    font-weight: normal;
+    font-weight: 600;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
-    color: #4b5320;
-    font-size: 50px;
+    color: #28a745;
     line-height: 42px;
-    text-shadow: 0 2px white, 0 3px #777;
     }
 
 .jumbotron{
@@ -33,7 +31,7 @@ h1 {
 }
 
 .item-id{
-    background-color: #a9c056;
+    background-color: #3DA843;
     padding-left : 5px;
     font-size : 18px;
 }
