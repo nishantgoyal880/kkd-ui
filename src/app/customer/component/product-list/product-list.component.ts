@@ -20,13 +20,17 @@ export class ProductListComponent implements OnInit {
   public loggedIn:boolean;
   public userId:string;
   public productsToShowInOnePage:number;
+  public cartItem = {};
+  public enteredQuant: number;
 
   constructor(private searchService: SearchService, private idRoleService: IdRoleService) {
     this.productsToShowInOnePage=SearchConfig.productsToShowInOnePage;
    
   }
 
+  // loading products on component loading
   ngOnInit() {
+    this.loggedIn=false;
     this.searchService.getAllProducts(this.searchInput).subscribe(
       data => {
         this.products = data;
@@ -44,6 +48,7 @@ export class ProductListComponent implements OnInit {
     }
   }
 
+  // calculating maximum price and quantity
   calculatingMax() {
     if (this.products.length != 0) {
       this.max_price = this.products.reduce(
@@ -63,6 +68,7 @@ export class ProductListComponent implements OnInit {
     }
   };
 
+  // sort products by specific criteria
   sortBy(x) {
     switch (x) {
       case "priceLH":
@@ -85,6 +91,7 @@ export class ProductListComponent implements OnInit {
     }
   }
 
+  // search products on basis on search input
   searchProduct() {
     this.searchService.getAllProducts(this.searchInput).subscribe(
       data => {
@@ -96,6 +103,7 @@ export class ProductListComponent implements OnInit {
       }
     );
   }
+  // event triggered on changing price slider
   myOnFinishPrice(event) {
     this.searchService.getAllProducts(this.searchInput).subscribe(
       data => {
@@ -106,6 +114,7 @@ export class ProductListComponent implements OnInit {
       err => console.log(err)
     );
   }
+  // event triggered on changing quantity filter
   myOnFinishQuantity(event) {
     this.searchService.getAllProducts(this.searchInput).subscribe(
       data => {
@@ -116,8 +125,7 @@ export class ProductListComponent implements OnInit {
       err => console.log(err)
     );
   }
-  public cartItem = {};
-  public enteredQuant: number;
+  // initializing item to be added to cart and ask for quantity
   addToCart(item) {
     this.cartItem = {
       productId: item.productId,
@@ -131,8 +139,8 @@ export class ProductListComponent implements OnInit {
     };
   }
 
+  // adding product to cart and ask for quantity
   proceed() {
-    
     if (this.cartItem["quantity"] > this.enteredQuant) {
       this.cartItem["quantity"] = this.enteredQuant;
       this.searchService.addToCart(this.cartItem).subscribe(

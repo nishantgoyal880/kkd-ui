@@ -20,6 +20,7 @@ export class CustomerMyCartComponent implements OnInit {
   public customerInfo: object = {};
 
   public kkdCustId: string;
+  // loading cart items on component loading
   ngOnInit() {
       this.cartService.getCustomerInfo(localStorage.getItem("id")).subscribe(
         res => {
@@ -31,6 +32,7 @@ export class CustomerMyCartComponent implements OnInit {
     this.getCartItems();
   }
 
+  // getting all cart items
   getCartItems() {
     this.cartService.getCartItems(localStorage.getItem("id")).subscribe(
       res => {
@@ -44,6 +46,7 @@ export class CustomerMyCartComponent implements OnInit {
     );
   }
 
+  // deleting a specific item from cart
   deleteItem(item, ind) {
     this.cartService.deleteCartItem(item).subscribe(
       res => {
@@ -53,6 +56,7 @@ export class CustomerMyCartComponent implements OnInit {
     );
   }
 
+  // posting order when customer clicks checkout
   checkout() {
     if (this.customerInfo != null) {
       let orders: Array<object> = [];
