@@ -1,24 +1,23 @@
-
-   
-  <h1>{{ 'customer_previous_order.previous_orders' | translate }}</h1>
-  <div class="container-fluid previous-orders bg">
-  <div class="row previous-orders-body">
-      <div *ngFor="let order of previousOrders">
-      <div class="col-md-4 cards" >
-           <div class="card shadow " >
-              <div class="card-body ">
-                <ul class="list-group list-group-flush ">
-                  <li class="list-group-item  item-id">{{ 'customer_previous_order.orderid' | translate }}           :   {{order.orderId}}</li>
-                  <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.product_name' | translate }}             :   {{order.name}} </li>                            
-                  <li class="list-group-item previous-orders-card item">(in Kg.){{ 'customer_previous_order.quantity' | translate }}                 :   {{order.quantity}}</li>                            
-                  <li class="list-group-item previous-orders-card item">(in Rs.){{ 'customer_previous_order.price' | translate }}                   :   {{order.totalAmount}}</li>
-                  <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.farmer_rating' | translate }}                   :   {{order.avgRating}}</li>
-                  <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.otp' | translate }}                      :   {{order.otp}} </li>
-                </ul>
-              </div>
-            </div>
+<h1>
+  {{ 'customer_previous_order.previous_orders' | translate }}
+</h1>
+<div class="container-fluid previous-orders bg">
+  <div class="col-md-12">
+    <div class="row previous-orders-body">
+      <div *ngFor="let order of previousOrders" class="col-md-4">
+        <div class="card shadow my-3 d-flex align-items-stretch">
+          <div class="card-body ">
+            <ul class="list-group list-group-flush ">
+              <li class="list-group-item  item-id">{{ 'customer_previous_order.orderid' | translate }} : {{order.orderId}}</li>
+              <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.product_name' | translate }} : {{order.name}} </li>
+              <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.quantity' | translate }} : {{order.quantity}}</li>
+              <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.price' | translate }} : {{order.totalAmount}}</li>
+              <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.farmer_rating' | translate }} : {{order.avgRating}}</li>
+              <li class="list-group-item previous-orders-card item">{{ 'customer_previous_order.otp' | translate }} : {{order.otp}} </li>
+            </ul>
           </div>
-          </div>
-          </div></div>
-
-          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
