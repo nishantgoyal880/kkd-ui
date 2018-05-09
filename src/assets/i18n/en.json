@@ -416,7 +416,7 @@
         "pincode":"Pincode",
         "enter_your_pincode":"Enter Your Pincode",
         "pincode_required":"pincode is required",
-        "update":"Update"
+        "update":"Add"
     },
     "customer_current_order":{
         "my_orders":"MY ORDERS",

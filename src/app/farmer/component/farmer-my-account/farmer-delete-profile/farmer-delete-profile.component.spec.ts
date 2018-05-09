@@ -2,7 +2,6 @@ import { FarmerDetailsService } from '../../../services/farmer-details/farmer-de
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserModule, By } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DebugElement } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
 
@@ -13,7 +12,6 @@ import { FarmerDeleteProfileComponent } from './farmer-delete-profile.component'
 describe('FarmerDeleteProfileComponent', () => {
   let component: FarmerDeleteProfileComponent;
   let fixture: ComponentFixture<FarmerDeleteProfileComponent>;
-  let debug: DebugElement;
   let el: HTMLElement;
 
   beforeEach(async(() => {
@@ -39,20 +37,12 @@ describe('FarmerDeleteProfileComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FarmerDeleteProfileComponent);
     component = fixture.componentInstance;
-    debug=fixture.debugElement.query(By.css('form'));
-    el=debug.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
-  it('should render title in a h1 tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('h1');
-    expect(e1.innerText).toEqual('Delete Profile');
-  }));
 
   it('should call the deleteFarmerProfile method', async(() => {
     fixture.detectChanges();

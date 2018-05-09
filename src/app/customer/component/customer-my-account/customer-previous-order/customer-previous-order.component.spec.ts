@@ -7,7 +7,7 @@ import {IdRoleService} from '../../../../services/id-role/id-role.service'
 import { CustomerPreviousOrderComponent } from './customer-previous-order.component';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
 
-fdescribe('CustomerPreviousOrderComponent', () => {
+describe('CustomerPreviousOrderComponent', () => {
   let component: CustomerPreviousOrderComponent;
   let fixture: ComponentFixture<CustomerPreviousOrderComponent>;
   let el: HTMLElement;

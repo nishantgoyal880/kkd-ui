@@ -7,7 +7,7 @@ import {IdRoleService} from '../../../../services/id-role/id-role.service'
 import { CustomerAddressBookComponent } from './customer-address-book.component';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
 
-fdescribe('CustomerAddressBookComponent', () => {
+describe('CustomerAddressBookComponent', () => {
   let component: CustomerAddressBookComponent;
   let fixture: ComponentFixture<CustomerAddressBookComponent>;
  

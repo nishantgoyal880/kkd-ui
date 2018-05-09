@@ -42,7 +42,7 @@
 			<div class = "form-comp">
 				<div class = "name"><label for="ifscCode">{{ 'farmer_bank_details.ifsc_code' | translate }}</label></div>
 				<input type="text" class="form-control" id="ifscCode" placeholder="{{ 'farmer_bank_details.ifsc_code' | translate }}" formControlName="ifscCode">
-				<div *ngIf="rForm.controls['ifscCode'].touched && rForm.controls['accountName'].invalid" class="alert">
+				<div *ngIf="rForm.controls['ifscCode'].touched && rForm.controls['ifscCode'].invalid" class="alert">
 					<div *ngIf="rForm.controls['ifscCode'].hasError('required')">
 						{{ 'farmer_bank_details.ifsc_required' | translate }}
 					</div>
