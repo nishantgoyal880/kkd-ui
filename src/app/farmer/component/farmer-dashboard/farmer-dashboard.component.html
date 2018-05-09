@@ -1,5 +1,6 @@
 <div class="home mt-100">
   <div class="container-fluid">
+    <!-- List of all the components that are to be displayed on the dashboard -->
     <ul class="nav nav-tabs nav-justified sidebar-nav edit" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#acc" role="tab" aria-controls="acc">{{ 'farmer_dashboard.my_account' | translate }}</a>
@@ -20,6 +21,7 @@
         <a class="nav-link" data-toggle="tab" href="#view" role="tab" aria-controls="view">{{ 'farmer_dashboard.view_product' | translate }}</a>
       </li>
     </ul>
+    <!-- Linking the components to be displayed -->
     <div class="tab-content">
       <div class="tab-pane active" id="acc" role="tabpanel">
         <app-farmer-my-account></app-farmer-my-account>
