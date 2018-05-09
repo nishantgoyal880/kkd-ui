@@ -90,3 +90,9 @@ button:focus{
 .main-body{
     background-color: #FFFFFF;
 }
+
+#bgimg{
+    background-image: url(../../../../assets/images/backg4.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
