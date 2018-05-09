@@ -5,7 +5,7 @@
   <div class="col-md-12">
     <div class="row current-orders-body">
       <div *ngFor="let order of currentOrders" class="col-md-4">
-        <div class="card shadow my-3">
+        <div class="card border-success shadow my-3">
           <div class="card-body">
             <ul class="list-group list-group-flush">
               <li class="list-group-item item-id ">{{ 'customer_current_order.orderid' | translate }} : {{order.orderId}}</li>

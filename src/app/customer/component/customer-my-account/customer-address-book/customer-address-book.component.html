@@ -1,17 +1,17 @@
 <h1>{{ 'customer_address_book.address_details' | translate }}</h1>
-<div class="container">
+<div class="container" style="height: 100%;">
   <div class="row">
     <div class="col-4">
-      <div class="card" style="width: 18rem;">
+      <div class="card add_card" id="card">
         <div class="card-body">
           <h5 class="card-title">{{ 'customer_address_book.add_address' | translate }}</h5>
-          <a routerLink="/customer/addressBook/addAddress" class="btn btn-primary">+</a>
+          <a routerLink="/customer/addressBook/addAddress"><img src="../../../../../assets/images/add_address.png" id="address_icon"></a>
         </div>
       </div>
     </div>
     <div *ngFor="let address of details">
       <div class="col-4">
-        <div class="card" style="width: 18rem;">
+        <div class="card" id="card">
           <div class="card-body">
             <div class="card-text">
               <ul>
@@ -24,4 +24,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
+  </div>
+ </div>
+</div>
