@@ -4,6 +4,9 @@
       <div class="col-md-1 btn">
         <ul class="nav nav-tabs nav-justified sidebar-nav edit">
           <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#profile" role="tab" aria-controls="add">profile</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#add" role="tab" aria-controls="add">{{ 'my_account.add_address' | translate }}</a>
           </li>
           <li class="nav-item">
@@ -19,6 +22,49 @@
       </div>
       <div class="col-md-10 marginComponent" style="margin-top:-7rem">
         <div class="tab-content">
+          <div class="tab-pane active" id="profile" role="tabpanel">
+            <div class="container mt-4">
+              <div class="">
+
+                <!-- Card -->
+                <div class="card testimonial-card" *ngIf="farmerInfo">
+
+                  <!-- Bacground color -->
+                  <div class="card-up indigo lighten-1">
+                  </div>
+
+                  <!-- Avatar -->
+                  <div class="avatar mx-auto white">
+                    <img src="./../../../../assets/images/user_img.jpeg" class="rounded-circle">
+                  </div>
+
+                  <div class="card-body">
+                    <!-- Name -->
+                    <h4 class="card-title">{{farmerInfo.aadhaarData.firstName}} {{farmerInfo.aadhaarData.lastName}}</h4>
+                    <hr>
+                    <!-- Quotation -->
+                    <p *ngIf="farmerInfo.currentAddress">
+                      <i class="fa fa-quote-left"></i> Current Address: {{farmerInfo.currentAddress.addressLine}}, {{farmerInfo.currentAddress.city}},
+                      distt. {{farmerInfo.currentAddress.district}}
+                      <br> {{farmerInfo.currentAddress.state}}, {{farmerInfo.currentAddress.pincode}}</p>
+                    <p>Alternate
+                      <i class="fa fa-phone" aria-hidden="true"></i>{{farmerInfo.mobileNo}}</p>
+                    <p>Current
+                      <i class="fa fa-phone" aria-hidden="true"></i>{{farmerInfo.alternateNo}}</p>
+                    <p *ngIf="farmerInfo.cities"> Places where i can deliver</p>
+                    <p>
+                      <i *ngFor="let city of farmerInfo.cities" lass="fa fa-map-marker" aria-hidden="true">{{city}}</i>
+                    </p>
+                    <p>
+                      <i class="fa fa-quote-left"></i> Aadhaar Address: {{farmerInfo.aadhaarData.permanentAddress.addressLine}}, {{farmerInfo.aadhaarData.permanentAddress.city}}, distt.
+                      {{farmerInfo.aadhaarData.permanentAddress.district}}</p>
+                    <p>{{farmerInfo.aadhaarData.permanentAddress.state}}, {{farmerInfo.aadhaarData.permanentAddress.pincode}}</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
+            </div>
+          </div>
           <div class="tab-pane" id="add" role="tabpanel">
             <app-farmer-add-address></app-farmer-add-address>
           </div>
@@ -35,16 +81,4 @@
       </div>
     </div>
   </div>
-   {{farmerName}}
-    {{farmerPincode}}
-    {{farmerAddressLine}}
-    {{farmerCity}}
-    {{farmerDistrict}}
-    {{farmerState}}
-    {{farmerMobileNumber}}
-    {{farmerPhoto}}
-{{accountName}}
-{{accountNo}}
-{{ifscCode}}
-{{alternateNo}}
 </div>
