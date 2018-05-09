@@ -38,47 +38,4 @@ describe('AboutUsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should render title in a h1 tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('h1');
-    expect(e1.innerText).toEqual('About Us');
-  }));
-
-  it('should render title in a h5 tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('h5');
-    expect(e1.innerText).toEqual('Problem Statement');
-  }));
-
-  // it('should render title in a h5 tag', async(() => {
-  //   fixture.detectChanges();
-  //   const e1=fixture.nativeElement.querySelector('h5');
-  //   expect(e1.innerText).toEqual('Project Definition');
-  // }));
-
-  // it('should render title in a h5 tag', async(() => {
-  //   fixture.detectChanges();
-  //   const e1=fixture.nativeElement.querySelector('h5');
-  //   expect(e1.innerText).toEqual('Stakeholders');
-  // }));
-
-  // it('should render title in a h5 tag', async(() => {
-  //   fixture.detectChanges();
-  //   const e1=fixture.nativeElement.querySelector('h5');
-  //   expect(e1.innerText).toEqual('Scope and Impact');
-  // }));
-
-  // it('should render title in a h5 tag', async(() => {
-  //   fixture.detectChanges();
-  //   const e1=fixture.nativeElement.querySelector('h5');
-  //   expect(e1.innerText).toEqual('Features');
-  // }));
-
-  // it('should render title in a h5 tag', async(() => {
-  //   fixture.detectChanges();
-  //   const e1=fixture.nativeElement.querySelector('h5');
-  //   expect(e1.innerText).toEqual('Functionalities');
-  // }));
-  
 });

@@ -10,10 +10,11 @@ export class FarmerAddProductService {
 
   constructor(private http: Http) { }
 
+  //handling error
   public handleError(error: Response){
     return Observable.throw(error.statusText);
   }    
-
+  //function to send the post request to add product
   update(id,productSubmission){
        return this.http.post(addProductServiceUrl.nameMapping+id,productSubmission,this.authorization())
         .map(data => data.json(),

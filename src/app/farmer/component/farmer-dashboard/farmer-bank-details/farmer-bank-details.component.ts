@@ -25,7 +25,8 @@ export class FarmerBankDetailsComponent implements OnInit {
   constructor(private bankDetailsService: BankDetailsService,
     private fb: FormBuilder, public router: Router,
     private idRoleService: IdRoleService) {
-  this.rForm = fb.group({
+    /* validators for the input fields */
+    this.rForm = fb.group({
       accountNo : [null, Validators.compose([Validators.required, Validators.minLength(12), Validators.maxLength(12)])],
       accountName : [null, Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(20)])],
       ifscCode : [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
@@ -40,13 +41,13 @@ export class FarmerBankDetailsComponent implements OnInit {
       'ifscCode': post.ifscCode,
     };
     // this.bankDetailsService.saveAccountDetails(this.farmerId,this.bankDetailsSubmission).subscribe((res) => {
+    /* Getting farmer's id from local storage */
     this.bankDetailsService.saveAccountDetails(localStorage.getItem('id'), this.bankDetailsSubmission).subscribe((res) => {
-
       alert('Your bank account details has been successfully added.');
 
     }, (error) => {
+      /* logging the error */
       console.log(error);
-
     });
   }
   ngOnInit() {

@@ -11,7 +11,7 @@ import { ProductListComponent } from './product-list.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-fdescribe('ProductListComponent', () => {
+describe('ProductListComponent', () => {
   let component: ProductListComponent;
   let fixture: ComponentFixture<ProductListComponent>;
   let el: HTMLElement;
