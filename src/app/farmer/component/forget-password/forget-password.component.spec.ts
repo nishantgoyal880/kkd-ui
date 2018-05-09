@@ -11,7 +11,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { RegistrationLoginService } from '../../services/registration-login-service/registration-login.service';
 import { IdRoleService } from '../../../services/id-role/id-role.service'
 
-fdescribe('ForgetPasswordComponent', () => {
+describe('ForgetPasswordComponent', () => {
   let component: ForgetPasswordComponent;
   let fixture: ComponentFixture<ForgetPasswordComponent>;
   let debug: DebugElement;
