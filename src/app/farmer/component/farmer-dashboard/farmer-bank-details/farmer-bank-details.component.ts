@@ -23,12 +23,12 @@ export class FarmerBankDetailsComponent implements OnInit {
   bankDetailsSubmission;
 
   constructor(private bankDetailsService: BankDetailsService,
-    private fb: FormBuilder,public router: Router,
+    private fb: FormBuilder, public router: Router,
     private idRoleService: IdRoleService) {
   this.rForm = fb.group({
-      accountNo : [null, Validators.compose([Validators.required,Validators.minLength(12),Validators.maxLength(12)])],
-      accountName : [null, Validators.compose([Validators.required,Validators.minLength(2),Validators.maxLength(20)])],
-      ifscCode : [null, Validators.compose([Validators.required,Validators.minLength(6),Validators.maxLength(12)])],
+      accountNo : [null, Validators.compose([Validators.required, Validators.minLength(12), Validators.maxLength(12)])],
+      accountName : [null, Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(20)])],
+      ifscCode : [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
   });
       }
 
@@ -39,7 +39,8 @@ export class FarmerBankDetailsComponent implements OnInit {
       'accountName' : post.accountName,
       'ifscCode': post.ifscCode,
     };
-    this.bankDetailsService.saveAccountDetails(localStorage.getItem("id"),this.bankDetailsSubmission).subscribe((res) => {
+    // this.bankDetailsService.saveAccountDetails(this.farmerId,this.bankDetailsSubmission).subscribe((res) => {
+    this.bankDetailsService.saveAccountDetails(localStorage.getItem('id'), this.bankDetailsSubmission).subscribe((res) => {
 
       alert('Your bank account details has been successfully added.');
 
