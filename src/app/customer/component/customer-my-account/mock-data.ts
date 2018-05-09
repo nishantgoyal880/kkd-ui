@@ -1,5 +1,7 @@
 import{Customer} from './customer'
 import{Orders} from './orders'
+
+//Mock data for testing purpose
 export const CUSTOMERDETAILS:Customer={
     "kkdCustId": "KKDCUST2000",
     "mobileNo": "7418832509",
