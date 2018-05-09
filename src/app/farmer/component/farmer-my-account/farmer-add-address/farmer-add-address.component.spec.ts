@@ -12,7 +12,6 @@ import { FarmerAddAddressComponent } from './farmer-add-address.component';
 describe('FarmerAddAddressComponent', () => {
   let component: FarmerAddAddressComponent;
   let fixture: ComponentFixture<FarmerAddAddressComponent>;
-  let debug: DebugElement;
   let el: HTMLElement;
 
   beforeEach(async(() => {
@@ -38,19 +37,12 @@ describe('FarmerAddAddressComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FarmerAddAddressComponent);
     component = fixture.componentInstance;
-    debug=fixture.debugElement.query(By.css('form'));
-    el=debug.nativeElement;
     fixture.detectChanges();
   });
 
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-  
-  it('should render title in a h1 tag',() => {   
-    const e1=fixture.nativeElement.querySelector('h1');
-    expect(e1.innerText).toEqual('Add Alternate Address');
   });
 
   it('should call the updateFarmerAddress method',() => { 
