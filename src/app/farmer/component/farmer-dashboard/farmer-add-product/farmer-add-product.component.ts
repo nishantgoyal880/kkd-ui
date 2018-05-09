@@ -59,7 +59,6 @@ export class FarmerAddProductComponent implements OnInit {
 
   //function to upload image
   onFileSelected(event: any){
-    console.log(event);
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
       
@@ -84,11 +83,9 @@ export class FarmerAddProductComponent implements OnInit {
       "available":post.available,
       "imageUrl":this.imageUrl,
     }
-    console.log(this.productSubmission)
 
     if(post.bulkOrderPrice<=post.price){
       this.productService.update(this.kkdFarmId,this.productSubmission).subscribe((res) => {
-        console.log(res);
         swal({
           position: 'center',
           type: 'success',

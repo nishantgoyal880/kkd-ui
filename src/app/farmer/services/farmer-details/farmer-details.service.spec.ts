@@ -48,6 +48,30 @@ describe('FarmerDetailsService', () => {
     expect(service).toBeTruthy();
   }));
 
+  it('getFarmerName method should be created', inject([FarmerDetailsService], (service: FarmerDetailsService) => {
+    expect(service.getFarmerName).toBeTruthy();
+  }));
+
+  it('updateFarmerAddress method should be created', inject([FarmerDetailsService], (service: FarmerDetailsService) => {
+    expect(service.updateFarmerAddress).toBeTruthy();
+  }));
+
+  it('updateFarmerMobile method should be created', inject([FarmerDetailsService], (service: FarmerDetailsService) => {
+    expect(service.updateFarmerMobile).toBeTruthy();
+  }));
+
+  it('deleteFarmerProfile method should be created', inject([FarmerDetailsService], (service: FarmerDetailsService) => {
+    expect(service.deleteFarmerProfile).toBeTruthy();
+  }));
+
+  it('updatePassword method should be created', inject([FarmerDetailsService], (service: FarmerDetailsService) => {
+    expect(service.updatePassword).toBeTruthy();
+  }));
+
+  it('handleError method should be created', inject([FarmerDetailsService], (service: FarmerDetailsService) => {
+    expect(service.handleError).toBeTruthy();
+  }));
+
   it('should get Farmer Details', async(inject([FarmerDetailsService], (service: FarmerDetailsService) => {
     mockBackend.connections.subscribe(
       (connection: MockConnection) => {

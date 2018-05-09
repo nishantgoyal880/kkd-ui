@@ -117,3 +117,26 @@ button:focus{
     width : 600px;
     margin : auto;
 }
+
+#card{
+    width: 18rem;
+    height: 13rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.add_card{
+    text-align: center;
+}
+
+#add_icon{
+    color: grey;
+}
+
+#address_icon{
+    width: 8rem;
+    height: 8rem;
+}
+.container{
+    padding-bottom: 3rem;
+}
