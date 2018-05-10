@@ -45,12 +45,22 @@ export class FarmerBankDetailsComponent implements OnInit {
     };
     // this.bankDetailsService.saveAccountDetails(this.farmerId,this.bankDetailsSubmission).subscribe((res) => {
     /* Getting farmer's id from local storage */
+    if(this.flag===false){
+      swal({
+        position: 'center',
+        type: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+    else{
     this.bankDetailsService.saveAccountDetails(localStorage.getItem('id'), this.bankDetailsSubmission).subscribe((res) => {
       // alert('Your bank account details has been successfully added.');
       swal({
         position: 'center',
         type: 'success',
-        title: 'Your work has been saved',
+        title: 'Your bank details has been saved',
         showConfirmButton: false,
         timer: 1500
       });
@@ -60,21 +70,24 @@ export class FarmerBankDetailsComponent implements OnInit {
       console.log(error);
     });
   }
+  }
 
   // Make flag=true for bank details | false for paytm details
   radioClick(flag){
     this.flag=flag;     
     console.log(flag);
 
-    if (this.flag==false) {    //If flag is true COD is selected. Thus disable the text fields
+    if (this.flag==false) {
       this.rForm.get('accountNo').disable();
       this.rForm.get('accountName').disable();
       this.rForm.get('ifscCode').disable();
+      this.rForm.get('contactNo').enable();
     }
     else{
       this.rForm.get('accountNo').enable();
       this.rForm.get('accountName').enable();
       this.rForm.get('ifscCode').enable();
+      this.rForm.get('contactNo').disable();
     }
   }
 
