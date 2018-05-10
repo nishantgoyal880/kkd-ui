@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BankDetailsService } from '../../../../services/bank-details.service';
 import { IdRoleService } from '../../../../services/id-role/id-role.service';
-/*import {swal} from 'sweetalert2'*/
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-farmer-bank-details',
@@ -43,7 +43,14 @@ export class FarmerBankDetailsComponent implements OnInit {
     // this.bankDetailsService.saveAccountDetails(this.farmerId,this.bankDetailsSubmission).subscribe((res) => {
     /* Getting farmer's id from local storage */
     this.bankDetailsService.saveAccountDetails(localStorage.getItem('id'), this.bankDetailsSubmission).subscribe((res) => {
-      alert('Your bank account details has been successfully added.');
+      //alert('Your bank account details has been successfully added.');
+      swal({
+        position: 'center',
+        type: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+      });
 
     }, (error) => {
       /* logging the error */

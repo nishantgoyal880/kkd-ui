@@ -6,13 +6,13 @@
         "contact":"संपर्क करें",
         "help":"मदद",
         "kisan_ki_dukan":"किसान की दुकान। सर्वाधिकार सुरक्षित",
-        "footer_description":"We are a young company always looking for new and creative ideas to help you with our products in your everyday work.",
-        "our_team":"Our Team",
-        "sapientrazorfish_Gurgaon":" SapientRazorfish,Gurgaon",
-        "phone":"Phone",
-        "email":"Email",
-        "skype":"Skype",
-        "follow_us":"Follow Us"
+        "footer_description":"हम एक युवा कंपनी हमेशा अपने दैनिक काम में हमारे उत्पादों के साथ आपकी मदद करने के लिए नए और रचनात्मक विचारों की तलाश में हैं।",
+        "our_team":"हमारी टीम",
+        "sapientrazorfish_Gurgaon":" SapientRazorfish, गुड़गांव",
+        "phone":"फ़ोन",
+        "email":"ईमेल",
+        "skype":"स्काइप",
+        "follow_us":"हमारा अनुसरण करो"
     },
     "body":{
         "kisan_ki_dukan":"किसान की दुकान",
@@ -69,7 +69,17 @@
         "sign_up_as_farmer":"किसान साइन अप",
         "my_account":"मेरा खाता",
         "logout":"लोग आउट",
-        "my_cart":"मेरा कार्ट"
+        "my_cart":"मेरा कार्ट",
+        "dashboard":"डैशबोर्ड",
+        "change_city":"शहर बदलें",
+        "delhi":"दिल्ली",
+        "mumbai":"मुंबई",
+        "chandigarh":"चंडीगढ़",
+        "ahmedabad":"अहमदाबाद",
+        "hyderabad":"हैदराबाद",
+        "chennai":"चेन्नई",
+        "cancel":"रद्द करना",
+        "save":"जमा"
     },
     "support":{
         "support":"सहायता",
@@ -89,11 +99,11 @@
         "how_to_register":"कैसे पंजीकृत करें",
         "aadhaar_verification":"आधार सत्यापन",
         "buying_products":"उत्पादों को खरीदना",
-        "normal_v_bulk":"सामान्य आदेश बनाम थोक आदेश",
+        "normal_v_bulk":"सामान्य ऑर्डर बनाम थोक ऑर्डर",
         "how_to_register_description":"पंजीकरण प्रक्रिया को उपयोगकर्ता अनुभव को बढ़ाने के लिए काफी सरल रखा गया है क्योंकि एक महान उपयोगकर्ता अनुभव हमारे लिए अत्यंत महत्वपूर्ण है। बस किसान या ग्राहक के अपने वांछित बटन पर क्लिक करें और आपको पंजीकरण और लॉगिन पेज के लिए निर्देशित किया जाएगा। पंजीकरण सिर्फ एक बार प्रक्रिया है जिसके बाद प्रत्येक सत्र के लिए लॉगिन की आवश्यकता होती है। पंजीकरण की आवश्यकता यह है कि किसान के मामले में आपके पास एक सक्रिय मोबाइल फोन नंबर और आधार संख्या होनी चाहिए। यदि किसी भी मुद्दे का सामना करना पड़ता है, तो आप निकटतम एसएससी केंद्र से संपर्क कर सकते हैं।",
         "aadhaar_verification_description":"आधार सत्यापन उनकी पहचान सत्यापित करने के लिए किसान पंजीकरण के लिए एक अनिवार्य कदम है। पंजीकरण प्रक्रिया को आसान और सरल बनाने के लिए भी इसका उपयोग किया जाता है क्योंकि आपको आधार संख्या दर्ज करके, आप अपने आधार से जुड़े नंबर पर ओपीटी प्रदान करके एक क्लिक के साथ पंजीकरण कर सकते हैं।",
         "buying_products_description":"उत्पादों को ख़रीदना भी एक आसान काम है। बस जो उत्पाद आप चाहते हैं उसे खोजें और अपने स्थान के आधार पर, उत्पाद सूची आपको दिखाया जाएगा। फिर आप विभिन्न किसानों और उनकी रेटिंग से सभी उत्पादों को देख सकते हैं। इस प्रकार, उनकी रेटिंग और आपकी व्यक्तिगत आवश्यकताओं के आधार पर, आप किसी भी समय बाद में अपने कार्ट और चेकआउट में उत्पाद जोड़ सकते हैं।",
-        "normal_v_bulk_description":"एक ऐसे उत्पाद की मात्रा पर एक सीमा है जिसे आप एक सामान्य ग्राहक के रूप में खरीद सकते हैं। यदि अधिक मात्रा में खरीदा जाना आवश्यक है, तो यह थोक आदेश की श्रेणी में आता है। दोनों के बीच का अंतर मूल्य दर और मात्रा में भी है। यह किसी भी अराजकता से बचने और किसान के अंत में कुछ आसान प्रदान करने के लिए किया जाता है।"
+        "normal_v_bulk_description":"एक ऐसे उत्पाद की मात्रा पर एक सीमा है जिसे आप एक सामान्य ग्राहक के रूप में खरीद सकते हैं। यदि अधिक मात्रा में खरीदा जाना आवश्यक है, तो यह थोक ऑर्डर की श्रेणी में आता है। दोनों के बीच का अंतर मूल्य दर और मात्रा में भी है। यह किसी भी अराजकता से बचने और किसान के अंत में कुछ आसान प्रदान करने के लिए किया जाता है।"
     },
     "customer_login":{
         "login_customer":"लॉगिन ग्राहक",
@@ -137,12 +147,13 @@
         "price":"कीमत",
         "quantity":"मात्रा",
         "description":"विवरण",
-        "bulk_order_price":"थोक आदेश कीमत",
-        "add_to_bag":"झोले में डालो",
+        "bulk_order_price":"थोक ऑर्डर कीमत",
+        "add_to_bag":"कार्ट में डालो",
         "new_message":"नया संदेश",
         "please_enter_qantity":"कृपया मात्रा दर्ज करें",
         "close":"बंद करे",
-        "proceed":"आगे बढ़ो"
+        "proceed":"आगे बढ़ो",
+        "enter_qantity":"मात्रा दर्ज करें"
     },
     "policy":{
         "policies":"नीतियाँ",
@@ -229,7 +240,7 @@
         "add_product":"उत्पाद जोड़ें",
         "bank_details":"बैंक विवरण",
         "current_order":"अभी का ऑर्डर",
-        "previous_orders":"पिछले आदेश",
+        "previous_orders":"पिछले ऑर्डर",
         "view_product":"उत्पाद देखें"
     },
     "my_account":{
@@ -303,8 +314,8 @@
         "product_price_per_kg":"प्रति किलो उत्पाद मूल्य",
         "enter_price":"मूल्य दर्ज करें",
         "price_required":"कीमत की आवश्यकता है",
-        "bulk_product_price_per_kg":"उत्पाद थोक आदेश मूल्य प्रति किलो",
-        "enter_bulk_order_price":"थोक आदेश मूल्य दर्ज करें",
+        "bulk_product_price_per_kg":"उत्पाद थोक ऑर्डर मूल्य प्रति किलो",
+        "enter_bulk_order_price":"थोक ऑर्डर मूल्य दर्ज करें",
         "bulk_price_required":"थोक मूल्य की आवश्यकता है",
         "quantity":"मात्रा",
         "enter_quantity":"मात्रा दर्ज करें",
@@ -335,7 +346,7 @@
         "address":"पता",
         "quantity":"मात्रा",
         "amount":"रकम",
-        "validity_of_order":"आदेश की वैधता",
+        "validity_of_order":"ऑर्डर की वैधता",
         "customer_mobileno":"ग्राहक मोबाइल नहीं",
         "delivered":"वितरण पर क्लिक करें",
         "accept":"स्वीकार करना",
@@ -346,7 +357,7 @@
         "why_did_you_decline_the_order":"आपने ऑर्डर क्यों गिरा दिया",
         "i_am_not_able_to_deliver_in_that_location":"मैं उस स्थान पर पहुंचने में सक्षम नहीं हूं",
         "all_the_items_have_been_sold_out":"सभी वस्तुओं को बेचा गया है",
-        "the_order_quantity_is_not_sufficient":"आदेश मात्रा पर्याप्त नहीं है",
+        "the_order_quantity_is_not_sufficient":"ऑर्डर मात्रा पर्याप्त नहीं है",
         "i_am_not_in_a_good_health_condition":"मैं एक अच्छी स्वास्थ्य स्थिति में नहीं हूँ",
         "other_reasons":"अन्य कारण",
         "submit":"जमा करें",
@@ -362,14 +373,14 @@
         "address":"पता",
         "quantity":"मात्रा",
         "amount":"रकम",
-        "order_status":"आदेश की स्थिति",
+        "order_status":"ऑर्डर की स्थिति",
         "delivery_date":"डिलीवरी की तारीख"
     },
     "farmer_view_product":{
         "producid":"उत्पाद आइ डि",
         "description":"विवरण",
         "price":"मूल्य",
-        "bulk_ordr_price":"थोक आदेश मूल्य",
+        "bulk_ordr_price":"थोक ऑर्डर मूल्य",
         "quantity":"मात्रा",
         "update":"अद्यतन करें",
         "delete":"हटाना",
@@ -429,8 +440,8 @@
         "update":"अद्यतन करें"
     },
     "customer_current_order":{
-        "my_orders":"मेरे आदेश",
-        "orderid":"आदेश कामतत्व",
+        "my_orders":"मेरे ऑर्डर",
+        "orderid":"ऑर्डर कामतत्व",
         "product_name":"उत्पाद का नाम",
         "quantity":"मात्रा (किलो में)",
         "price":"मूल्य (रुपये में)",
@@ -438,8 +449,8 @@
         "otp":"OTP"
     },
     "customer_previous_order":{
-        "previous_orders":"पिछले आदेश",
-        "orderid":"आदेश कामतत्व",
+        "previous_orders":"पिछले ऑर्डर",
+        "orderid":"ऑर्डर कामतत्व",
         "product_name":"उत्पाद का नाम",
         "quantity":"मात्रा (किलो में)",
         "price":"मूल्य (रुपये में)",
@@ -447,8 +458,8 @@
         "otp":"OTP"
     },
     "customer_my_account":{
-        "my_orders":"मेरे आदेश",
-        "previous_orders":"पिछले आदेश",
+        "my_orders":"मेरे ऑर्डर",
+        "previous_orders":"पिछले ऑर्डर",
         "address_book":"पता पुस्तिका",
         "change_password":"पासवर्ड बदलें",
         "mobile_number":"मोबाइल नंबर",
@@ -478,7 +489,7 @@
         "no_address_linked":"कोई पता जुड़ा हुआ नहीं है",
         "add_address":"पता जोड़ें",
         "total":"कुल",
-        "place_order":"आदेश देना"
+        "place_order":"ऑर्डर देना"
     },
     "customer_payment":{
         "payment_details":"भुगतान विवरण",
@@ -497,7 +508,7 @@
         "less_than_3_digits":"3 अंकों से कम",
         "more_than_3_digits":"3 से अधिक अंक",
         "cvv_is_required":"सीवीवी की आवश्यकता है",
-        "make_payment":"भुगतान करो"
+        "place_order":"ऑर्डर करना"      
     },
     "about_us":{
         "about_us_heading":"हमारे बारे में",
@@ -539,7 +550,7 @@
         "functionalities_description2":"उत्पादों की विविधता खोजें और क्रमबद्ध करें",
         "functionalities_description3":"सूची प्रबंधन",
         "functionalities_description4":"सरल चेकआउट",
-        "functionalities_description5":"आदेश का प्रबंधन",
+        "functionalities_description5":"ऑर्डर का प्रबंधन",
         "functionalities_description6":"समीक्षा प्रबंधन",
         "functionalities_description7":"ऑनलाइन भुगतान या सीओडी विकल्प"
      }
