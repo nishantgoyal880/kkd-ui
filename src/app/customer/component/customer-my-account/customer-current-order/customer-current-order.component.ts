@@ -13,7 +13,7 @@ import { ProductList } from '../../../../farmer/config/productList';
 export class CustomerCurrentOrderComponent implements OnInit {
  public customerId : string ;
  public currentOrders : any = [];
- public p:any;
+ public p:number;
   constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { 
    }
   items = ProductList.products;
@@ -21,6 +21,7 @@ export class CustomerCurrentOrderComponent implements OnInit {
 //getting customer id of the actively logged in customer
       this.customerId=localStorage.getItem("id");
       this.getdata();
+      this.p=1;
    }
     
   //function to retreive the current orders of the customer
