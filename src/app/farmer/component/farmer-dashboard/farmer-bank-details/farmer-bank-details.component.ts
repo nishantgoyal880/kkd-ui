@@ -21,6 +21,7 @@ export class FarmerBankDetailsComponent implements OnInit {
   farmerId: String;
   post: any;
   bankDetailsSubmission;
+  flag:boolean;
 
   constructor(private bankDetailsService: BankDetailsService,
     private fb: FormBuilder, public router: Router,
@@ -30,6 +31,8 @@ export class FarmerBankDetailsComponent implements OnInit {
       accountNo : [null, Validators.compose([Validators.required, Validators.minLength(12), Validators.maxLength(12)])],
       accountName : [null, Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(20)])],
       ifscCode : [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
+      contactNo : [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
+      'rad':[null,Validators.required]
   });
       }
 
@@ -43,7 +46,7 @@ export class FarmerBankDetailsComponent implements OnInit {
     // this.bankDetailsService.saveAccountDetails(this.farmerId,this.bankDetailsSubmission).subscribe((res) => {
     /* Getting farmer's id from local storage */
     this.bankDetailsService.saveAccountDetails(localStorage.getItem('id'), this.bankDetailsSubmission).subscribe((res) => {
-      //alert('Your bank account details has been successfully added.');
+      // alert('Your bank account details has been successfully added.');
       swal({
         position: 'center',
         type: 'success',
@@ -57,6 +60,24 @@ export class FarmerBankDetailsComponent implements OnInit {
       console.log(error);
     });
   }
+
+  // Make flag=true for bank details | false for paytm details
+  radioClick(flag){
+    this.flag=flag;     
+    console.log(flag);
+
+    if (this.flag==false) {    //If flag is true COD is selected. Thus disable the text fields
+      this.rForm.get('accountNo').disable();
+      this.rForm.get('accountName').disable();
+      this.rForm.get('ifscCode').disable();
+    }
+    else{
+      this.rForm.get('accountNo').enable();
+      this.rForm.get('accountName').enable();
+      this.rForm.get('ifscCode').enable();
+    }
+  }
+
   ngOnInit() {
   }
 }

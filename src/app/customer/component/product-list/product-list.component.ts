@@ -10,6 +10,7 @@ import swal from 'sweetalert2'
   providers: [SearchService]
 })
 export class ProductListComponent implements OnInit {
+  public searchTextDisplay:string;
   public searchInput: string;
   public products: Array<any> = [];
   public max_price: number;
@@ -22,10 +23,12 @@ export class ProductListComponent implements OnInit {
   public productsToShowInOnePage:number;
   public cartItem = {};
   public enteredQuant: number;
+  public p:number;
+  public lastpage:string;
 
   constructor(private searchService: SearchService, private idRoleService: IdRoleService) {
     this.productsToShowInOnePage=SearchConfig.productsToShowInOnePage;
-   
+    this.p=1;
   }
 
   // loading products on component loading
@@ -35,6 +38,7 @@ export class ProductListComponent implements OnInit {
       data => {
         this.products = data;
         this.calculatingMax();
+        this.lastpage=Math.ceil(this.products.length/this.productsToShowInOnePage)+'';
       },
       err => console.log(err)
     );
@@ -94,10 +98,13 @@ export class ProductListComponent implements OnInit {
 
   // search products on basis on search input
   searchProduct() {
+    this.searchTextDisplay=this.searchInput;
     this.searchService.getAllProducts(this.searchInput).subscribe(
       data => {
         this.products = data;
         this.calculatingMax();
+        this.lastpage=Math.ceil(this.products.length/this.productsToShowInOnePage)+'';
+        console.log(this.lastpage);
       },
       err => {
         console.log(err), (this.products = []);
@@ -111,6 +118,9 @@ export class ProductListComponent implements OnInit {
         this.products = data.filter(
           product => product.price >= event.from && product.price <= event.to
         );
+        this.lastpage=Math.ceil(this.products.length/this.productsToShowInOnePage)+'';
+        console.log("current"+this.p)
+        console.log("lst"+this.lastpage);
       },
       err => console.log(err)
     );
@@ -122,6 +132,9 @@ export class ProductListComponent implements OnInit {
         this.products = data.filter(
           product => product.quantity >= event.from && product.quantity <= event.to
         );
+        this.lastpage=Math.ceil(this.products.length/this.productsToShowInOnePage)+'';
+        console.log("current"+this.p)
+        console.log("lst"+this.lastpage);
       },
       err => console.log(err)
     );
