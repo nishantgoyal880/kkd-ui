@@ -5,7 +5,7 @@
 			<div class="cart-dropdown-container">
 				<div class="row">
 					<div class="text-left col-md-6">{{ 'customer_my_cart.your_cart' | translate }}
-						<i class="fa fa-shopping-cart"></i> ({{items.length}} {{ 'customer_my_cart.items' | translate }})</div>
+						<i class="fa fa-shopping-cart"></i>( {{items.length}} {{ 'customer_my_cart.item' | translate }})</div>
 					<div class="text-right col-md-6">
 						<button type="button" class="btn btn-success btn-sm" routerLink="/productList">
 							<span>
@@ -73,7 +73,7 @@
 	</ng-template>
 	<ng-template #empty>
 		<div class="container" style=" text-align: center;">
-			<div class="h6">{{ 'customer_my_cart.your_cart' | translate }}(0 Items)</div>
+			<div class="h6">{{ 'customer_my_cart.your_cart' | translate }}(0 {{ 'customer_my_cart.item' | translate }})</div>
 		</div>
 		<div class="cart-header" style="margin-bottom: 8rem; text-align: center;">
 			<img src="./../../../../assets/images/empty_cart.jpg" alt="empty wishlist" class="img-fluid">

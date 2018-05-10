@@ -155,9 +155,9 @@
     "close":"మూసివేయి",
     "proceed":"కొనసాగు",
     "enter_qantity":"పరిమాణాన్ని నమోదు చేయండి",
-    "showing":"Showing",
-    "results_of":"results of",
-    "for":"for"
+    "showing":"చూపుతున్న ఫలితాలు",
+    "results_of":"మొత్తం",
+    "for":"కోసం"
 },
 "policy":{
     "policies":"విధానాలు",
@@ -261,7 +261,8 @@
     "account_owner":"ఖాతా యజమాని",
     "account_name":"ఖాతా పేరు",
     "account_ifsc":"ఖాతా ఐఎఫ్ఎస్సి ",
-    "profile":"ప్రొఫైల్"
+    "profile":"ప్రొఫైల్",
+    "current_number":"ప్రస్తుత సంఖ్య"
 },
 "add_address":{
     "add_alternate_address":"ప్రత్యామ్నాయ చిరునామాను జోడించు",
@@ -295,7 +296,7 @@
         "change":"మార్చు"
     },
     "alternate_mobile_number":{
-        "Alternate_mobile_number":"ప్రత్యామ్నాయ మొబైల్ నంబర్ ",
+        "alternate_mobile_number":"ప్రత్యామ్నాయ మొబైల్ నంబర్ ",
         "enter_mobile_number":"మొబైల్ నంబర్ను నమోదు చేయండి",
         "less_than_10_digits":"10 కంటే తక్కువ అంకెలు",
         "more_than_10_digits":"10 కంటే ఎక్కువ అంకెలు",
@@ -428,7 +429,7 @@
         "more_than_12_digits":"2 కంటే ఎక్కువ అంకెలు",
         "password_is_required":"పాస్వర్డ్ అవసరం",
         "re-enter_password":"పాస్ వర్డ్ ను తిరిగి పంపు",
-        "new_confirm_password_did_not_match":"Tక్రొత్త పాస్ వర్డ్ మరియు పాస్వర్డ్ను నిర్ధారించండి లేదు",
+        "new_confirm_password_did_not_match":"క్రొత్త పాస్ వర్డ్ మరియు పాస్వర్డ్ను నిర్ధారించండి లేదు",
         "submit":"సమర్పించు"
     },
     "customer_address_book":{
@@ -456,7 +457,7 @@
     },
     "customer_current_order":{
         "my_orders":"నా ఆర్డర్స్",
-        "orderid":"ఆర్డర్ ID",
+        "orderid":"ఆర్డర్ ఐడి",
         "product_name":"ఉత్పత్తి పేరు",
         "quantity":"పరిమాణం (కిలో లో)",
         "price":"ధర (రూ.)",
@@ -464,7 +465,7 @@
         "otp":"ఓటీపీ"    },
     "customer_previous_order":{
         "previous_orders":"మునుపటి ఆర్డర్స్",
-        "orderid":"ఆర్డర్ ID",
+        "orderid":"ఆర్డర్ ఐడి",
         "product_name":"ఉత్పత్తి పేరు",
         "quantity":"పరిమాణం (కిలో లో)",
         "price":"ధర (రూ.)",
@@ -495,7 +496,7 @@
     },
     "customer_my_cart":{
         "your_cart":"మీ కార్ట్",
-        "items":"అంశాలు",
+        "item":"అంశాలు",
         "continue_shopping":"షాపింగ్ కొనసాగించు",
         "qty":"పరిమాణం ",
         "kg":"కిలో",
