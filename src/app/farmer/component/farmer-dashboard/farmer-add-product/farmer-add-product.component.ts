@@ -15,6 +15,7 @@ import { ProductList } from '../../../config/productList';
 export class FarmerAddProductComponent implements OnInit {
 
   items = ProductList.products;
+  public lanItems:any;
   rForm: FormGroup;
   post:any;
   public kkdFarmId: any="";
@@ -32,7 +33,7 @@ export class FarmerAddProductComponent implements OnInit {
   ngOnInit() {
     //assign role and farmer id
     this.kkdFarmId=localStorage.getItem("id");
-  }
+    }
 
 
   constructor(private productService: FarmerAddProductService,
@@ -48,11 +49,13 @@ export class FarmerAddProductComponent implements OnInit {
       available : ''
     })
 
+    //items changing according to language
     this.idRoleService.currentLan.subscribe((lan) =>{
-       this.currentLan=lan;
+      this.items=ProductList.prodLan[lan];
     })
-
   }
+
+
 
 
   //function to select product name
@@ -99,7 +102,6 @@ export class FarmerAddProductComponent implements OnInit {
         this.router.navigate(['farmer/dashboard']);
 
       },(error) => {
-        console.log(error)
         swal({
           type: 'error',
           title: 'Oops...',

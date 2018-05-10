@@ -56,7 +56,6 @@ export class HeaderComponent implements OnInit {
  }
 
  emitLan(x){
-   debugger
    this.idRoleService.currentLan.emit(x);
  }
 
