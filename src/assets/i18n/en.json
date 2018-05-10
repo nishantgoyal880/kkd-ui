@@ -154,7 +154,10 @@
         "please_enter_qantity":"Please Enter Quantity",
         "close":"Close",
         "proceed":"Proceed",
-        "enter_qantity":"Enter Quantity"
+        "enter_qantity":"Enter Quantity",
+        "showing":"Showing",
+        "results_of":"results of",
+        "for":"for"
     },
     "policy":{
         "policies":"Policies",

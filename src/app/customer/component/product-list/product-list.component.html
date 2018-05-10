@@ -49,13 +49,13 @@
       <div class="col-md-9">
         <div class="container">
             <span class="searchResults">
-                Showing {{(p-1)*productsToShowInOnePage+1}} – 
+                {{ 'products.showing' | translate }} {{(p-1)*productsToShowInOnePage+1}} – 
                 <span *ngIf="p!=lastpage; else lastpagee;">{{p*productsToShowInOnePage}}</span>
                 <ng-template #lastpagee>
                     {{products.length}}
                 </ng-template>
 
-                 results of {{products.length}} <span *ngIf="searchTextDisplay">for "{{searchTextDisplay}}"</span>
+                 {{ 'products.results_of' | translate }} {{products.length}} <span *ngIf="searchTextDisplay">{{ 'products.for' | translate }} "{{searchTextDisplay}}"</span>
             </span>
           <div class="row">
             <div class="col-md-6 col-lg-4" *ngFor="let item of products | paginate:{itemsPerPage:productsToShowInOnePage,currentPage:p}">

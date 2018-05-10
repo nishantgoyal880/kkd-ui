@@ -153,7 +153,10 @@
         "please_enter_qantity":"कृपया मात्रा दर्ज करें",
         "close":"बंद करे",
         "proceed":"आगे बढ़ो",
-        "enter_qantity":"मात्रा दर्ज करें"
+        "enter_qantity":"मात्रा दर्ज करें",
+        "showing":"Showing",
+        "results_of":"results of",
+        "for":"for"
     },
     "policy":{
         "policies":"नीतियाँ",

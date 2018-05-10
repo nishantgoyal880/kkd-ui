@@ -154,7 +154,10 @@
     "please_enter_qantity":"దయచేసి పరిమాణం ఎంటర్ చేయండి",
     "close":"మూసివేయి",
     "proceed":"కొనసాగు",
-    "enter_qantity":"పరిమాణాన్ని నమోదు చేయండి"
+    "enter_qantity":"పరిమాణాన్ని నమోదు చేయండి",
+    "showing":"Showing",
+    "results_of":"results of",
+    "for":"for"
 },
 "policy":{
     "policies":"విధానాలు",

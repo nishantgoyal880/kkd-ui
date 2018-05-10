@@ -154,7 +154,10 @@
         "please_enter_qantity":"ਕਿਰਪਾ ਕਰਕੇ ਮਾਤਰਾ ਦਾਖਲ ਕਰੋ",
         "close":"ਬੰਦ ਕਰੋ",
         "proceed":"ਅੱਗੇ ਵਧੋ",
-        "enter_qantity":"ਮਾਤਰਾ ਦਾਖਲ ਕਰੋ"
+        "enter_qantity":"ਮਾਤਰਾ ਦਾਖਲ ਕਰੋ",
+        "showing":"Showing",
+        "results_of":"results of",
+        "for":"for"
     },
     "policy":{
         "policies":"ਪਾਲਿਸੀਆਂ",
