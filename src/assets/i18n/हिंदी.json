@@ -298,12 +298,19 @@
         "mobile_number_required":"मोबाइल नंबर की आवश्यकता है",
         "update":"अद्यतन करें"
     },
-    "delete_profile":{
+    "farmer_delete_profile":{
         "delete_profile":"प्रोफ़ाइल हटाएं",
         "enter_password":"पास वर्ड दर्ज करें",
         "enter_current_password":"वर्तमान पासवर्ड डालें",
         "current_password_required":"वर्तमान पासवर्ड आवश्यक है",
-        "delete":"हटाना"
+        "delete":"हटाना",
+        "enter_otp":"Enter OTP",
+        "otp_is_required":"OTP is required",
+        "less_then_10_digit":"less then 10 digit",
+        "more_then_10_digit":"more then 10 digit",
+        "mobile_number_is_required":"Mobile Number is required",
+        "verify_otp":"Verify otp",
+        "enter_mobile_number":"Enter Mobile Number"
     },
     "farmer_add_product":{
         "upload_product":"उत्पाद अपलोड करें",
@@ -338,7 +345,11 @@
         "ifsc_required":"आईएफएससी कोड की आवश्यकता है",
         "more_than_6_characters_not_allowed":"6 से अधिक वर्णों की अनुमति नहीं है",
         "minimun_6_digits_are_required":"न्यूनतम 6 अंक आवश्यक हैं",
-        "save_details":"विवरण बचाओ"
+        "save_details":"विवरण बचाओ",
+        "more_than_10_characters_not_allowed":"More than 6 characters not allowed",
+        "minimun_10_digits_are_required":"Minimum 6 digits are required",
+        "mobile_number":"Mobile Number",
+        "mobile_number_required":"Mobile number is required"
     },
     "farmer_current_order":{
         "customer_id":"ग्राहक आईडी",

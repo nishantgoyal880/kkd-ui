@@ -299,12 +299,19 @@
         "mobile_number_required":"Mobile number is required",
         "update":"Update"
     },
-    "delete_profile":{
+    "farmer_delete_profile":{
         "delete_profile":"Delete Profile",
         "enter_password":"Enter the password",
         "enter_current_password":"Enter the current password",
         "current_password_required":"Current password required",
-        "delete":"Delete"
+        "delete":"Delete",
+        "enter_otp":"Enter OTP",
+        "otp_is_required":"OTP is required",
+        "less_then_10_digit":"less then 10 digit",
+        "more_then_10_digit":"more then 10 digit",
+        "mobile_number_is_required":"Mobile Number is required",
+        "verify_otp":"Verify otp",
+        "enter_mobile_number":"Enter Mobile Number"
     },
     "farmer_add_product":{
         "upload_product":"Upload Product",
@@ -339,7 +346,11 @@
         "ifsc_required":"IFSC Code is required",
         "more_than_6_characters_not_allowed":"More than 6 characters not allowed",
         "minimun_6_digits_are_required":"Minimum 6 digits are required",
-        "save_details":"Save Details"
+        "save_details":"Save Details",
+        "more_than_10_characters_not_allowed":"More than 6 characters not allowed",
+        "minimun_10_digits_are_required":"Minimum 6 digits are required",
+        "mobile_number":"Mobile Number",
+        "mobile_number_required":"Mobile number is required"
     },
     "farmer_current_order":{
         "customer_id":"Customer ID",

@@ -1,69 +1,124 @@
 <div id="bgimg" style="margin-top: 0.1rem; padding-bottom: 3rem">
-<div>
-<h1>{{ 'farmer_bank_details.bank_details' | translate }}</h1>
-</div>
-
-<!-- Form begins -->
-<form [formGroup]="rForm" (ngSubmit)="addBankDetails(rForm.value)">
-
-	<div class = "card shadow">
-		<div class="form-group">
-			<!-- Account no. field -->
-			<div class = "form-comp-top">
-				<div class = "name"><label for="accountNo">{{ 'farmer_bank_details.account_number' | translate }}</label></div>
-				<input type="text" class="form-control" id="accountNo" placeholder="{{ 'farmer_bank_details.account_number' | translate }}" formControlName="accountNo">
-				<!-- Validating the data -->
-				<div *ngIf="rForm.controls['accountNo'].touched && rForm.controls['accountNo'].invalid" class="alert">
-					<div *ngIf="rForm.controls['accountNo'].hasError('required')">
-						{{ 'farmer_bank_details.account_number_required' | translate }}
-					</div>
-					<div *ngIf="rForm.controls['accountNo'].hasError('maxlength')">
-						{{ 'farmer_bank_details.more_than_12_digits' | translate }}
-					</div>
-					<div *ngIf="rForm.controls['accountNo'].hasError('minlength')">
-						{{ 'farmer_bank_details.minimun_12_digits_are_required' | translate }}
-					</div>
-				</div>
-			</div>
-			<!-- Account name field -->
-			<div class = "form-comp">
-				<div class = "name"><label for="accountName">{{ 'farmer_bank_details.account_holder_name' | translate }}</label></div>
-				<input type="textarea" class="form-control" id="accountName" placeholder="{{ 'farmer_bank_details.account_holder_name' | translate }}" formControlName="accountName">
-				<div *ngIf="rForm.controls['accountName'].touched && rForm.controls['accountName'].invalid" class="alert">
-					<!-- Validating the data -->
-					<div *ngIf="rForm.controls['accountName'].hasError('required')">
-						{{ 'farmer_bank_details.name_required' | translate }}
-					</div>
-					<div *ngIf="rForm.controls['accountName'].hasError('maxlength')">
-						{{ 'farmer_bank_details.more_than_20_characters_not_allowed' | translate }}
-					</div>
-					<div *ngIf="rForm.controls['accountName'].hasError('minlength')">
-						{{ 'farmer_bank_details.minimun_2_digits_are_required' | translate }}
-					</div>
-				</div>
-			</div>
-			<!-- IFSC code field -->
-			<div class = "form-comp">
-				<div class = "name"><label for="ifscCode">{{ 'farmer_bank_details.ifsc_code' | translate }}</label></div>
-				<input type="text" class="form-control" id="ifscCode" placeholder="{{ 'farmer_bank_details.ifsc_code' | translate }}" formControlName="ifscCode">
-				<!-- Validating the data -->
-				<div *ngIf="rForm.controls['ifscCode'].touched && rForm.controls['ifscCode'].invalid" class="alert">
-					<div *ngIf="rForm.controls['ifscCode'].hasError('required')">
-						{{ 'farmer_bank_details.ifsc_required' | translate }}
-					</div>
-					<div *ngIf="rForm.controls['ifscCode'].hasError('maxlength')">
-						{{ 'farmer_bank_details.more_than_12_characters_not_allowed' | translate }}
-					</div>
-					<div *ngIf="rForm.controls['ifscCode'].hasError('minlength')">
-						{{ 'farmer_bank_details.minimun_6_digits_are_required' | translate }}
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class ="form-comp-button">
-			<button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_bank_details.save_details' | translate }}</button>
-		</div>
+	<div>
+		<h1>{{ 'farmer_bank_details.bank_details' | translate }}</h1>
 	</div>
-</form>
-</div>
 
+	<!-- Form begins -->
+	<form [formGroup]="rForm" (ngSubmit)="addBankDetails(rForm.value)">
+
+		<!-- Radio buttons for Bank or Paytm -->
+		<div class="text-center">
+			<div class="checkbox col-md-6">
+				<!--Cash on delivery checkbox-->
+				<label>
+					<input type="radio" formControlName="rad" value="bank" (change)="radioClick(true)" />
+					<img src="../../../../assets/images/cod.png" alt="Cash On delivery">
+				</label>
+			</div>
+			<div class="checkbox col-md-6">
+				<!--Online payment checkbox-->
+				<label>
+					<input type="radio" formControlName="rad" value="paytm" (change)="radioClick(false)" />
+					<img src="../../../../assets/images/credit_card.png" alt="Online Payment">
+				</label>
+			</div>
+		</div>
+
+
+		<div class="card shadow" *ngIf="flag">
+			<div class="form-group">
+				<!-- Account no. field -->
+				<div class="form-comp-top">
+					<div class="name">
+						<label for="accountNo">{{ 'farmer_bank_details.account_number' | translate }}</label>
+					</div>
+					<input type="text" class="form-control" id="accountNo" placeholder="{{ 'farmer_bank_details.account_number' | translate }}"
+					 formControlName="accountNo">
+					<!-- Validating the data -->
+					<div *ngIf="rForm.controls['accountNo'].touched && rForm.controls['accountNo'].invalid" class="alert">
+						<div *ngIf="rForm.controls['accountNo'].hasError('required')">
+							{{ 'farmer_bank_details.account_number_required' | translate }}
+						</div>
+						<div *ngIf="rForm.controls['accountNo'].hasError('maxlength')">
+							{{ 'farmer_bank_details.more_than_12_digits' | translate }}
+						</div>
+						<div *ngIf="rForm.controls['accountNo'].hasError('minlength')">
+							{{ 'farmer_bank_details.minimun_12_digits_are_required' | translate }}
+						</div>
+					</div>
+				</div>
+				<!-- Account name field -->
+				<div class="form-comp">
+					<div class="name">
+						<label for="accountName">{{ 'farmer_bank_details.account_holder_name' | translate }}</label>
+					</div>
+					<input type="textarea" class="form-control" id="accountName" placeholder="{{ 'farmer_bank_details.account_holder_name' | translate }}"
+					 formControlName="accountName">
+					<div *ngIf="rForm.controls['accountName'].touched && rForm.controls['accountName'].invalid" class="alert">
+						<!-- Validating the data -->
+						<div *ngIf="rForm.controls['accountName'].hasError('required')">
+							{{ 'farmer_bank_details.name_required' | translate }}
+						</div>
+						<div *ngIf="rForm.controls['accountName'].hasError('maxlength')">
+							{{ 'farmer_bank_details.more_than_20_characters_not_allowed' | translate }}
+						</div>
+						<div *ngIf="rForm.controls['accountName'].hasError('minlength')">
+							{{ 'farmer_bank_details.minimun_2_digits_are_required' | translate }}
+						</div>
+					</div>
+				</div>
+				<!-- IFSC code field -->
+				<div class="form-comp">
+					<div class="name">
+						<label for="ifscCode">{{ 'farmer_bank_details.ifsc_code' | translate }}</label>
+					</div>
+					<input type="text" class="form-control" id="ifscCode" placeholder="{{ 'farmer_bank_details.ifsc_code' | translate }}" formControlName="ifscCode">
+					<!-- Validating the data -->
+					<div *ngIf="rForm.controls['ifscCode'].touched && rForm.controls['ifscCode'].invalid" class="alert">
+						<div *ngIf="rForm.controls['ifscCode'].hasError('required')">
+							{{ 'farmer_bank_details.ifsc_required' | translate }}
+						</div>
+						<div *ngIf="rForm.controls['ifscCode'].hasError('maxlength')">
+							{{ 'farmer_bank_details.more_than_12_characters_not_allowed' | translate }}
+						</div>
+						<div *ngIf="rForm.controls['ifscCode'].hasError('minlength')">
+							{{ 'farmer_bank_details.minimun_6_digits_are_required' | translate }}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-comp-button">
+				<button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_bank_details.save_details' | translate }}</button>
+			</div>
+		</div>
+
+		<!-- Paytm form starts here -->
+		<div class="card shadow" *ngIf="flag===false">
+			<div class="form-group">
+				<div class="form-comp-top mb-3">
+					<div class="name">
+						<label for="accountNo">{{ 'farmer_bank_details.mobile_number' | translate }}*</label>
+					</div>
+					<input type="text" class="form-control"  placeholder="{{ 'farmer_bank_details.mobile_number' | translate }}"
+					 formControlName="contactNo">
+					<!-- Validating the data -->
+					<div *ngIf="rForm.controls['contactNo'].touched && rForm.controls['contactNo'].invalid" class="alert">
+						<div *ngIf="rForm.controls['contactNo'].hasError('required')">
+							{{ 'farmer_bank_details.mobile_number_required' | translate }}
+						</div>
+						<div *ngIf="rForm.controls['contactNo'].hasError('maxlength')">
+							{{ 'farmer_bank_details.more_than_10_digits' | translate }}
+						</div>
+						<div *ngIf="rForm.controls['contactNo'].hasError('minlength')">
+							{{ 'farmer_bank_details.minimun_10_digits_are_required' | translate }}
+						</div>
+					</div>
+					<div class="form-comp-button">
+							<button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_bank_details.save_details' | translate }}</button>
+						</div>
+				</div>
+			</div>
+		</div>
+
+	</form>
+</div>

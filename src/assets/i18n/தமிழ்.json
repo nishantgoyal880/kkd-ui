@@ -1,17 +1,18 @@
 {
     "footer":{
-        "get_started":"தொடங்குக",
-        "home":"முகப்பு",
         "about_us":"எங்களை பற்றி",
         "policies":"கொள்கைகள்",
-        "contact_us":"எங்களை தொடர்பு கொள்ள",
+        "contact":"எங்களை தொடர்பு கொள்ள",
         "support":"ஆதரவு",
         "help":"உதவி",
-        "join_our_newsletter":"எங்கள் செய்திமடலில் சேரவும்",
-        "connect_on_social":"சமூக ஊடகங்களில் எங்களுடன் இணையுங்கள்",
-        "enter_your_email":"மின்னஞ்சலை பதிவுசெய்க",
-        "subscribe":"பதிவு",
-        "kisan_ki_dukan":"கிசான் கி டுகான். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை"
+        "kisan_ki_dukan":"கிசான் கி டுகான். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை",
+        "footer_description":"We are a young company always looking for new and creative ideas to help you with our products in your everyday work.",
+        "our_team":"Our Team",
+        "sapientrazorfish_Gurgaon":" SapientRazorfish,Gurgaon",
+        "phone":"Phone",
+        "email":"Email",
+        "skype":"Skype",
+        "follow_us":"Follow Us"
     },
     "body":{
         "kisan_ki_dukan":"கிசான் கி டுகான்",
@@ -21,7 +22,7 @@
         "previous":"முந்தைய",
         "next":"அடுத்த",
         "welcome":"வரவேற்பு",
-        "about":"பற்றி",
+        "about":"About",
         "about_description":"கிசான் கி டுகன் (KKD) திட்டம், பண்ணையில் இருந்து வாடிக்கையாளருக்கு நேரடியாக பொருட்களை விநியோகிப்பதில் கவனம் செலுத்துகிறது.நமக்கு தெரிந்தவாறு,அது பண்ணையில் இருந்து இல்லையென்றால் புதியது அல்ல.எனவே,விவசாயிகள் தங்கள் பொருட்களை விற்க சரியான வாடிக்கையாளர்களுடன் தொடர்பு கொள்ளக்கூடிய ஒரு தளத்தை விவசாயிகளுக்கும் வாடிக்கையாளர்களுக்கும் வழங்குவதன் மூலம் ஒரு ஆன்லைன் அணுகுமுறை நடைமுறைப்படுத்தப்படுகிறது மற்றும் அதேபோல வாடிக்கையாளர்களும் தங்கள் இருப்பிடம் மற்றும் விலையை அடிப்படையாகக் கொண்டு விவசாயிகளிடமிருந்து பொருட்களை பெற்றுக் கொள்ளலாம் மற்றும் அவற்றின் பயன்பாட்டிற்கான தரமான மூலப்பொருட்களைப் பெறலாம்.",
         "farmer_joined":"விவசாயிகள் இணைந்தனர்",
         "kg_vegetables_sold":"கிலோ காய்கறிகள் விற்கப்பட்டன ",
@@ -69,7 +70,17 @@
         "sign_up_as_farmer":"விவசாயியாக பதிவு செய்க",
         "my_account":"என் கணக்கு",
         "logout":"வெளியேறு",
-        "my_cart":"என் வணிக வண்டி"
+        "my_cart":"என் வணிக வண்டி",
+        "dashboard":"Dashboard",
+        "change_city":"Change City",
+        "delhi":"Delhi",
+        "mumbai":"Mumbai",
+        "chandigarh":"Chandigarh",
+        "ahmedabad":"Ahmedabad",
+        "hyderabad":"Hyderabad",
+        "chennai":"Chennai",
+        "cancel":"Cancel",
+        "save":"Save"
     },
     "support":{
        "support":"ஆதரவு",
@@ -142,7 +153,8 @@
         "new_message":"புதிய தகவல்",
         "please_enter_qantity":"அளவை குறிப்பிடவும் ",
         "close":"வெளியேறு ",
-        "proceed":"தொடர்"
+        "proceed":"தொடர்",
+        "enter_qantity":"Enter Quantity"
     },
     "policy":{
         "policies":"கொள்கைகள்",
@@ -277,12 +289,19 @@
         "mobile_number_required":"தொலைபேசி எண் தேவை",
         "update":"புதுப்பிக்கவும்"
     },
-    "delete_profile":{
+    "farmer_delete_profile":{
         "delete_profile":"கணக்கை நீக்கு",
         "enter_password":"கடவுச்சொல்லை உள்ளிடவும்",
         "enter_current_password":"தற்போதைய கடவுச்சொல்லை உள்ளிடவும்",
         "current_password_required":"தற்போதைய கடவுச்சொல் தேவை",
-        "delete":"நீக்குக"
+        "delete":"நீக்குக",
+        "enter_otp":"Enter OTP",
+        "otp_is_required":"OTP is required",
+        "less_then_10_digit":"less then 10 digit",
+        "more_then_10_digit":"more then 10 digit",
+        "mobile_number_is_required":"Mobile Number is required",
+        "verify_otp":"Verify otp",
+        "enter_mobile_number":"Enter Mobile Number"
     },
     "farmer_add_product":{
         "upload_product":"தயாரிப்பை பதிவேற்றுக ",
@@ -317,7 +336,11 @@
         "ifsc_required":"IFSC எண் தேவைப்படுகிறது",
         "more_than_6_characters_not_allowed":"6 க்கும் மேற்பட்ட எழுத்துக்கள் அனுமதிக்கப்படாது",
         "minimun_6_digits_are_required":"குறைந்தபட்சம் 6 இலக்கங்கள் தேவைப்படுகின்றன",
-        "save_details":"விவரங்களைச் சேமிக்கவும்"
+        "save_details":"விவரங்களைச் சேமிக்கவும்",
+        "more_than_10_characters_not_allowed":"More than 6 characters not allowed",
+        "minimun_10_digits_are_required":"Minimum 6 digits are required",
+        "mobile_number":"Mobile Number",
+        "mobile_number_required":"Mobile number is required"
     },
     "farmer_current_order":{
         "customer_id":"வாடிக்கையாளர் அடையாள எண்",
@@ -487,7 +510,8 @@
         "less_than_3_digits":"3 இலக்கத்திற்கும் குறைவாக உள்ளது",
         "more_than_3_digits":"3 க்கும் மேற்பட்ட இலக்கங்கள்",
         "cvv_is_required":"CVV எண் தேவை",
-        "make_payment":"பணம் கட்டுக"       
+        "make_payment":"பணம் கட்டுக",
+        "place_order":"ஆர்டரை சமர்ப்பிக்கவும்"      
     },
     "about_us":{
         "about_us_heading":"எங்களை பற்றி",
