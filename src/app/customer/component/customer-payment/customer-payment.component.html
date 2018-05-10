@@ -1,6 +1,6 @@
 <div class="container mt-100">
   <div class="row">
-    <div class="col-sm-12 col-md-8 mx-auto">
+    <div class="col-sm-12 col-md-6 mx-auto">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
@@ -12,23 +12,28 @@
             <!-->
             Form group area starts here
             </!-->
-            <div class="checkbox ">
-              <!--Cash on delivery checkbox-->
-              <label>
-                <input type="radio" formControlName="rad" value="cod" (change)="radioClick(true)" /> {{ 'customer_payment.cash_on_delivery' | translate }}
-              </label>
-            </div>
-            <div class="checkbox ">
-              <!--Online payment checkbox-->
-              <label>
-                <input type="radio" formControlName="rad" value="card" (change)="radioClick(false)" /> {{ 'customer_payment.credit_debit_card' | translate }}
-              </label>
+            <div class="text-center">
+              <div class="checkbox col-md-6">
+                <!--Cash on delivery checkbox-->
+                <label>
+                  <input type="radio" formControlName="rad" value="cod" (change)="radioClick(true)" />
+                  <img src="../../../../assets/images/cod.png" alt="Cash On delivery" >
+                </label>
+              </div>
+              <div class="checkbox col-md-6">
+                <!--Online payment checkbox-->
+                <label>
+                  <input type="radio" formControlName="rad" value="card" (change)="radioClick(false)" />
+                  <img src="../../../../assets/images/credit_card.png" alt="Online Payment">
+                </label>
+              </div>
             </div>
             <div class="form-group">
-              <label for="cardNumber">
+              <label for="cardNumber" *ngIf="!flag">
                 {{ 'customer_payment.Card_number' | translate }}</label>
               <div class="input-group">
-                <input type="text" class="form-control" formControlName="cardNumber" placeholder=" {{ 'customer_payment.Card_number' | translate }}" />
+                <input type="text" class="form-control" formControlName="cardNumber" placeholder=" {{ 'customer_payment.Card_number' | translate }}"
+                  *ngIf="!flag" />
                 <!--Input field for Card Number-->
                 <div *ngIf="rForm.controls['cardNumber'].touched && rForm.controls['cardNumber'].invalid" class="alert">
                   <div *ngIf="rForm.controls['cardNumber'].hasError('minlength')">
@@ -46,11 +51,11 @@
             <div class="row">
               <div class="col-sm-7 col-md-7">
                 <div class="form-group">
-                  <label for="expiryMonth">
+                  <label for="expiryMonth" *ngIf="!flag">
                     {{ 'customer_payment.expiry_date' | translate }}</label>
                   <div class="row">
                     <div class="col-sm-6 pl-ziro">
-                      <input type="text" class="form-control mb-1" formControlName="expiryMonth" placeholder="MM" required />
+                      <input type="text" class="form-control mb-1" formControlName="expiryMonth" placeholder="MM" required *ngIf="!flag" />
                       <!--Input field for Month-->
                       <div *ngIf="rForm.controls['expiryMonth'].touched && rForm.controls['expiryMonth'].invalid" class="alert">
                         <div *ngIf="rForm.controls['expiryMonth'].hasError('minlength')">
@@ -65,7 +70,7 @@
                       </div>
                     </div>
                     <div class="col-sm-6  pl-ziro">
-                      <input type="text" class="form-control" formControlName="expiryYear" placeholder="YY" required />
+                      <input type="text" class="form-control" formControlName="expiryYear" placeholder="YY" required *ngIf="!flag" />
                       <!--Input field for Year-->
                       <div *ngIf="rForm.controls['expiryYear'].touched && rForm.controls['expiryYear'].invalid" class="alert">
                         <div *ngIf="rForm.controls['expiryYear'].hasError('minlength')">
@@ -84,9 +89,9 @@
               </div>
               <div class="col-sm-5 col-md-5 pull-right">
                 <div class="form-group">
-                  <label for="cvCode">
+                  <label for="cvCode" *ngIf="!flag">
                     {{ 'customer_payment.cvv_code' | translate }}</label>
-                  <input type="password" class="form-control" formControlName="cvCode" placeholder="CV" required />
+                  <input type="password" class="form-control" formControlName="cvCode" placeholder="CV" required *ngIf="!flag" />
                   <!--Input field for CVV number-->
                   <div *ngIf="rForm.controls['cvCode'].touched && rForm.controls['cvCode'].invalid" class="alert">
                     <div *ngIf="rForm.controls['cvCode'].hasError('minlength')">
