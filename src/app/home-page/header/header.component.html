@@ -3,11 +3,11 @@
     <div class="footer-bottom">
         <div class="container-fluid">
           <div class="row">
-            <div class=" col-3">
-                  <a class="nav-link" (click)="select()" data-toggle="modal" data-target="#locationModal" id="location">{{ 'header.you_are_in' | translate }}
+            <div class=" col-9">
+                  <a class="nav-link ml-0" (click)="select()" data-toggle="modal" data-target="#locationModal" id="location">{{ 'header.you_are_in' | translate }}
                     <i class="fa fa-map-marker mr-1 ml-2"></i>{{city}}</a>
                   </div>
-             <div class="col-9" id="lang-div">
+             <div class="col-3" id="lang-div">
               <select  class="btn btn-success" #langSelect (change)="translate.use(langSelect.value)" id="lang-drop">
                  <option class="btn btn-light" *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
               </select>

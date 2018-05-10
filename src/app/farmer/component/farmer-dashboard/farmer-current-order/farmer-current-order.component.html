@@ -31,6 +31,9 @@
           style="margin-top:13px;">
           {{ 'farmer_current_order.delivered' | translate }}
         </a>
+        <a id="track" class="launch-map" data-toggle="modal" data-target="#mapModal" (click)="track(order.address.city)"
+          style="margin-top:13px;">Track
+        </a>
       </span>
       <span *ngIf="order.farmerStatus==null">
         <a id="accept" data-toggle="modal" data-target="#exampleModal1" (click)="setData(order.orderId)">
@@ -173,3 +176,17 @@
         </div>
       </div>
     </div>
+    </div>
+
+    <!-- Accept Modal -->
+<div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="mapModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div #gmap style="width:600px;height:600px"></div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+    
