@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import swal from "sweetalert2";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-payment',
@@ -15,7 +16,7 @@ export class CustomerPaymentComponent implements OnInit {
   ngOnInit() {
   }
 
-  constructor(private fb: FormBuilder) {    //Initialise form element and specify the validations
+  constructor(private fb: FormBuilder, private router:Router) {    //Initialise form element and specify the validations
     this.flag=true;
     this.rForm = fb.group({
       'cardNumber': [null, Validators.compose([Validators.required, Validators.minLength(16), Validators.maxLength(16)])],
@@ -47,6 +48,8 @@ export class CustomerPaymentComponent implements OnInit {
   		'Thank You!',
   		'Your order has been placed',
   		'success'
-  		)
+      )
+      this.router.navigate(["productList"]);
+      
   }
 }

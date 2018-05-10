@@ -20,7 +20,7 @@
         </div>
         <div class = form-comp>
           <div class = "name"><label for="currentPassword">{{ 'farmer_delete_profile.enter_password' | translate }}*</label></div>
-          <input type="password" class="form-control" placeholder="{{ 'delete_profile.enter_current_password' | translate }}" formControlName="currentPassword">
+          <input type="password" class="form-control" placeholder="{{ 'farmer_delete_profile.enter_current_password' | translate }}" formControlName="currentPassword">
           <div *ngIf="rForm.controls['currentPassword'].touched && rForm.controls['currentPassword'].invalid" class="alert">
             <div *ngIf="rForm.controls['currentPassword'].hasError('required')">
               {{ 'farmer_delete_profile.current_password_required' | translate }}!

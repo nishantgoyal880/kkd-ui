@@ -45,37 +45,38 @@
                     <hr>
                     <!-- Quotation -->
                     <p *ngIf="farmerInfo.currentAddress">
-                      <span class="font-weight-bold">Current Address: </span>
+                      <span class="font-weight-bold">{{ 'my_account.current_address' | translate }}: </span>
                       {{ farmerInfo.currentAddress.addressLine}}, {{farmerInfo.currentAddress.city}}, 
                       distt. {{farmerInfo.currentAddress.district}} {{farmerInfo.currentAddress.state}}, {{farmerInfo.currentAddress.pincode}}
                     </p>
                     <p>
-                        <i class="fa fa-phone" aria-hidden="true"></i><span class="font-weight-bold"> Current Number: </span>
+                        <i class="fa fa-phone" aria-hidden="true"></i><span class="font-weight-bold"> 
+                          {{ 'my_account.current_number' | translate }}: </span>
                       {{farmerInfo.mobileNo}}
                     </p>
                     <p>
                         <i class="fa fa-phone" aria-hidden="true"></i> <span class="font-weight-bold">
-                         Alternate Number: 
+                         {{ 'my_account.alternate_mobile' | translate }}: 
                       </span>
                       {{farmerInfo.alternateNo}}
                     </p>
-                    <p *ngIf="farmerInfo.cities"> Places where I can deliver:</p>
+                    <p *ngIf="farmerInfo.cities"> {{ 'my_account.places_where_i_can_deliver' | translate }}:</p>
                     <p>
                       <i *ngFor="let city of farmerInfo.cities" lass="fa fa-map-marker" aria-hidden="true">{{city}}&nbsp;&nbsp; </i>
                     </p>
                     <p>
-                      <span class="font-weight-bold">Aadhaar Address: </span>
+                      <span class="font-weight-bold">{{ 'my_account.current_address' | translate }}: </span>
                       {{farmerInfo.aadhaarData.permanentAddress.addressLine}}, {{farmerInfo.aadhaarData.permanentAddress.city}}, distt. {{farmerInfo.aadhaarData.permanentAddress.district}},
                       {{farmerInfo.aadhaarData.permanentAddress.state}}, {{farmerInfo.aadhaarData.permanentAddress.pincode}}
                     </p>
                     <p *ngIf="farmerInfo.bankDetails">
-                      <span class="font-weight-bold">Bank Details</span>
+                      <span class="font-weight-bold">{{ 'my_account.aadhaar_address' | translate }}</span>
                       <br>
-                      <span>Account Owner: {{farmerInfo.bankDetails.accountName}}</span>
+                      <span>{{ 'my_account.account_owner' | translate }}: {{farmerInfo.bankDetails.accountName}}</span>
                       <br>
-                      <span>Account Name: {{farmerInfo.bankDetails.accountNo}}</span>
+                      <span>{{ 'my_account.account_name' | translate }}: {{farmerInfo.bankDetails.accountNo}}</span>
                       <br>
-                      <span>Account IFSC:{{farmerInfo.bankDetails.ifscCode}}</span>
+                      <span>{{ 'my_account.account_ifsc' | translate }}:{{farmerInfo.bankDetails.ifscCode}}</span>
                     </p>
                   </div>
                 </div>

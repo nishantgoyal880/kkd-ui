@@ -195,14 +195,11 @@ span.banner-icon {
     margin-top: 26px; 
 }
 
-/* @media (min-width: 992px) {  
-
+.lang_sel{
+	margin-top: 2rem;
 }
 
-.its-an-icon @media (min-width: 1200px) {  
-
-} */
-
-
-/*--//services--*/
-
+.card_lang{
+	text-align: center;
+	margin: auto;
+}

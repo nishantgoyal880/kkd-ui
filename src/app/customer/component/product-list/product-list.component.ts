@@ -15,8 +15,8 @@ export class ProductListComponent implements OnInit {
   public products: Array<any> = [];
   public max_price: number;
   public max_quantity: number;
-  public min_price:number;
-  public min_quantity:number;
+  public min_price:number=0;
+  public min_quantity:number=0;
   public role:string;
   public loggedIn:boolean;
   public userId:string;
@@ -74,7 +74,6 @@ export class ProductListComponent implements OnInit {
 
   // sort products by specific criteria
   sortBy(x) {
-    console.log(x);
     switch (x) {
       case "priceLH":
         this.products.sort(this.sorters.byPrice);
@@ -104,7 +103,6 @@ export class ProductListComponent implements OnInit {
         this.products = data;
         this.calculatingMax();
         this.lastpage=Math.ceil(this.products.length/this.productsToShowInOnePage)+'';
-        console.log(this.lastpage);
       },
       err => {
         console.log(err), (this.products = []);
@@ -113,28 +111,28 @@ export class ProductListComponent implements OnInit {
   }
   // event triggered on changing price slider
   myOnFinishPrice(event) {
+    this.min_price=event.from;
+    this.max_price=event.to;
     this.searchService.getAllProducts(this.searchInput).subscribe(
       data => {
         this.products = data.filter(
-          product => product.price >= event.from && product.price <= event.to
+          product => product.price >= event.from && product.price <= event.to&&product.quantity >= this.min_quantity && product.price <= this.max_quantity
         );
         this.lastpage=Math.ceil(this.products.length/this.productsToShowInOnePage)+'';
-        console.log("current"+this.p)
-        console.log("lst"+this.lastpage);
       },
       err => console.log(err)
     );
   }
   // event triggered on changing quantity filter
   myOnFinishQuantity(event) {
+    this.min_quantity=event.from;
+    this.max_quantity=event.to;
     this.searchService.getAllProducts(this.searchInput).subscribe(
       data => {
         this.products = data.filter(
-          product => product.quantity >= event.from && product.quantity <= event.to
+          product => product.quantity >= event.from && product.quantity <= event.to && product.price >= this.min_price && product.price <= this.max_price
         );
         this.lastpage=Math.ceil(this.products.length/this.productsToShowInOnePage)+'';
-        console.log("current"+this.p)
-        console.log("lst"+this.lastpage);
       },
       err => console.log(err)
     );
