@@ -69,7 +69,17 @@
         "sign_up_as_farmer":"किसान साइन अप",
         "my_account":"मेरा खाता",
         "logout":"लोग आउट",
-        "my_cart":"मेरा कार्ट"
+        "my_cart":"मेरा कार्ट",
+        "dashboard":"Dashboard",
+        "change_city":"Change City",
+        "delhi":"Delhi",
+        "mumbai":"Mumbai",
+        "chandigarh":"Chandigarh",
+        "ahmedabad":"Ahmedabad",
+        "hyderabad":"Hyderabad",
+        "chennai":"Chennai",
+        "cancel":"Cancel",
+        "save":"Save"
     },
     "support":{
         "support":"सहायता",
@@ -497,7 +507,7 @@
         "less_than_3_digits":"3 अंकों से कम",
         "more_than_3_digits":"3 से अधिक अंक",
         "cvv_is_required":"सीवीवी की आवश्यकता है",
-        "make_payment":"भुगतान करो"       
+        "place_order":"Place Order"      
     },
     "about_us":{
         "about_us_heading":"हमारे बारे में",
