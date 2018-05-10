@@ -8,18 +8,18 @@
 
 		<!-- Radio buttons for Bank or Paytm -->
 		<div class="text-center">
-			<div class="checkbox col-md-6">
-				<!--Cash on delivery checkbox-->
+			<div class="checkbox col-md-4 mb-3">
+				<!--Bank Details-->
 				<label>
 					<input type="radio" formControlName="rad" value="bank" (change)="radioClick(true)" />
-					<img src="../../../../assets/images/cod.png" alt="Cash On delivery">
+					<img src="../../../../../assets/images/bank_logo.png" alt="Cash On delivery">
 				</label>
 			</div>
-			<div class="checkbox col-md-6">
-				<!--Online payment checkbox-->
+			<div class="checkbox col-md-4 mb-3">
+				<!-- Paytm Details-->
 				<label>
 					<input type="radio" formControlName="rad" value="paytm" (change)="radioClick(false)" />
-					<img src="../../../../assets/images/credit_card.png" alt="Online Payment">
+					<img src="../../../../assets/images/paytm.jpg" alt="Online Payment">
 				</label>
 			</div>
 		</div>
@@ -97,8 +97,9 @@
 			<div class="form-group">
 				<div class="form-comp-top mb-3">
 					<div class="name">
-						<label for="accountNo">{{ 'farmer_bank_details.mobile_number' | translate }}*</label>
+						<label for="contactNo">{{ 'farmer_bank_details.mobile_number' | translate }}</label>
 					</div>
+					<!-- Field for Contact Number -->
 					<input type="text" class="form-control"  placeholder="{{ 'farmer_bank_details.mobile_number' | translate }}"
 					 formControlName="contactNo">
 					<!-- Validating the data -->
