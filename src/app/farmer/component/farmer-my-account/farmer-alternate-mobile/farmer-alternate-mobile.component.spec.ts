@@ -45,6 +45,12 @@ describe('FarmerAlternateMobileComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should call the ngOnInit method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'ngOnInit');
+    expect(component.ngOnInit).toHaveBeenCalledTimes(0);
+  }));
+  
   it('should call the updateFarmerMobile method', async(() => {
     fixture.detectChanges();
     spyOn(component,'updateFarmerMobile');

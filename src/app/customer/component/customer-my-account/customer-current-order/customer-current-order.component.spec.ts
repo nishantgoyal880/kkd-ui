@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import {IdRoleService} from '../../../../services/id-role/id-role.service'
 import { CustomerCurrentOrderComponent } from './customer-current-order.component';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
+import { NgxPaginationModule } from 'ngx-pagination';
 
 describe('CustomerCurrentOrderComponent', () => {
   let component: CustomerCurrentOrderComponent;
@@ -18,6 +19,7 @@ describe('CustomerCurrentOrderComponent', () => {
         BrowserModule,
         HttpClientModule,
         HttpModule,
+        NgxPaginationModule,
         RouterTestingModule,
         TranslateModule.forRoot({
           provide: TranslateLoader,
@@ -39,13 +41,6 @@ describe('CustomerCurrentOrderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should render title in a h1 tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('h1');
-    console.log(e1.innerText);
-    expect(e1.innerText).toEqual('customer_current_order.my_orders');
-  }));
 
   it('should call the getdata method', async(() => {
     fixture.detectChanges();

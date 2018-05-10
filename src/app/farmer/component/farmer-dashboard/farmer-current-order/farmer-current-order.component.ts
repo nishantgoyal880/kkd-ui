@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../../services/order-service/order.service';
 import { IdRoleService } from '../../../../services/id-role/id-role.service';
 import { ProductList } from '../../../config/productList';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-farmer-current-order',
@@ -88,7 +89,12 @@ export class FarmerCurrentOrderComponent implements OnInit {
     if(this.otpAuto==this.otp){
       this.otpVerified=true;
     }else{
-      alert("wrong OTP entered");
+      swal({
+				type: 'error',
+				title: 'Oops...',
+				text: 'Wrong OTP!',
+				footer: 'Enter Correct OTP......',
+			})
     }
   }
 

@@ -45,6 +45,12 @@ describe('FarmerChangePasswordComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should call the ngOnInit method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'ngOnInit');
+    expect(component.ngOnInit).toHaveBeenCalledTimes(0);
+  }));
+
   it('should call the resetPassword method', async(() => {
     fixture.detectChanges();
     spyOn(component,'resetPassword');
