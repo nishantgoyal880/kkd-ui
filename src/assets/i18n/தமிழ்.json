@@ -248,7 +248,17 @@
         "add_address":"முகவரி சேர்க்கவும்",
         "change_password":"கடவுச்சொல்லை மாற்றவும்",
         "alternate_mobile":"மாற்று தொலைபேசி எண் ",
-        "delete_profile":"கணக்கை நீக்குக "
+        "delete_profile":"கணக்கை நீக்குக ",
+        "current_address":"Current Address",
+        "alternate":"Alternate",
+        "current":"Current",
+        "places_where_i_can_deliver":"Places where i can deliver",
+        "aadhaar_address":"Aadhaar Address",
+        "bank_details":"Bank Details",
+        "account_owner":"Account Owner",
+        "account_name":"Account Name",
+        "account_ifsc":"Account IFSC",
+        "profile":"Profile"
     },
     "add_address":{
         "add_alternate_address":"மாற்று முகவரி",
