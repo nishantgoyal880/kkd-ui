@@ -338,7 +338,7 @@
         "amount":"Total Amount",
         "validity_of_order":"Validity Of Order",
         "customer_mobileno":"Customer MobileNo",
-        "delivered":"DELIVERED",
+        "delivered":"Click On Delivery",
         "accept":"ACCEPT",
         "decline":"DECLINE",
         "enter_delivery_info":"Enter Delivery Info",

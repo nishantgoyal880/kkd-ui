@@ -1,5 +1,5 @@
 {
-    "footer":{ 
+    "footer":{
         "support":"सहायता",
         "about_us":"हमारे बारे में",
         "policies":"नीतियों",
@@ -337,7 +337,7 @@
         "amount":"रकम",
         "validity_of_order":"आदेश की वैधता",
         "customer_mobileno":"ग्राहक मोबाइल नहीं",
-        "delivered":"पहुंचा दिया",
+        "delivered":"वितरण पर क्लिक करें",
         "accept":"स्वीकार करना",
         "decline":"पतन",
         "enter_delivery_info":"डिलिवरी जानकारी दर्ज करें",
@@ -354,7 +354,7 @@
         "otp":"ओटीपी",
         "confirms":"पुष्टि",
         "rate_the_order":"ऑर्डर रेट करें"
- 
+
     },
     "farmer_previous_order":{
         "customer_id":"ग्राहक आईडी",
@@ -466,7 +466,7 @@
         "enter_10_digit_mobile_number":"अपना 10 अंकों का मोबाइल नंबर दर्ज करें",
         "password":"पारण शब्द",
         "enter_your_password":"अपना पासवर्ड डालें",
-        "password_required":"पासवर्ड आवश्यक"       
+        "password_required":"पासवर्ड आवश्यक"
     },
     "customer_my_cart":{
         "your_cart":"आपका कार्ट",
@@ -497,13 +497,13 @@
         "less_than_3_digits":"3 अंकों से कम",
         "more_than_3_digits":"3 से अधिक अंक",
         "cvv_is_required":"सीवीवी की आवश्यकता है",
-        "make_payment":"भुगतान करो"       
+        "make_payment":"भुगतान करो"
     },
     "about_us":{
         "about_us_heading":"हमारे बारे में",
         "problem_statement":"समस्या का विवरण",
         "in_the_global_market":"वैश्विक बाजार में",
-        "problem_statement_description1":"आपूर्ति श्रृंखला में उत्पादों की वास्तविक कीमत प्रचलित नहीं है।",   
+        "problem_statement_description1":"आपूर्ति श्रृंखला में उत्पादों की वास्तविक कीमत प्रचलित नहीं है।",
         "problem_statement_description2":"किसानों को बेचने के लिए एक मंच की जरूरत है।",
         "problem_statement_description3":"उनके उत्पादों को उनके सुविधाजनक मूल्य पर। ग्राहकों को खेत के मालिक से उत्पाद नहीं मिलते हैं।",
         "project_definition":"परियोजना की परिभाषा",
@@ -519,7 +519,7 @@
         "stakeholders_description1":"किसान: किसानों को सीधे अपने ग्राहक के साथ जोड़कर और बिचौलियों को खत्म करके, केकेडी उन्हें अधिक लाभ अर्जित करने में मदद करेगा।",
         "stakeholders_description2":"ग्राहक: खरीदार सीधे अपने खेत से उत्पाद प्राप्त करेंगे। इसलिए वे यह सुनिश्चित कर सकते हैं कि वे जिन सब्जियों का उपभोग कर रहे हैं वे ताजा और बेकार हैं।",
         "stakeholders_description3":" उत्पाद स्वामी: हम उत्पाद डेवलपर्स और मालिकों के रूप में किसानों और ग्राहकों के साथ बातचीत करने के लिए एक मंच प्रदान करेंगे।",
-        "scope_and_impact":"दायरा और प्रभाव", 
+        "scope_and_impact":"दायरा और प्रभाव",
         "scope":"क्षेत्र",
         "scope_description":"छोटे पैमाने और बड़े पैमाने पर किसान",
         "scope_description1":"उत्पादों के उपभोक्ता",
