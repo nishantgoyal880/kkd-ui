@@ -23,7 +23,6 @@
         {{order.address?.state}} {{order.address?.district}} {{order.address?.pincode}}</div>
         <div class="quantity">{{ 'farmer_current_order.quantity' | translate }}:{{order.quantity}} Kg</div>
         <div class="price">{{ 'farmer_current_order.amount' | translate }}: ₹{{order.totalAmount}}</div>
-        <!-- <div *ngIf="order.farmerStatus=='Accept'" class="validity">{{ 'farmer_current_order.validity_of_order' | translate }}:{{order.validityOfOrder}}</div> -->
         <div *ngIf="order.farmerStatus=='Accept'" class="mobile">{{ 'farmer_current_order.customer_mobileno' | translate }}:{{order.mobileNo}}</div>
       </div>
       <span *ngIf="order.farmerStatus=='Accept'">
@@ -59,7 +58,7 @@
         <form>
           {{ 'farmer_current_order.enter_delivery_date_and_time' | translate }}:
           <input type="date" name="deliveryInfo" [(ngModel)]="date">
-          <input type="time" name="deliveryTime" [(ngModel)]="time">
+          <!-- <input type="time" name="deliveryTime" [(ngModel)]="time"> -->
         </form>
       </div>
       <div class="modal-footer">
@@ -148,6 +147,7 @@
   </div>
 </div>
 
+//Rating modal
   <div *ngIf="otpVerified==true">
     <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -173,3 +173,4 @@
         </div>
       </div>
     </div>
+  </div>
