@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     overflow-x: hidden !important;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif,'Mukta+Malar','Sree+Krushnadevaraya';
 }
 .mt-100 {
   margin-top:8rem;
