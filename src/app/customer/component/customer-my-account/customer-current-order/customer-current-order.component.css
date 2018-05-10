@@ -1,8 +1,8 @@
-
 fieldset, label { margin: 0; padding: 0; }
 h1 { font-size: 1.5em; margin: 10px; }
 
-.card-img-top {
+
+    .card-img-top {
     width: 100%;
     height: 12em;
     object-fit: cover;
@@ -181,8 +181,4 @@ hr {
   .bottom .name{
     margin-top: -1rem;
     text-align: center;
-}
-
-#curr_main{
-    margin-bottom: 3rem;
 }

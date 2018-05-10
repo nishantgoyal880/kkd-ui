@@ -19,6 +19,7 @@ hr {
     opacity: 0;
 }
 
+
 .card-title {
     margin: 0.1rem;
 }
@@ -181,8 +182,6 @@ hr {
     margin-top: -1rem;
     text-align: center;
 }
-<<<<<<< HEAD
-=======
 
 button:hover {
     background-color: #c1ed23 !important;
@@ -196,4 +195,12 @@ button:focus{
 #prev_main{
     margin-bottom: 3rem;
 }
->>>>>>> 94a5d5c29a00a137d04f78d68282f0272fe2f7d6
+h1 {
+    font-weight: 600;
+    padding: 0.5em 0 40px 0;
+    text-align: center;
+    margin: 0;
+    color: #28a745;
+    line-height: 42px;
+    margin-top: 2rem;
+    }
