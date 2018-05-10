@@ -153,7 +153,8 @@
         "new_message":"New message",
         "please_enter_qantity":"Please Enter Quantity",
         "close":"Close",
-        "proceed":"Proceed"
+        "proceed":"Proceed",
+        "enter_qantity":"Enter Quantity"
     },
     "policy":{
         "policies":"Policies",
@@ -348,7 +349,7 @@
         "amount":"Total Amount",
         "validity_of_order":"Validity Of Order",
         "customer_mobileno":"Customer MobileNo",
-        "delivered":"DELIVERED",
+        "delivered":"Click On Delivery",
         "accept":"ACCEPT",
         "decline":"DECLINE",
         "enter_delivery_info":"Enter Delivery Info",
