@@ -93,7 +93,7 @@ export class FarmerAddProductComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
-        this.router.navigate(['farmer/viewProduct']);
+        this.router.navigate(['farmer/dashboard']);
 
       },(error) => {
         console.log(error)

@@ -508,7 +508,7 @@
         "less_than_3_digits":"3 अंकों से कम",
         "more_than_3_digits":"3 से अधिक अंक",
         "cvv_is_required":"सीवीवी की आवश्यकता है",
-        "place_order":"ऑर्डर करना"      
+        "place_order":"ऑर्डर देना"      
     },
     "about_us":{
         "about_us_heading":"हमारे बारे में",

@@ -1,32 +1,29 @@
-<h1>
-  {{ 'customer_current_order.my_orders' | translate }}
-</h1>
-  <div class="row">
-    <div *ngFor="let order of currentOrders | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
-      <div class="block">
 
-        <div class="top">
-              <span class="converse">{{order.orderId}}</span>
-        </div>
-
-        <div class="middle">
-          <div *ngFor="let item of items">
-            <div *ngIf="order.name==item">
-              <!-- Card image -->
-              <div class="view overlay zoom">
-                <img class="card-img-top" src="../../../../../assets/order/{{item}}.jpg" alt="Product Image">
+     <div class="row">
+        <div *ngFor="let order of currentOrders | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
+          <div class="block">
+            <div class="top">
+                  <span class="converse">{{ 'customer_current_order.orderid' | translate }} : {{order.orderId}}</span>
+            </div>
+            <div class="middle">
+              <div *ngFor="let item of items">
+                <div *ngIf="order.name==item">
+                  <!-- Card image -->
+                  <div class="view overlay zoom">
+                    <img class="card-img-top" src="../../../../../assets/order/{{item}}.jpg" alt="Product Image">
+                  </div>
+                </div>
               </div>
+            </div>
+            <div class="bottom">
+              <div class="name">{{ 'customer_current_order.product_name' | translate }} : {{order.name}}</div>
+              <div class="quantity">{{ 'customer_current_order.quantity' | translate }} : {{order.quantity}} Kg</div>
+              <div class="price">{{ 'customer_current_order.price' | translate }} : {{order.totalAmount}}</div>
+              <div class="quantity">{{ 'customer_current_order.rating' | translate }} : {{order.avgRating}}</div>
+              <div class="quantity">{{ 'customer_current_order.otp' | translate }} : {{order.otp}}</div>
             </div>
           </div>
         </div>
-
-        <div class="bottom">
-          <div class="name">{{ 'customer_current_order.product_name' | translate }}:{{order.name}}</div>
-          <div class="quantity">{{ 'customer_current_order.quantity' | translate }}:{{order.quantity}} Kg</div>
-          <div class="price">{{ 'customer_current_order.price' | translate }}: ₹{{order.totalAmount}}</div>
-          <!-- <div *ngIf="order.customerStatus=='Accept'" class="validity">{{ 'customer_current_order.validity_of_order' | translate }}:{{order.validityOfOrder}}</div> -->
-        </div>
-        </div>
-    </div>
-  </div>
-  <pagination-controls (pageChange)="p=$event"></pagination-controls>
+      </div>
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+      
