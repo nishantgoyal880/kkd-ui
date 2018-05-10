@@ -17,11 +17,6 @@
 				<table class="table table-hover mt-2">
 					<tbody>
 						<tr *ngFor="let item of items; let ind=index">
-							<!-- <td class="text-left ml-4">
-								<a href="#">
-									<img src="http://placehold.it/100x70" alt="{{item.productName}}.png" title="{{item.productName}}">
-								</a>
-							</td> -->
 							<td>
 								<div *ngFor="let cartItem of cartItems">
 									<div *ngIf="item.productName==cartItem">
