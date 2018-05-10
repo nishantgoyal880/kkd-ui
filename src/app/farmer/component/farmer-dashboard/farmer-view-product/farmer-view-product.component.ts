@@ -44,7 +44,7 @@ export class FarmerViewProductComponent implements OnInit {
     // Getting Farmer id from local Storage
     this.id = localStorage.getItem("id");
     
-    console.log("id in view product ts: " + this.id);
+    //console.log("id in view product ts: " + this.id);
     this.farmerViewProductService.getAllProducts(this.id).subscribe((res) => {
       this.products = res;
     }, error => this.handleError(error));
@@ -111,7 +111,7 @@ export class FarmerViewProductComponent implements OnInit {
     }
     // calling service to update farmer product
     this.farmerViewProductService.update(this.productSubmission).subscribe((res) => {
-      console.log(res);
+      //console.log(res);
       swal({
         position: 'center',
         type: 'success',
@@ -121,7 +121,7 @@ export class FarmerViewProductComponent implements OnInit {
       })
       this.getProducts();
     }, (error) => {
-      console.log(error);
+      //console.log(error);
       swal({
         type: 'error',
         title: 'Oops...',
@@ -132,7 +132,12 @@ export class FarmerViewProductComponent implements OnInit {
 
   // Handling errors
   private handleError(error) {
-    console.log(error);
+    //console.log(error);
+    swal({
+      type: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+    })
   }
 
 }

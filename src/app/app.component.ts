@@ -42,11 +42,11 @@ export class AppComponent implements OnInit {
 		}
 
 	}
-
+	//verify token and get role and id
 	verifyToken() {
 		this.verifyTokenService.verifyToken(localStorage.getItem("token"))
 			.subscribe((res) => {
-				console.log(res.results.kkdId + " " + res.results.role)
+				//console.log(res.results.kkdId + " " + res.results.role)
 				this.idRoleService.id.emit(res.results.kkdId);
 				IdRoleService.id1 = res.results.kkdId;
 				this.idRoleService.role.emit(res.results.role);
@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
 			})
 	}
 
-
+	// Get user coordinates through its browser
 	getLocation() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition((position) => {
@@ -76,15 +76,20 @@ export class AppComponent implements OnInit {
 					}
 					)
 					.catch((error) => {
-						console.log(error);
+						swal({
+							type: 'error',
+							title: 'Oops...',
+							text: 'Something went wrong!',
+						  })
+						//console.log(error);
 					});
 			}, (error) => {
 				switch (error.code) {
 					case error.PERMISSION_DENIED:
-						console.log("User denied the request for Geolocation.");
+						//console.log("User denied the request for Geolocation.");
 						break;
 					case error.POSITION_UNAVAILABLE:
-						console.log("Location information is unavailable.");
+						//console.log("Location information is unavailable.");
 						break;
 					case error.TIMEOUT:
 						this.city = "Gurgaon";
@@ -94,9 +99,10 @@ export class AppComponent implements OnInit {
 
 			}, { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true });
 		} else {
-			console.log("Geolocation is not supported by this browser.");
+			//console.log("Geolocation is not supported by this browser.");
 		}
 	}
+	//convert user location coordinates to address
 
 	getAddress(latitude, longitude) {
 		return new Promise(function (resolve, reject) {

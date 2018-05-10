@@ -1,9 +1,11 @@
 <div class="row">
   <div *ngFor="let product of products | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
+
+    <!-- Products Cards -->
     <div class="block">
 
       <div class="top">
-            <span class="converse">{{product.productId}}</span>
+        <span class="converse">{{product.productId}}</span>
       </div>
 
       <div class="middle">
@@ -17,9 +19,10 @@
         <div class="price">{{ 'farmer_view_product.price' | translate }}: ₹{{product.price}}/kg.</div>
       </div>
       <span>
-          <a id="update" data-toggle="modal" data-target="#exampleModal" (click)="updateProduct(product)">{{ 'farmer_view_product.update' | translate }}</a>
-         | <a id="delete" (click)="saveId(product.productId)">{{ 'farmer_view_product.delete' | translate }}</a>
-        </span>
+        <a id="update" data-toggle="modal" data-target="#exampleModal" (click)="updateProduct(product)">{{ 'farmer_view_product.update' | translate }}</a>
+        |
+        <a id="delete" (click)="saveId(product.productId)">{{ 'farmer_view_product.delete' | translate }}</a>
+      </span>
 
     </div>
   </div>

@@ -38,6 +38,8 @@ export class FarmerCurrentOrderComponent implements OnInit {
   public farmerLng:any;
   public custLat:any;
   public custLng:any;
+  public distance:any;
+  WindowRef:any=window;
 
   ngOnInit() {
     this.loadData();
@@ -142,7 +144,7 @@ export class FarmerCurrentOrderComponent implements OnInit {
     }
   }
 
-  track(custAddress) {
+  track() {
     // var directionsDisplay;
     this.geocoder = new google.maps.Geocoder();
     this.directionsService = new google.maps.DirectionsService();
@@ -153,32 +155,30 @@ export class FarmerCurrentOrderComponent implements OnInit {
           if (status === 'OK') {
             this.farmerLat = results[0].geometry.location.lat();
             this.farmerLng = results[0].geometry.location.lng();
-            console.log(this.farmerLat +"," +this.farmerLng);
+            this.custLat = 28.704059;
+            this.custLng = 77.102490;
+            //console.log(this.farmerLat +"," +this.farmerLng);
             var center = new google.maps.LatLng(this.farmerLat, this.farmerLng);
         var mapOptions = {
-            zoom: 15,
+            zoom: 20,
             center: center
         };
         this.map = new google.maps.Map(this.gmap.nativeElement, mapOptions);
         this.directionsDisplay.setMap(this.map);
-        this.calcRoute(custAddress);
+        this.calcRoute();
           } else {
-            alert('Geocode was not successful for the following reason: ' + status);
+            swal({
+              type: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+            })
+           // console.log('Geocode was not successful for the following reason: ' + status);
           }
         });
 
         
   }
-   calcRoute(custAddress) {
-
-    this.geocoder.geocode({'address': custAddress}, (results, status)=> {
-      if (status === 'OK') {
-        this.custLat = results[0].geometry.location.lat();
-        this.custLng = results[0].geometry.location.lng();
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
+   calcRoute() {
 
     var start = new google.maps.LatLng(this.farmerLat, this.farmerLng);
     var end = new google.maps.LatLng(this.custLat, this.custLng);
@@ -200,10 +200,26 @@ export class FarmerCurrentOrderComponent implements OnInit {
           }
             
         } else {
-            alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+          swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
+            //console.log("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
         }
     });
+    this.calculateDistance();
 }
-  
-}
+
+calculateDistance()
+	{
+    var start = new google.maps.LatLng(this.farmerLat, this.farmerLng);
+    var end = new google.maps.LatLng(this.custLat, this.custLng);
+		// 	var miledistance = start.distanceFrom(end, 3959).toFixed(1);
+		// 	var kmdistance = (miledistance * 1.609344).toFixed(1);
+		// 	document.getElementById('results').innerHTML = 'Address 1: ' + location1.address + ' (' + location1.lat + ':' + location1.lon + ')<br />Address 2: ' + location2.address + ' (' + location2.lat + ':' + location2.lon + ')<br />Distance: ' + miledistance + ' miles (or ' + kmdistance + ' kilometers)<br/>';
+    this.distance = (google.maps.geometry.spherical.computeDistanceBetween (start, end)/ 1000);
+    this.WindowRef.p = Math.ceil(this.distance);
+  }
+ }
 
