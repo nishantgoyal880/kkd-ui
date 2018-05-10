@@ -248,7 +248,16 @@
         "add_address":"ਐਡਰੈੱਸ ਜੋੜੋ",
         "change_password":"ਪਾਸਵਰਡ ਬਦਲੋ",
         "alternate_mobile":"ਵਿਕਲਪਿਕ ਮੋਬਾਈਲ",
-        "delete_profile":"ਪਰੋਫਾਈਲ ਮਿਟਾਓ"
+        "delete_profile":"ਪਰੋਫਾਈਲ ਮਿਟਾਓ",
+        "current_address":"Current Address",
+        "alternate":"Alternate",
+        "current":"Current",
+        "places_where_i_can_deliver":"Places where i can deliver",
+        "aadhaar_address":"Aadhaar Address",
+        "bank_details":"Bank Details",
+        "account_owner":"Account Owner",
+        "account_name":"Account Name",
+        "account_ifsc":"Account IFSC"
     },
     "add_address":{
         "add_alternate_address":"ਵਿਕਲਪਿਕ ਪਤਾ ਜੋੜੋ",
