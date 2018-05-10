@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.translate.use(localStorage.getItem("language"))
+    this.translate.use(localStorage.getItem("language"));
     if(localStorage.getItem("counter")!="1")
     this.langBtn.nativeElement.click();
   }
