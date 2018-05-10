@@ -154,7 +154,11 @@
         "please_enter_qantity":"அளவை குறிப்பிடவும் ",
         "close":"வெளியேறு ",
         "proceed":"தொடர்",
+        "showing":"காண்பது ",
+        "results_of":"முடிவுகள்",
+        "for":"அதற்கு",
         "enter_qantity":"அளவை குறிப்பிடவும்"
+
     },
     "policy":{
         "policies":"கொள்கைகள்",
@@ -258,7 +262,8 @@
         "account_owner":"கணக்கு வைத்திருப்பவர்",
         "account_name":"கணக்கின் பெயர்",
         "account_ifsc":"கணக்கு ஐஎப்எஸ்சி ",
-        "profile":"விவரம்"
+        "profile":"விவரம்",
+        "current_number":"தற்போதைய எண்"
     },
     "add_address":{
         "add_alternate_address":"மாற்று முகவரி",
@@ -493,7 +498,7 @@
     },
     "customer_my_cart":{
         "your_cart":"உங்கள் வணிக வண்டி",
-        "items":"பொருட்கள் ",
+        "item":"பொருட்கள் ",
         "continue_shopping":"ஷாப்பிங்கைத் தொடரவும்",
         "qty":"அளவு",
         "kg":"கிலோ",

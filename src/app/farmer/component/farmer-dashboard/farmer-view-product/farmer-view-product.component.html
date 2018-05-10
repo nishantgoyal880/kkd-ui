@@ -13,8 +13,8 @@
       <div class="bottom">
         <div class="heading">{{product.productName}}</div>
         <div class="info">{{product.description}}</div>
-        <div class="quantity">Quantity: {{product.quantity}} Kg</div>
-        <div class="price">Price: ₹{{product.price}}/kg.</div>
+        <div class="quantity">{{ 'farmer_view_product.quantity' | translate }}: {{product.quantity}} Kg</div>
+        <div class="price">{{ 'farmer_view_product.price' | translate }}: ₹{{product.price}}/kg.</div>
       </div>
       <span>
           <a id="update" data-toggle="modal" data-target="#exampleModal" (click)="updateProduct(product)">{{ 'farmer_view_product.update' | translate }}</a>

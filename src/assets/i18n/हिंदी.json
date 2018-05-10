@@ -153,7 +153,10 @@
         "please_enter_qantity":"कृपया मात्रा दर्ज करें",
         "close":"बंद करे",
         "proceed":"आगे बढ़ो",
-        "enter_qantity":"मात्रा दर्ज करें"
+        "enter_qantity":"मात्रा दर्ज करें",
+        "showing":"दिखा रहा है",
+        "results_of":"के परिणाम",
+        "for":"के लिये"
     },
     "policy":{
         "policies":"नीतियाँ",
@@ -188,7 +191,7 @@
         "password_is_required":"पासवर्ड की आवश्यकता है!",
         "Re_enter_Password":"पासवर्ड फिर से दर्ज करें",
         "password_match":"नया पासवर्ड और पुष्टि पासवर्ड मेल नहीं खाता है",
-        "send_otp":"Send OTP",
+        "send_otp":"ओटीपी भेजें",
         "verify_otp_to_register_customer":" रजिस्ट्रार ग्राहक को ओटीपी सत्यापित करें",
         "enter_otp":"ओटीपी दर्ज करें",
         "otp_is_required":"ओटीपी आवश्यक है",
@@ -244,7 +247,7 @@
         "view_product":"उत्पाद देखें"
     },
     "my_account":{
-        "profile":"प्रोफाइल",
+        "profile":"तुम्हारी प्रोफाइल",
         "add_address":"पता जोड़ें",
         "change_password":"पासवर्ड बदलें",
         "alternate_mobile":"वैकल्पिक मोबाइल",
@@ -257,7 +260,8 @@
         "bank_details":"बैंक विवरण",
         "account_owner":"खाता मालिक",
         "account_name":"खाते का नाम",
-        "account_ifsc":"खाता आईएफएससी"
+        "account_ifsc":"खाता आईएफएससी",
+        "current_number":"मौजूदा नंबर"
     },
     "add_address":{
         "add_alternate_address":"वैकल्पिक पता जोड़ें",
@@ -492,7 +496,7 @@
     },
     "customer_my_cart":{
         "your_cart":"आपका कार्ट",
-        "items":"आइटम",
+        "item":"आइटम",
         "continue_shopping":"खरीदारी जारी रखें",
         "qty":"मात्रा",
         "kg":"किलोग्राम",

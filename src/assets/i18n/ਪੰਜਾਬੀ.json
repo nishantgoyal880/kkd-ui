@@ -154,7 +154,10 @@
         "please_enter_qantity":"ਕਿਰਪਾ ਕਰਕੇ ਮਾਤਰਾ ਦਾਖਲ ਕਰੋ",
         "close":"ਬੰਦ ਕਰੋ",
         "proceed":"ਅੱਗੇ ਵਧੋ",
-        "enter_qantity":"ਮਾਤਰਾ ਦਾਖਲ ਕਰੋ"
+        "enter_qantity":"ਮਾਤਰਾ ਦਾਖਲ ਕਰੋ",
+        "showing":"ਦਿਖਾ ਰਿਹਾ ਹੈ",
+        "results_of":"ਦੇ ਨਤੀਜੇ",
+        "for":"ਲਈ"
     },
     "policy":{
         "policies":"ਪਾਲਿਸੀਆਂ",
@@ -249,16 +252,17 @@
         "change_password":"ਪਾਸਵਰਡ ਬਦਲੋ",
         "alternate_mobile":"ਵਿਕਲਪਿਕ ਮੋਬਾਈਲ",
         "delete_profile":"ਪਰੋਫਾਈਲ ਮਿਟਾਓ",
-        "current_address":"Current Address",
-        "alternate":"Alternate",
-        "current":"Current",
-        "places_where_i_can_deliver":"Places where i can deliver",
-        "aadhaar_address":"Aadhaar Address",
-        "bank_details":"Bank Details",
-        "account_owner":"Account Owner",
-        "account_name":"Account Name",
-        "account_ifsc":"Account IFSC",
-        "profile":"Profile"
+        "current_address":"ਮੌਜੂਦਾ ਪਤਾ",
+        "alternate":"ਬਦਲਵਾਂ",
+        "current":"ਮੌਜੂਦਾ",
+        "places_where_i_can_deliver":"ਉਹ ਜਗ੍ਹਾ ਜਿੱਥੇ ਮੈਂ ਡਿਲੀਵਰ ਕਰ ਸਕਦਾ ਹਾਂ",
+        "aadhaar_address":"ਆਧਾਰ ਪਤਾ",
+        "bank_details":"ਬੈਂਕ ਵੇਰਵੇ",
+        "account_owner":"ਖਾਤਾ ਮਾਲਕ",
+        "account_name":"ਅਕਾਉਂਟ ਦਾ ਨਾਂ",
+        "account_ifsc":"IFSC",
+        "profile":"ਪ੍ਰੋਫਾਈਲ",
+        "current_number":"ਮੌਜੂਦਾ ਨੰਬਰ"
     },
     "add_address":{
         "add_alternate_address":"ਵਿਕਲਪਿਕ ਪਤਾ ਜੋੜੋ",
@@ -493,7 +497,7 @@
     },
     "customer_my_cart":{
         "your_cart":"ਤੁਹਾਡੀ ਕਾਰਟ",
-        "items":"ਆਈਟਮਾਂ",
+        "item":"ਆਈਟਮਾਂ",
         "continue_shopping":"ਸ਼ਾਪਿੰਗ ਜਾਰੀ ਰੱਖੋ",
         "qty":"ਮਾਤਰਾ",
         "kg":"ਕਿਲੋਗ੍ਰਾਮ",

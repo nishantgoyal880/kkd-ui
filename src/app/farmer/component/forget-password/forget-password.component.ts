@@ -72,12 +72,6 @@ export class ForgetPasswordComponent implements OnInit {
 			//sucessfully sended
 		}, (err) =>{
 			//in case of error
-			swal({
-				type: 'error',
-				title: 'Oops...',
-				text: 'OTP service not ready',
-				footer: '.....',
-			})
 		})
 
 	}

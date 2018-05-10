@@ -154,7 +154,10 @@
         "please_enter_qantity":"Please Enter Quantity",
         "close":"Close",
         "proceed":"Proceed",
-        "enter_qantity":"Enter Quantity"
+        "enter_qantity":"Enter Quantity",
+        "showing":"Showing",
+        "results_of":"results of",
+        "for":"for"
     },
     "policy":{
         "policies":"Policies",
@@ -248,9 +251,10 @@
         "profile":"Profile",
         "add_address":"Add Address",
         "change_password":"Change Password",
-        "alternate_mobile":"Alternate Mobile",
+        "alternate_mobile":"Alternate Mobile Number",
         "delete_profile":"Delete Profile",
         "current_address":"Current Address",
+        "current_number":"Current Number",
         "alternate":"Alternate",
         "current":"Current",
         "places_where_i_can_deliver":"Places where i can deliver",
@@ -307,8 +311,8 @@
         "delete":"Delete",
         "enter_otp":"Enter OTP",
         "otp_is_required":"OTP is required",
-        "less_then_10_digit":"less then 10 digit",
-        "more_then_10_digit":"more then 10 digit",
+        "less_then_10_digit":"less than 10 digit",
+        "more_then_10_digit":"more than 10 digit",
         "mobile_number_is_required":"Mobile Number is required",
         "verify_otp":"Verify otp",
         "enter_mobile_number":"Enter Mobile Number"
@@ -493,7 +497,7 @@
     },
     "customer_my_cart":{
         "your_cart":"Your Cart",
-        "items":"Items",
+        "item":"Items",
         "continue_shopping":"Continue Shopping",
         "qty":"Qty",
         "kg":"Kg",
