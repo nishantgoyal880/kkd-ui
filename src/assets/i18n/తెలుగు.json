@@ -6,13 +6,13 @@
         "support":"మద్దతు",
         "help":"సహాయం",
         "kisan_ki_dukan":"కిసాన్ కి దుకాణ్.అన్ని హక్కులూ ప్రత్యేకించుకోవడమైనది",
-        "footer_description":"We are a young company always looking for new and creative ideas to help you with our products in your everyday work.",
-        "our_team":"Our Team",
-        "sapientrazorfish_Gurgaon":" SapientRazorfish,Gurgaon",
-        "phone":"Phone",
-        "email":"Email",
-        "skype":"Skype",
-        "follow_us":"Follow Us"
+        "footer_description":"మేము మీ రోజువారీ పనిలో మా ఉత్పత్తులతో మీకు సహాయం చేయడానికి ఎల్లప్పుడూ కొత్త మరియు సృజనాత్మక ఆలోచనల కోసం చూస్తున్న యువ కంపెనీ.",
+        "our_team":"మా జట్టు",
+        "sapientrazorfish_Gurgaon":" సేపీయాంట్ రాజోర్ఫిష్, గురుగ్రామ్ ",
+        "phone":"ఫోన్",
+        "email":"ఇమెయిల్",
+        "skype":"స్కైప్",
+        "follow_us":"మమ్మల్ని అనుసరించు"
     },
     "body":{
         "kisan_ki_dukan":"కిసాన్ కి దుకాణ్",
@@ -71,16 +71,16 @@
         "my_account":"నా ఖాతా",
         "logout":"లాగ్ ఔట్",
         "my_cart":"నా కార్ట్",
-        "dashboard":"Dashboard",
-        "change_city":"Change City",
-        "delhi":"Delhi",
-        "mumbai":"Mumbai",
-        "chandigarh":"Chandigarh",
-        "ahmedabad":"Ahmedabad",
-        "hyderabad":"Hyderabad",
-        "chennai":"Chennai",
-        "cancel":"Cancel",
-        "save":"Save"
+        "dashboard":"డాష్బోర్డ్ ",
+        "change_city":"నగరాన్ని మార్చండి",
+        "delhi":"ఢిల్లీ",
+        "mumbai":"ముంబయి",
+        "chandigarh":"చండీగఢ్",
+        "ahmedabad":"అహ్మదాబాద్",
+        "hyderabad":"హైదరాబాద్",
+        "chennai":"చెన్నై",
+        "cancel":"రద్దు",
+        "save":"సేవ్"
     },
     "support":{
        "support":"మద్దతు",
@@ -102,7 +102,7 @@
        "buying_products":"ఉత్పత్తుల కొనుగోలు ",
        "normal_v_bulk":"సాధారణ ఆర్డర్ వర్సెస్ బల్క్ ఆర్డర్",
        "how_to_register_description":"నమోదు ప్రక్రియ యూజర్ అనుభవాన్ని పెంచడానికి తగినంత సులభం తగినంత సులభంగా ఉంచబడింది . రైతు లేదా కస్టమర్ బటన్ ద్వారా లాగిన్ అండ్ సిగనుప్ పేజీ కి చేరుకోగలరు. రిజిస్ట్రేషన్ కేవలం ఒక తడవ చేయవలెను. మరియు ప్రతిసారి లాగిన్ మాత్రం చేయవలెను. రిజిస్ట్రేషన్ చేసుకొనుటకు ఒక మొబైల్ నెంబర్ మరియు ఒక ఆధార్ నెంబర్ కలిగి ఉండవలెను. ఏదైనా సమస్యలు ఎదుర్కొన్న యెడల మీకు చేరువలో CSC సెంటర్ ను సంప్రదించగలరు.",
-       "aadhaar_verification_description":"ధృవీకరణ ఒక వ్యక్తి యొక్క గుర్తింపు ధ్రువీకరణ కోసం ఒక తప్పనిసరి అడుగు. కేవలం మీ ఆధార్ నెంబర్ ద్వారా మీరు రిజిస్టర్ చేయగలుగుతారు, మీ ఆధార్ కు లింక్ చేయబడిన మొబైల్ నెంబర్ కి OTP పంపబడుతుంది. ఇది రిజిస్ట్రేషన్ ప్రాసెస్ సులభతరం చెయ్యడానికి మాత్రమే.",
+       "aadhaar_verification_description":"ధృవీకరణ ఒక వ్యక్తి యొక్క గుర్తింపు ధ్రువీకరణ కోసం ఒక తప్పనిసరి అడుగు. కేవలం మీ ఆధార్ నెంబర్ ద్వారా మీరు రిజిస్టర్ చేయగలుగుతారు, మీ ఆధార్ కు లింక్ చేయబడిన మొబైల్ నెంబర్ కి ఓటీపీ పంపబడుతుంది. ఇది రిజిస్ట్రేషన్ ప్రాసెస్ సులభతరం చెయ్యడానికి మాత్రమే.",
        "buying_products_description":"ఉత్పత్తులను కొనుగోలు చేయడం కూడా సులభం.. ఉత్పత్తుల కోసం శోధన మీ స్థానం ఆధారంగా, ఉత్పత్తి జాబితా మీకు చూపబడుతుంది. వారి రేటింగ్లు మరియు మీ వ్యక్తిగత అవసరాల ఆధారంగా, మీరు ఏ సమయంలోనైనా మీ కార్ట్ మరియు చెక్అవుట్కు ఉత్పత్తిని జోడించవచ్చు.",
        "normal_v_bulk_description":"మీరు ఒక సాధారణ కస్టమర్గా కొనుగోలు చేసే ఒక ఉత్పత్తి యొక్క పరిమితికి పరిమితి ఉంది. ధరల రేటు మరియు పరిమాణంలో, ఏ గందరగోళాన్ని నివారించడానికి మరియు రైతుల ముగింపుకు కొంత సులభంగా అందించడానికి ఇది జరుగుతుంది."
    },
@@ -154,7 +154,7 @@
     "please_enter_qantity":"దయచేసి పరిమాణం ఎంటర్ చేయండి",
     "close":"మూసివేయి",
     "proceed":"కొనసాగు",
-    "enter_qantity":"Enter Quantity"
+    "enter_qantity":"పరిమాణాన్ని నమోదు చేయండి"
 },
 "policy":{
     "policies":"విధానాలు",
@@ -165,12 +165,12 @@
     "mail_us":"మెయిల్",
     "registered_office_address":"రిజిస్టర్డ్ ఆఫీస్ అడ్రస్",
     "kisan_ki_dukan":"కిసాన్ కీ దుకాణ్",
-    "kkd":"KKD",
+    "kkd":"కెకెడి",
     "publicis":"పబ్లిసిస్ సపిస్ట్ట్ ప్రెవేట్ లిమిటెడ్",
     "unitech_infospace":"యునిటెక్ ఇన్ఫోస్పేస్",
     "sector_21 ":"సెక్టార్ 21 ",
     "gurugram":"గురుగ్రామ్ ",
-    "india":"India, 122017"
+    "india":"ఇండియా, 122017"
 },
 "customer_register":{
     "register_customer":"రిజిస్టర్ కస్టమర్",
@@ -189,11 +189,11 @@
     "password_is_required":"పాస్వర్డ్ అవసరం!",
     "Re_enter_Password":"పాస్వర్డ్ ను మళ్లీ ఎంటర్ చెయ్యండి  ",
     "password_match":"క్రొత్త పాస్ వర్డ్ మరియు పాస్వర్డ్ను నిర్ధారించండి లేదు",
-    "send_otp":"OTP పంపించు",
+    "send_otp":"ఓటీపీ పంపించు",
     "verify_otp_to_register_customer":" కస్టమర్ ను రిజిస్టర్ చెయ్యడానికి ఓటీపీ వెరిఫై చెయ్యండి ",
-    "enter_otp":"OTP ను నమోదు చేయండి",
-    "otp_is_required":"OTP అవసరం",
-    "verify_otp":"OTP ని నిర్ధారించండి"
+    "enter_otp":"ఓటీపీ ను నమోదు చేయండి",
+    "otp_is_required":"ఓటీపీ అవసరం",
+    "verify_otp":"ఓటీపీ ని నిర్ధారించండి"
 },
 "customer_forgot_password":{
     "forget_password":"పాస్ వర్డ్ ను మర్చిపోతే",
@@ -201,11 +201,11 @@
     "less_than_10_digits":"10 కంటే తక్కువ అంకెలు",
     "more_than_10_digits":"10 కంటే ఎక్కువ అంకెలు",
     "mobile_number_is_required":"మొబైల్ నంబర్ అవసరం!",
-    "send_otp":"OTP పంపించు",
-    "verify_otp_to_reset_password":" OTP ను PASSWORD రీసెట్ చేయడానికి నిర్ధారించండి",
-    "enter_otp":"OTP ను నమోదు చేయండి",
-    "otp_is_required":"OTP అవసరం",
-    "verify_otp":"OTP ధృవీకరించు",
+    "send_otp":"ఓటీపీ పంపించు",
+    "verify_otp_to_reset_password":" ఓటీపీ ను పాస్వర్డ్ రీసెట్ చేయడానికి నిర్ధారించండి",
+    "enter_otp":"ఓటీపీ ను నమోదు చేయండి",
+    "otp_is_required":"ఓటీపీ అవసరం",
+    "verify_otp":"ఓటీపీ ధృవీకరించు",
     "reset_password":"రీసెట్ పాస్వర్డ్",
     "new_password":"కొత్త సంకేతపదము",
     "less_than_6_digits":"6 కంటే తక్కువ అంకెలు",
@@ -222,11 +222,11 @@
     "less_than_10_digits":"10 కంటే తక్కువ అంకెలు",
     "more_than_10_digits":"10 కంటే ఎక్కువ  అంకెలు",
     "mobile_number_is_required":"మొబైల్ నంబర్ అవసరం!",
-    "send_otp":"OTP పంపించు",
-    "verify_otp_to_reset_password":" OTP ను PASSWORD రీసెట్ చేయడానికి నిర్ధారించండి",
-    "enter_otp":"OTP ను నమోదు చేయండి",
-    "otp_is_required":"OTP అవసరం",
-    "verify_otp":"OTP ధృవీకరించు",
+    "send_otp":"ఓటీపీ పంపించు",
+    "verify_otp_to_reset_password":" ఓటీపీ ను పాస్వర్డ్ రీసెట్ చేయడానికి నిర్ధారించండి",
+    "enter_otp":"ఓటీపీ ను నమోదు చేయండి",
+    "otp_is_required":"ఓటీపీ అవసరం",
+    "verify_otp":"ఓటీపీ ధృవీకరించు",
     "reset_password":"రీసెట్ పాస్వర్డ్",
     "new_password":"కొత్త సంకేతపదము",
     "less_than_6_digits":"6 కంటే తక్కువ అంకెలు",
@@ -249,16 +249,16 @@
     "change_password":"పాస్వర్డ్ను మార్చండి",
     "alternate_mobile":"ప్రత్యామ్నాయ మొబైల్",
     "delete_profile":"ప్రొఫైల్ను తొలగించు",
-    "current_address":"Current Address",
-    "alternate":"Alternate",
-    "current":"Current",
-    "places_where_i_can_deliver":"Places where i can deliver",
-    "aadhaar_address":"Aadhaar Address",
-    "bank_details":"Bank Details",
-    "account_owner":"Account Owner",
-    "account_name":"Account Name",
-    "account_ifsc":"Account IFSC",
-    "profile":"Profile"
+    "current_address":"ప్రస్తుత చిరునామా",
+    "alternate":"ప్రత్యామ్నాయ",
+    "current":"ప్రస్తుత",
+    "places_where_i_can_deliver":"నేను డెలివర్ చెయ్యగల ప్రదేశాలు ",
+    "aadhaar_address":"ఆధార్ చిరునామా",
+    "bank_details":"బ్యాంక్ వివరములు",
+    "account_owner":"ఖాతా యజమాని",
+    "account_name":"ఖాతా పేరు",
+    "account_ifsc":"ఖాతా ఐఎఫ్ఎస్సి ",
+    "profile":"ప్రొఫైల్"
 },
 "add_address":{
     "add_alternate_address":"ప్రత్యామ్నాయ చిరునామాను జోడించు",
@@ -305,13 +305,13 @@
         "enter_current_password":"ప్రస్తుత పాస్వర్డ్ను ప్రవేశపెట్టుము",
         "current_password_required":"ప్రస్తుత పాస్ వర్డ్ అవసరం",
         "delete":"తొలగించు",
-        "enter_otp":"Enter OTP",
-        "otp_is_required":"OTP is required",
-        "less_then_10_digit":"less then 10 digit",
-        "more_then_10_digit":"more then 10 digit",
-        "mobile_number_is_required":"Mobile Number is required",
-        "verify_otp":"Verify otp",
-        "enter_mobile_number":"Enter Mobile Number"
+        "enter_otp":"Enter ఓటీపీ",
+        "otp_is_required":"ఓటీపీ అవసరం",
+        "less_then_10_digit":"10 కంటే తక్కువ అంకెలు",
+        "more_then_10_digit":"10 కంటే ఎక్కువ అంకెలు",
+        "mobile_number_is_required":"మొబైల్ నంబర్ అవసరం",
+        "verify_otp":"ఓటీపీ వెరిఫై చేయండి",
+        "enter_mobile_number":"మొబైల్ నంబర్ నమోదు చేయండి"
     },
     "farmer_add_product":{
         "upload_product":"ఉత్పత్తిని నమోదు చేయ్యండి ",
@@ -342,15 +342,15 @@
         "name_required":"పేరు అవసరం",
         "more_than_20_characters_not_allowed":"20 కంటే ఎక్కువ అక్షరాలు అనుమతించబడవు",
         "minimun_2_digits_are_required":"కనీస 2 అంకెలు అవసరం",
-        "ifsc_code":"IFSC కోడ్",
-        "ifsc_required":"IFSC కోడ్ అవసరం",
+        "ifsc_code":"ఐఎఫ్ఎస్సి కోడ్",
+        "ifsc_required":"ఐఎఫ్ఎస్సి కోడ్ అవసరం",
         "more_than_6_characters_not_allowed":"6 కంటే ఎక్కువ అక్షరాలు అనుమతించబడవు",
         "minimun_6_digits_are_required":"కనీస 6 అంకెలు అవసరం",
         "save_details":"వివరాలు భద్రపరచండి",
-        "more_than_10_characters_not_allowed":"More than 6 characters not allowed",
-        "minimun_10_digits_are_required":"Minimum 6 digits are required",
-        "mobile_number":"Mobile Number",
-        "mobile_number_required":"Mobile number is required"
+        "more_than_10_characters_not_allowed":"10 కంటే ఎక్కువ అక్షరాలు అనుమతించబడవు",
+        "minimun_10_digits_are_required":"కనీస 10 అంకెలు అవసరం",
+        "mobile_number":"మొబైల్ నంబర్",
+        "mobile_number_required":"మొబైల్ నంబర్ అవసరం"
     },
     "farmer_current_order":{
         "customer_id":"కస్టమర్ ఐడి",
@@ -373,8 +373,8 @@
         "i_am_not_in_a_good_health_condition":"నేను మంచి ఆరోగ్య స్థితిలో లేను",
         "other_reasons":"ఇతర కారణాలు",
         "submit":"సమర్పించు",
-        "enter_otp_here":"ఇక్కడ OTP ను ఎంటర్ చేయండి",
-        "otp":"OTP",
+        "enter_otp_here":"ఇక్కడ ఓటీపీ ను ఎంటర్ చేయండి",
+        "otp":"ఓటీపీ",
         "confirms":"కన్ఫర్మెస్",
         "rate_the_order":"రేట్ ది ఆర్డర్ "
 
@@ -405,11 +405,11 @@
         "less_than_12_digits":"12 కంటే తక్కువ అంకెలు",
         "more_than_12_digits":"12 కంటే ఎక్కువ అంకెలు",
         "aadhaar_number_required":"ఆధార్ సంఖ్య అవసరం",
-        "send_otp":"OTP పంపించు",
-        "verify_otp_to_register_farmer":"OTP పంపించు",
-        "enter_otp":"OTP ను నమోదు చేయండి",
-        "otp_is_required":"OTP అవసరం",
-        "verify_otp":"OTP ని నిర్ధారించండి"
+        "send_otp":"ఓటీపీ పంపించు",
+        "verify_otp_to_register_farmer":"ఓటీపీ పంపించు",
+        "enter_otp":"ఓటీపీ ను నమోదు చేయండి",
+        "otp_is_required":"ఓటీపీ అవసరం",
+        "verify_otp":"ఓటీపీ ని నిర్ధారించండి"
     },
     "farmer_register":{
         "mobile_number":"మొబైల్ సంఖ్య",
@@ -455,18 +455,18 @@
         "my_orders":"నా ఆర్డర్స్",
         "orderid":"ఆర్డర్ ID",
         "product_name":"ఉత్పత్తి పేరు",
-        "quantity":"పరిమాణం (kg లో)",
+        "quantity":"పరిమాణం (కిలో లో)",
         "price":"ధర (రూ.)",
         "rating":"రేటింగ్",
-        "otp":"OTP"    },
+        "otp":"ఓటీపీ"    },
     "customer_previous_order":{
         "previous_orders":"మునుపటి ఆర్డర్స్",
         "orderid":"ఆర్డర్ ID",
         "product_name":"ఉత్పత్తి పేరు",
-        "quantity":"పరిమాణం (kg లో)",
+        "quantity":"పరిమాణం (కిలో లో)",
         "price":"ధర (రూ.)",
         "farmer_rating":"రైతు రేటింగ్",
-        "otp":"OTP"
+        "otp":"ఓటీపీ"
     },
     "customer_my_account":{
         "my_orders":"నా ఆర్డర్లు",
@@ -495,7 +495,7 @@
         "items":"అంశాలు",
         "continue_shopping":"షాపింగ్ కొనసాగించు",
         "qty":"పరిమాణం ",
-        "kg":"Kg",
+        "kg":"కిలో",
         "products_will_be_delivered_to":"ఉత్పత్తులు పంపిణీ చేయబడతాయి",
         "no_address_linked":"చిరునామా ఏదీ లింక్ చేయబడలేదు",
         "add_address":"చిరునామాను జోడించు",
@@ -515,10 +515,10 @@
         "more_than_2_digits":"2 కంటే ఎక్కువ అంకెలు",
         "month_is_required":"నెల అవసరం",
         "year_is_required":"సంవత్సరం  అవసరం",
-        "cvv_code":"CVV కోడ్",
+        "cvv_code":"సివివి కోడ్",
         "less_than_3_digits":"3 కంటే తక్కువ అంకెలు",
         "more_than_3_digits":"3 కంటే ఎక్కువ అంకెలు",
-        "cvv_is_required":"CVV అవసరం",
+        "cvv_is_required":"సివివి అవసరం",
         "place_order":"ప్లేస్ ఆర్డర్"       
     },
     "about_us":{
@@ -529,9 +529,9 @@
         "problem_statement_description2":"రైతులకు విక్రయించడానికి ఒక వేదిక అవసరం.",
         "problem_statement_description3":"వారి ఉత్పత్తులను వారి అనుకూలమైన ధర వద్ద వినియోగదారులకు వ్యవసాయ యజమాని నుండి ఉత్పత్తులు పొందలేరు.",
         "project_definition":"ప్రాజెక్ట్ డెఫినిషన్",
-        "project_definition_description1":"ప్రాజెక్ట్ కిసాన్ కీ దుకాణ్ (KKD) పొలాల నుండి కస్టమర్కు నేరుగా వస్తువులను పంపిణీ చేయడంపై దృష్టి పెడుతుంది. ",
+        "project_definition_description1":"ప్రాజెక్ట్ కిసాన్ కీ దుకాణ్ (కెకెడి) పొలాల నుండి కస్టమర్కు నేరుగా వస్తువులను పంపిణీ చేయడంపై దృష్టి పెడుతుంది. ",
         "project_definition_description2":"పొలం నుండి కానిది ఏదైనా తాజా కాదు.",
-        "project_definition_description3":"KKD రైతులు వారి సంపద నుండి నేరుగా వారి పొలాల నుండి సంపదను అందించే ఒక ఆన్లైన్ పోర్టల్.",
+        "project_definition_description3":"కెకెడి రైతులు వారి సంపద నుండి నేరుగా వారి పొలాల నుండి సంపదను అందించే ఒక ఆన్లైన్ పోర్టల్.",
         "project_definition_description4":"గృహ",
         "project_definition_description5":"రెస్టారెంట్లు",
         "project_definition_description6":"హోటల్స్",
@@ -563,6 +563,6 @@
         "functionalities_description4":"సాధారణ చెక్అవుట్",
         "functionalities_description5":"ఆర్డర్ మేనేజ్మెంట్",
         "functionalities_description6":"రివ్యూ మేనేజ్మెంట్",
-        "functionalities_description7":"ఆన్లైన్ చెల్లింపు లేదా COD ఎంపికలు"
+        "functionalities_description7":"ఆన్లైన్ చెల్లింపు లేదా సిఓడి ఎంపికలు"
      }
 }

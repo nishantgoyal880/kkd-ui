@@ -307,8 +307,8 @@
         "delete":"Delete",
         "enter_otp":"Enter OTP",
         "otp_is_required":"OTP is required",
-        "less_then_10_digit":"less then 10 digit",
-        "more_then_10_digit":"more then 10 digit",
+        "less_then_10_digit":"less than 10 digit",
+        "more_then_10_digit":"more than 10 digit",
         "mobile_number_is_required":"Mobile Number is required",
         "verify_otp":"Verify otp",
         "enter_mobile_number":"Enter Mobile Number"
