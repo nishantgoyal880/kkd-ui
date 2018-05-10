@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CustomerAuthenticationService} from '../../../services/customer-authentication.service'
 import swal from 'sweetalert2';
 import{IdRoleService} from '../../../../services/id-role/id-role.service'
+import { ProductList } from '../../../../farmer/config/productList';
 
 @Component({
   selector: 'app-customer-previous-order',
@@ -13,6 +14,7 @@ export class CustomerPreviousOrderComponent implements OnInit {
 
   public customerId : string ;
   public previousOrders : any = [];
+  items = ProductList.products;
   constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { }
 
   ngOnInit() {
