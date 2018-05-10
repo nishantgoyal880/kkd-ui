@@ -46,12 +46,12 @@ a {
     color: blue;
     text-underline-position: below;
 }
-#delivered {
+#delivered,#track {
     color: green;
-    margin-left: 5px;
+    margin-left: 15px;
 }
 
-#delivered:hover {
+#delivered,#track:hover {
     color: blue;
     text-underline-position: below;
 }
@@ -180,4 +180,20 @@ hr {
   .bottom .name{
     margin-top: -1rem;
     text-align: center;
+}
+
+body, .modal-open .page-container, .modal-open .page-container .navbar-fixed-top, .modal-open .modal-container {
+    overflow-y: scroll;
+}
+@media (max-width: 979px) {
+    .modal-open .page-container .navbar-fixed-top {
+        overflow-y: visible;
+    }
+}
+
+#map-canvas {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px
 }
