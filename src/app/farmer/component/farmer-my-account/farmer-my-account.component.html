@@ -50,18 +50,18 @@
                       distt. {{farmerInfo.currentAddress.district}} {{farmerInfo.currentAddress.state}}, {{farmerInfo.currentAddress.pincode}}
                     </p>
                     <p>
-                      <span class="font-weight-bold">Alternate</span>
-                      <i class="fa fa-phone" aria-hidden="true"></i>{{farmerInfo.mobileNo}}
+                        <i class="fa fa-phone" aria-hidden="true"></i><span class="font-weight-bold"> Current Number: </span>
+                      {{farmerInfo.mobileNo}}
                     </p>
                     <p>
-                      <span class="font-weight-bold">
-                        Current
+                        <i class="fa fa-phone" aria-hidden="true"></i> <span class="font-weight-bold">
+                         Alternate Number: 
                       </span>
-                      <i class="fa fa-phone" aria-hidden="true"></i>{{farmerInfo.alternateNo}}
+                      {{farmerInfo.alternateNo}}
                     </p>
-                    <p *ngIf="farmerInfo.cities"> Places where i can deliver</p>
+                    <p *ngIf="farmerInfo.cities"> Places where I can deliver:</p>
                     <p>
-                      <i *ngFor="let city of farmerInfo.cities" lass="fa fa-map-marker" aria-hidden="true">{{city}}</i>
+                      <i *ngFor="let city of farmerInfo.cities" lass="fa fa-map-marker" aria-hidden="true">{{city}}, </i>
                     </p>
                     <p>
                       <span class="font-weight-bold">Aadhaar Address: </span>
