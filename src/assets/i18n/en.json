@@ -361,8 +361,8 @@
         "price":"Price",
         "bulk_ordr_price":"Bulk order Price",
         "quantity":"Quantity",
-        "update":"Update",
-        "delete":"Delete",
+        "update":"EDIT",
+        "delete":"DELETE",
         "upadte_product":"Update Product",
         "cancel":"Cancel"
     },
