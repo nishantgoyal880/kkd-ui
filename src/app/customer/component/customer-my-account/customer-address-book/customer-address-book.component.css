@@ -1,12 +1,11 @@
 h1 {
-    font-weight: 600;
+    font-weight: 400;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
     color: #28a745;
     line-height: 42px;
     }
-
 form{
     width : 70%;
     margin : 0 auto;
@@ -38,4 +37,8 @@ form{
 }
 .container{
     padding-bottom: 3rem;
+}
+
+#main_div{
+    margin-bottom: 3rem;
 }

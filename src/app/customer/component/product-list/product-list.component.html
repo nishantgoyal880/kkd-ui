@@ -48,35 +48,32 @@
     <ng-template #prod>
       <div class="col-md-9">
         <div class="container">
+            <span class="searchResults">
+                Showing {{(p-1)*productsToShowInOnePage+1}} – 
+                <span *ngIf="p!=lastpage; else lastpagee;">{{p*productsToShowInOnePage}}</span>
+                <ng-template #lastpagee>
+                    {{products.length}}
+                </ng-template>
+
+                 results of {{products.length}} <span *ngIf="searchTextDisplay">for "{{searchTextDisplay}}"</span>
+            </span>
           <div class="row">
             <div class="col-md-6 col-lg-4" *ngFor="let item of products | paginate:{itemsPerPage:productsToShowInOnePage,currentPage:p}">
-              <div class="card shadow p-2 mb-3">
-                <!-- Card image -->
-                <div class="view overlay zoom">
-                  <img class="card-img-top" src="{{item.imageUrl}}" alt="Product Image">
+              <div class="block">
+                <div class="middle">
+                  <img src="{{item.imageUrl}}" alt="product image" />
                 </div>
-                <!-- Card content -->
-                <div class="card-body text-center">
-                  <!-- Title -->
-                  <h5 class="card-title">
-                    <strong>{{item.productName}}</strong>
-                  </h5>
-                  <!-- Text -->
-                  <div class="text-area">
-                    <p class="card-text">
-                      <b>{{ 'products.description' | translate }}: </b>{{item.description}}</p>
-                    <p class="card-text">
-                      <b>{{ 'products.price' | translate }}:</b>{{item.price}}/kg.</p>
-                    <p class="card-text">
-                      <b>{{ 'products.bulk_order_price' | translate }}:</b>{{item.bulkOrderPrice}}/kg.</p>
-                    <p class="card-text">
-                      <b>{{ 'products.quantity' | translate }}:</b>{{item.quantity}} Kg</p>
-                  </div>
-                  <hr>
-                  <span *ngIf="role=='Customer'">
-                    <button type="button" class="btn btn-success mt-4" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1">{{ 'products.add_to_bag' | translate }} </button>
-                  </span>
+                <a (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1">
+                <div class="bottom mt-1">
+                  <div class="heading">{{item.productName}}</div>
+                  <div class="info">{{item.description}}</div>
+                  <div class="quantity">{{ 'products.quantity' | translate }}: {{item.quantity}} Kg</div>
+                  <div class="price">{{ 'products.price' | translate }}: ₹{{item.price}}/kg.</div>
                 </div>
+                <span *ngIf="role=='Customer'">
+                    <a id="addbutton" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1"><i class="fa fa-cart-plus" aria-hidden="true"></i>{{ 'products.add_to_bag' | translate }}</a>
+                </span>
+                </a>
               </div>
             </div>
           </div>
@@ -98,7 +95,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ 'products.new_message' | translate }}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Enter Quantity{{ 'products.enter_qantity' | translate }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

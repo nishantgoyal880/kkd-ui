@@ -16,6 +16,7 @@ export class CustomerPaymentComponent implements OnInit {
   }
 
   constructor(private fb: FormBuilder) {    //Initialise form element and specify the validations
+    this.flag=true;
     this.rForm = fb.group({
       'cardNumber': [null, Validators.compose([Validators.required, Validators.minLength(16), Validators.maxLength(16)])],
       'expiryMonth': [null, Validators.compose([Validators.required, Validators.maxLength(2), Validators.minLength(1)])],

@@ -1,5 +1,5 @@
 <h1>{{ 'customer_address_book.address_details' | translate }}</h1>
-<div class="container-fluid">
+<div class="container-fluid" id="main_div">
   <div class="row" style="margin: auto">
     <div class="col-4" style="max-width: 250px;;">
       <div class="card add_card" id="card">
@@ -16,7 +16,7 @@
 
             <div class="card-text">
               <ul style="list-style-type: none; padding: 0">
-                <li style="text-align: center"><b>Adderss {{i+1}}</b></li>
+                <li style="text-align: center"><b>Address {{i+1}}</b></li>
                 <hr style="margin: .75rem; width: 100%">
                 <li>{{address.addressLine}}</li>
                 <li>{{address.city}},{{address.district}},</li>
