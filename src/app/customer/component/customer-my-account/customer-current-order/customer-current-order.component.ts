@@ -15,9 +15,8 @@ export class CustomerCurrentOrderComponent implements OnInit {
  public currentOrders : any = [];
  public p:any;
   constructor(private customerAuthenticationService : CustomerAuthenticationService,private idRoleService : IdRoleService) { 
-  }
+   }
   items = ProductList.products;
-
   ngOnInit() {
 //getting customer id of the actively logged in customer
       this.customerId=localStorage.getItem("id");
@@ -35,7 +34,6 @@ export class CustomerCurrentOrderComponent implements OnInit {
               text: 'Currently there are no orders',
             })
            }
-           console.log(results)
     this.currentOrders=results;
         },error=> {
           swal({
@@ -46,4 +44,3 @@ export class CustomerCurrentOrderComponent implements OnInit {
         });
         }
     }
-  
