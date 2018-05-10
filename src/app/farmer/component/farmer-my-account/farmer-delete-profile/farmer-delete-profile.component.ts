@@ -50,19 +50,13 @@ export class FarmerDeleteProfileComponent implements OnInit {
 //funtion to send otp to the number
 sendOtp(post) {
   this.mobileNo=post.mobileNo;
-  this.password=post.password;
+  this.password=post.currentPassword;
   this.hideVar=true
     //call otp service to generate a otp corresponding to number
     this.registrationService.generateOtp(this.mobileNo).subscribe((res) =>{
       //sucessfully sended
     }, (err) =>{
       //in case of error
-      swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'OTP service not ready',
-        footer: '.....',
-      })
     })
 
   }
