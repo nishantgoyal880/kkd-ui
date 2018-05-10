@@ -32,7 +32,7 @@
               <i class="fa fa-home mr-1"></i>{{ 'header.home' | translate }}</a>
           </li>
           <li class="nav-item" *ngIf="loggedIn==true && role=='Customer'">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" routerLink="/customer/myAccount" role="tab" aria-controls="home"
+            <a class="nav-link" id="home-tab" data-toggle="tab" routerLink="/customer/myAccount" role="tab" aria-controls="home"
               aria-selected="true">
               <i class="fa fa-home mr-1"></i>{{ 'header.my_account' | translate }}</a>
           </li>
