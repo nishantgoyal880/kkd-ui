@@ -289,12 +289,19 @@
         "mobile_number_required":"మొబైల్ నంబర్ అవసరం",
         "update":"అప్డేట్"
     },
-    "delete_profile":{
+    "farmer_delete_profile":{
         "delete_profile":"ప్రొఫైల్ తీసివేయు ",
         "enter_password":"పాస్వర్డ్ను నమోదు చేయండి",
         "enter_current_password":"ప్రస్తుత పాస్వర్డ్ను ప్రవేశపెట్టుము",
         "current_password_required":"ప్రస్తుత పాస్ వర్డ్ అవసరం",
-        "delete":"తొలగించు"
+        "delete":"తొలగించు",
+        "enter_otp":"Enter OTP",
+        "otp_is_required":"OTP is required",
+        "less_then_10_digit":"less then 10 digit",
+        "more_then_10_digit":"more then 10 digit",
+        "mobile_number_is_required":"Mobile Number is required",
+        "verify_otp":"Verify otp",
+        "enter_mobile_number":"Enter Mobile Number"
     },
     "farmer_add_product":{
         "upload_product":"ఉత్పత్తిని నమోదు చేయ్యండి ",

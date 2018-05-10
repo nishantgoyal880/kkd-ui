@@ -289,12 +289,19 @@
         "mobile_number_required":"ਮੋਬਾਈਲ ਨੰਬਰ ਦੀ ਲੋੜ ਹੈ",
         "update":"ਅੱਪਡੇਟ ਕਰੋ"
     },
-    "delete_profile":{
+    "farmer_delete_profile":{
         "delete_profile":"ਮਿਟਾਓ ਪ੍ਰੋਫਾਈਲ",
         "enter_password":"ਪਾਸਵਰਡ ਦਰਜ ਕਰੋ",
         "enter_current_password":"ਮੌਜੂਦਾ ਪਾਸਵਰਡ ਦਿਓ",
         "current_password_required":"ਮੌਜੂਦਾ ਪਾਸਵਰਡ ਦੀ ਲੋੜ ਹੈ",
-        "delete":"ਮਿਟਾਓ"
+        "delete":"ਮਿਟਾਓ",
+        "enter_otp":"Enter OTP",
+        "otp_is_required":"OTP is required",
+        "less_then_10_digit":"less then 10 digit",
+        "more_then_10_digit":"more then 10 digit",
+        "mobile_number_is_required":"Mobile Number is required",
+        "verify_otp":"Verify otp",
+        "enter_mobile_number":"Enter Mobile Number"
     },
     "farmer_add_product":{
         "upload_product":"ਉਤਪਾਦ ਅਪਲੋਡ ਕਰੋ",

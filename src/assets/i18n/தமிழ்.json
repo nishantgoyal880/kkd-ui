@@ -289,12 +289,19 @@
         "mobile_number_required":"தொலைபேசி எண் தேவை",
         "update":"புதுப்பிக்கவும்"
     },
-    "delete_profile":{
+    "farmer_delete_profile":{
         "delete_profile":"கணக்கை நீக்கு",
         "enter_password":"கடவுச்சொல்லை உள்ளிடவும்",
         "enter_current_password":"தற்போதைய கடவுச்சொல்லை உள்ளிடவும்",
         "current_password_required":"தற்போதைய கடவுச்சொல் தேவை",
-        "delete":"நீக்குக"
+        "delete":"நீக்குக",
+        "enter_otp":"Enter OTP",
+        "otp_is_required":"OTP is required",
+        "less_then_10_digit":"less then 10 digit",
+        "more_then_10_digit":"more then 10 digit",
+        "mobile_number_is_required":"Mobile Number is required",
+        "verify_otp":"Verify otp",
+        "enter_mobile_number":"Enter Mobile Number"
     },
     "farmer_add_product":{
         "upload_product":"தயாரிப்பை பதிவேற்றுக ",
