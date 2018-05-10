@@ -128,14 +128,14 @@
 <!-- <div class="col-md-8 col-center m-auto">
   <h2>{{ 'homepage.what_our_clients_say' | translate }}</h2>
   <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
-    <!-- Carousel indicators -->
-    <!-- <ol class="carousel-indicators">
+<!-- Carousel indicators -->
+<!-- <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"> </li>
       <li data-target="#myCarousel" data-slide-to="2"> </li>
     </ol> -->
-    <!-- Wrapper for carousel items -->
-    <!-- <div class="carousel-inner">
+<!-- Wrapper for carousel items -->
+<!-- <div class="carousel-inner">
       <div class="item carousel-item active">
         <div class="img-box">
           <img class="first-slide" src="../../../assets/Body/PM_Modi_2015.jpg" alt="first-slide">
@@ -163,8 +163,8 @@
           <b>{{ 'homepage.words_that_matter_3' | translate }}</b>{{ 'homepage.words_that_matter_position3' | translate }}</p>
       </div>
     </div> -->
-    <!-- Carousel controls -->
-    <!-- <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+<!-- Carousel controls -->
+<!-- <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
       <i class="fa fa-angle-left"></i>
     </a>
     <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
@@ -176,64 +176,75 @@
 
 <!-- Button trigger modal -->
 <button type="button" id="langBtn" #langBtn class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"  data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Choose Your Language</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card"  >
-                        <div class="card-body">
-                          <h5 class="card-title"> <a href="javascript:void();" (click)="chooseLang('en')" class="btn btn-primary">English</a></h5>
-                        </div>
-                      </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card"  >
-                        <div class="card-body">
-                          <h5 class="card-title"> <a href="javascript:void();" (click)="chooseLang('hindi')" class="btn btn-primary">हिंदी</a></h5>
-                        </div>
-                      </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card"  >
-                        <div class="card-body">
-                          <h5 class="card-title"> <a href="javascript:void();" (click)="chooseLang('punjabi')" class="btn btn-primary">ਪੰਜਾਬੀ</a></h5>
-                        </div>
-                      </div>
-                </div>
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+  data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Choose Your Language</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-4 lang_sel">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title card_lang">
+                  <a href="javascript:void();" (click)="chooseLang('en')" class="btn btn-success">English</a>
+                </h5>
               </div>
-              <div class="row">
-                  <div class="col-md-4">
-                      <div class="card"  >
-                          <div class="card-body">
-                            <h5 class="card-title"> <a href="javascript:void();" (click)="chooseLang('tamil')" class="btn btn-primary">தமிழ்</a></h5>
-                          </div>
-                        </div>
-                  </div>
-                  <div class="col-md-4">
-                      <div class="card"  >
-                          <div class="card-body">
-                            <h5 class="card-title"> <a href="javascript:void();" (click)="chooseLang('telegu')" class="btn btn-primary">తెలుగు</a></h5>
-                          </div>
-                        </div>
-                  </div>
-                </div>
+            </div>
+          </div>
+          <div class="col-md-4 lang_sel">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title card_lang">
+                  <a href="javascript:void();" (click)="chooseLang('hindi')" class="btn btn-success">हिंदी</a>
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 lang_sel">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title card_lang">
+                  <a href="javascript:void();" (click)="chooseLang('punjabi')" class="btn btn-success">ਪੰਜਾਬੀ</a>
+                </h5>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" #closeModal class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-4 lang_sel">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title card_lang">
+                  <a href="javascript:void();" (click)="chooseLang('tamil')" class="btn btn-success">தமிழ்</a>
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 lang_sel">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title card_lang">
+                  <a href="javascript:void();" (click)="chooseLang('telegu')" class="btn btn-success">తెలుగు</a>
+                </h5>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" #closeModal class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-
+</div>
