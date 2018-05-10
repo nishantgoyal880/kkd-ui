@@ -1,6 +1,4 @@
-<h1>
-  {{ 'customer_previous_order.previous_orders' | translate }}
-</h1>
+
 <div class="row">
   <div *ngFor="let order of previousOrders | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
     <div class="block">

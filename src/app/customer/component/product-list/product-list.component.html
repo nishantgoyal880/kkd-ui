@@ -48,6 +48,15 @@
     <ng-template #prod>
       <div class="col-md-9">
         <div class="container">
+            <span class="searchResults">
+                {{ 'products.showing' | translate }} {{(p-1)*productsToShowInOnePage+1}} – 
+                <span *ngIf="p!=lastpage; else lastpagee;">{{p*productsToShowInOnePage}}</span>
+                <ng-template #lastpagee>
+                    {{products.length}}
+                </ng-template>
+
+                 {{ 'products.results_of' | translate }} {{products.length}} <span *ngIf="searchTextDisplay">{{ 'products.for' | translate }} "{{searchTextDisplay}}"</span>
+            </span>
           <div class="row">
             <div class="col-md-6 col-lg-4" *ngFor="let item of products | paginate:{itemsPerPage:productsToShowInOnePage,currentPage:p}">
               <div class="block">
@@ -58,8 +67,8 @@
                 <div class="bottom mt-1">
                   <div class="heading">{{item.productName}}</div>
                   <div class="info">{{item.description}}</div>
-                  <div class="quantity">Quantity: {{item.quantity}} Kg</div>
-                  <div class="price">Price: ₹{{item.price}}/kg.</div>
+                  <div class="quantity">{{ 'products.quantity' | translate }}: {{item.quantity}} Kg</div>
+                  <div class="price">{{ 'products.price' | translate }}: ₹{{item.price}}/kg.</div>
                 </div>
                 <span *ngIf="role=='Customer'">
                     <a id="addbutton" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1"><i class="fa fa-cart-plus" aria-hidden="true"></i>{{ 'products.add_to_bag' | translate }}</a>
@@ -86,7 +95,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Enter Quantity</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Enter Quantity{{ 'products.enter_qantity' | translate }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

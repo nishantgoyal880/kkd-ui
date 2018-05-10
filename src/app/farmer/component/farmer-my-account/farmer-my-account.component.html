@@ -29,54 +29,59 @@
                 <!-- Card -->
                 <div class="card testimonial-card" *ngIf="farmerInfo">
 
-                  <!-- Bacground color -->
-                  <div class="card-up indigo lighten-1">
-                  </div>
+                  <div class="container">
+                    <div class="row">
 
+                      <div class="col-3">
                   <!-- Avatar -->
                   <div class="avatar mx-auto white pt-2">
-                    <img src="./../../../../assets/images/user_img.jpeg" class="rounded-circle">
+                    <img src="./../../../../assets/images/user_img.jpeg" class="rounded-circle" style="text-align: center">
                   </div>
-
+                </div>
+                <div class="col-9">
                   <div class="card-body">
                     <!-- Name -->
                     <h4 class="card-title">{{farmerInfo.aadhaarData.firstName}} {{farmerInfo.aadhaarData.lastName}}</h4>
                     <hr>
                     <!-- Quotation -->
                     <p *ngIf="farmerInfo.currentAddress">
-                      <span class="font-weight-bold">Current Address: </span>
-                      {{farmerInfo.currentAddress.addressLine}}, {{farmerInfo.currentAddress.city}}, 
+                      <span class="font-weight-bold">{{ 'my_account.current_address' | translate }}: </span>
+                      {{ farmerInfo.currentAddress.addressLine}}, {{farmerInfo.currentAddress.city}}, 
                       distt. {{farmerInfo.currentAddress.district}} {{farmerInfo.currentAddress.state}}, {{farmerInfo.currentAddress.pincode}}
                     </p>
                     <p>
-                      <span class="font-weight-bold">Alternate</span>
-                      <i class="fa fa-phone" aria-hidden="true"></i>{{farmerInfo.mobileNo}}
+                        <i class="fa fa-phone" aria-hidden="true"></i><span class="font-weight-bold"> 
+                          {{ 'my_account.current_number' | translate }}: </span>
+                      {{farmerInfo.mobileNo}}
                     </p>
                     <p>
-                      <span class="font-weight-bold">
-                        Current
+                        <i class="fa fa-phone" aria-hidden="true"></i> <span class="font-weight-bold">
+                         {{ 'my_account.alternate_mobile' | translate }}: 
                       </span>
-                      <i class="fa fa-phone" aria-hidden="true"></i>{{farmerInfo.alternateNo}}
+                      {{farmerInfo.alternateNo}}
                     </p>
-                    <p *ngIf="farmerInfo.cities"> Places where i can deliver</p>
+                    <p *ngIf="farmerInfo.cities"> {{ 'my_account.places_where_i_can_deliver' | translate }}:</p>
                     <p>
-                      <i *ngFor="let city of farmerInfo.cities" lass="fa fa-map-marker" aria-hidden="true">{{city}}</i>
+                      <i *ngFor="let city of farmerInfo.cities" lass="fa fa-map-marker" aria-hidden="true">{{city}}&nbsp;&nbsp; </i>
                     </p>
                     <p>
-                      <span class="font-weight-bold">Aadhaar Address: </span>
+                      <span class="font-weight-bold">{{ 'my_account.current_address' | translate }}: </span>
                       {{farmerInfo.aadhaarData.permanentAddress.addressLine}}, {{farmerInfo.aadhaarData.permanentAddress.city}}, distt. {{farmerInfo.aadhaarData.permanentAddress.district}},
                       {{farmerInfo.aadhaarData.permanentAddress.state}}, {{farmerInfo.aadhaarData.permanentAddress.pincode}}
                     </p>
                     <p *ngIf="farmerInfo.bankDetails">
-                      <span class="font-weight-bold">Bank Details</span>
+                      <span class="font-weight-bold">{{ 'my_account.aadhaar_address' | translate }}</span>
                       <br>
-                      <span>Account Owner: {{farmerInfo.bankDetails.accountName}}</span>
+                      <span>{{ 'my_account.account_owner' | translate }}: {{farmerInfo.bankDetails.accountName}}</span>
                       <br>
-                      <span>Account Name: {{farmerInfo.bankDetails.accountNo}}</span>
+                      <span>{{ 'my_account.account_name' | translate }}: {{farmerInfo.bankDetails.accountNo}}</span>
                       <br>
-                      <span>Account IFSC:{{farmerInfo.bankDetails.ifscCode}}</span>
+                      <span>{{ 'my_account.account_ifsc' | translate }}:{{farmerInfo.bankDetails.ifscCode}}</span>
                     </p>
                   </div>
+                </div>
+                </div>
+                </div>
                 </div>
               </div>
               <!-- Card -->

@@ -1,21 +1,59 @@
-<div class="my-3">
-<h1>{{ 'delete_profile.delete_profile' | translate }}</h1>
-<form [formGroup]="rForm" (ngSubmit)="deleteFarmerProfile(rForm.value)">
-  <div class = "card">
-    <div class="form-group">
-    <div class = form-comp>
-    <div class = "name"><label for="currentPassword">{{ 'delete_profile.enter_password' | translate }}</label></div>
-    <input type="password" class="form-control" placeholder="{{ 'delete_profile.enter_current_password' | translate }}" formControlName="currentPassword">
-    <div *ngIf="rForm.controls['currentPassword'].touched && rForm.controls['currentPassword'].invalid" class="alert">
-      <div *ngIf="rForm.controls['currentPassword'].hasError('required')">
-        {{ 'delete_profile.current_password_required' | translate }}!
+<div *ngIf="!hideVar" class="my-3">
+  <h1>{{ 'farmer_delete_profile.delete_profile' | translate }}</h1>
+  <form [formGroup]="rForm" (ngSubmit)="sendOtp(rForm.value)">
+    <div class = "card">
+      <div class="form-group">
+        <div class = form-comp>
+          <div class = "name"><label for="currentPassword">{{ 'farmer_delete_profile.enter_mobile_number' | translate }}*</label></div>
+          <input type="text" class="form-control" placeholder="{{ 'farmer_delete_profile.enter_mobile_number' | translate }}" formControlName="mobileNo">
+          <div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
+            <div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
+              {{ 'farmer_delete_profile.less_then_10_digit' | translate }}
+            </div>
+            <div *ngIf="rForm.controls['mobileNo'].hasError('maxlength')">
+              {{ 'farmer_delete_profile.more_then_10_digit' | translate }}
+            </div>
+            <div *ngIf="rForm.controls['mobileNo'].hasError('required')">
+              {{ 'farmer_delete_profile.mobile_number_is_required' | translate }}
+            </div>
+          </div>
+        </div>
+        <div class = form-comp>
+          <div class = "name"><label for="currentPassword">{{ 'farmer_delete_profile.enter_password' | translate }}*</label></div>
+          <input type="password" class="form-control" placeholder="{{ 'farmer_delete_profile.enter_current_password' | translate }}" formControlName="currentPassword">
+          <div *ngIf="rForm.controls['currentPassword'].touched && rForm.controls['currentPassword'].invalid" class="alert">
+            <div *ngIf="rForm.controls['currentPassword'].hasError('required')">
+              {{ 'farmer_delete_profile.current_password_required' | translate }}!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = form-comp-button>
+        <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_delete_profile.delete' | translate }}</button>
       </div>
     </div>
-    </div>
-    </div>
-    <div class = form-comp-button>
-    <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">{{ 'delete_profile.delete' | translate }}</button>
+  </form>
+</div>
+  <div *ngIf="hideVar" style="padding-top: 1.7rem">
+    <h1>{{ 'farmer_delete_profile.verify_otp' | translate }}</h1>
+    <div class="container-fluid">
+      <div class="card  shadow cardwidth">
+        <div class="card-body">
+          <form [formGroup]="otpForm" (ngSubmit)="verifyOtp(otpForm.value)">
+            <div class="form-group">
+              <div class = "form-comp-top">
+                <label for="exampleInputEmail1">{{ 'farmer_delete_profile.enter_otp' | translate }}*</label>
+                <input class="form-control" type="text" id="otp" formControlName="otp" placeholder="{{ 'farmer_delete_profile.enter_otp' | translate }}">
+                <div class="alert" *ngIf=" otpForm.controls['otp'].touched && otpForm.controls['otp'].hasError('required')">
+                  {{ 'farmer_delete_profile.otp_is_required' | translate }}
+                </div>
+              </div>
+            </div>
+            <div class = "form-comp-button">
+              <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!otpForm.valid">{{ 'farmer_forgot_password.verify_otp' | translate }}</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-</form>
-

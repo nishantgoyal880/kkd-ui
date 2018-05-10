@@ -15,6 +15,7 @@ import { ProductList } from '../../../config/productList';
 export class FarmerAddProductComponent implements OnInit {
 
   items = ProductList.products;
+  public lanItems:any;
   rForm: FormGroup;
   post:any;
   public kkdFarmId: any="";
@@ -26,20 +27,19 @@ export class FarmerAddProductComponent implements OnInit {
   public quantity: any;
   public productName: any;
   public available: any;
+  public currentLan:any;
   productSubmission;
 
   ngOnInit() {
     //assign role and farmer id
-    
     this.kkdFarmId=localStorage.getItem("id");
-    
-  }
-  
+    }
+
 
   constructor(private productService: FarmerAddProductService,
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     public router: Router,
-    private idRoleService: IdRoleService) { 
+    private idRoleService: IdRoleService) {
       //putting validation in reactive form
     this.rForm = fb.group({
       description : [null, Validators.compose([Validators.required])],
@@ -48,8 +48,14 @@ export class FarmerAddProductComponent implements OnInit {
       quantity : [null, Validators.compose([Validators.required])],
       available : ''
     })
-    
+
+    //items changing according to language
+    this.idRoleService.currentLan.subscribe((lan) =>{
+      this.items=ProductList.prodLan[lan];
+    })
   }
+
+
 
 
   //function to select product name
@@ -61,11 +67,11 @@ export class FarmerAddProductComponent implements OnInit {
   onFileSelected(event: any){
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
-      
+
       reader.onload = (event:any) => {
-        this.imageUrl = event.target.result 
+        this.imageUrl = event.target.result
       }
-      
+
       reader.readAsDataURL(event.target.files[0]);
     }
   }
@@ -83,7 +89,7 @@ export class FarmerAddProductComponent implements OnInit {
       "available":post.available,
       "imageUrl":this.imageUrl,
     }
-  
+
     if(parseInt(post.bulkOrderPrice) <= parseInt(post.price)){
       this.productService.update(this.kkdFarmId,this.productSubmission).subscribe((res) => {
         swal({
@@ -93,10 +99,9 @@ export class FarmerAddProductComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
-        this.router.navigate(['farmer/viewProduct']);
+        this.router.navigate(['farmer/dashboard']);
 
       },(error) => {
-        console.log(error)
         swal({
           type: 'error',
           title: 'Oops...',

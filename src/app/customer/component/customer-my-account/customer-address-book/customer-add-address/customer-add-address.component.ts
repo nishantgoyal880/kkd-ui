@@ -55,7 +55,7 @@ export class CustomerAddAddressComponent implements OnInit {
       .subscribe(
       data => {
         swal({
-          position: "top-end",
+          position: "top",
           type: "success",
           title: "Your address has been added",
           showConfirmButton: false,

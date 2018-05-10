@@ -5,7 +5,7 @@
 			<div class="cart-dropdown-container">
 				<div class="row">
 					<div class="text-left col-md-6">{{ 'customer_my_cart.your_cart' | translate }}
-						<i class="fa fa-shopping-cart"></i> ({{items.length}} {{ 'customer_my_cart.items' | translate }})</div>
+						<i class="fa fa-shopping-cart"></i>( {{items.length}} {{ 'customer_my_cart.item' | translate }})</div>
 					<div class="text-right col-md-6">
 						<button type="button" class="btn btn-success btn-sm" routerLink="/productList">
 							<span>
@@ -17,10 +17,13 @@
 				<table class="table table-hover mt-2">
 					<tbody>
 						<tr *ngFor="let item of items; let ind=index">
-							<td class="text-left ml-4">
-								<a href="#">
-									<img src="http://placehold.it/100x70" alt="{{item.productName}}.png" title="{{item.productName}}">
-								</a>
+							<td>
+								<div *ngFor="let cartItem of cartItems">
+									<div *ngIf="item.productName==cartItem">
+									<!-- Card image -->
+										<img class="img_cart" src="../../../../../assets/order/{{cartItem}}.jpg" alt="{{item.productName}}">
+									</div>
+								</div>
 							</td>
 							<td class="text-left">
 								<a href="#">{{item.productName}}</a>
@@ -70,7 +73,7 @@
 	</ng-template>
 	<ng-template #empty>
 		<div class="container" style=" text-align: center;">
-			<div class="h6">{{ 'customer_my_cart.your_cart' | translate }}(0 Items)</div>
+			<div class="h6">{{ 'customer_my_cart.your_cart' | translate }}(0 {{ 'customer_my_cart.item' | translate }})</div>
 		</div>
 		<div class="cart-header" style="margin-bottom: 8rem; text-align: center;">
 			<img src="./../../../../assets/images/empty_cart.jpg" alt="empty wishlist" class="img-fluid">

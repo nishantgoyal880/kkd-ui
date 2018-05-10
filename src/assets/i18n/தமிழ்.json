@@ -1,17 +1,18 @@
 {
     "footer":{
-        "get_started":"தொடங்குக",
-        "home":"முகப்பு",
         "about_us":"எங்களை பற்றி",
         "policies":"கொள்கைகள்",
-        "contact_us":"எங்களை தொடர்பு கொள்ள",
+        "contact":"எங்களை தொடர்பு கொள்ள",
         "support":"ஆதரவு",
         "help":"உதவி",
-        "join_our_newsletter":"எங்கள் செய்திமடலில் சேரவும்",
-        "connect_on_social":"சமூக ஊடகங்களில் எங்களுடன் இணையுங்கள்",
-        "enter_your_email":"மின்னஞ்சலை பதிவுசெய்க",
-        "subscribe":"பதிவு",
-        "kisan_ki_dukan":"கிசான் கி டுகான். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை"
+        "kisan_ki_dukan":"கிசான் கி டுகான். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை",
+        "footer_description":"உங்கள் அன்றாட வேலைகளில் எங்கள் தயாரிப்புகள் உங்களுக்கு உதவ புதிய மற்றும் ஆக்கப்பூர்வமான யோசனைகளைத் தேடும் ஒரு இளம் நிறுவனம் எப்போதும்.",
+        "our_team":"எங்கள் அணி",
+        "sapientrazorfish_Gurgaon":" செபிஎன்ட் ரேசொரபிஷ், குர்கான்",
+        "phone":"தொலைபேசி எண் ",
+        "email":"மின்னஞ்சல்",
+        "skype":"ஸ்கைப்",
+        "follow_us":"எங்களை பின்தொடரவும்"
     },
     "body":{
         "kisan_ki_dukan":"கிசான் கி டுகான்",
@@ -69,7 +70,17 @@
         "sign_up_as_farmer":"விவசாயியாக பதிவு செய்க",
         "my_account":"என் கணக்கு",
         "logout":"வெளியேறு",
-        "my_cart":"என் வணிக வண்டி"
+        "my_cart":"என் வணிக வண்டி",
+        "dashboard":" டேஷ்போர்டில்",
+        "change_city":"நகரம் மாற்றவும்",
+        "delhi":"தில்லி",
+        "mumbai":"மும்பை",
+        "chandigarh":"சண்டிகர்",
+        "ahmedabad":"அகமதாபாத்",
+        "hyderabad":"ஹைதெராபாத்",
+        "chennai":"சென்னை",
+        "cancel":"ரத்து செய்",
+        "save":"சேமி"
     },
     "support":{
        "support":"ஆதரவு",
@@ -142,7 +153,12 @@
         "new_message":"புதிய தகவல்",
         "please_enter_qantity":"அளவை குறிப்பிடவும் ",
         "close":"வெளியேறு ",
-        "proceed":"தொடர்"
+        "proceed":"தொடர்",
+        "showing":"காண்பது ",
+        "results_of":"முடிவுகள்",
+        "for":"அதற்கு",
+        "enter_qantity":"அளவை குறிப்பிடவும்"
+
     },
     "policy":{
         "policies":"கொள்கைகள்",
@@ -236,7 +252,18 @@
         "add_address":"முகவரி சேர்க்கவும்",
         "change_password":"கடவுச்சொல்லை மாற்றவும்",
         "alternate_mobile":"மாற்று தொலைபேசி எண் ",
-        "delete_profile":"கணக்கை நீக்குக "
+        "delete_profile":"கணக்கை நீக்குக ",
+        "current_address":"தற்போதைய முகவரி",
+        "alternate":"மாற்று",
+        "current":"தற்போதைய",
+        "places_where_i_can_deliver":"நான் வழங்கக்கூடிய இடங்கள்",
+        "aadhaar_address":"ஆதார் முகவரி",
+        "bank_details":"வங்கி விவரங்கள்",
+        "account_owner":"கணக்கு வைத்திருப்பவர்",
+        "account_name":"கணக்கின் பெயர்",
+        "account_ifsc":"கணக்கு ஐஎப்எஸ்சி ",
+        "profile":"விவரம்",
+        "current_number":"தற்போதைய எண்"
     },
     "add_address":{
         "add_alternate_address":"மாற்று முகவரி",
@@ -277,13 +304,20 @@
         "mobile_number_required":"தொலைபேசி எண் தேவை",
         "update":"புதுப்பிக்கவும்"
     },
-    "delete_profile":{
+    "farmer_delete_profile":{
         "delete_profile":"கணக்கை நீக்கு",
         "enter_password":"கடவுச்சொல்லை உள்ளிடவும்",
         "enter_current_password":"தற்போதைய கடவுச்சொல்லை உள்ளிடவும்",
         "current_password_required":"தற்போதைய கடவுச்சொல் தேவை",
-        "delete":"நீக்குக"
-    },
+        "delete":"நீக்குக",
+        "enter_otp":"ஓ டி பி  ஐ உள்ளிடவும்",
+        "otp_is_required":"ஓ டி பி தேவை",
+        "less_then_10_digit":"10 இலக்கங்கள் குறைவாக",
+        "more_then_10_digit":"10 க்கும் மேற்பட்ட இலக்கங்கள்",
+        "mobile_number_is_required":"தொலைபேசி எண் தேவை",
+        "verify_otp":"ஓ டி பியை சரிபார்க்கவும்",
+        "enter_mobile_number":"தொலைபேசி எண்ணை உள்ளிடவும்"
+    }, 
     "farmer_add_product":{
         "upload_product":"தயாரிப்பை பதிவேற்றுக ",
         "choose_product_name":"தயாரிப்பு பெயரைத் தேர்வு செய்க",
@@ -317,7 +351,11 @@
         "ifsc_required":"IFSC எண் தேவைப்படுகிறது",
         "more_than_6_characters_not_allowed":"6 க்கும் மேற்பட்ட எழுத்துக்கள் அனுமதிக்கப்படாது",
         "minimun_6_digits_are_required":"குறைந்தபட்சம் 6 இலக்கங்கள் தேவைப்படுகின்றன",
-        "save_details":"விவரங்களைச் சேமிக்கவும்"
+        "save_details":"விவரங்களைச் சேமிக்கவும்",
+        "more_than_10_characters_not_allowed":"6 க்கும் மேற்பட்ட எழுத்துக்கள் அனுமதிக்கப்படாது",
+        "minimun_10_digits_are_required":"குறைந்தபட்சம் 6 இலக்கங்கள் தேவைப்படுகின்றன",
+        "mobile_number":"தொலைபேசி எண்",
+        "mobile_number_required":"தொலைபேசி எண் தேவை"
     },
     "farmer_current_order":{
         "customer_id":"வாடிக்கையாளர் அடையாள எண்",
@@ -460,7 +498,7 @@
     },
     "customer_my_cart":{
         "your_cart":"உங்கள் வணிக வண்டி",
-        "items":"பொருட்கள் ",
+        "item":"பொருட்கள் ",
         "continue_shopping":"ஷாப்பிங்கைத் தொடரவும்",
         "qty":"அளவு",
         "kg":"கிலோ",
@@ -487,7 +525,8 @@
         "less_than_3_digits":"3 இலக்கத்திற்கும் குறைவாக உள்ளது",
         "more_than_3_digits":"3 க்கும் மேற்பட்ட இலக்கங்கள்",
         "cvv_is_required":"CVV எண் தேவை",
-        "make_payment":"பணம் கட்டுக"       
+        "make_payment":"பணம் கட்டுக",
+        "place_order":"ஆர்டரை சமர்ப்பிக்கவும்"      
     },
     "about_us":{
         "about_us_heading":"எங்களை பற்றி",
