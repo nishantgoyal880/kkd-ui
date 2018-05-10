@@ -70,10 +70,20 @@
         "sign_up_as_farmer":"Sign Up as Farmer",
         "my_account":"My Account",
         "logout":"log Out",
-        "my_cart":"My Cart"
+        "my_cart":"My Cart",
+        "dashboard":"Dashboard",
+        "change_city":"Change City",
+        "delhi":"Delhi",
+        "mumbai":"Mumbai",
+        "chandigarh":"Chandigarh",
+        "ahmedabad":"Ahmedabad",
+        "hyderabad":"Hyderabad",
+        "chennai":"Chennai",
+        "cancel":"Cancel",
+        "save":"Save"
     },
     "support":{
-       "support":"SUPPORT",
+       "support":"Support",
        "issue_title":"Issue Title",
        "issue_description":"Issue Description",
        "email":"E-mail",
@@ -86,7 +96,7 @@
        "email_is_required":"Email is required"
    },
    "help":{
-       "Help":"HELP",
+       "Help":"Help",
        "how_to_register":"How to Register",
        "aadhaar_verification":"Aadhaar Verification",
        "buying_products":"Buying Products",
@@ -97,7 +107,7 @@
        "normal_v_bulk_description":"There is a limit on the quantity of a single product that you can buy as a general customer. If greater quantity is required to be bought, it falls under the categoury of the Bulk order. The difference between the two is in the price rate and also the quantity. It is done in order to avoid any chaos and provide some ease to the farmer end."
    },
     "customer_login":{
-        "login_customer":"LOGIN CUSTOMER",
+        "login_customer":"Login Customer",
         "mobile_number":"Mobile Number*",
         "password":"Password*",
         "forgot_password":"Forgot Password",
@@ -111,7 +121,7 @@
         "password_invalid":"Password Invalid (Atleast one lowercase, uppercase, specialcharacter, digit, minLength 6) !"
     },
     "farmer_login":{
-        "login_farmer":"LOGIN FARMER",
+        "login_farmer":"Login Farmer",
         "mobile_number":"Mobile Number*",
         "password":"Password*",
         "forgot_password":"Forgot Password?",
@@ -143,14 +153,15 @@
         "new_message":"New message",
         "please_enter_qantity":"Please Enter Quantity",
         "close":"Close",
-        "proceed":"Proceed"
+        "proceed":"Proceed",
+        "enter_qantity":"Enter Quantity"
     },
     "policy":{
-        "policies":"POLICIES",
+        "policies":"Policies",
         "description":"Returns is a scheme provided by respective sellers directly under this policy in terms of which the option of exchange, replacement and/ or refund is offered by the respective sellers to you. All products listed under a particular category may not have the same returns policy. For all products, the policy on the product page shall prevail over the general returns policy. Do refer the respective item's applicable return policy on the product page for any exceptions to the table below. The return policy is divided into three parts; Do read all sections carefully to understand the conditions and cases under which returns will be accepted. A privacy policy is a legal document that details how a website gathers, stores, shares, and sells data about its visitors. This data typically includes items such as a user’s name, address, birthday, marital status, medical history, and consumer behavior. The specific contents of this document depend upon the laws in the legal jurisdiction in which your business operates. Most countries have their own set of guidelines regarding what information is eligible for collection, and how that information may be used. When it comes to legal documents, it is best not to take chances. Fortunately, it’s easy to get a free website privacy policy in just a few minutes. All you have to do is fill up the blank spaces below and we will send you an email with your own personalized privacy policy for your business."
     },
     "connect_us":{
-        "contact_us":"CONTACT US",
+        "contact_us":"Contact Us",
         "mail_us":"Mail Us",
         "registered_office_address":"Registered Office Address",
         "kisan_ki_dukan":"Kisan Ki Dukan",
@@ -162,7 +173,7 @@
         "india":"India, 122017"
     },
     "customer_register":{
-        "register_customer":"REGISTER CUSTOMER",
+        "register_customer":"Register Customer",
         "first_name":"First Name",
         "less_than_3_digits":"Less than 3 digits",
         "first_name_is_required":"First Name is required!",
@@ -179,23 +190,23 @@
         "Re_enter_Password":"Re-enter Password",
         "password_match":"The new password and confirm password do not match",
         "send_otp":"Send OTP",
-        "verify_otp_to_register_customer":" VERIFY OTP TO REGISTER CUSTOMER",
+        "verify_otp_to_register_customer":" Verify OTP To Register Customer",
         "enter_otp":"Enter OTP",
         "otp_is_required":"OTP is required",
         "verify_otp":"Verify OTP"
     },
     "customer_forgot_password":{
-        "forget_password":"FORGET PASSWORD",
+        "forget_password":"Forget Password",
         "mobile_number":"Mobile Number",
         "less_than_10_digits":"Less than 10 digits",
         "more_than_10_digits":"More than 10 digits",
         "mobile_number_is_required":"Mobile number is required!",
         "send_otp":"Send OTP",
-        "verify_otp_to_reset_password":" VERIFY OTP TO RESET PASSWORD",
+        "verify_otp_to_reset_password":" Verify Otp To Reset Password",
         "enter_otp":"Enter OTP",
         "otp_is_required":"OTP is required",
         "verify_otp":"Verify OTP",
-        "reset_password":"RESET PASSWORD",
+        "reset_password":"Reset Password",
         "new_password":"New Password",
         "less_than_6_digits":"less than 6 digits",
         "more_than_12_digits":"More than 12 digits",
@@ -206,7 +217,7 @@
         "submit":"Submit"
     },
     "farmer_forgot_password":{
-        "forget_password":"FORGET PASSWORD",
+        "forget_password":"Forget Password",
         "mobile_number":"Mobile Number",
         "less_than_10_digits":"Less than 10 digits",
         "more_than_10_digits":"More than 10 digits",
@@ -250,7 +261,7 @@
         "account_ifsc":"Account IFSC"
     },
     "add_address":{
-        "add_alternate_address":"ADD ALTERNATE ADDRESS",
+        "add_alternate_address":"Add Alternate Address",
         "address_line":"Address Line",
         "enter_address_line":"Enter Address Line",
         "address_line_required":"Address Line Required",
@@ -269,19 +280,19 @@
         "update":"Update"
     },
     "farmer_change_password":{
-        "change_password":"CHANGE PASSWORD",
+        "change_password":"Change Password",
         "current_password":"Current Pssword",
         "enter_current_password":"Enter the current pssword",
         "current_password_required":"Current password is required",
         "new_password":"New Password",
-        "enter_new_password":"Enterthe new password",
+        "enter_new_password":"Enter the new password",
         "new_password_required":"New password is required",
         "re-enter_new_password":"Re-enter the new password",
         "re-enter_new_password_required":"Re-enter the new password is required",
         "change":"Change"
     },
     "alternate_mobile_number":{
-        "alternate_mobile_number":"ALTERNATE MOBILE NUMBER",
+        "alternate_mobile_number":"Alternate Mobile Number",
         "enter_mobile_number":"Enter the mobile number",
         "less_than_10_digits":"Less than 10 digits",
         "more_than_10_digits":"More than 10 digits",
@@ -289,14 +300,14 @@
         "update":"Update"
     },
     "delete_profile":{
-        "delete_profile":"DELETE PROFILE",
+        "delete_profile":"Delete Profile",
         "enter_password":"Enter the password",
         "enter_current_password":"Enter the current password",
         "current_password_required":"Current password required",
         "delete":"Delete"
     },
     "farmer_add_product":{
-        "upload_product":"UPLOAD PRODUCT",
+        "upload_product":"Upload Product",
         "choose_product_name":"Choose the product name",
         "product_description":"Prouct Description",
         "enter_description":"Enter the description",
@@ -315,7 +326,7 @@
         "submit_product":"Submit Product"
     },
     "farmer_bank_details":{
-        "bank_details":"BANK DETAILS",
+        "bank_details":"Bank Details",
         "account_number":"Account Number",
         "account_number_required":"Account number is required",
         "more_than_12_digits":"More than 12 digits not allowed",
@@ -338,7 +349,7 @@
         "amount":"Total Amount",
         "validity_of_order":"Validity Of Order",
         "customer_mobileno":"Customer MobileNo",
-        "delivered":"DELIVERED",
+        "delivered":"Click On Delivery",
         "accept":"ACCEPT",
         "decline":"DECLINE",
         "enter_delivery_info":"Enter Delivery Info",
@@ -378,7 +389,7 @@
         "cancel":"Cancel"
     },
     "aadhaar":{
-        "register_farmer":"REGISTER FARMER",
+        "register_farmer":"Register Farmer",
         "aadhaar_number":"Aadhaar Number",
         "less_than_12_digits":"less than 12 digits",
         "more_than_12_digits":"More than 12 digits",
@@ -411,7 +422,7 @@
         "add_address":"Add Address"
     },
     "customer_add_address":{
-        "add_alternate_address":"ADD ALTERNATE ADDRESS",
+        "add_alternate_address":"Add Alternate Address",
         "address_line":"Address Line",
         "enter_address_line":"Enter Address Line",
         "address_line_required":"Address Line Required",
@@ -430,7 +441,7 @@
         "update":"Add"
     },
     "customer_current_order":{
-        "my_orders":"MY ORDERS",
+        "my_orders":"My Orders",
         "orderid":"Order ID",
         "product_name":"Product Name",
         "quantity":"Quantity(in kg)",
@@ -482,7 +493,7 @@
         "place_order":"Place Order"
     },
     "customer_payment":{
-        "payment_details":"PAYMENT DETAILS",
+        "payment_details":"Payment Details",
         "cash_on_delivery":"Cash On Delivery",
         "credit_debit_card":"Credit/Debit Card",
         "Card_number":"CARD NUMBER",
@@ -498,10 +509,10 @@
         "less_than_3_digits":"Less than 3 digits",
         "more_than_3_digits":"More than 3 digits",
         "cvv_is_required":"CVV is required",
-        "make_payment":"Make Payment"
+        "place_order":"Place Order"
     },
     "about_us":{
-        "about_us_heading":"ABOUT US",
+        "about_us_heading":"About Us",
         "problem_statement":"Problem Statement",
         "in_the_global_market":"In the Global Market",
         "problem_statement_description1":"the actual price of the products is not prevalent in the supply chain.",
