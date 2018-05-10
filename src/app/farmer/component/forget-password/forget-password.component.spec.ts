@@ -48,6 +48,12 @@ describe('ForgetPasswordComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should call the ngOnInit method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'ngOnInit');
+    expect(component.ngOnInit).toHaveBeenCalledTimes(0);
+  }));
+  
   it('should call the send farmer method', async(() => {
     fixture.detectChanges();
     spyOn(component,'sendOtp');

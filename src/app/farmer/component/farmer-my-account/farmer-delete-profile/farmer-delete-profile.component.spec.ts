@@ -44,21 +44,45 @@ describe('FarmerDeleteProfileComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call the deleteFarmerProfile method', async(() => {
+  it('should call the ngOnInit method', async(() => {
     fixture.detectChanges();
-    spyOn(component,'deleteFarmerProfile');
+    spyOn(component,'ngOnInit');
+    expect(component.ngOnInit).toHaveBeenCalledTimes(0);
+  }));
+
+  it('should call the sendOtp method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'sendOtp');
     el=fixture.debugElement.query(By.css('button')).nativeElement;
     el.click();
-    expect(component.deleteFarmerProfile).toHaveBeenCalledTimes(0);
+    expect(component.sendOtp).toHaveBeenCalledTimes(0);
   }));
 
-  it('form should be invalid', async(() => {
-    component.rForm.controls['currentPassword'].setValue('');
-    expect(component.rForm.valid).toBeFalsy();
+  it('should call the sendOtp method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'sendOtp');
+    el=fixture.debugElement.query(By.css('button')).nativeElement;
+    el.click();
+    expect(component.sendOtp).toHaveBeenCalledTimes(0);
   }));
 
-  it('form should be valid', async(() => {
+  it('should call the verifyOtp method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'verifyOtp');
+    el=fixture.debugElement.query(By.css('button')).nativeElement;
+    el.click();
+    expect(component.verifyOtp).toHaveBeenCalledTimes(0);
+  }));
+
+  it('To send otp form should be valid', async(() => {
+    component.rForm.controls['mobileNo'].setValue('9875326475');
     component.rForm.controls['currentPassword'].setValue('qwerty');
     expect(component.rForm.valid).toBeTruthy();
   }));
+
+  it('To send otp form should be valid', async(() => {
+    component.otpForm.controls['otp'].setValue('9545');
+    expect(component.otpForm.valid).toBeTruthy();
+  }));
+
 });

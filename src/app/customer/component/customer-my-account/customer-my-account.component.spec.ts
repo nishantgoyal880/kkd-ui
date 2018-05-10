@@ -10,7 +10,9 @@ import { HttpModule, Http } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import {IdRoleService} from '../../../services/id-role/id-role.service';
+import { NgxPaginationModule } from 'ngx-pagination';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
+
 describe('CustomerMyAccountComponent', () => {
   let component: CustomerMyAccountComponent;
   let fixture: ComponentFixture<CustomerMyAccountComponent>;
@@ -23,6 +25,7 @@ describe('CustomerMyAccountComponent', () => {
         BrowserModule,
         HttpClientModule,
         HttpModule,
+        NgxPaginationModule,
         RouterTestingModule,
         FormsModule,
         ReactiveFormsModule,
@@ -45,12 +48,7 @@ describe('CustomerMyAccountComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should render title in a h1 tag', async(() => {
-    fixture.detectChanges();
-    const e1=fixture.nativeElement.querySelector('h1');
-    console.log(e1.innerText);
-    expect(e1.innerText).toEqual('customer_current_order.my_orders');
-  }));
+ 
   it('should call the onSubmit method', async(() => {
     fixture.detectChanges();
     spyOn(component,'onSubmit');

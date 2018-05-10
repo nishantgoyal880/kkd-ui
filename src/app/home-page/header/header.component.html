@@ -8,7 +8,7 @@
                     <i class="fa fa-map-marker mr-1 ml-2"></i>{{city}}</a>
                   </div>
              <div class="col-9" id="lang-div">
-              <select  class="btn btn-success" #langSelect (change)="translate.use(langSelect.value)" id="lang-drop">
+              <select  class="btn btn-success" #langSelect (change)="translate.use(langSelect.value)" (click)="emitLan(langSelect.value)" id="lang-drop">
                  <option class="btn btn-light" *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
               </select>
               </div>

@@ -49,6 +49,12 @@ describe('FarmerLoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should call the ngOnInit method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'ngOnInit');
+    expect(component.ngOnInit).toHaveBeenCalledTimes(0);
+  }));    
+
   it('should call the login farmer method', async(() => {
     fixture.detectChanges();
     spyOn(component,'loginFarmer');

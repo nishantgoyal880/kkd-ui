@@ -3,16 +3,26 @@ export class ProductList{
 							   "Cauliflower", "Garlic", "Lady's Finger", "Lemon",
 							   "Potato", "Coriander", "Banana", "Mango", "Grapes",
 							   "Apple"];
-	public static products2 = [ "Onion" ,"Tomato","Orange", "Carrot", "Brinjal",
-							 	 "Cauliflower", "Garlic", "Lady's Finger", "Lemon",
-							 	 "Potato", "Coriander", "Banana", "Mango", "Grapes",
-							 	 "Apple"];
-	public static products3 = [ "Onion" ,"Tomato","Orange", "Carrot", "Brinjal",
-							 	 "Cauliflower", "Garlic", "Lady's Finger", "Lemon",
-							 	 "Potato", "Coriander", "Banana", "Mango", "Grapes",
-							 	 "Apple"];
-	public static products4 = [ "Onion" ,"Tomato","Orange", "Carrot", "Brinjal",
-								 "Cauliflower", "Garlic", "Lady's Finger", "Lemon",
-								 "Potato", "Coriander", "Banana", "Mango", "Grapes",
-								 "Apple"];
-}
+	public static prodLan={
+		en : [ "Onion" ,"Tomato","Orange", "Carrot", "Brinjal",
+							 		"Cauliflower", "Garlic", "Lady's Finger", "Lemon",
+							 		"Potato", "Coriander", "Banana", "Mango", "Grapes",
+							 		"Apple"],
+	 हिंदी : [ "प्याज" ,"टमाटर","नारंगी", "गाजर", "बैंगन",
+							 	 "गोभी", "लहसुन", "भिन्डी", "नींबू",
+							 	 "आलू", "धनिया", "केला", "आम", "अंगूर",
+							 	 "सेब"],
+	 தமிழ் : [ "வெங்காயம்", "தக்காளி", "ஆரஞ்சு", "கேரட்", "பிரிஞ்செல்",
+								"காலிஃபிளவர்", "பூண்டு", "லேடி'ஸ் ஃபிங்கர்", "லெமன்",
+								"உருளைக்கிழங்கு", "கொத்தமல்லி", "வாழை", "மாம்பழம்", "திராட்சை",
+								"ஆப்பிள்"],
+	 తెలుగు : [ "ఉల్లిపాయ", "టమాటో", "ఆరెంజ్", "క్యారెట్", "వంకర",
+								"కాలీఫ్లవర్", "వెల్లుల్లి", "లేడీ'స్ ఫింగర్", "లెమన్",
+								"పొటాటో", "కొరియర్", "అరటి", "మామిడి", "గ్రేప్స్",
+								"ఆపిల్"],
+	 ਪੰਜਾਬੀ  : [ "ਪਿਆਜ਼", "ਟਮਾਟਰ", "ਸੰਤਰੇ", "ਗਾਜਰ", "ਬ੍ਰਿਜਲ",
+								"ਫੁੱਲ ਗੋਭੀ", "ਲਸਣਕ", "ਲੇਡੀਸ ਫਿੰਗਰ", "ਲੈਮਨ",
+								"ਆਲੂ", "ਧਾਲੀ", "ਕੇਨੇ", "ਅੰਬ", "ਅੰਗੂਰ",
+								"ਸੇਬ"]
+		}
+  }

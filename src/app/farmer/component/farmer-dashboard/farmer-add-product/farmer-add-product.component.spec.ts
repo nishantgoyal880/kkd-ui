@@ -54,6 +54,13 @@ describe('FarmerAddProductComponent', () => {
     expect(el.innerText.toLowerCase()).toEqual('farmer_add_product.upload_product');
   }));
 
+  //testcase for ngOnInit method
+  it('should call the ngOnInit method', async(() => {
+    fixture.detectChanges();
+    spyOn(component,'ngOnInit');
+    expect(component.ngOnInit).toHaveBeenCalledTimes(0);
+  }));
+
   //testcase for onFileSelected method
   it('should call the onFileSelected method', async(() => {
     fixture.detectChanges();
