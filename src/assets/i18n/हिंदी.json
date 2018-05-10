@@ -345,7 +345,11 @@
         "ifsc_required":"आईएफएससी कोड की आवश्यकता है",
         "more_than_6_characters_not_allowed":"6 से अधिक वर्णों की अनुमति नहीं है",
         "minimun_6_digits_are_required":"न्यूनतम 6 अंक आवश्यक हैं",
-        "save_details":"विवरण बचाओ"
+        "save_details":"विवरण बचाओ",
+        "more_than_10_characters_not_allowed":"More than 6 characters not allowed",
+        "minimun_10_digits_are_required":"Minimum 6 digits are required",
+        "mobile_number":"Mobile Number",
+        "mobile_number_required":"Mobile number is required"
     },
     "farmer_current_order":{
         "customer_id":"ग्राहक आईडी",
