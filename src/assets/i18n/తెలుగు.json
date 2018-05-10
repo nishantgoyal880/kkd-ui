@@ -70,7 +70,17 @@
         "sign_up_as_farmer":"రైతుగా సైన్ అప్ చేయండి",
         "my_account":"నా ఖాతా",
         "logout":"లాగ్ ఔట్",
-        "my_cart":"నా కార్ట్"
+        "my_cart":"నా కార్ట్",
+        "dashboard":"Dashboard",
+        "change_city":"Change City",
+        "delhi":"Delhi",
+        "mumbai":"Mumbai",
+        "chandigarh":"Chandigarh",
+        "ahmedabad":"Ahmedabad",
+        "hyderabad":"Hyderabad",
+        "chennai":"Chennai",
+        "cancel":"Cancel",
+        "save":"Save"
     },
     "support":{
        "support":"మద్దతు",
@@ -143,7 +153,8 @@
     "new_message":"కొత్త సందేశం",
     "please_enter_qantity":"దయచేసి పరిమాణం ఎంటర్ చేయండి",
     "close":"మూసివేయి",
-    "proceed":"కొనసాగు"
+    "proceed":"కొనసాగు",
+    "enter_qantity":"Enter Quantity"
 },
 "policy":{
     "policies":"విధానాలు",
@@ -487,7 +498,7 @@
         "less_than_3_digits":"3 కంటే తక్కువ అంకెలు",
         "more_than_3_digits":"3 కంటే ఎక్కువ అంకెలు",
         "cvv_is_required":"CVV అవసరం",
-        "make_payment":"చెల్లింపు చేయండి"       
+        "place_order":"Place Order"       
     },
     "about_us":{
         "about_us_heading":"మా గురించి",
