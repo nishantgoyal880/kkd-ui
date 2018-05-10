@@ -58,7 +58,7 @@ export class FarmerRegisterComponent implements OnInit {
 	registerFarmer(post) {
 		//making json format which is to be send with request
 		var farmerToRegister={
-			'mobileNo':this.aadhaarDataRecievedByRegister.mobileNumber,
+			'mobileNo':this.aadhaarDataRecievedByRegister.mobileNo,
 			'password':post.password,
 			'aadhaarData':this.aadhaarDataRecievedByRegister,
 			'cities': post.cities

@@ -13,3 +13,17 @@ img{
        display:inline;
    }
   }
+
+  a {
+    color: #29a745;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}

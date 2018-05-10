@@ -12,6 +12,8 @@
           </div>
         </div>
         </div>
+        <div class="row">
+          <div class="col-5">
         <div class = form-comp>
           <div class = "name"><label for="city">{{ 'add_address.city' | translate }}</label></div>
           <input type="text" class="form-control" id="city" placeholder="{{ 'add_address.enter_your_city' | translate }}" formControlName="city">
@@ -21,6 +23,9 @@
             </div>
           </div>
           </div>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-6">
         <div class = form-comp>
           <div class = "name"><label for="district">{{ 'add_address.district' | translate }}</label></div>
           <input type="text" class="form-control" id="district" placeholder="{{ 'add_address.enter_your_district' | translate }}" formControlName="district">
@@ -29,6 +34,8 @@
               {{ 'add_address.district_required' | translate }}!
             </div>
           </div>
+        </div>
+        </div>
         </div>
         <div class = form-comp>
           <div class = "name"><label for="state">{{ 'add_address.state' | translate }}</label></div>
@@ -50,7 +57,7 @@
         </div>
         </div>
         <div class = form-comp-button>
-        <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">{{ 'add_address.update' | translate }}</button>
+        <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'add_address.update' | translate }}</button>
         </div>
       </div>
     </form>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { CartService } from "../../services/cart.service";
 import { IdRoleService } from "./../../../services/id-role/id-role.service";
+import { ProductList } from '../../../farmer/config/productList';
 import { Router } from "@angular/router";
 import swal from "sweetalert2";
 @Component({
@@ -15,6 +16,7 @@ export class CustomerMyCartComponent implements OnInit {
     private cartService: CartService,
     private router: Router
   ) {}
+  public cartItems = ProductList.products;
   public items :Array<any>=[];
   public x: number;
   public customerInfo: object = {};
