@@ -5,6 +5,7 @@ h1 {
     margin: 0;
     color: #28a745;
     line-height: 42px;
+    margin-top: 2rem;
     }
 
 form{
@@ -38,4 +39,8 @@ form{
 }
 .container{
     padding-bottom: 3rem;
+}
+
+#main_div{
+    margin-bottom: 3rem;
 }

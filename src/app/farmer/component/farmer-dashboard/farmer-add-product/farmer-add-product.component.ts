@@ -21,8 +21,8 @@ export class FarmerAddProductComponent implements OnInit {
   public role:string;
   public imageUrl:any;
   public description: any;
-  public price: any;
-  public bulkOrderPrice: any;
+  public price: Number;
+  public bulkOrderPrice: Number;
   public quantity: any;
   public productName: any;
   public available: any;
@@ -83,8 +83,8 @@ export class FarmerAddProductComponent implements OnInit {
       "available":post.available,
       "imageUrl":this.imageUrl,
     }
-
-    if(post.bulkOrderPrice<=post.price){
+  
+    if(parseInt(post.bulkOrderPrice) <= parseInt(post.price)){
       this.productService.update(this.kkdFarmId,this.productSubmission).subscribe((res) => {
         swal({
           position: 'center',

@@ -31,6 +31,7 @@ h1 {
     margin: 0;
     color: #28a745;
     line-height: 42px;
+    margin-top: 2rem;
     }
 
 
@@ -118,3 +119,6 @@ button:focus{
     border-color : #f9f9f9 !important;
 }
 
+#prev_main{
+    margin-bottom: 3rem;
+}
