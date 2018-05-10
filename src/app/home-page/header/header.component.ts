@@ -57,6 +57,7 @@ export class HeaderComponent implements OnInit {
 
  emitLan(x){
    this.idRoleService.currentLan.emit(x);
+   localStorage.setItem("language",x);
  }
 
 }
