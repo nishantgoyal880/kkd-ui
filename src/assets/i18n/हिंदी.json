@@ -304,13 +304,13 @@
         "enter_current_password":"वर्तमान पासवर्ड डालें",
         "current_password_required":"वर्तमान पासवर्ड आवश्यक है",
         "delete":"हटाना",
-        "enter_otp":"Enter OTP",
-        "otp_is_required":"OTP is required",
-        "less_then_10_digit":"less then 10 digit",
-        "more_then_10_digit":"more then 10 digit",
-        "mobile_number_is_required":"Mobile Number is required",
-        "verify_otp":"Verify otp",
-        "enter_mobile_number":"Enter Mobile Number"
+        "enter_otp":"ओटीपी दर्ज करें",
+        "otp_is_required":"ओटीपी आवश्यक है",
+        "less_then_10_digit":"10 अंकों से कम",
+        "more_than_10_digits":"10 से अधिक अंक",
+        "mobile_number_is_required":"मोबाइल नंबर की आवश्यकता है",
+        "verify_otp":"ओटीपी सत्यापित करें",
+        "enter_mobile_number":"मोबाइल नंबर दर्ज करें"
     },
     "farmer_add_product":{
         "upload_product":"उत्पाद अपलोड करें",
@@ -346,10 +346,10 @@
         "more_than_6_characters_not_allowed":"6 से अधिक वर्णों की अनुमति नहीं है",
         "minimun_6_digits_are_required":"न्यूनतम 6 अंक आवश्यक हैं",
         "save_details":"विवरण बचाओ",
-        "more_than_10_characters_not_allowed":"More than 6 characters not allowed",
-        "minimun_10_digits_are_required":"Minimum 6 digits are required",
-        "mobile_number":"Mobile Number",
-        "mobile_number_required":"Mobile number is required"
+        "more_than_10_characters_not_allowed":"6 से अधिक वर्णों की अनुमति नहीं है",
+        "minimun_10_digits_are_required":"न्यूनतम 6 अंक आवश्यक हैं",
+        "mobile_number":"मोबाइल नंबर",
+        "mobile_number_required":"मोबाइल नंबर की आवश्यकता है"
     },
     "farmer_current_order":{
         "customer_id":"ग्राहक आईडी",
@@ -457,7 +457,7 @@
         "quantity":"मात्रा (किलो में)",
         "price":"मूल्य (रुपये में)",
         "rating":"रेटिंग",
-        "otp":"OTP"
+        "otp":"ओटीपी"
     },
     "customer_previous_order":{
         "previous_orders":"पिछले ऑर्डर",
@@ -466,7 +466,7 @@
         "quantity":"मात्रा (किलो में)",
         "price":"मूल्य (रुपये में)",
         "farmer_rating":"किसान रेटिंग",
-        "otp":"OTP"
+        "otp":"ओटीपी"
     },
     "customer_my_account":{
         "my_orders":"मेरे ऑर्डर",
