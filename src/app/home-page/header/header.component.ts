@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   translate.addLangs(this.languages);
   translate.setDefaultLang('en');
   const browserLang = translate.getBrowserLang();
- translate.use(this.languages.filter(languages => browserLang.match(languages)) ? browserLang : 'en');
+  translate.use(this.languages.filter(languages => browserLang.match(languages)) ? browserLang : 'en');
    this.idRoleService.role.subscribe((role) =>{
       this.role=role;
    })
@@ -53,6 +53,11 @@ export class HeaderComponent implements OnInit {
  set(city) {
    this.city = city;
    localStorage.setItem("user-location",this.city);
+ }
+
+ emitLan(x){
+   debugger
+   this.idRoleService.currentLan.emit(x);
  }
 
 }
