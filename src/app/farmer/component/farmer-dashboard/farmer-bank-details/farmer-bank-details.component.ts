@@ -46,7 +46,7 @@ export class FarmerBankDetailsComponent implements OnInit {
     // this.bankDetailsService.saveAccountDetails(this.farmerId,this.bankDetailsSubmission).subscribe((res) => {
     /* Getting farmer's id from local storage */
     this.bankDetailsService.saveAccountDetails(localStorage.getItem('id'), this.bankDetailsSubmission).subscribe((res) => {
-      //alert('Your bank account details has been successfully added.');
+      // alert('Your bank account details has been successfully added.');
       swal({
         position: 'center',
         type: 'success',

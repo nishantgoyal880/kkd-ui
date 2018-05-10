@@ -248,7 +248,17 @@
     "add_address":"చిరునామాను జోడించు",
     "change_password":"పాస్వర్డ్ను మార్చండి",
     "alternate_mobile":"ప్రత్యామ్నాయ మొబైల్",
-    "delete_profile":"ప్రొఫైల్ను తొలగించు"
+    "delete_profile":"ప్రొఫైల్ను తొలగించు",
+    "current_address":"Current Address",
+    "alternate":"Alternate",
+    "current":"Current",
+    "places_where_i_can_deliver":"Places where i can deliver",
+    "aadhaar_address":"Aadhaar Address",
+    "bank_details":"Bank Details",
+    "account_owner":"Account Owner",
+    "account_name":"Account Name",
+    "account_ifsc":"Account IFSC",
+    "profile":"Profile"
 },
 "add_address":{
     "add_alternate_address":"ప్రత్యామ్నాయ చిరునామాను జోడించు",
@@ -336,7 +346,11 @@
         "ifsc_required":"IFSC కోడ్ అవసరం",
         "more_than_6_characters_not_allowed":"6 కంటే ఎక్కువ అక్షరాలు అనుమతించబడవు",
         "minimun_6_digits_are_required":"కనీస 6 అంకెలు అవసరం",
-        "save_details":"వివరాలు భద్రపరచండి"
+        "save_details":"వివరాలు భద్రపరచండి",
+        "more_than_10_characters_not_allowed":"More than 6 characters not allowed",
+        "minimun_10_digits_are_required":"Minimum 6 digits are required",
+        "mobile_number":"Mobile Number",
+        "mobile_number_required":"Mobile number is required"
     },
     "farmer_current_order":{
         "customer_id":"కస్టమర్ ఐడి",

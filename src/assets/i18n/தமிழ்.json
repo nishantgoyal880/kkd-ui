@@ -248,7 +248,17 @@
         "add_address":"முகவரி சேர்க்கவும்",
         "change_password":"கடவுச்சொல்லை மாற்றவும்",
         "alternate_mobile":"மாற்று தொலைபேசி எண் ",
-        "delete_profile":"கணக்கை நீக்குக "
+        "delete_profile":"கணக்கை நீக்குக ",
+        "current_address":"Current Address",
+        "alternate":"Alternate",
+        "current":"Current",
+        "places_where_i_can_deliver":"Places where i can deliver",
+        "aadhaar_address":"Aadhaar Address",
+        "bank_details":"Bank Details",
+        "account_owner":"Account Owner",
+        "account_name":"Account Name",
+        "account_ifsc":"Account IFSC",
+        "profile":"Profile"
     },
     "add_address":{
         "add_alternate_address":"மாற்று முகவரி",
@@ -336,7 +346,11 @@
         "ifsc_required":"IFSC எண் தேவைப்படுகிறது",
         "more_than_6_characters_not_allowed":"6 க்கும் மேற்பட்ட எழுத்துக்கள் அனுமதிக்கப்படாது",
         "minimun_6_digits_are_required":"குறைந்தபட்சம் 6 இலக்கங்கள் தேவைப்படுகின்றன",
-        "save_details":"விவரங்களைச் சேமிக்கவும்"
+        "save_details":"விவரங்களைச் சேமிக்கவும்",
+        "more_than_10_characters_not_allowed":"More than 6 characters not allowed",
+        "minimun_10_digits_are_required":"Minimum 6 digits are required",
+        "mobile_number":"Mobile Number",
+        "mobile_number_required":"Mobile number is required"
     },
     "farmer_current_order":{
         "customer_id":"வாடிக்கையாளர் அடையாள எண்",
