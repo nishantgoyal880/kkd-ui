@@ -13,6 +13,8 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.translate.use(localStorage.getItem("language"))
+    if(localStorage.getItem("counter")!="1")
     this.langBtn.nativeElement.click();
   }
 
@@ -23,7 +25,7 @@ export class HomePageComponent implements OnInit {
   }
 
   chooseLang(language){
-    debugger
+    localStorage.setItem("counter","1");
     switch(language){
       case 'hindi': localStorage.setItem("language",'हिंदी');
       break;
