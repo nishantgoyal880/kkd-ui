@@ -12,6 +12,7 @@ import { ProductList } from '../../../../farmer/config/productList';
 })
 export class CustomerPreviousOrderComponent implements OnInit {
 
+  public p:any;
   public customerId : string ;
   public previousOrders : any = [];
   items = ProductList.products;
@@ -22,10 +23,10 @@ export class CustomerPreviousOrderComponent implements OnInit {
       this.customerId=localStorage.getItem("id");
       this.getdata();
    }
-   
-  //function to retreive the previous orders of the customer 
+
+  //function to retreive the previous orders of the customer
    getdata(){
-  //calling the service to retreive the previous orders 
+  //calling the service to retreive the previous orders
     this.customerAuthenticationService.getPreviousOrders(this.customerId).subscribe(results=>{
         if(results == null){
          swal({
