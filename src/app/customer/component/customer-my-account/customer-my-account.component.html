@@ -1,125 +1,125 @@
 <!-- <h1 class="text-center">My Account</h1>
-  <br> -->
-  <div class="container-fluid mt-100">
+<br> -->
+<div class="container-fluid mt-100">
 
     <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">{{ 'customer_my_account.my_orders' | translate }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " data-toggle="tab" href="#profile" role="tab" aria-controls="profile">{{ 'customer_my_account.previous_orders' | translate }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages">{{ 'customer_my_account.address_book' | translate }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#settings" role="tab" aria-controls="settings">{{ 'customer_my_account.change_password' | translate }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#settings1" role="tab" aria-controls="settings1">{{ 'customer_my_account.delete_profile' | translate }}</a>
-      </li>
-    </ul>
-
-    <div class="tab-content">
-      <div class="tab-pane active " id="home" role="tabpanel" >
-        <app-customer-current-order></app-customer-current-order>
-      </div>
-      <div class="tab-pane " id="profile" role="tabpanel">
-        <app-customer-previous-order></app-customer-previous-order>
-      </div>
-      <div class="tab-pane " id="messages" role="tabpanel">
-        <app-customer-address-book></app-customer-address-book>
-      </div>
-      <div class="tab-pane change-password" id="settings" role="tabpanel">
-        <div id="bgimg" style="padding-bottom: 3rem">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">{{ 'customer_my_account.my_orders' | translate }}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " data-toggle="tab" href="#profile" role="tab" aria-controls="profile">{{ 'customer_my_account.previous_orders' | translate }}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages">{{ 'customer_my_account.address_book' | translate }}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#settings" role="tab" aria-controls="settings">{{ 'customer_my_account.change_password' | translate }}</a>
+    </li>
+    <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#settings1" role="tab" aria-controls="settings1">{{ 'customer_my_account.delete_profile' | translate }}</a>
+        </li>
+  </ul>
+  
+  <div class="tab-content">
+    <div class="tab-pane active " id="home" role="tabpanel" >
+          <app-customer-current-order></app-customer-current-order>
+    </div>
+    <div class="tab-pane " id="profile" role="tabpanel">
+          <app-customer-previous-order></app-customer-previous-order>
+    </div>
+    <div class="tab-pane " id="messages" role="tabpanel">
+          <app-customer-address-book></app-customer-address-book>
+    </div>
+    <div class="tab-pane change-password" id="settings" role="tabpanel">
+        <div id="bgimg" style="padding-top: 3rem; padding-bottom: 3rem">
           <h1> {{ 'customer_my_account.change_password' | translate }} </h1>
-
+  
           <form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
-
+  
             <div class = "card shadow">
               <div class="form-group">
-
-                <div class = "form-comp-top">
-                  <div class = "name"><label for="mobileNumber">{{ 'customer_my_account.mobile_number' | translate }}</label></div>
-                  <input type="text"  class="form-control" id="mobileNumber" placeholder="{{ 'customer_my_account.enter_10_digit_mobile_number' | translate }}" formControlName="mobileNumber">
-                  <div *ngIf="rForm.controls['mobileNumber'].touched && rForm.controls['mobileNumber'].invalid" class="alert">
-                    <div *ngIf="rForm.controls['mobileNumber'].hasError('required')">
-                      {{ 'customer_my_account.mobile_number_required' | translate }}
-                    </div>
+  
+              <div class = "form-comp-top">
+              <div class = "name"><label for="mobileNumber">{{ 'customer_my_account.mobile_number' | translate }}</label></div>
+              <input type="text"  class="form-control" id="mobileNumber" placeholder="{{ 'customer_my_account.enter_10_digit_mobile_number' | translate }}" formControlName="mobileNumber">
+              <div *ngIf="rForm.controls['mobileNumber'].touched && rForm.controls['mobileNumber'].invalid" class="alert">
+                      <div *ngIf="rForm.controls['mobileNumber'].hasError('required')">
+                          {{ 'customer_my_account.mobile_number_required' | translate }}
+                      </div>
                   </div>
                 </div>
-
+  
                 <div class = "form-comp">
                   <div class = "name"><label for="currentPassword">{{ 'customer_my_account.current_password' | translate }}</label></div>
-                  <input  type="password" class="form-control" id="currentPassword" placeholder="{{ 'customer_my_account.enter_current_password' | translate }}" formControlName="currentPassword">
-                  <div *ngIf="rForm.controls['currentPassword'].touched && rForm.controls['currentPassword'].invalid" class="alert">
-                    <div *ngIf="rForm.controls['currentPassword'].hasError('required')">
-                      {{ 'customer_my_account.password_required' | translate }}
-                    </div>
+                <input  type="password" class="form-control" id="currentPassword" placeholder="{{ 'customer_my_account.enter_current_password' | translate }}" formControlName="currentPassword">
+                <div *ngIf="rForm.controls['currentPassword'].touched && rForm.controls['currentPassword'].invalid" class="alert">
+                      <div *ngIf="rForm.controls['currentPassword'].hasError('required')">
+                        {{ 'customer_my_account.password_required' | translate }}
+                      </div>
                   </div>
                 </div>
-
-                <div class = "form-comp">
-                  <div class = "name"><label for="newPassword">{{ 'customer_my_account.new_password' | translate }}</label></div>
+  
+                  <div class = "form-comp">
+                    <div class = "name"><label for="newPassword">{{ 'customer_my_account.new_password' | translate }}</label></div>
                   <input  type="password" class="form-control" id="newPassword" placeholder="{{ 'customer_my_account.enter_new_password' | translate }}" formControlName="newPassword">
                   <div *ngIf="rForm.controls['newPassword'].touched && rForm.controls['newPassword'].invalid" class="alert">
-                    <div *ngIf="rForm.controls['newPassword'].hasError('required')">
-                      {{ 'customer_my_account.new_password_required' | translate }}
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class = "form-comp">
-                  <div class = "name"><label for="reenterNewPassword">{{ 'customer_my_account.re-enter_new_password' | translate }}</label></div>
-                  <input  type="password" class="form-control" id="reenterNewPassword" placeholder="{{ 'customer_my_account.re-enter_new_password' | translate }}" formControlName="reenterNewPassword">
-                  <div *ngIf="rForm.controls['reenterNewPassword'].touched && rForm.controls['reenterNewPassword'].invalid" class="alert">
-                    <div *ngIf="rForm.controls['reenterNewPassword'].hasError('required')">
-                      {{ 'customer_my_account.re-enter_new_password_required' | translate }}
-                    </div>
-                  </div>
-                </div></div>
-
-                <div class = form-comp-button>
-
-                  <button  type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'customer_my_account.submit' | translate }}</button>
-                </div></div></form>
-              </div>
-            </div>
-
-            <div class="tab-pane change-password" id="settings1" role="tabpanel">
-              <div id="bgimg" style="padding-bottom: 3rem">
-                <h1> {{ 'customer_my_account.delete_profile' | translate }} </h1>
-
-                <form [formGroup]="rFormDeleteProfile" (ngSubmit)="deleteUser(rFormDeleteProfile.value)">
-
-                  <div class = "card shadow">
-                    <div class="form-group">
-
-                      <div class = "form-comp-top">
-                        <div class = "name"><label for="mobileNumberDeleteProfile">{{ 'customer_my_account.mobile_number' | translate }}</label></div>
-                        <input type="text"  class="form-control" id="mobileNumberDeleteProfile" placeholder="{{ 'customer_my_account.enter_10_digit_mobile_number' | translate }}" formControlName="mobileNumberDeleteProfile">
-                        <div *ngIf="rFormDeleteProfile.controls['mobileNumberDeleteProfile'].touched && rFormDeleteProfile.controls['mobileNumberDeleteProfile'].invalid" class="alert">
-                          <div *ngIf="rFormDeleteProfile.controls['mobileNumberDeleteProfile'].hasError('required')">
-                            {{ 'customer_my_account.mobile_number_required' | translate }}
+                          <div *ngIf="rForm.controls['newPassword'].hasError('required')">
+                            {{ 'customer_my_account.new_password_required' | translate }}
                           </div>
-                        </div>
                       </div>
-
-                      <div class = "form-comp">
-                        <div class = "name"><label for="currentPasswordDeleteProfile">{{ 'customer_my_account.password' | translate }}</label></div>
-                        <input  type="password" class="form-control" id="currentPasswordDeleteProfile" placeholder="{{ 'customer_my_account.enter_your_password' | translate }}" formControlName="currentPasswordDeleteProfile">
-                        <div *ngIf="rFormDeleteProfile.controls['currentPasswordDeleteProfile'].touched && rFormDeleteProfile.controls['currentPasswordDeleteProfile'].invalid" class="alert">
-                          <div *ngIf="rFormDeleteProfile.controls['currentPasswordDeleteProfile'].hasError('required')">
-                            {{ 'customer_my_account.password_required' | translate }}
-                          </div>
+                    </div>
+  
+  
+                    <div class = "form-comp">
+                      <div class = "name"><label for="reenterNewPassword">{{ 'customer_my_account.re-enter_new_password' | translate }}</label></div>
+                    <input  type="password" class="form-control" id="reenterNewPassword" placeholder="{{ 'customer_my_account.re-enter_new_password' | translate }}" formControlName="reenterNewPassword">
+                    <div *ngIf="rForm.controls['reenterNewPassword'].touched && rForm.controls['reenterNewPassword'].invalid" class="alert">
+                            <div *ngIf="rForm.controls['reenterNewPassword'].hasError('required')">
+                              {{ 'customer_my_account.re-enter_new_password_required' | translate }}
+                            </div>
                         </div>
                       </div></div>
-
+  
                       <div class = form-comp-button>
-
-                        <button  type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rFormDeleteProfile.valid">{{ 'customer_my_account.submit' | translate }}</button>
-                      </div></div></form>
-                    </div>
-                  </div>
-                </div></div>
+  
+                          <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">{{ 'customer_my_account.submit' | translate }}</button>
+                       </div></div></form>
+  </div>
+    </div>
+  
+          <div class="tab-pane change-password" id="settings1" role="tabpanel">
+              <div id="bgimg" style="padding-top: 5.4rem; padding-bottom: 3rem">
+                  <h1> {{ 'customer_my_account.delete_profile' | translate }} </h1>
+  
+                  <form [formGroup]="rFormDeleteProfile" (ngSubmit)="deleteUser(rFormDeleteProfile.value)">
+  
+                    <div class = "card shadow">
+                      <div class="form-group">
+  
+                      <div class = "form-comp-top">
+                      <div class = "name"><label for="mobileNumberDeleteProfile">{{ 'customer_my_account.mobile_number' | translate }}</label></div>
+                      <input type="text"  class="form-control" id="mobileNumberDeleteProfile" placeholder="{{ 'customer_my_account.enter_10_digit_mobile_number' | translate }}" formControlName="mobileNumberDeleteProfile">
+                      <div *ngIf="rFormDeleteProfile.controls['mobileNumberDeleteProfile'].touched && rFormDeleteProfile.controls['mobileNumberDeleteProfile'].invalid" class="alert">
+                              <div *ngIf="rFormDeleteProfile.controls['mobileNumberDeleteProfile'].hasError('required')">
+                                  {{ 'customer_my_account.mobile_number_required' | translate }}
+                              </div>
+                          </div>
+                        </div>
+  
+                        <div class = "form-comp">
+                          <div class = "name"><label for="currentPasswordDeleteProfile">{{ 'customer_my_account.password' | translate }}</label></div>
+                        <input  type="password" class="form-control" id="currentPasswordDeleteProfile" placeholder="{{ 'customer_my_account.enter_your_password' | translate }}" formControlName="currentPasswordDeleteProfile">
+                        <div *ngIf="rFormDeleteProfile.controls['currentPasswordDeleteProfile'].touched && rFormDeleteProfile.controls['currentPasswordDeleteProfile'].invalid" class="alert">
+                              <div *ngIf="rFormDeleteProfile.controls['currentPasswordDeleteProfile'].hasError('required')">
+                                {{ 'customer_my_account.password_required' | translate }}
+                              </div>
+                          </div>
+                        </div></div>
+  
+                        <div class = form-comp-button>
+  
+                          <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rFormDeleteProfile.valid">{{ 'customer_my_account.submit' | translate }}</button>
+                       </div></div></form>
+                       </div>
+          </div>
+  </div></div>

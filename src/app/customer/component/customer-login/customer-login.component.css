@@ -22,14 +22,17 @@ button{
     margin-top: 35px;
     margin-bottom: 20px;
 }
+
 h1 {
-    font-weight: 600;
+    font-weight: 400;
     padding: 0.5em 0 40px 0;
     text-align: center;
     margin: 0;
-    color: #29a745;
+    color: #28a745;
     line-height: 42px;
+    font-size: 1.7rem;
     }
+    
 @keyframes alertAnim {
     from {
         opacity:0;
