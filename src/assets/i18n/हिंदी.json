@@ -1,17 +1,18 @@
 {
-    "footer":{
+    "footer":{ 
         "support":"सहायता",
-        "get_started":"शुरू हो जाओ",
-        "home":"होम",
         "about_us":"हमारे बारे में",
         "policies":"नीतियों",
-        "contact_us":"संपर्क करें",
+        "contact":"संपर्क करें",
         "help":"मदद",
         "kisan_ki_dukan":"किसान की दुकान। सर्वाधिकार सुरक्षित",
-        "join_our_newsletter":"हमारे समाचार पत्र से जुड जाओ",
-        "connect_on_social":"सोशल पर हमसे जुड़ें",
-        "enter_your_email":"अपना ईमेल दर्ज करें",
-        "subscribe":"सदस्यता लें"
+        "footer_description":"We are a young company always looking for new and creative ideas to help you with our products in your everyday work.",
+        "our_team":"Our Team",
+        "sapientrazorfish_Gurgaon":" SapientRazorfish,Gurgaon",
+        "phone":"Phone",
+        "email":"Email",
+        "skype":"Skype",
+        "follow_us":"Follow Us"
     },
     "body":{
         "kisan_ki_dukan":"किसान की दुकान",
@@ -21,7 +22,7 @@
         "previous":"पिछला",
         "next":"आगामी",
         "welcome":"स्वागत",
-        "about":"",
+        "about":"About",
         "about_description":"परियोजना किसान की डुकान (केकेडी) प्रवृत्ति का प्रक्षेपण है जो माल वितरित करने पर केंद्रित है सीधे खेत से ग्राहक को। जैसा कि हम जानते हैं, यह ताजा नहीं है अगर यह खेत से नहीं है। और इसलिए, ग्राहक को मंच प्रदान करके एक ऑनलाइन दृष्टिकोण लागू किया जा रहा है और किसान जहां किसान मिल सकते हैं और सही ग्राहकों के संपर्क में आ सकते हैं अपने सामान बेचते हैं और इसी तरह से ग्राहकों को माल के लिए अनुरोध कर सकते हैं किसान स्थान या मूल्य की अपनी प्राथमिकताओं के आधार पर और गुणवत्ता वाले कच्चे माल का लाभ उठाते हैं उनके उपयोग के लिए।",
         "farmer_joined":"किसान शामिल",
         "kg_vegetables_sold":"केजी सब्जी बेच दिया",
@@ -232,10 +233,20 @@
         "view_product":"उत्पाद देखें"
     },
     "my_account":{
+        "profile":"Profile",
         "add_address":"पता जोड़ें",
         "change_password":"पासवर्ड बदलें",
         "alternate_mobile":"वैकल्पिक मोबाइल",
-        "delete_profile":"प्रोफ़ाइल हटाएं"
+        "delete_profile":"प्रोफ़ाइल हटाएं",
+        "current_address":"Current Address",
+        "alternate":"Alternate",
+        "current":"Current",
+        "places_where_i_can_deliver":"Places where i can deliver",
+        "aadhaar_address":"Aadhaar Address",
+        "bank_details":"Bank Details",
+        "account_owner":"Account Owner",
+        "account_name":"Account Name",
+        "account_ifsc":"Account IFSC"
     },
     "add_address":{
         "add_alternate_address":"वैकल्पिक पता जोड़ें",
