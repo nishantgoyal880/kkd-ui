@@ -53,7 +53,7 @@ export class FarmerDetailsService {
     }
 
     // Function to handle errors
-    private handleError(error: Response){
+    public handleError(error: Response){
       return Observable.throw(error.statusText);
     }
   }

@@ -18,9 +18,9 @@ export class AppComponent implements OnInit {
 
 	isTracking = false;
 
-	currentLat: any;
-	currentLong: any;
-	city: any;
+	public currentLat: any;
+	public currentLong: any;
+	public city: any;
 
 	constructor(
 		public router: Router,
@@ -50,9 +50,9 @@ export class AppComponent implements OnInit {
 				this.idRoleService.id.emit(res.results.kkdId);
 				IdRoleService.id1 = res.results.kkdId;
 				this.idRoleService.role.emit(res.results.role);
-				IdRoleService.role1=res.results.role;
+				IdRoleService.role1 = res.results.role;
 				this.idRoleService.isLoggedIn.emit(true);
-				IdRoleService.isLoggedIn1=true;
+				IdRoleService.isLoggedIn1 = true;
 			}, (err) => {
 				alert("Invalid");
 			})
@@ -64,11 +64,15 @@ export class AppComponent implements OnInit {
 			navigator.geolocation.getCurrentPosition((position) => {
 				this.currentLat = position.coords.latitude;
 				this.currentLong = position.coords.longitude;
-				console.log("lat:" + this.currentLat);
-				console.log("lon:" + this.currentLong);
+				//alert("lat:" + this.currentLat);
+				//alert("lon:" + this.currentLong);
 				this.getAddress(this.currentLat, this.currentLong)
 					.then((location) => {
 						this.city = location;
+						if (this.city !== null)
+							localStorage.setItem("user-location", this.city);
+						else
+							localStorage.setItem("user-location", "Gurgaon");
 					}
 					)
 					.catch((error) => {
@@ -83,13 +87,14 @@ export class AppComponent implements OnInit {
 						console.log("Location information is unavailable.");
 						break;
 					case error.TIMEOUT:
-						console.log("The request to get user location timed out.");
+						this.city = "Gurgaon";
+						localStorage.setItem("user-location", this.city);
 						break;
 				}
 
-			});
+			}, { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true });
 		} else {
-			alert("Geolocation is not supported by this browser.");
+			console.log("Geolocation is not supported by this browser.");
 		}
 	}
 

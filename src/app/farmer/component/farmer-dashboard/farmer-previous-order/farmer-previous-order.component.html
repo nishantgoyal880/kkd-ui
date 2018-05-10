@@ -1,35 +1,32 @@
-<div class="container mt-100" style="margin-bottom: 170px;">
-  <div class="row">
-    <div *ngFor="let order of orderList | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
+<div class="row">
+<div *ngFor="let order of orderList | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
+  <div class="block">
 
-      <div class="card shadow p-2 mb-3" style="height: 13rem;">
-        <!-- Card content -->
-        <div class="card-body text-center">
-          <!-- Title -->
-          <h5 class="card-title">
-            <strong>{{order.orderId}}</strong>
-          </h5>
-          <!-- Text -->
-          <div class="text-area">
-            <p class="card-text">
-              <b>{{ 'farmer_previous_order.customer_id' | translate }}: </b>{{order.kkdCustId}}</p>
-            <p class="card-text">
-              <b>{{ 'farmer_previous_order.product_name' | translate }}: </b>{{order.name}}</p>
-            <p class="card-text">
-              <b>{{ 'farmer_previous_order.address' | translate }}: </b>{{order.address.addressLine}} {{order.address.city}} {{order.address.state}} {{order.address.district}} {{order.address.pincode}}</p>
-            <p class="card-text">
-              <b>{{ 'farmer_previous_order.quantity' | translate }}: </b>{{order.quantity}}</p>
-            <p class="card-text">
-              <b>{{ 'farmer_previous_order.amount' | translate }}: </b>{{order.price}}</p>
-            <p class="card-text">
-              <b>{{ 'farmer_previous_order.order_status' | translate }}: </b>{{order.orderStatus}}</p>
-							<div *ngIf="order.orderStatus=='Delivered'">
-								<p class="card-text"><b>{{ 'farmer_previous_order.delivery_date' | translate }}: </b>{{order.orderReceivingDate}}</p>
-							</div>
+    <div class="top">
+          <span class="converse">{{order.orderId}}</span>
+    </div>
+
+    <div class="middle">
+      <div *ngFor="let item of items">
+        <div *ngIf="order.name==item">
+          <!-- Card image -->
+          <div class="view overlay zoom">
+            <img class="card-img-top" src="../../../../../assets/order/{{item}}.jpg" alt="Product Image">
           </div>
         </div>
       </div>
-		</div>
-	</div>
+    </div>
+
+    <div class="bottom">
+      <div class="name">{{ 'farmer_current_order.product_name' | translate }}:{{order.name}}</div>
+      <div class="address">{{ 'farmer_current_order.address' | translate }}:{{order.address?.addressLine}} {{order.address?.city}}
+      {{order.address?.state}} {{order.address?.district}} {{order.address?.pincode}}</div>
+      <div class="quantity">{{ 'farmer_current_order.quantity' | translate }}:{{order.quantity}} Kg</div>
+      <div class="price">{{ 'farmer_current_order.amount' | translate }}:₹{{order.totalAmount}}</div>
+      <div class="validity">{{ 'farmer_previous_order.order_status' | translate }}:{{order.orderStatus}}</div>
+      <div *ngIf="order.orderStatus=='Delivered'" class="mobile">{{ 'farmer_previous_order.delivery_date' | translate }}:{{order.orderReceivingDate}}</div>
+    </div>
+  </div>
+</div>
 </div>
 <pagination-controls (pageChange)="p=$event"></pagination-controls>

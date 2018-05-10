@@ -23,7 +23,7 @@ export class SearchService {
   getAllProducts(searchQuery: string) {
     let url: string;
     if (searchQuery != undefined) {
-      let location:string=localStorage.getItem("user-location")?localStorage.getItem("user-location"):"gurgaon";
+      let location:any=localStorage.getItem("user-location")?localStorage.getItem("user-location").toLowerCase():"gurgaon";
       url = SearchConfig.searchSpecificProducts +location+"/"+ searchQuery;
     } else {
       url = SearchConfig.searchProducts;

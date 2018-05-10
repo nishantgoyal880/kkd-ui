@@ -70,6 +70,7 @@ export class ProductListComponent implements OnInit {
 
   // sort products by specific criteria
   sortBy(x) {
+    console.log(x);
     switch (x) {
       case "priceLH":
         this.products.sort(this.sorters.byPrice);

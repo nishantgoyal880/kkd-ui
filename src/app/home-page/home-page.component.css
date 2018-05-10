@@ -188,6 +188,16 @@ span.banner-icon {
 
 .white-right{text-align:left;}
 .white-left{
-    margin-top: 26px;
+    margin-top: 26px; 
 }
+
+/* @media (min-width: 992px) {  
+
+}
+
+.its-an-icon @media (min-width: 1200px) {  
+
+} */
+
+
 /*--//services--*/

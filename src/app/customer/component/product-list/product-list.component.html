@@ -10,11 +10,11 @@
     </div>
     <div class="col-sm-12 col-md-2">
       <label class="text-heading">
-        <select class="btn btn-success select-btn">
-          <option class="btn btn-light select-btn" (click)="sortBy('priceLH')">{{ 'products.price_low_to_high' | translate }}</option>
-          <option class="btn btn-light select-btn" (click)="sortBy('priceHL')">{{ 'products.price_high_to_low' | translate }}</option>
-          <option class="btn btn-light select-btn" (click)="sortBy('quantityLH')">{{ 'products.quantity_low_to_high' | translate }}</option>
-          <option class="btn btn-light select-btn" (click)="sortBy('quantityHL')">{{ 'products.quantity_high_to_low' | translate }}</option>
+        <select class="btn btn-success" #langSelect (change)="sortBy(langSelect.value)">
+          <option class="btn btn-light" [value]="'priceLH'">{{ 'products.price_low_to_high' | translate }}</option>
+          <option class="btn btn-light" [value]="'priceHL'">{{ 'products.price_high_to_low' | translate }}</option>
+          <option class="btn btn-light" [value]="'quantityLH'">{{ 'products.quantity_low_to_high' | translate }}</option>
+          <option class="btn btn-light" [value]="'quantityHL'">{{ 'products.quantity_high_to_low' | translate }}</option>
         </select>
       </label>
     </div>

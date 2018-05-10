@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {APP_BASE_HREF} from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './home-page/header/header.component';
@@ -68,7 +69,7 @@ HttpClientModule,
 }),
 NgxPermissionsModule.forRoot()
 ],
- providers:[IdRoleService],
+ providers:[{provide: APP_BASE_HREF, useValue: '/kkd'},IdRoleService],
   bootstrap: [AppComponent]
 })
 

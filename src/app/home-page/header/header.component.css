@@ -9,7 +9,9 @@ nav{
 
 a{
   color: #29a745;
+  cursor: pointer;
 }
+
 .show{
   color:#767a82;
 }
@@ -26,7 +28,7 @@ a{
 
   @media screen and (max-width: 600px) {
     .topnav.responsive {position: relative;}
-    .topnav.responsive .icon { 
+    .topnav.responsive .icon {
       position: absolute;
       right: 0;
       top: 0;
@@ -69,14 +71,83 @@ a{
 #location{
   margin-top:-.4rem;
   color: #fff;
-  margin-left:2rem; 
+  margin-left:2rem;
 }
 
 #lang-drop{
   margin-top: -.2rem;
-  margin-right:2rem; 
+  margin-right:2rem;
 }
 
 #lang-div{
   text-align: end;
 }
+
+/* change location modal */
+    @media (min-width: 96rem) {
+      .small {
+        display: none;
+      }
+
+    }
+
+    @media (max-width: 160rem) {
+      .large {
+        display: none;
+      }
+
+      .logo {
+        font-size: 1rem;
+      }
+    }
+
+    .btn-default
+    {
+     background-color: green;
+     color: white;
+   }
+
+   .btn-default:hover
+    {
+     background-color: black;
+     color: white;
+   }
+
+   .maincities
+   {
+     height: 4.5rem;
+     width: 4.5rem;
+     margin-right: 1.5rem;
+     margin-left: 1rem;
+   }
+
+   .maincitiestext
+   {
+     font-weight: bold;
+     padding-right: 1.75rem;
+     padding-left: 1.70rem;
+     font-size: 0.75rem;
+   }
+
+   .dropdown-toggle
+   {
+     margin-left: 5rem;
+     margin-bottom: 1rem;
+   }
+
+
+  ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+ }
+
+
+ li {
+   float: left;
+ }
+
+ #_setImg {
+  background-color: transparent;
+  border: none;
+ }

@@ -22,7 +22,7 @@
         "next":"Next",
         "welcome":"Welcome",
         "about":"About",
-        "about_description":"The project Kisan Ki Dukan(KKD) is the launch of trend that focuses on delivering goods  directly to the customer from the farm. As we know, it’s not fresh if it’s not from farm. And so, an online approach is being implemented by providing a platform to the customer and the farmers where the farmers can find and get in touch with the right customers to sell their goods and in a similar fashion the customers can request for goods from the  farmers based on their preferences of location or price and avail the quality raw goods for their use.",
+        "about_description":"The project Kisan Ki Dukan(KKD) is the launch of trend that focuses on delivering goods  directly to the customer from the farm. As we know, it’s not fresh if it’s not from farm. And so, an online approach is being implemented by providing a platform to the customer and the farmers where the farmers can find and get in touch with the right customers to sell their goods and in a similar fashion the customers can request for goods from the  farmers based on their preferences of location or price and avail the quality raw goods for their use. In all this, we also aim to to create an effective environment for the trade between farmers and the customers by solving the problems from both ends.",
         "farmer_joined":"Farmers Joined",
         "kg_vegetables_sold":"Kgs of Vegetables Sold",
         "happy_customers":"Happy Customers"
@@ -45,7 +45,7 @@
         "best_quality_description":"We believe quality is vital for success. Quality is all about improving products, services, systems and processes, to making sure that the whole platform is fit and effective. We work for the satisfaction of the customer for that we ensure quality.",
         "best_products_description":"The color, flavor, texture, and the nutritional value of fresh-cut fruit and vegetable products are factors critical to consumer acceptance and the success of the products.",
         "reliable_description":" No false promises or sales hype. We do and deliver what we say, on-time, on-budget. We are professional and easy to work with.",
-        "words_that_matter_description1":"We should not forget what was the state of grain production in the country after attaining independence. Our “annadata” has brought us out of the crisis. The country today has a record grain production, record dal, fruit, vegetables and milk production.",
+        "words_that_matter_description1":"We should not forget what was the state of grain production in the country after attaining independence.",
         "words_that_matter_description2":"The diet, to be healthy, has to be mostly fruits, vegetables, beans, nuts and seeds.",
         "words_that_matter_description3":"Cultivators of the Earth are the most virtuous and independent citizens.",
         "words_that_matter_1":"Narendra Modi",
@@ -324,12 +324,12 @@
         "product_name":"Product Name",
         "address":"Address",
         "quantity":"Quantity",
-        "amount":"Amount",
+        "amount":"Total Amount",
         "validity_of_order":"Validity Of Order",
         "customer_mobileno":"Customer MobileNo",
-        "delivered":"Delivered",
-        "accept":"Accept",
-        "decline":"Decline",
+        "delivered":"DELIVERED",
+        "accept":"ACCEPT",
+        "decline":"DECLINE",
         "enter_delivery_info":"Enter Delivery Info",
         "enter_delivery_date_and_time":"Enter delivery date and time",
         "close":"Close",
@@ -351,7 +351,7 @@
         "product_name":"Product Name",
         "address":"Address",
         "quantity":"Quantity",
-        "amount":"Amount",
+        "amount":"Total Amount",
         "order_status":"Order Status",
         "delivery_date":"Delivery Date"
     },
@@ -456,7 +456,7 @@
         "enter_10_digit_mobile_number":"Enter your 10 digit mobile number",
         "password":"Password",
         "enter_your_password":"Enter your password",
-        "password_required":"Password is Required"       
+        "password_required":"Password is Required"
     },
     "customer_my_cart":{
         "your_cart":"Your Cart",
@@ -487,13 +487,13 @@
         "less_than_3_digits":"Less than 3 digits",
         "more_than_3_digits":"More than 3 digits",
         "cvv_is_required":"CVV is required",
-        "make_payment":"Make Payment"       
+        "make_payment":"Make Payment"
     },
     "about_us":{
         "about_us_heading":"ABOUT US",
         "problem_statement":"Problem Statement",
         "in_the_global_market":"In the Global Market",
-        "problem_statement_description1":"the actual price of the products is not prevalent in the supply chain.",   
+        "problem_statement_description1":"the actual price of the products is not prevalent in the supply chain.",
         "problem_statement_description2":"need of a platform for farmers to sell.",
         "problem_statement_description3":"their products at their convenient price. The customers do not get products from the farm owner.",
         "project_definition":"Project Definition",
@@ -509,7 +509,7 @@
         "stakeholders_description1":"Farmers: By connecting the farmers directly with their customer and eliminating the middleman, KKD will help them to generate a greater profit.",
         "stakeholders_description2":"Customers: The buyer will get their products directly from the farm. Hence they can be sure that the vegetables they are consuming are fresh and unadulterated.",
         "stakeholders_description3":" Product Owner: We as the product developers and owners will provide a platform for the farmers and the customers to interact.",
-        "scope_and_impact":"Scope and Impact", 
+        "scope_and_impact":"Scope and Impact",
         "scope":"Scope",
         "scope_description":"Small scale and large scale farmers",
         "scope_description1":"Consumers of products",

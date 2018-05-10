@@ -1,46 +1,30 @@
-<div class="container mt-100">
-  <div class="row">
-    <div *ngFor="let product of products | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
+<div class="row">
+  <div *ngFor="let product of products | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
+    <div class="block">
 
-      <div class="card shadow p-2 mb-3" style="height: 26rem;">
-        <!-- Card image -->
-        <div class="view overlay zoom">
-          <img class="card-img-top" src="{{product.imageUrl}}" alt="Product Image">
-        </div>
-        <!-- Card content -->
-        <div class="card-body text-center">
-          <!-- Title -->
-          <h5 class="card-title">
-            <strong>{{product.productName}}</strong>
-          </h5>
-          <!-- Text -->
-          <div class="text-area">
-            <p class="card-text">
-              <b>{{ 'farmer_view_product.productid' | translate }}: </b>{{product.productId}}</p>
-            <p class="card-text">
-              <b>{{ 'farmer_view_product.description' | translate }}: </b>{{product.description}}</p>
-            <p class="card-text">
-              <b>{{ 'farmer_view_product.price' | translate }}: </b>{{product.price}}/kg.</p>
-            <p class="card-text">
-              <b>{{ 'farmer_view_product.bulk_ordr_price' | translate }}: </b>{{product.bulkOrderPrice}}/kg.</p>
-            <p class="card-text">
-              <b>{{ 'farmer_view_product.quantity' | translate }}: </b>{{product.quantity}} Kg</p>
-          </div>
-          <hr>
-          <span>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" (click)="updateProduct(product)">{{ 'farmer_view_product.update' | translate }}</button>
-          </span>
-          <span>
-            <button type="button" class="btn btn-danger" (click)="saveId(product.productId)">{{ 'farmer_view_product.delete' | translate }}</button>
-          </span>
-        </div>
+      <div class="top">
+            <span class="converse">{{product.productId}}</span>
       </div>
+
+      <div class="middle">
+        <img src="{{product.imageUrl}}" alt="pic" />
+      </div>
+
+      <div class="bottom">
+        <div class="heading">{{product.productName}}</div>
+        <div class="info">{{product.description}}</div>
+        <div class="quantity">Quantity: {{product.quantity}} Kg</div>
+        <div class="price">Price: ₹{{product.price}}/kg.</div>
+      </div>
+      <span>
+          <a id="update" data-toggle="modal" data-target="#exampleModal" (click)="updateProduct(product)">{{ 'farmer_view_product.update' | translate }}</a>
+         | <a id="delete" (click)="saveId(product.productId)">{{ 'farmer_view_product.delete' | translate }}</a>
+        </span>
 
     </div>
   </div>
-  <pagination-controls (pageChange)="p=$event"></pagination-controls>
 </div>
-
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
 <!-- Update Product Modal -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
