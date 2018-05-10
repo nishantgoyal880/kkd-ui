@@ -257,7 +257,8 @@
     "bank_details":"Bank Details",
     "account_owner":"Account Owner",
     "account_name":"Account Name",
-    "account_ifsc":"Account IFSC"
+    "account_ifsc":"Account IFSC",
+    "profile":"Profile"
 },
 "add_address":{
     "add_alternate_address":"ప్రత్యామ్నాయ చిరునామాను జోడించు",

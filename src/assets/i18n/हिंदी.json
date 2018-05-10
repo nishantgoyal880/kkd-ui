@@ -244,20 +244,20 @@
         "view_product":"उत्पाद देखें"
     },
     "my_account":{
-        "profile":"Profile",
+        "profile":"प्रोफाइल",
         "add_address":"पता जोड़ें",
         "change_password":"पासवर्ड बदलें",
         "alternate_mobile":"वैकल्पिक मोबाइल",
         "delete_profile":"प्रोफ़ाइल हटाएं",
-        "current_address":"Current Address",
-        "alternate":"Alternate",
-        "current":"Current",
-        "places_where_i_can_deliver":"Places where i can deliver",
-        "aadhaar_address":"Aadhaar Address",
-        "bank_details":"Bank Details",
-        "account_owner":"Account Owner",
-        "account_name":"Account Name",
-        "account_ifsc":"Account IFSC"
+        "current_address":"वर्तमान पता",
+        "alternate":"वैकल्पिक",
+        "current":"वर्तमान",
+        "places_where_i_can_deliver":"वे स्थान जहां मैं वितरित कर सकता हूं",
+        "aadhaar_address":"आधार पता",
+        "bank_details":"बैंक विवरण",
+        "account_owner":"खाता मालिक",
+        "account_name":"खाते का नाम",
+        "account_ifsc":"खाता आईएफएससी"
     },
     "add_address":{
         "add_alternate_address":"वैकल्पिक पता जोड़ें",
