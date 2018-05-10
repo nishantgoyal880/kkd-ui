@@ -1,17 +1,18 @@
 {
     "footer":{
-        "get_started":"Get started",
-        "home":"Home",
         "about_us":"About Us",
         "policies":"Policies",
-        "contact_us":"Contact us",
+        "contact":"Contact",
         "support":"Support",
         "help":"Help",
-        "join_our_newsletter":"Join our Newsletter",
-        "connect_on_social":"Connect with us on Social",
-        "enter_your_email":"Enter your E-mail",
-        "subscribe":"Subscribe",
-        "kisan_ki_dukan":"Kisan Ki Dukan. All Rights Reserved"
+        "kisan_ki_dukan":"Kisan Ki Dukan. All Rights Reserved",
+        "footer_description":"We are a young company always looking for new and creative ideas to help you with our products in your everyday work.",
+        "our_team":"Our Team",
+        "sapientrazorfish_Gurgaon":" SapientRazorfish,Gurgaon",
+        "phone":"Phone",
+        "email":"Email",
+        "skype":"Skype",
+        "follow_us":"Follow Us"
     },
     "body":{
         "kisan_ki_dukan":"Kisan Ki Dukan",
@@ -233,10 +234,20 @@
         "view_product":"View Product"
     },
     "my_account":{
+        "profile":"Profile",
         "add_address":"Add Address",
         "change_password":"Change Password",
         "alternate_mobile":"Alternate Mobile",
-        "delete_profile":"Delete Profile"
+        "delete_profile":"Delete Profile",
+        "current_address":"Current Address",
+        "alternate":"Alternate",
+        "current":"Current",
+        "places_where_i_can_deliver":"Places where i can deliver",
+        "aadhaar_address":"Aadhaar Address",
+        "bank_details":"Bank Details",
+        "account_owner":"Account Owner",
+        "account_name":"Account Name",
+        "account_ifsc":"Account IFSC"
     },
     "add_address":{
         "add_alternate_address":"ADD ALTERNATE ADDRESS",
@@ -361,8 +372,8 @@
         "price":"Price",
         "bulk_ordr_price":"Bulk order Price",
         "quantity":"Quantity",
-        "update":"Update",
-        "delete":"Delete",
+        "update":"EDIT",
+        "delete":"DELETE",
         "upadte_product":"Update Product",
         "cancel":"Cancel"
     },

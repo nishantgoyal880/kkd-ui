@@ -181,3 +181,19 @@ hr {
     margin-top: -1rem;
     text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+button:hover {
+    background-color: #c1ed23 !important;
+    
+}
+
+button:focus{
+    border-color : #f9f9f9 !important;
+}
+
+#prev_main{
+    margin-bottom: 3rem;
+}
+>>>>>>> 94a5d5c29a00a137d04f78d68282f0272fe2f7d6
