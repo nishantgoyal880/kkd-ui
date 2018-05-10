@@ -295,13 +295,13 @@
         "enter_current_password":"ਮੌਜੂਦਾ ਪਾਸਵਰਡ ਦਿਓ",
         "current_password_required":"ਮੌਜੂਦਾ ਪਾਸਵਰਡ ਦੀ ਲੋੜ ਹੈ",
         "delete":"ਮਿਟਾਓ",
-        "enter_otp":"Enter OTP",
-        "otp_is_required":"OTP is required",
-        "less_then_10_digit":"less then 10 digit",
-        "more_then_10_digit":"more then 10 digit",
-        "mobile_number_is_required":"Mobile Number is required",
-        "verify_otp":"Verify otp",
-        "enter_mobile_number":"Enter Mobile Number"
+        "enter_otp":"OTP ਦਰਜ ਕਰੋ",
+        "otp_is_required":"OTP ਲੋੜੀਂਦਾ ਹੈ",
+        "less_then_10_digit":"10 ਅੰਕ ਤੋਂ ਘਟ",
+        "more_then_10_digit":"10 ਅੰਕ ਤੋਂ ਵੱਧ",
+        "mobile_number_is_required":"ਮੋਬਾਈਲ ਨੰਬਰ ਲਾਜ਼ਮੀ ਹੈ",
+        "verify_otp":"Otp ਦੀ ਤਸਦੀਕ ਕਰੋ",
+        "enter_mobile_number":"ਮੋਬਾਈਲ ਨੰਬਰ ਦਰਜ ਕਰੋ"
     },
     "farmer_add_product":{
         "upload_product":"ਉਤਪਾਦ ਅਪਲੋਡ ਕਰੋ",
@@ -337,10 +337,10 @@
         "more_than_6_characters_not_allowed":"6 ਅੱਖਰਾਂ ਤੋਂ ਵੱਧ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ",
         "minimun_6_digits_are_required":"ਘੱਟੋ ਘੱਟ 6 ਅੰਕਾਂ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ",
         "save_details":"ਵੇਰਵਾ ਸੁਰੱਖਿਅਤ ਕਰੋ",
-        "more_than_10_characters_not_allowed":"More than 6 characters not allowed",
-        "minimun_10_digits_are_required":"Minimum 6 digits are required",
-        "mobile_number":"Mobile Number",
-        "mobile_number_required":"Mobile number is required"
+        "more_than_10_characters_not_allowed":"6 ਅੱਖਰਾਂ ਤੋਂ ਵੱਧ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ",
+        "minimun_10_digits_are_required":"ਘੱਟੋ ਘੱਟ 6 ਅੰਕਾਂ ਦੀ ਲੋੜ ਹੈ",
+        "mobile_number":"ਮੋਬਾਈਲ ਨੰਬਰ",
+        "mobile_number_required":"ਮੋਬਾਈਲ ਨੰਬਰ ਦੀ ਲੋੜ ਹੈ"
     },
     "farmer_current_order":{
         "customer_id":"ਗਾਹਕ ID",
