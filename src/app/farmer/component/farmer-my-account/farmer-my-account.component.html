@@ -29,15 +29,16 @@
                 <!-- Card -->
                 <div class="card testimonial-card" *ngIf="farmerInfo">
 
-                  <!-- Bacground color -->
-                  <div class="card-up indigo lighten-1">
-                  </div>
+                  <div class="container">
+                    <div class="row">
 
+                      <div class="col-3">
                   <!-- Avatar -->
                   <div class="avatar mx-auto white pt-2">
-                    <img src="./../../../../assets/images/user_img.jpeg" class="rounded-circle">
+                    <img src="./../../../../assets/images/user_img.jpeg" class="rounded-circle" style="text-align: center">
                   </div>
-
+                </div>
+                <div class="col-9">
                   <div class="card-body">
                     <!-- Name -->
                     <h4 class="card-title">{{farmerInfo.aadhaarData.firstName}} {{farmerInfo.aadhaarData.lastName}}</h4>
@@ -77,6 +78,9 @@
                       <span>Account IFSC:{{farmerInfo.bankDetails.ifscCode}}</span>
                     </p>
                   </div>
+                </div>
+                </div>
+                </div>
                 </div>
               </div>
               <!-- Card -->
