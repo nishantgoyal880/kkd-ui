@@ -7,6 +7,7 @@
     <div class="form-group">
 
 			<div class = form-comp >
+					<div class = "name"><label for="description">{{ 'farmer_add_product.choose_product_name' | translate }}</label></div>
 				<select class="form-control" (change)="selectChangeHandler($event)" >
 					<option disabled>{{ 'farmer_add_product.choose_product_name' | translate }}</option>
 					<option value="{{item}}" *ngFor="let item of items">{{item}}</option>
@@ -22,7 +23,8 @@
 					</div>
 				</div>
 			  </div>
-
+		<div class="row">
+			<div class="col-5">
       <div class = form-comp>
 		  <div class = "name"><label for="price">{{ 'farmer_add_product.product_price_per_kg' | translate }}</label></div>
 		<input type="text" class="form-control" placeholder="{{ 'farmer_add_product.enter_price' | translate }}" formControlName="price">
@@ -32,7 +34,9 @@
 			  </div>
 		  </div>
 		</div>
-
+		</div>
+			<div class="col-2"></div>
+		<div class="col-5">
 		<div class = form-comp>
 			<div class = "name"><label for="bulkOrderPrice">{{ 'farmer_add_product.bulk_product_price_per_kg' | translate }}</label></div>
 		  <input type="text" class="form-control" placeholder="{{ 'farmer_add_product.enter_bulk_order_price' | translate }}" formControlName="bulkOrderPrice">
@@ -41,8 +45,11 @@
 				  {{ 'farmer_add_product.bulk_price_required' | translate }}
 				</div>
 			</div>
-		  </div>
-
+			</div>
+		</div>
+	</div>
+	<div class="row">
+			<div class="col-5">
 		  <div class = form-comp>
 			<div class = "name"><label for="quantity">{{ 'farmer_add_product.quantity' | translate }}</label></div>
 		  <input type="text" class="form-control" placeholder="{{ 'farmer_add_product.enter_quantity' | translate }}" formControlName="quantity">
@@ -51,19 +58,24 @@
 				  {{ 'farmer_add_product.quantity_required' | translate }}
 				</div>
 			</div>
-		  </div>
-
-		  <div class = form-comp>
-		  <input type="checkbox" name="available" formControlName="available" value="1">{{ 'farmer_add_product.in_stock' | translate }}
-		</div>
-
-      <div class = form-comp>
+			</div>
+			</div>
+			<div class="col-2"></div>
+			<div class="col-5">
+			<div class = form-comp>
 					<div class = "name">
 					<label for="exampleInputFile">
 						{{ 'farmer_add_product.upload_image' | translate }}
 						</label></div>
 						<input type="file" (change)="onFileSelected($event)" class="form-control-file" id="exampleInputFile">
 			</div>
+			</div>
+			</div>
+		
+			<br>
+		  <div class = form-comp style="text-align: center">
+		  <input type="checkbox" name="available" formControlName="available" value="1">{{ 'farmer_add_product.in_stock' | translate }}
+		</div>
 
     <div class = form-comp-button>
       <button type="submit" class="btn btn-success" value="Submit Form" [disabled]="!rForm.valid">{{ 'farmer_add_product.submit_product' | translate }}</button>
