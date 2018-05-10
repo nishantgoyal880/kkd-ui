@@ -6,3 +6,12 @@
     display: inline-block;
     animation: 2s alertAnim forwards;
 }
+
+.checkbox{
+    display: inline;
+}
+
+img{
+    width:150px;
+    height: 150px;
+} 

@@ -77,3 +77,13 @@ button{
 .bank-det{
     margin-top: 4rem;
 }
+
+/* Payment */
+.checkbox{
+    display: inline;
+}
+
+img{
+    width:200px;
+    height: 200px;
+} 
