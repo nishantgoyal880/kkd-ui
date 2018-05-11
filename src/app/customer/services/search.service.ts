@@ -22,12 +22,14 @@ export class SearchService {
   // getting list of all the products according to location
   getAllProducts(searchQuery: string) {
     let url: string;
-    if (searchQuery != undefined) {
+    if(searchQuery==undefined||searchQuery==""){
+      url = SearchConfig.searchProducts;;
+    }
+    else{
       let location:any=localStorage.getItem("user-location")?localStorage.getItem("user-location").toLowerCase():"gurgaon";
       url = SearchConfig.searchSpecificProducts +location+"/"+ searchQuery;
-    } else {
-      url = SearchConfig.searchProducts;
     }
+   
     return this.http.get(url,this.authorization()).map(data => data.json(), err => console.log(err));
   }
 

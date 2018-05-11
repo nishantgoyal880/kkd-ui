@@ -15,6 +15,8 @@ export class ProductListComponent implements OnInit {
   public products: Array<any> = [];
   public max_price: number;
   public max_quantity: number;
+  public max_price_slider: number;
+  public max_quantity_slider: number;
   public min_price:number=0;
   public min_quantity:number=0;
   public role:string;
@@ -61,6 +63,8 @@ export class ProductListComponent implements OnInit {
       this.max_quantity = this.products.reduce(
         (prev, current) => (prev.quantity > current.quantity ? prev : current)
       ).quantity;
+      this.max_price_slider=this.max_price;
+      this.max_quantity_slider=this.max_quantity;
     }
   }
   sorters = {
